@@ -1,0 +1,30 @@
+name: auto deploy
+run-name: ${{ github.actor }} is deploying to server 🚀
+on:
+    push:
+        branches:
+            - main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+    
+          - name: Set up Node.js
+            uses: actions/setup-node@v2
+            with:
+              node-version: 21.5.0
+    
+          - name: Build
+            run: yarn build
+    
+          - name: 📂 upload to server
+            uses: appleboy/scp-action@v0.1.4
+            with:
+              host: 154.197.99.171
+              username: root
+              key: ${{ secrets.SSH_PRIVATE_KEY }}
+              port: 31275
+              source: build/*
+              target: /root/doc.niostack.com
