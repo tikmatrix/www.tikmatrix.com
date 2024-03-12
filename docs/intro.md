@@ -14,10 +14,12 @@ and **run an auto publish job**.
 ### What you'll need
 
 - Android Device
-  - Android 4.4 ~ 11
-  - USB Debugging enabled
+  - The Android device requires at least API 21 (Android 5.0).
+  - Make sure you enabled USB debugging on your device(s).
+  - On some devices, you also need to enable an additional option USB debugging (Security Settings) (this is an item different from USB debugging) to control it using a keyboard and mouse. Rebooting the device is necessary once this option is set.
+
 - Windows PC
-  - Windows 7 ~ 11
+  - Windows 7 or later
 - USB Cable
 
 ## Installation
