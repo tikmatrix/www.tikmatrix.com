@@ -20,7 +20,7 @@ and **run an auto publish job**.
 
 - Windows PC
   - Windows 7 or later
-- USB Cable
+- USB Cable or TCP/IP connection
 
 ## Installation
 
