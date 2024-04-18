@@ -10,6 +10,7 @@ Let's discover **TikTok Matrix in less than 5 minutes**.
 
 Get started by **run an auto train job**.
 and **run an auto publish job**.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q7HhePYNUx0?si=ortlbW3cdcEBR5fY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### What you'll need
 
@@ -30,7 +31,3 @@ Download the latest version of TikTok Matrix from the [GitHub Releases](https://
 
 1. Click the `Open Admin Console` button to open the admin console.
 ![Startup](img/startup.png)
-
-## How to use
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3Q5RidOPsM?si=xz-FWG3XBJnppua_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

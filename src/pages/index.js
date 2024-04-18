@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            TikTok Matrix Tutorial - 5min ⏱️
+            Strat TikMatrix Tutorial - 5min ⏱️
           </Link>
         </div>
       </div>
