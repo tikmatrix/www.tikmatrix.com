@@ -26,9 +26,11 @@ and **run an auto publish job**.
 
 Download the latest version of TikTok Matrix from the [GitHub Releases](https://github.com/niostack/tiktok-matrix/releases) page.
 
-## Start Service
+## Start
 
-1. Click the `Start` button of **Web server**.
-2. Click the `Start` button of **Agent**.
-3. Click the `Open` button to open the **Web UI**.
-![Start Service](img/start-service.png)
+1. Click the `Open Admin Console` button to open the admin console.
+![Startup](img/startup.png)
+
+## How to use
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y3Q5RidOPsM?si=xz-FWG3XBJnppua_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
