@@ -13,14 +13,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://niostack.com/',
+  url: 'https://www.tikmatrix.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'niostack', // Usually your GitHub org/user name.
+  organizationName: 'tikmatrix', // Usually your GitHub org/user name.
   projectName: 'tiktok-matrix', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -66,9 +66,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'TikTok Matrix',
+        title: 'Tik Matrix',
         logo: {
-          alt: 'TikTok Matrix Logo',
+          alt: 'Tik Matrix Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -78,13 +78,13 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          // { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'localeDropdown',
             position: 'right',
           },
           {
-            href: 'https://github.com/niostack/tiktok-matrix',
+            href: 'https://github.com/tikmatrix/tiktok-matrix',
             label: 'GitHub',
             position: 'right',
           },
@@ -128,7 +128,7 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/niostack/tiktok-matrix',
+                href: 'https://github.com/tikmatrix/tiktok-matrix',
               },
             ],
           },
