@@ -16,4 +16,4 @@ Publish job is used to publish the videos in the group.
 - If the time is in the past, the publish job will not start today.
 - If the time is in the future, the publish job will be created in one minute and start at the time you set.
 - if set multiple times, multiple publish jobs will be created every day. The maximum number of publish jobs is 6.
-- The `fastest way to start a publish job` is to set the time to 2 minutes later and click the `Save` button.
+- The `fastest way to start a publish job` is to set the time to the next minute later and click the `Save` button.
