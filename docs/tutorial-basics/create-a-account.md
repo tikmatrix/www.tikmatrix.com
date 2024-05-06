@@ -31,3 +31,5 @@ Before you start, you need to prepare an domain and enable email rules on Cloudf
 4. Click one device to open the device detail page.
 5. Click the `Register` button in Auto Script section.
 6. The register job will be started and the account will be added to the device after the job is finished.
+
+<video src="https://r2.tikmatrix.com/register-0506.mp4" controls width="400" height="300"></video>

@@ -133,7 +133,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} TikTok Matrix, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TikMatrix, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
