@@ -8,6 +8,7 @@ sidebar_position: 2
 
 ## Steps
 
-1. Click the `Groups` menu on the left sidebar.
-2. Click the `Add` button to create a new group.
-3. Input the group name and click the `Save` button.
+1. Click the `Add Group` menu on the left sidebar.
+2. Input the group name.
+3. Press the `Enter` key to save the group.
+![create-group](../img/create-group.png)

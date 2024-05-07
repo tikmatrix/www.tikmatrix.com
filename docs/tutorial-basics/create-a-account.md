@@ -26,10 +26,9 @@ Before you start, you need to prepare an domain and enable email rules on Cloudf
 - [Use Cloudflare Email Routing Catch-All Feature](https://developers.cloudflare.com/email-routing/setup/email-routing-addresses/#catch-all-address)
 
 1. Click the `Settings` menu on the left sidebar.
-2. Configure the `Custom register email suffix` and click the `Save` button.
-3. Click the `Devices` menu on the left sidebar.
-4. Click one device to open the device detail page.
-5. Click the `Register` button in Auto Script section.
-6. The register job will be started and the account will be added to the device after the job is finished.
+2. Configure the `Email Suffix` and click the `Save` button.
+3. Click one device to open the device detail page.
+4. Click the `Register` button to start the register job.
+5. The register job will be started and the account will be added to the device after the job is finished.
 
 <video src="https://r2.tikmatrix.com/register-0506.mp4" controls width="400" height="300"></video>
