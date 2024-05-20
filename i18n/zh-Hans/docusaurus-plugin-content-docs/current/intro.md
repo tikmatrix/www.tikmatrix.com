@@ -23,9 +23,7 @@ sidebar_position: 1
 
 ## 安装
 
-从 [GitHub Releases](https://github.com/niostack/tiktok-matrix/releases) 页面下载最新版本的 TikTok Matrix。
-
-## 开始
-
-1. 点击 `Open Admin Console` 按钮打开管理员控制台。
-![启动](img/startup.png)
+1. 从 [GitHub Releases](https://github.com/tikmatrix/tiktok-matrix/releases) 页面下载最新版本安装包（`tiktok-matrix_x.x.x_x64_en-US.msi`）。
+2. 运行安装程序。
+3. 等待安装完成。
+4. 在你的 Windows 电脑桌面上打开 **TikMatrix** 应用程序。

@@ -24,9 +24,8 @@ and **run an auto publish job**.
 
 ## Installation
 
-Download the latest version of TikTok Matrix from the [GitHub Releases](https://github.com/niostack/tiktok-matrix/releases) page.
-
-## Start
-
-1. Click the `Open Admin Console` button to open the admin console.
-![Startup](img/startup.png)
+1. Download the latest version install package(`tiktok-matrix_x.x.x_x64_en-US.msi
+`) from the [GitHub Releases](https://github.com/tikmatrix/tiktok-matrix/releases) page.
+2. Run the installer.
+3. Wait for the installation to complete.
+4. Open the **TikMatrix** app on your Windows PC Desktop.
