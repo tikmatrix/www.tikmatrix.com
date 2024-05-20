@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Create a Group
 
-**Group** is a collection of **Accounts**
+**Group** is a collection of **Devices**
 
 ## Steps
 

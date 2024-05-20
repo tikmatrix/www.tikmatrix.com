@@ -6,7 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
+import Translate, { translate } from '@docusaurus/Translate';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -15,12 +15,21 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          <Translate
+            message="TikMatrix is a powerful tool that can automate anything on TikTok.">
+            TikMatrix is a powerful tool that can automate anything on TikTok.
+          </Translate>
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Strat TikMatrix Tutorial - 5min ⏱️
+            <Translate
+              message="Start Now">
+              Start Now
+            </Translate>
+
           </Link>
         </div>
       </div>
@@ -33,7 +42,11 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="TikTok Matrix is a powerful tool that can automate anything on TikTok.">
+      description={
+        translate({
+          message: "TikMatrix is a powerful tool that can automate anything on TikTok."
+        })
+      }>
       <HomepageHeader />
       <main>
         <HomepageFeatures />

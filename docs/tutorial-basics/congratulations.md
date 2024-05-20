@@ -4,11 +4,10 @@ sidebar_position: 6
 
 # Congratulations
 
-You have just learned the **basics of TikTok Matrix**.
+You have completed the basic tutorial of TikMatrix. Give it a try!
 
-## What's next?
+## Coming Soon
 
-- How to fill the **Account** information(avatar,nickname, username, bio, etc) in the **Auto Register** feature?
-- How to set proxy ip for each **Device**?
-- How to add a product link to the post in the **Auto Publish** feature?
-- How to use TikTok AI generated video in the **Auto Publish** feature?
+- **Video Collection Feature**: Collect videos from across the web and import them into TikMatrix with one click.
+- **Video De-duplication Feature**: Achieve video de-duplication through various methods such as frame extraction, speed adjustment, rotation, and scaling.
+- **Video E-commerce Feature**: Automatically add product links (small yellow cart).

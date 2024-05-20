@@ -1,32 +1,37 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate, { translate } from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: <Translate message="Easy to Use">Easy to Use</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        TikTok Matrix is designed to be easy to use and install. It is a simple and easy to use tool for TikTok.
+        <Translate message="TikMatrix is designed to be easy to use and install. It is a simple and easy to use tool for TikTok.">TikMatrix is designed to be easy to use and install. It is a simple and easy to use tool for TikTok.</Translate>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: <Translate message="Focus on What Matters">Focus on What Matters</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        TikTok Matrix lets you focus on your content, and we'll do the chores. Go ahead and build your TikTok content.
+        <Translate message="TikMatrix lets you focus on your content, and we'll do the chores. Go ahead and build your TikTok content.">
+          TikMatrix lets you focus on your content, and we'll do the chores. Go ahead and build your TikTok content.
+        </Translate>
       </>
     ),
   },
   {
-    title: 'Powered by Google UI Automator',
+    title: <Translate message="Powered by Google UI Automator">Powered by Google UI Automator</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        TikTok Matrix is powered by Google UI Automator. It is a powerful tool that can automate anything on TikTok.
+        <Translate message="TikMatrix is powered by Google UI Automator. It is a powerful tool that can automate anything on TikTok without Root Access and Accessibility.">
+          TikMatrix is powered by Google UI Automator. It is a powerful tool that can automate anything on TikTok without Root Access and Accessibility.
+        </Translate>
       </>
     ),
   },
