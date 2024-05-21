@@ -392,8 +392,8 @@ tags: [video, download, tiktok,tikmatrix]
 - **drtv:season**
 - **drtv:series**
 - **DTube**: (**Currently broken**)
-- **duboku**: [www.duboku.io](www.duboku.io)
-- **duboku:list**: [www.duboku.io](www.duboku.io) entire series
+- **duboku**: [www.duboku.io](http://www.duboku.io)
+- **duboku:list**: [www.duboku.io](http://www.duboku.io) entire series
 - **Dumpert**
 - **Duoplay**
 - **dvtv**: [http://video.aktualne.cz](http://video.aktualne.cz)
