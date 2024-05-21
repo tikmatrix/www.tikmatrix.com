@@ -5,7 +5,8 @@ authors: tikMatrix
 tags: [video, download, tiktok,tikmatrix]
 ---
 
-# Download Videos Supported Sites
+## Download Videos Supported Sites
+
 <!--truncate-->
 ---
 
@@ -391,11 +392,11 @@ tags: [video, download, tiktok,tikmatrix]
 - **drtv:season**
 - **drtv:series**
 - **DTube**: (**Currently broken**)
-- **duboku**: <www.duboku.io>
-- **duboku:list**: <www.duboku.io> entire series
+- **duboku**: [www.duboku.io](www.duboku.io)
+- **duboku:list**: [www.duboku.io](www.duboku.io) entire series
 - **Dumpert**
 - **Duoplay**
-- **dvtv**: <http://video.aktualne.cz/>
+- **dvtv**: [http://video.aktualne.cz](http://video.aktualne.cz)
 - **dw**: (**Currently broken**)
 - **dw:article**: (**Currently broken**)
 - **EaglePlatform**
