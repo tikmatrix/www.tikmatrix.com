@@ -1,26 +1,104 @@
 {
-    "Start Now": {
-        "message": "马上开始"
+    "Download for Windows": {
+        "message": "Windows 下载"
     },
     "TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.": {
         "message": "TikMatrix 是一个用于批量控制安卓手机，实现矩阵化运营的强大工具。"
     },
-    "Easy to Use": {
-        "message": "简单易用"
+    "Why TikMatrix?": {
+        "message": "为什么使用 TikMatrix?"
     },
-    "TikMatrix is designed to be easy to use and install. It is a simple and easy to use tool for TikTok.": {
-        "message": "TikMatrix 是设计为易于使用和安装的。它是一款简单易用的工具。"
+    "Our advantages": {
+        "message": "我们的优势"
     },
-    "Focus on What Matters": {
-        "message": "专注于核心内容"
+    "Features": {
+        "message": "功能"
     },
-    "TikMatrix lets you focus on your content, and we'll do the chores. Go ahead and build your TikTok content.": {
-        "message": "TikMatrix 让你专注于内容，我们将做好所有事情。快跟上，构建你的 TikTok 内容。"
+    "TikMatrix RealPhone Matrix": {
+        "message": "TikMatrix 真机矩阵"
     },
-    "Powered by Google UI Automator": {
-        "message": "基于 Google UI Automator"
+    "Fingerprint Browser Matrix": {
+        "message": "指纹浏览器矩阵"
     },
-    "TikMatrix is powered by Google UI Automator. It is a powerful tool that can automate anything on TikTok without Root Access and Accessibility.": {
-        "message": "TikMatrix 是基于 Google UI Automator。它是一款强大的工具，可以无需 Root 访问和无障碍服务即可完成 TikTok 上的任何自动化操作。"
+    "Protocol Matrix": {
+        "message": "协议矩阵"
+    },
+    "Account Safe": {
+        "message": "账号安全"
+    },
+    "Automatic registration": {
+        "message": "自动注册"
+    },
+    "Automatic login": {
+        "message": "自动登录"
+    },
+    "Automated account nurturing": {
+        "message": "自动养号"
+    },
+    "Automatic video posting": {
+        "message": "自动发布视频"
+    },
+    "Pricing": {
+        "message": "价格"
+    },
+    "Our plans": {
+        "message": "我们的套餐"
+    },
+    "Free": {
+        "message": "免费"
+    },
+    "Monthly": {
+        "message": "包月"
+    },
+    "Yearly": {
+        "message": "包年"
+    },
+    "Per Month": {
+        "message": "每月"
+    },
+    "Per Year": {
+        "message": "每年"
+    },
+    "Manage unlimited devices": {
+        "message": "管理无限设备"
+    },
+    "Customer support": {
+        "message": "客户支持"
+    },
+    "Get Started": {
+        "message": "开始使用"
+    },
+    "Frequently Asked Questions": {
+        "message": "常见问题"
+    },
+    "Here are some frequently asked questions.": {
+        "message": "以下是常见问题。"
+    },
+    "What is TikMatrix?": {
+        "message": "什么是 TikMatrix?"
+    },
+    "How to use?": {
+        "message": "如何使用?"
+    },
+    "Go to the \"Download\" page and download the latest version of TikMatrix.": {
+        "message": "前往“下载”页面并下载最新版本的 TikMatrix。"
+    },
+    "What devices can I use?": {
+        "message": "我可以使用哪些设备?"
+    },
+    "TikMatrix supports Android phones running Android 5.0 and above.": {
+        "message": "TikMatrix 支持 Android 手机，运行 Android 5.0 及以上版本。"
+    },
+    "How many devices can I manage?": {
+        "message": "我可以管理多少设备?"
+    },
+    "TikMatrix supports up to 200+ devices.": {
+        "message": "TikMatrix 支持 200+ 个设备。"
+    },
+    "What computer can I use?": {
+        "message": "我可以使用哪些电脑?"
+    },
+    "TikMatrix supports Windows 10 and above.": {
+        "message": "TikMatrix 支持 Windows 10 及以上版本。"
     }
 }

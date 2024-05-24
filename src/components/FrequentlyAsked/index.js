@@ -1,0 +1,89 @@
+import clsx from 'clsx';
+import './index.css';
+import Translate, { translate } from '@docusaurus/Translate';
+
+export default function FrequentlyAsked() {
+    return (
+        <section id="faq" className="faq section-bg">
+            <div className="container" data-aos="fade-up">
+
+                <div className="section-title">
+                    <h2>
+                        <Translate>Frequently Asked Questions</Translate>
+                    </h2>
+                    <p>
+                        <Translate>Here are some frequently asked questions.</Translate>
+                    </p>
+                </div>
+
+                <div className="accordion-list">
+                    <ul>
+                        <li data-aos="fade-up">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse"
+                                data-bs-target="#accordion-list-1">
+                                <Translate>What is TikMatrix?</Translate>
+                                <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-1" className="collapse show" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.</Translate>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
+                                className="collapsed">
+                                <Translate>How to use?</Translate>
+                                <i className="bx bx-chevron-down icon-show"></i><i
+                                    className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-2" className="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>Go to the "Download" page and download the latest version of TikMatrix.</Translate>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
+                                className="collapsed">
+                                <Translate>What devices can I use?</Translate>
+                                <i className="bx bx-chevron-down icon-show"></i><i
+                                    className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-3" className="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>TikMatrix supports Android phones running Android 5.0 and above.</Translate>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4"
+                                className="collapsed">
+                                <Translate>How many devices can I manage?</Translate>
+                                <i className="bx bx-chevron-down icon-show"></i><i
+                                    className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-4" className="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>TikMatrix supports up to 200+ devices.</Translate>
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="400">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5"
+                                className="collapsed">
+                                <Translate>What computer can I use?</Translate><i className="bx bx-chevron-down icon-show"></i><i
+                                    className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-5" className="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>TikMatrix supports Windows 10 and above.</Translate>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    );
+}

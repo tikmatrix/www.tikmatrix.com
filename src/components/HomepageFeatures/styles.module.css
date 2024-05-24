@@ -1,11 +1,23 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
+  margin: 0;
+  padding: 0;
   width: 100%;
+  border-collapse: collapse;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featuresTitle {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+
+.featuresDetail {
+  text-align: center;
+  font-size: medium;
+  border: 1px solid #ccc;
+  padding: 10px;
 }

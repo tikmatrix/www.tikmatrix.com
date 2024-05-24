@@ -92,15 +92,16 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
+              {
+                label: 'Youtube',
+                href: 'https://youtube.com/@tikmatrix',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
-              // {
-              //   label: 'Stack Overflow',
-              //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              // },
+
               {
                 label: 'Telegram',
                 href: 'https://t.me/+iGhozoBfAbI5YmE1',
