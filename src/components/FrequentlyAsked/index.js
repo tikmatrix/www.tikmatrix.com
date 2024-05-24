@@ -1,7 +1,11 @@
 import clsx from 'clsx';
 import './index.css';
 import Translate, { translate } from '@docusaurus/Translate';
-
+const handleTagClick = (id) => {
+    console.log(`Tag ${id} clicked`);
+    //add class show to id
+    document.getElementById(id).classList.toggle('show');
+};
 export default function FrequentlyAsked() {
     return (
         <section id="faq" className="faq section-bg">
@@ -20,6 +24,7 @@ export default function FrequentlyAsked() {
                     <ul>
                         <li data-aos="fade-up">
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse"
+                                onClick={() => handleTagClick("accordion-list-1")}
                                 data-bs-target="#accordion-list-1">
                                 <Translate>What is TikMatrix?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
@@ -32,6 +37,7 @@ export default function FrequentlyAsked() {
 
                         <li data-aos="fade-up" data-aos-delay="100">
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2"
+                                onClick={() => handleTagClick("accordion-list-2")}
                                 className="collapsed">
                                 <Translate>How to use?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i
@@ -45,6 +51,7 @@ export default function FrequentlyAsked() {
 
                         <li data-aos="fade-up" data-aos-delay="200">
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3"
+                                onClick={() => handleTagClick("accordion-list-3")}
                                 className="collapsed">
                                 <Translate>What devices can I use?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i
@@ -58,6 +65,7 @@ export default function FrequentlyAsked() {
 
                         <li data-aos="fade-up" data-aos-delay="300">
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4"
+                                onClick={() => handleTagClick("accordion-list-4")}
                                 className="collapsed">
                                 <Translate>How many devices can I manage?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i
@@ -70,7 +78,8 @@ export default function FrequentlyAsked() {
                         </li>
 
                         <li data-aos="fade-up" data-aos-delay="400">
-                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5"
+                            <i className="bx bx-help-circle icon-help"></i>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" onClick={() => handleTagClick("accordion-list-5")}
                                 className="collapsed">
                                 <Translate>What computer can I use?</Translate><i className="bx bx-chevron-down icon-show"></i><i
                                     className="bx bx-chevron-up icon-close"></i></a>
