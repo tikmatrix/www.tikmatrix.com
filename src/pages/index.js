@@ -10,28 +10,33 @@ import Translate, { translate } from '@docusaurus/Translate';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">
-          <Translate
-            message="TikMatrix is a powerful tool that can automate anything on TikTok.">
-            TikMatrix is a powerful tool that can automate anything on TikTok.
-          </Translate>
-        </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
+    <header className={clsx('hero shadow--lw')} >
+      <div className="container row ">
+        <div className='col col--6'>
+          <Heading as="h1" className="hero__title">
+            {siteConfig.title}
+          </Heading>
+          <p className="hero__subtitle">
             <Translate
-              message="Start Now">
-              Start Now
+              message="TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.">
+              TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.
             </Translate>
-
-          </Link>
+          </p>
+          <div>
+            <Link
+              className="button button--primary button--outline button--lg"
+              to="/docs/intro">
+              <Translate
+                message="Start Now">
+                Start Now
+              </Translate>
+            </Link>
+          </div>
         </div>
+        <img
+          className="hero__img col col--6"
+          src="img/startup.png"
+        />
       </div>
     </header>
   );
@@ -40,13 +45,7 @@ function HomepageHeader() {
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description={
-        translate({
-          message: "TikMatrix is a powerful tool that can automate anything on TikTok."
-        })
-      }>
+    <Layout>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
