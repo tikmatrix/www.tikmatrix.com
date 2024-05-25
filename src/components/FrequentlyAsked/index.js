@@ -26,11 +26,11 @@ export default function FrequentlyAsked() {
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse"
                                 onClick={() => handleTagClick("accordion-list-1")}
                                 data-bs-target="#accordion-list-1">
-                                <Translate>What is TikMatrix?</Translate>
+                                <Translate>What is TikTokMatrix?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-1" className="collapse show" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.</Translate>
+                                    <Translate>TikTokMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -44,7 +44,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-2" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>Go to the "Download" page and download the latest version of TikMatrix.</Translate>
+                                    <Translate>Go to the "Download" page and download the latest version of TikTokMatrix.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -58,7 +58,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-3" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix supports Android phones running Android 5.0 and above.</Translate>
+                                    <Translate>TikTokMatrix supports Android phones running Android 5.0 and above.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -72,7 +72,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-4" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix supports up to 200+ devices.</Translate>
+                                    <Translate>TikTokMatrix supports up to 200+ devices.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -85,7 +85,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-5" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix supports Windows 10 and above.</Translate>
+                                    <Translate>TikTokMatrix supports Windows 10 and above.</Translate>
                                 </p>
                             </div>
                         </li>

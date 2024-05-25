@@ -11,7 +11,7 @@ export default function HomepageFeatures() {
 
         <div className="section-title">
           <h2>
-            <Translate>Why TikMatrix?</Translate>
+            <Translate>Why TikTokMatrix?</Translate>
           </h2>
           <p>
             <Translate>
@@ -35,7 +35,7 @@ export default function HomepageFeatures() {
             <Translate>Features</Translate>
           </div>
           <div className="featuresCol featuresTitle">
-            <Translate>TikMatrix RealPhone Matrix</Translate>
+            <Translate>TikTokMatrix RealPhone Matrix</Translate>
           </div>
           <div className="featuresCol featuresDetail">
             <Translate>Fingerprint Browser Matrix</Translate>

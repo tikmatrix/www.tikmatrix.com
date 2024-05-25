@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **TikMatrix in less than 5 minutes**.
+Let's discover **TikTokMatrix in less than 5 minutes**.
 
 ## Getting Started
 
@@ -28,4 +28,4 @@ and **run an auto publish job**.
 `) from the [GitHub Releases](https://github.com/tikmatrix/tiktok-matrix/releases) page.
 2. Run the installer.
 3. Wait for the installation to complete.
-4. Open the **TikMatrix** app on your Windows PC Desktop.
+4. Open the **TikTokMatrix** app on your Windows PC Desktop.

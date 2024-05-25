@@ -8,12 +8,12 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikMatrix',
+  title: 'TikTokMatrix',
   tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://www.tikmatrix.com/',
+  url: 'https://www.tiktokmatrix.net/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -50,7 +50,7 @@ const config = {
           customCss: './src/css/custom.css',
         },
         gtag: {
-          trackingID: 'G-60Y51L6N5Y',
+          trackingID: 'G-ZX7BFMJE03',
           anonymizeIP: true,
         },
         sitemap: {
@@ -75,9 +75,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'TikMatrix',
+        title: 'TikTokMatrix',
         logo: {
-          alt: 'TikMatrix Logo',
+          alt: 'TikTokMatrix Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -98,11 +98,11 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            href: 'https://github.com/tikmatrix/tiktok-matrix',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/tikmatrix/tiktok-matrix',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       footer: {
@@ -115,10 +115,10 @@ const config = {
                 label: 'Tutorial',
                 to: '/docs/intro',
               },
-              {
-                label: 'Youtube',
-                href: 'https://youtube.com/@tikmatrix',
-              },
+              // {
+              //   label: 'Youtube',
+              //   href: 'https://youtube.com/@tikmatrix',
+              // },
             ],
           },
           {
@@ -127,12 +127,12 @@ const config = {
 
               {
                 label: 'Telegram',
-                href: 'https://t.me/+iGhozoBfAbI5YmE1',
+                href: 'https://t.me/+oTw5Na5lmbczNmVl',
               },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/niostack',
-              },
+              // {
+              //   label: 'Twitter',
+              //   href: 'https://twitter.com/niostack',
+              // },
             ],
           },
           {
@@ -142,14 +142,14 @@ const config = {
               //   label: 'Blog',
               //   to: '/blog',
               // },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/tikmatrix/tiktok-matrix',
-              },
+              // {
+              //   label: 'GitHub',
+              //   href: 'https://github.com/tikmatrix/tiktok-matrix',
+              // },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} TikMatrix, Inc. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TikTokMatrix, Inc. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
@@ -157,7 +157,7 @@ const config = {
       },
       metadata: [
         { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
-        { name: 'author', content: 'TikMatrix' },],
+        { name: 'author', content: 'TikTokMatrix' },],
 
     }),
   headTags: [

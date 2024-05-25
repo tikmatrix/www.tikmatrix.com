@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 教程介绍
 
-让我们在不到 5 分钟的时间里了解 **TikMatrix**。
+让我们在不到 5 分钟的时间里了解 **TikTokMatrix**。
 
 ## 入门
 
@@ -26,4 +26,4 @@ sidebar_position: 1
 1. 从 [GitHub Releases](https://github.com/tikmatrix/tiktok-matrix/releases) 页面下载最新版本安装包（`tiktok-matrix_x.x.x_x64_en-US.msi`）。
 2. 运行安装程序。
 3. 等待安装完成。
-4. 在你的 Windows 电脑桌面上打开 **TikMatrix** 应用程序。
+4. 在你的 Windows 电脑桌面上打开 **TikTokMatrix** 应用程序。

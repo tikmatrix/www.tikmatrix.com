@@ -16,11 +16,11 @@ export default function HomepageHeader() {
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.
+                            TikTokMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.
                         </Translate>
                     </p>
                     <div>
-                        <a href="https://github.com/tikmatrix/tiktok-matrix/releases/latest" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="/tiktokmatrix.msi" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>

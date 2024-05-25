@@ -19,7 +19,7 @@
     "description": "Navbar item with label Pricing"
   },
   "logo.alt": {
-    "message": "TikMatrix Logo",
+    "message": "TikTokMatrix Logo",
     "description": "The alt text of navbar logo"
   },
   "item.label.GitHub": {

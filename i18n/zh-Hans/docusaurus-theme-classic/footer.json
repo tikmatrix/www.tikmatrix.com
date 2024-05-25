@@ -38,7 +38,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tiktok-matrix"
   },
   "copyright": {
-    "message": "Copyright © 2024 TikMatrix, Inc. All rights reserved.",
+    "message": "Copyright © 2024 TikTokMatrix, Inc. All rights reserved.",
     "description": "The footer copyright"
   }
 }

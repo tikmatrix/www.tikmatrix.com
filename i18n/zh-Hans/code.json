@@ -2,11 +2,11 @@
   "Download for Windows": {
     "message": "Windows 下载"
   },
-  "TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.": {
-    "message": "TikMatrix 是一个用于批量控制安卓手机，实现矩阵化运营的强大工具。"
+  "TikTokMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.": {
+    "message": "TikTokMatrix 是一个用于批量控制安卓手机，实现矩阵化运营的强大工具。"
   },
-  "Why TikMatrix?": {
-    "message": "为什么使用 TikMatrix?"
+  "Why TikTokMatrix?": {
+    "message": "为什么使用 TikTokMatrix?"
   },
   "Our Core Advantages": {
     "message": "我们的核心优势"
@@ -20,8 +20,8 @@
   "Features": {
     "message": "功能"
   },
-  "TikMatrix RealPhone Matrix": {
-    "message": "TikMatrix 真机矩阵"
+  "TikTokMatrix RealPhone Matrix": {
+    "message": "TikTokMatrix 真机矩阵"
   },
   "Fingerprint Browser Matrix": {
     "message": "指纹浏览器矩阵"
@@ -83,32 +83,32 @@
   "Here are some frequently asked questions.": {
     "message": "以下是常见问题。"
   },
-  "What is TikMatrix?": {
-    "message": "什么是 TikMatrix?"
+  "What is TikTokMatrix?": {
+    "message": "什么是 TikTokMatrix?"
   },
   "How to use?": {
     "message": "如何使用?"
   },
-  "Go to the \"Download\" page and download the latest version of TikMatrix.": {
-    "message": "前往“下载”页面并下载最新版本的 TikMatrix。"
+  "Go to the \"Download\" page and download the latest version of TikTokMatrix.": {
+    "message": "前往“下载”页面并下载最新版本的 TikTokMatrix。"
   },
   "What devices can I use?": {
     "message": "我可以使用哪些设备?"
   },
-  "TikMatrix supports Android phones running Android 5.0 and above.": {
-    "message": "TikMatrix 支持 Android 手机，运行 Android 5.0 及以上版本。"
+  "TikTokMatrix supports Android phones running Android 5.0 and above.": {
+    "message": "TikTokMatrix 支持 Android 手机，运行 Android 5.0 及以上版本。"
   },
   "How many devices can I manage?": {
     "message": "我可以管理多少设备?"
   },
-  "TikMatrix supports up to 200+ devices.": {
-    "message": "TikMatrix 支持 200+ 个设备。"
+  "TikTokMatrix supports up to 200+ devices.": {
+    "message": "TikTokMatrix 支持 200+ 个设备。"
   },
   "What computer can I use?": {
     "message": "我可以使用哪些电脑?"
   },
-  "TikMatrix supports Windows 10 and above.": {
-    "message": "TikMatrix 支持 Windows 10 及以上版本。"
+  "TikTokMatrix supports Windows 10 and above.": {
+    "message": "TikTokMatrix 支持 Windows 10 及以上版本。"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
