@@ -27,11 +27,14 @@ export default function HomepageHeader() {
                         </a>
                     </div>
                 </div>
-                <img
-                    className="hero__img col col--6"
-                    src="img/startup.png"
-                    data-aos="fade-up"
-                />
+                <div className="col col--6">
+                    <img
+                        className="hero__img "
+                        src="img/startup.png"
+                        data-aos="fade-up"
+                    />
+                </div>
+
             </div>
         </header>
     );
