@@ -118,7 +118,7 @@ export default function HomepageFeatures() {
 
         <div className="featuresRow">
           <div className="featuresCol featuresTitle">
-            价格
+            <Translate>Pricing</Translate>
           </div>
           <div className="featuresCol featuresDetail">
             ★
