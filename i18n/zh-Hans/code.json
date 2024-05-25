@@ -8,8 +8,14 @@
     "Why TikMatrix?": {
         "message": "为什么使用 TikMatrix?"
     },
-    "Our advantages": {
-        "message": "我们的优势"
+    "Our Core Advantages": {
+        "message": "我们的核心优势"
+    },
+    "Compared to similar products on the market, using our product TIK results in at least a 30% increase in traffic compared to other similar products.": {
+        "message": "对比市面上的同类产品  使用我们的产品TIK流量对比同类其他产品流量增加最低约30%"
+    },
+    "Additionally, our real device matrix program system can perfectly avoid account suspensions caused by TIK's risk control measures. Our account suspension rate is 0%.": {
+        "message": "同时我们的真机矩阵程序系统 可以完美避开TIK风控带来的封停账号  我们的封号率是0%"
     },
     "Features": {
         "message": "功能"
@@ -40,6 +46,9 @@
     },
     "Pricing": {
         "message": "价格"
+    },
+    "Full Network Video Download": {
+        "message": "全网视频采集"
     },
     "Our plans": {
         "message": "我们的套餐"

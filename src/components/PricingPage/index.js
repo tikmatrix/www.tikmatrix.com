@@ -15,8 +15,8 @@ export default function PricingPage() {
                     </p>
                 </div>
 
-                <div className="row no-gutters">
-                    <div className="col col--4 box" data-aos="fade-right">
+                <div className="row">
+                    <div className="box" data-aos="fade-right">
                         <h3>
                             <Translate>Free</Translate>
                         </h3>
@@ -55,7 +55,7 @@ export default function PricingPage() {
                             <Translate>Get Started</Translate>
                         </a>
                     </div>
-                    <div className="col col--4 box featured" data-aos="fade-up">
+                    <div className="box featured" data-aos="fade-up">
                         <h3>
                             <Translate>Monthly</Translate>
                         </h3>
@@ -96,7 +96,7 @@ export default function PricingPage() {
                         <div id="paypal-button-container-P-51N76453KY9797203MW6FJEY"></div>
 
                     </div>
-                    <div className="col col--4 box" data-aos="fade-left">
+                    <div className="box" data-aos="fade-left">
                         <h3>
                             <Translate>Yearly</Translate>
                         </h3>

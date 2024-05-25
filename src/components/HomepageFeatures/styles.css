@@ -1,8 +1,12 @@
-.features {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  border-collapse: collapse;
+.featuresRow {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.featuresCol {
+  flex: 1;
+  text-align: center;
 }
 
 .featuresTitle {
@@ -11,13 +15,13 @@
   font-weight: bold;
   border: 1px solid #ccc;
   padding: 10px;
+  color: green;
 }
-
-
 
 .featuresDetail {
   text-align: center;
   font-size: medium;
   border: 1px solid #ccc;
   padding: 10px;
+  color: green;
 }
