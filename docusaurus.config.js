@@ -52,6 +52,18 @@ const config = {
           trackingID: 'G-60Y51L6N5Y',
           anonymizeIP: true,
         },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, ...rest } = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
+          },
+        },
       }),
     ],
   ],
@@ -136,7 +148,34 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
+      metadata: [
+        { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
+        { name: 'author', content: 'TikMatrix' },],
     }),
+  headTags: [
+    // Declare a <link> preconnect tag
+    // {
+    //   tagName: 'link',
+    //   attributes: {
+    //     rel: 'preconnect',
+    //     href: 'https://example.com',
+    //   },
+    // },
+    // // Declare some json-ld structured data
+    // {
+    //   tagName: 'script',
+    //   attributes: {
+    //     type: 'application/ld+json',
+    //   },
+    //   innerHTML: JSON.stringify({
+    //     '@context': 'https://schema.org/',
+    //     '@type': 'Organization',
+    //     name: 'Meta Open Source',
+    //     url: 'https://opensource.fb.com/',
+    //     logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
+    //   }),
+    // },
+  ],
 };
 
 export default config;
