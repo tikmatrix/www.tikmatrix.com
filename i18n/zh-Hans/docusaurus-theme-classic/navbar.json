@@ -1,17 +1,29 @@
 {
-    "title": {
-        "message": "TikTok矩阵"
-    },
-    "item.label.Docs": {
-        "message": "文档"
-    },
-    "item.label.Tutorial": {
-        "message": "教程"
-    },
-    "item.label.Blog": {
-        "message": "博客"
-    },
-    "item.label.Pricing": {
-        "message": "价格"
-    }
+  "title": {
+    "message": "TikTok矩阵",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "文档"
+  },
+  "item.label.Tutorial": {
+    "message": "教程",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Pricing": {
+    "message": "价格",
+    "description": "Navbar item with label Pricing"
+  },
+  "logo.alt": {
+    "message": "TikMatrix Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
 }

@@ -41,6 +41,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          sidebarCollapsible: false,
         },
         blog: {
           showReadingTime: true,
@@ -157,6 +158,7 @@ const config = {
       metadata: [
         { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
         { name: 'author', content: 'TikMatrix' },],
+
     }),
   headTags: [
     // Declare a <link> preconnect tag

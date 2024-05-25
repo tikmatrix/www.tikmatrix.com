@@ -1,20 +1,44 @@
 {
-    "title": {
-        "message": "TikTok矩阵"
-    },
-    "link.title.Docs": {
-        "message": "文档"
-    },
-    "link.item.label.Tutorial": {
-        "message": "教程"
-    },
-    "link.title.Blog": {
-        "message": "博客"
-    },
-    "link.title.Community": {
-        "message": "社区"
-    },
-    "link.title.More": {
-        "message": "更多"
-    }
+  "title": {
+    "message": "TikTok矩阵"
+  },
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.item.label.Tutorial": {
+    "message": "教程",
+    "description": "The label of footer link with label=Tutorial linking to /docs/intro"
+  },
+  "link.title.Blog": {
+    "message": "博客"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Youtube": {
+    "message": "Youtube",
+    "description": "The label of footer link with label=Youtube linking to https://youtube.com/@tikmatrix"
+  },
+  "link.item.label.Telegram": {
+    "message": "Telegram",
+    "description": "The label of footer link with label=Telegram linking to https://t.me/+iGhozoBfAbI5YmE1"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/niostack"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tiktok-matrix"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 TikMatrix, Inc. All rights reserved.",
+    "description": "The footer copyright"
+  }
 }

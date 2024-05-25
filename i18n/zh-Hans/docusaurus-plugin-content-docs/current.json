@@ -1,0 +1,14 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
+    "message": "基础教程",
+    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
+    "message": "了解如何使用 TIKTOK 矩阵的基础知识。",
+    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  }
+}
