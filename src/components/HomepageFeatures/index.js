@@ -43,9 +43,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             <Translate>Protocol Matrix</Translate>
           </div>
-        </div>
-
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Account Safe</Translate>
           </div>
@@ -58,8 +55,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             ★
           </div>
-        </div>
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Automatic registration</Translate>
           </div>
@@ -72,8 +67,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             ❌
           </div>
-        </div>
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Automated account nurturing</Translate>
           </div>
@@ -86,8 +79,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             ❌
           </div>
-        </div>
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Automatic video posting</Translate>
           </div>
@@ -100,8 +91,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             ❌
           </div>
-        </div>
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Full Network Video Download</Translate>
           </div>
@@ -114,9 +103,6 @@ export default function HomepageFeatures() {
           <div className="featuresCol featuresDetail">
             ❌
           </div>
-        </div>
-
-        <div className="featuresRow">
           <div className="featuresCol featuresTitle">
             <Translate>Pricing</Translate>
           </div>

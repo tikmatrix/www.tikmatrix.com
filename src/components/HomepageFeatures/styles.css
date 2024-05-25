@@ -1,12 +1,11 @@
 .featuresRow {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .featuresCol {
-  flex: 1;
-  text-align: center;
+  align-items: center;
+  align-content: center;
 }
 
 .featuresTitle {

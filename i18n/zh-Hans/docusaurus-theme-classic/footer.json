@@ -1,0 +1,20 @@
+{
+    "title": {
+        "message": "TikTok矩阵"
+    },
+    "link.title.Docs": {
+        "message": "文档"
+    },
+    "link.item.label.Tutorial": {
+        "message": "教程"
+    },
+    "link.title.Blog": {
+        "message": "博客"
+    },
+    "link.title.Community": {
+        "message": "社区"
+    },
+    "link.title.More": {
+        "message": "更多"
+    }
+}

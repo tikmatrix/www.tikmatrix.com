@@ -80,6 +80,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
+
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -87,6 +88,11 @@ const config = {
             label: 'Tutorial',
           },
           { to: '/blog', label: 'Blog', position: 'right' },
+          {
+            href: '#pricing',
+            position: 'right',
+            label: 'Pricing',
+          },
           {
             type: 'localeDropdown',
             position: 'right',
