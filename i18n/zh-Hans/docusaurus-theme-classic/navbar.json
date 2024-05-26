@@ -18,6 +18,10 @@
     "message": "价格",
     "description": "Navbar item with label Pricing"
   },
+  "item.label.Contact": {
+    "message": "联系我们",
+    "description": "Navbar item with label Contact"
+  },
   "logo.alt": {
     "message": "TikMatrix Logo",
     "description": "The alt text of navbar logo"

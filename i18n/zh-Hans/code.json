@@ -396,5 +396,41 @@
   "theme.unlistedContent.message": {
     "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
     "description": "The unlisted content banner message"
+  },
+  "Contact": {
+    "message": "联系我们",
+    "description": "The contact form title"
+  },
+  "If you are interested in our service, please contact us to get price.": {
+    "message": "如果您想了解我们的服务，请联系我们获取价格。",
+    "description": "The contact form description"
+  },
+  "Address": {
+    "message": "地址",
+    "description": "The address label"
+  },
+  "Guangzhou, China": {
+    "message": "广州，中国",
+    "description": "The address description"
+  },
+  "Telegram": {
+    "message": "Telegram",
+    "description": "The telegram label"
+  },
+  "Join Group": {
+    "message": "加入群组",
+    "description": "The join group button label"
+  },
+  "Email": {
+    "message": "邮箱",
+    "description": "The email label"
+  },
+  "Working Hours": {
+    "message": "工作时间",
+    "description": "The working hours label"
+  },
+  "Mon - Fri: 9:00AM - 5:00PM(UTC+8)": {
+    "message": "周一至周五: 9:00AM - 5:00PM（UTC+8）",
+    "description": "The working hours description"
   }
 }

@@ -73,7 +73,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.png',
       navbar: {
         title: 'TikMatrix',
         logo: {
@@ -90,9 +90,14 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'right' },
           {
-            href: '#pricing',
+            href: '/#pricing',
             position: 'right',
             label: 'Pricing',
+          },
+          {
+            href: '/#contact',
+            position: 'right',
+            label: 'Contact',
           },
           {
             type: 'localeDropdown',

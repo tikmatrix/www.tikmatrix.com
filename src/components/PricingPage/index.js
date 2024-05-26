@@ -51,8 +51,8 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#" className="get-started-btn">
-                            <Translate>Get Started</Translate>
+                        <a href="#contact" className="get-started-btn">
+                            <Translate>Contact</Translate>
                         </a>
                     </div>
                     <div className="box featured" data-aos="fade-up">
@@ -90,10 +90,9 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#" className="get-started-btn">
-                            <Translate>Get Started</Translate>
+                        <a href="#contact" className="get-started-btn">
+                            <Translate>Contact</Translate>
                         </a>
-                        <div id="paypal-button-container-P-51N76453KY9797203MW6FJEY"></div>
 
                     </div>
                     <div className="box" data-aos="fade-left">
@@ -131,8 +130,9 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#" className="get-started-btn"><Translate>Get Started</Translate></a>
-                        <div id="paypal-button-container-P-6S8294320E2240513MW6FRHI"></div>
+                        <a href="#contact" className="get-started-btn">
+                            <Translate>Contact</Translate>
+                        </a>
 
                     </div>
                 </div>
