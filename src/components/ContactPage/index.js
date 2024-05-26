@@ -24,12 +24,14 @@ export default function FrequentlyAsked() {
                     <div className="col col--12">
                         <div className="row">
                             <div className="col col--6 info">
-                                <i className="bx bx-map"></i>
+                                <i className="bx bxl-whatsapp"></i>
                                 <h4>
-                                    <Translate>Address</Translate>
+                                    <Translate>WhatsApp</Translate>
                                 </h4>
                                 <p>
-                                    <Translate>Guangzhou, China</Translate>
+                                    <a href="//chat.whatsapp.com/G15tFqXqbRGADnggV5OEvg" target="_blank">
+                                        <Translate>Join Group</Translate>
+                                    </a>
                                 </p>
                             </div>
                             <div className="col col--6 info">
@@ -38,7 +40,9 @@ export default function FrequentlyAsked() {
                                     <Translate>Telegram</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//t.me/+iGhozoBfAbI5YmE1" target="_blank">Join Group</a>
+                                    <a href="//t.me/+iGhozoBfAbI5YmE1" target="_blank">
+                                        <Translate>Join Group</Translate>
+                                    </a>
                                 </p>
                             </div>
                             <div className="col col--6 info">

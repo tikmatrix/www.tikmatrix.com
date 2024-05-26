@@ -52,19 +52,7 @@ const config = {
         gtag: {
           trackingID: 'G-60Y51L6N5Y',
           anonymizeIP: true,
-        },
-        sitemap: {
-          lastmod: 'date',
-          changefreq: 'weekly',
-          priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-          createSitemapItems: async (params) => {
-            const { defaultCreateSitemapItems, ...rest } = params;
-            const items = await defaultCreateSitemapItems(rest);
-            return items.filter((item) => !item.url.includes('/page/'));
-          },
-        },
+        }
       }),
     ],
   ],
@@ -162,7 +150,13 @@ const config = {
       },
       metadata: [
         { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
-        { name: 'author', content: 'TikMatrix' },],
+        { name: 'author', content: 'TikMatrix' },
+      ],
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
 
     }),
   headTags: [
@@ -188,6 +182,13 @@ const config = {
     //     logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
     //   }),
     // },
+  ],
+  scripts: [
+    {
+      src: 'https://embed.tawk.to/665309c6981b6c564774cafe/1huq5scl7',
+      async: true,
+      crossorigin: 'anonymous'
+    },
   ],
 };
 

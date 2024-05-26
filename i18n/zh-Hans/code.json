@@ -405,14 +405,6 @@
     "message": "如果您想了解我们的服务，请联系我们获取价格。",
     "description": "The contact form description"
   },
-  "Address": {
-    "message": "地址",
-    "description": "The address label"
-  },
-  "Guangzhou, China": {
-    "message": "广州，中国",
-    "description": "The address description"
-  },
   "Telegram": {
     "message": "Telegram",
     "description": "The telegram label"
