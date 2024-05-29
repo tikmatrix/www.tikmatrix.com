@@ -80,6 +80,18 @@ export default function HomepageFeatures() {
             ❌
           </div>
           <div className="featuresCol featuresTitle">
+            <Translate>Automated comment</Translate>
+          </div>
+          <div className="featuresCol featuresDetail">
+            ✅
+          </div>
+          <div className="featuresCol featuresDetail">
+            ❌
+          </div>
+          <div className="featuresCol featuresDetail">
+            ❌
+          </div>
+          <div className="featuresCol featuresTitle">
             <Translate>Automatic video posting</Translate>
           </div>
           <div className="featuresCol featuresDetail">

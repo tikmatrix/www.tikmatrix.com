@@ -76,6 +76,19 @@ export default function FrequentlyAsked() {
                                 </p>
                             </div>
                         </li>
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4"
+                                onClick={() => handleTagClick("accordion-list-4")}
+                                className="collapsed">
+                                <Translate>How many TikTok accounts can each phone log into?</Translate>
+                                <i className="bx bx-chevron-down icon-show"></i><i
+                                    className="bx bx-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-4" className="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    <Translate>TikMatrix supports 8 TikTok accounts on each phone.</Translate>
+                                </p>
+                            </div>
+                        </li>
 
                         <li data-aos="fade-up" data-aos-delay="400">
                             <i className="bx bx-help-circle icon-help"></i>

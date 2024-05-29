@@ -41,6 +41,9 @@
   "Automated account nurturing": {
     "message": "自动养号"
   },
+  "Automated comment": {
+    "message": "自动评论"
+  },
   "Automatic video posting": {
     "message": "自动发布视频"
   },
@@ -103,6 +106,12 @@
   },
   "TikMatrix supports up to 200+ devices.": {
     "message": "TikMatrix 支持 200+ 个设备。"
+  },
+  "How many TikTok accounts can each phone log into?": {
+    "message": "每个手机可以登录几个tiktok账号?"
+  },
+  "TikMatrix supports 8 TikTok accounts on each phone.": {
+    "message": "TikMatrix 支持每个手机登录8个tiktok账号"
   },
   "What computer can I use?": {
     "message": "我可以使用哪些电脑?"
