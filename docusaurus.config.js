@@ -183,13 +183,13 @@ const config = {
     //   }),
     // },
   ],
-  scripts: [
-    {
-      src: 'https://embed.tawk.to/665309c6981b6c564774cafe/1huq5scl7',
-      async: true,
-      crossorigin: 'anonymous'
-    },
-  ],
+  // scripts: [
+  //   {
+  //     src: 'https://embed.tawk.to/665309c6981b6c564774cafe/1huq5scl7',
+  //     async: true,
+  //     crossorigin: 'anonymous'
+  //   },
+  // ],
 };
 
 export default config;

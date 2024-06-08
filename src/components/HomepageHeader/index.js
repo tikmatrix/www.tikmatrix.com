@@ -25,12 +25,17 @@ export default function HomepageHeader() {
                                 Download for Windows
                             </Translate>
                         </a>
+                        <a href="#contact" className="download-btn"><i className="bx bxl-telegram"></i>
+                            <Translate>
+                                Contact
+                            </Translate>
+                        </a>
                     </div>
                 </div>
                 <div className="col col--6">
                     <img
                         className="hero__img "
-                        src="img/startup.png"
+                        src="img/startup.png?v=1"
                         data-aos="fade-up"
                     />
                 </div>
