@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TikMatrix',
-  tagline: '',
+  tagline: 'TikMatrix is a Tiktok android phonefarm batch control tool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -149,7 +149,8 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
+        { name: 'keywords', content: 'tiktik-matrix, phonefarm, tikmatrix, autopost' },
+        { name: 'description', content: 'TikMatrix is a Tiktok android phonefarm batch control tool' },
         { name: 'author', content: 'TikMatrix' },
       ],
       colorMode: {
