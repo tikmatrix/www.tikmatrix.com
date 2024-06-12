@@ -10,7 +10,7 @@ const products = [
         description: 'The length and width are relatively small, but the height is high',
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '640$-1190$',
-        imageUrl: 'img/A4.png',
+        imageUrl: '/img/A4.png',
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const products = [
         description: 'The length and width are relatively big, but the height is low(2u size)',
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '650$-1200$',
-        imageUrl: 'img/A6.png',
+        imageUrl: '/img/A6.png',
     },
     {
         id: 3,
@@ -26,13 +26,13 @@ const products = [
         description: 'The length and width are relatively big, but the height is low(2u size) and more beautiful',
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '700$-1250$',
-        imageUrl: 'img/AK.png',
+        imageUrl: '/img/AK.png',
     },
 ];
 
 function ProductList() {
     return (
-        <Layout title="Product List" description="The list of products">
+        <Layout title="PhoneFarm Box" description="PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access">
             <div className={styles.productTitle}>
                 <Translate>PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access</Translate>
             </div>
