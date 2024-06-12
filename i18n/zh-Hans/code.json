@@ -433,5 +433,17 @@
   "Mon - Fri: 9:00AM - 5:00PM(UTC+8)": {
     "message": "周一至周五: 9:00AM - 5:00PM（UTC+8）",
     "description": "The working hours description"
+  },
+  "Shipping worldwide": {
+    "message": "全球发货",
+    "description": "The shipping worldwide label"
+  },
+  "Contact to purchase": {
+    "message": "联系购买",
+    "description": "The contact to purchase label"
+  },
+  "PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access": {
+    "message": "PhoneFarm Box 是 20 个 Sumsung 手机 Motherboard。它是一台自启动的，统一的电源系统，统一的热敏，统一的 USB 连接，支持 OTG 无线互联网络。",
+    "description": "The description of PhoneFarm Box"
   }
 }
