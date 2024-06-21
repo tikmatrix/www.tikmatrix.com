@@ -14,9 +14,8 @@ There are **two** ways to add TikTok accounts to TikTok Matrix:
 1. Click the `Accounts` menu on the left sidebar.
 2. Click the `Add` button to create a new account.
 3. Input the email(Optional),password(Optional), username(Rquired, must be start with `@`)
-4. Select a group to add the account to.
-5. Select a device to login the account.
-6. Click the `Save` button.
+4. Select a device to login the account.
+5. Click the `Save` button.
 
 ## Auto
 

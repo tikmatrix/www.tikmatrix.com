@@ -10,7 +10,7 @@ It is best to set up the **Account** profile 1-2 days after registration.
 
 1. Fill the `Nickname`, `Username`, `Bio`,`Avatar` in the **Settings**.
 2. Click and open one device.
-3. Click the `Profile` button.
+3. Click the `Fill Profile` button.
 4. Wait 1-2 minutes.
 
 ## Video

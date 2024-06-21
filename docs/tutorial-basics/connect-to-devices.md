@@ -22,3 +22,18 @@ Support USB and TCP connection now.
 
 * The procedure may vary from brand to brand, but basically it's pretty much the same.
 * If there is no response, please try to replace the data cable or the USB port behind the computer.
+
+## How to Connect the Motherboard or Case
+
+1. Request the authorization files `adbkey` and `adbkey.pub` from the seller of your motherboard or case.
+2. Copy the authorization files to the `C:\Users\YourComputerUsername\.android` directory on your computer.
+3. Restart your computer.
+
+## Screenshots2
+
+![usbsetp12en.png](../img/adbkey.png)
+
+### Tip 2
+
+* Please make sure to back up these two authorization files properly, as you will need them again if you reinstall the system or switch to a new computer.
+* If these two files are lost, you will need to touch the phone screen to allow permission.

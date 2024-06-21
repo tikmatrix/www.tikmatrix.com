@@ -13,7 +13,6 @@ sidebar_position: 5
 3. 输入开始发布任务的时间（`小时:分钟`）。
 4. 输入你想发布的标题和标签。
 5. 点击 `Save` 按钮。
-6. 从仪表板上传视频。
 
 <video src="https://r2.tikmatrix.com/post-0510.mp4" controls width="400" height="300"></video>
 
