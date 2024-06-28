@@ -1,3 +1,6 @@
+---
+sidebar_position: 7
+---
 # Setting Up a Proxy
 
 ## Setting up a unique proxy IP address for each mobile device
