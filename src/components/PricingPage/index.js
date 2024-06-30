@@ -36,6 +36,16 @@ export default function PricingPage() {
                                     <Translate>Automatic login</Translate>
                                 </span>
                             </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Automated Comment</Translate>
+                                </span>
+                            </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Automated Message</Translate>
+                                </span>
+                            </li>
                             <li><i className="bx bx-check"></i> <span>
                                 <Translate>Automated account nurturing</Translate>
                             </span></li>

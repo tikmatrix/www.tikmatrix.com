@@ -149,7 +149,7 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'tiktik-matrix, phonefarm, tikmatrix, autopost' },
+        { name: 'keywords', content: 'TikMatrix, Tiktok Matrix, Tiktok Phonefarm, Tiktok Autopost, Tiktok Autopublish, Tiktok 矩阵, Tiktok 自动养号, Tiktok 自动发布' },
         { name: 'description', content: 'TikMatrix is a Tiktok android phonefarm batch control tool' },
         { name: 'author', content: 'TikMatrix' },
       ],

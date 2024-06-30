@@ -41,11 +41,14 @@
   "Automated account nurturing": {
     "message": "自动养号"
   },
-  "Automated comment": {
+  "Automated Comment": {
     "message": "自动评论"
   },
+  "Automated Message": {
+    "message": "自动私信"
+  },
   "Automatic video posting": {
-    "message": "自动发布视频"
+    "message": "自动发布"
   },
   "Pricing": {
     "message": "价格"
