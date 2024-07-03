@@ -20,7 +20,7 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div>
-                        <a href="https://github.com/tikmatrix/tiktok-matrix/releases/latest" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="https://api.tikmatrix.com/download" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>
