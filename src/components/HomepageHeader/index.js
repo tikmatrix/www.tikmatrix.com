@@ -9,14 +9,14 @@ export default function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className='hero shadow--lw' >
-            <div className="container row ">
+            <div className="row">
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
                         {siteConfig.title}
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.
+                            TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency.
                         </Translate>
                     </p>
                     <div>
