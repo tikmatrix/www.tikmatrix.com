@@ -53,8 +53,11 @@
   "Pricing": {
     "message": "价格"
   },
+  "Automatic Capture": {
+    "message": "自动采集"
+  },
   "Full Network Video Download": {
-    "message": "全网视频采集"
+    "message": "全网视频下载"
   },
   "Our plans": {
     "message": "我们的套餐"

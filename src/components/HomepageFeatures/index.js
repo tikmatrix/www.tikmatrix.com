@@ -116,6 +116,18 @@ export default function HomepageFeatures() {
             ❌
           </div>
           <div className="featuresCol featuresTitle">
+            <Translate>Automatic Capture</Translate>
+          </div>
+          <div className="featuresCol featuresDetail">
+            ✅
+          </div>
+          <div className="featuresCol featuresDetail">
+            ✅
+          </div>
+          <div className="featuresCol featuresDetail">
+            ✅
+          </div>
+          <div className="featuresCol featuresTitle">
             <Translate>Full Network Video Download</Translate>
           </div>
           <div className="featuresCol featuresDetail">
