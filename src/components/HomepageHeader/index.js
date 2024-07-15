@@ -9,14 +9,14 @@ export default function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
     return (
         <header className='hero shadow--lw' >
-            <div className="container row ">
+            <div className="row">
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
                         {siteConfig.title}
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikTokMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.
+                            TikTokMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency.
                         </Translate>
                     </p>
                     <div>
@@ -25,12 +25,17 @@ export default function HomepageHeader() {
                                 Download for Windows
                             </Translate>
                         </a>
+                        <a href="#contact" className="download-btn"><i className="bx bxl-telegram"></i>
+                            <Translate>
+                                Contact
+                            </Translate>
+                        </a>
                     </div>
                 </div>
                 <div className="col col--6">
                     <img
                         className="hero__img "
-                        src="img/startup.png"
+                        src="img/startup.png?v=1"
                         data-aos="fade-up"
                     />
                 </div>

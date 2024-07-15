@@ -3,6 +3,7 @@ import HomepageHeader from '@site/src/components/HomepageHeader';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import PricingPage from '@site/src/components/PricingPage';
 import FrequentlyAsked from '@site/src/components/FrequentlyAsked';
+import ContactPage from '@site/src/components/ContactPage';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -26,6 +27,7 @@ export default function Home() {
         <HomepageFeatures />
         <PricingPage />
         <FrequentlyAsked />
+        <ContactPage />
       </main>
     </Layout>
   );

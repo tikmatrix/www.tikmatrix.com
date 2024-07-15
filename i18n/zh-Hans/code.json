@@ -2,8 +2,8 @@
   "Download for Windows": {
     "message": "Windows 下载"
   },
-  "TikTokMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.": {
-    "message": "TikTokMatrix 是一个用于批量控制安卓手机，实现矩阵化运营的强大工具。"
+  "TikTokMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency.": {
+    "message": "TikTokMatrix 是一款专业的TikTok矩阵软件，专为TikTok运营者设计，通过电脑控制多部安卓手机进行自动注册、登录、养号、私信和发布，极大提升运营效率。"
   },
   "Why TikTokMatrix?": {
     "message": "为什么使用 TikTokMatrix?"
@@ -41,14 +41,23 @@
   "Automated account nurturing": {
     "message": "自动养号"
   },
+  "Automated Comment": {
+    "message": "自动评论"
+  },
+  "Automated Message": {
+    "message": "自动私信"
+  },
   "Automatic video posting": {
-    "message": "自动发布视频"
+    "message": "自动发布"
   },
   "Pricing": {
     "message": "价格"
   },
+  "Automatic Capture": {
+    "message": "自动采集"
+  },
   "Full Network Video Download": {
-    "message": "全网视频采集"
+    "message": "全网视频下载"
   },
   "Our plans": {
     "message": "我们的套餐"
@@ -103,6 +112,12 @@
   },
   "TikTokMatrix supports up to 200+ devices.": {
     "message": "TikTokMatrix 支持 200+ 个设备。"
+  },
+  "How many TikTok accounts can each phone log into?": {
+    "message": "每个手机可以登录几个tiktok账号?"
+  },
+  "TikMatrix supports 8 TikTok accounts on each phone.": {
+    "message": "TikMatrix 支持每个手机登录8个tiktok账号"
   },
   "What computer can I use?": {
     "message": "我可以使用哪些电脑?"
@@ -396,5 +411,45 @@
   "theme.unlistedContent.message": {
     "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
     "description": "The unlisted content banner message"
+  },
+  "Contact": {
+    "message": "联系我们",
+    "description": "The contact form title"
+  },
+  "If you are interested in our service, please contact us to get price.": {
+    "message": "如果您想了解我们的服务，请联系我们获取价格。",
+    "description": "The contact form description"
+  },
+  "Telegram": {
+    "message": "Telegram",
+    "description": "The telegram label"
+  },
+  "Join Group": {
+    "message": "加入群组",
+    "description": "The join group button label"
+  },
+  "Email": {
+    "message": "邮箱",
+    "description": "The email label"
+  },
+  "Working Hours": {
+    "message": "工作时间",
+    "description": "The working hours label"
+  },
+  "Mon - Fri: 9:00AM - 5:00PM(UTC+8)": {
+    "message": "周一至周五: 9:00AM - 5:00PM（UTC+8）",
+    "description": "The working hours description"
+  },
+  "Shipping worldwide": {
+    "message": "全球发货",
+    "description": "The shipping worldwide label"
+  },
+  "Contact to purchase": {
+    "message": "联系购买",
+    "description": "The contact to purchase label"
+  },
+  "PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access": {
+    "message": "PhoneFarm Box 是 20 个 Sumsung 手机 Motherboard。它是一台自启动的，统一的电源系统，统一的热敏，统一的 USB 连接，支持 OTG 无线互联网络。",
+    "description": "The description of PhoneFarm Box"
   }
 }

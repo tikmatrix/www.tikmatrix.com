@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'TikTokMatrix',
-  tagline: '',
+  tagline: 'TikTokMatrix is a Tiktok android phonefarm batch control tool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -52,19 +52,7 @@ const config = {
         gtag: {
           trackingID: 'G-ZX7BFMJE03',
           anonymizeIP: true,
-        },
-        sitemap: {
-          lastmod: 'date',
-          changefreq: 'weekly',
-          priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-          createSitemapItems: async (params) => {
-            const { defaultCreateSitemapItems, ...rest } = params;
-            const items = await defaultCreateSitemapItems(rest);
-            return items.filter((item) => !item.url.includes('/page/'));
-          },
-        },
+        }
       }),
     ],
   ],
@@ -73,7 +61,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.png',
       navbar: {
         title: 'TikTokMatrix',
         logo: {
@@ -81,7 +69,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-
+          { to: '/ProductList', label: 'PhoneFarmBox', position: 'right' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
@@ -90,9 +78,14 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'right' },
           {
-            href: '#pricing',
+            href: '/#pricing',
             position: 'right',
             label: 'Pricing',
+          },
+          {
+            href: '/#contact',
+            position: 'right',
+            label: 'Contact',
           },
           {
             type: 'localeDropdown',
@@ -156,8 +149,15 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'tiktik, phonefarm, tikmatrix, autopost' },
-        { name: 'author', content: 'TikTokMatrix' },],
+        { name: 'keywords', content: 'TikMatrix, Tiktok Matrix, Tiktok Phonefarm, Tiktok Autopost, Tiktok Autopublish, Tiktok 矩阵, Tiktok 自动养号, Tiktok 自动发布' },
+        { name: 'description', content: 'TikMatrix is a Tiktok android phonefarm batch control tool' },
+        { name: 'author', content: 'TikMatrix' },
+      ],
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
 
     }),
   headTags: [
@@ -184,6 +184,13 @@ const config = {
     //   }),
     // },
   ],
+  // scripts: [
+  //   {
+  //     src: 'https://embed.tawk.to/665309c6981b6c564774cafe/1huq5scl7',
+  //     async: true,
+  //     crossorigin: 'anonymous'
+  //   },
+  // ],
 };
 
 export default config;
