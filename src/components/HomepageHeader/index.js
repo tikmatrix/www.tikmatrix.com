@@ -12,7 +12,9 @@ export default function HomepageHeader() {
             <div className="row">
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
-                        {siteConfig.title}
+                        <Translate>
+                            TikTokMatrix
+                        </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
@@ -20,7 +22,7 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div>
-                        <a href="/tiktokmatrix.msi" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="/download.html" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>

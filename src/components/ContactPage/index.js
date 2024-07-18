@@ -29,7 +29,7 @@ export default function FrequentlyAsked() {
                                     <Translate>WhatsApp</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//chat.whatsapp.com/G15tFqXqbRGADnggV5OEvg" target="_blank">
+                                    <a href="//chat.whatsapp.com/DZPOoa2BdfBDchLLsxRkyo" target="_blank">
                                         <Translate>Join Group</Translate>
                                     </a>
                                 </p>
@@ -40,18 +40,18 @@ export default function FrequentlyAsked() {
                                     <Translate>Telegram</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//t.me/+iGhozoBfAbI5YmE1" target="_blank">
+                                    <a href="//t.me/+iW_mzNhGdHw1YjRl" target="_blank">
                                         <Translate>Join Group</Translate>
                                     </a>
                                 </p>
                             </div>
-                            <div className="col col--6 info">
+                            {/* <div className="col col--6 info">
                                 <i className="bx bx-envelope"></i>
                                 <h4>
                                     <Translate>Email</Translate>
                                 </h4>
                                 <p>customer@tikmatrix.com</p>
-                            </div>
+                            </div> 
                             <div className="col col--6 info">
                                 <i className="bx bx-time-five"></i>
                                 <h4>
@@ -61,6 +61,7 @@ export default function FrequentlyAsked() {
                                     <Translate>Mon - Fri: 9:00AM - 5:00PM(UTC+8)</Translate>
                                 </p>
                             </div>
+                            */}
                         </div>
                     </div>
 

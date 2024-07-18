@@ -8,12 +8,12 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikTokMatrix',
+  title: 'Tiktok real machine matrix group control official website',
   tagline: 'TikTokMatrix is a Tiktok android phonefarm batch control tool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://www.tiktokmatrix.net/',
+  url: 'https://www.tiktokmatrix.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -120,7 +120,7 @@ const config = {
 
               {
                 label: 'Telegram',
-                href: 'https://t.me/+oTw5Na5lmbczNmVl',
+                href: 'https://t.me/+iW_mzNhGdHw1YjRl',
               },
               // {
               //   label: 'Twitter',
