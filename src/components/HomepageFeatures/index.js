@@ -6,7 +6,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 
 export default function HomepageFeatures() {
   return (
-    <section id="faq" className="faq section-bg">
+    <section id="features" className="features section-bg">
       <div className="container" data-aos="fade-up">
 
         <div className="section-title">

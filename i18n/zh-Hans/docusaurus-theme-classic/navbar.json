@@ -22,6 +22,10 @@
     "message": "联系我们",
     "description": "Navbar item with label Contact"
   },
+  "item.label.FAQ": {
+    "message": "常见问题",
+    "description": "Navbar item with label FAQ"
+  },
   "logo.alt": {
     "message": "TikMatrix Logo",
     "description": "The alt text of navbar logo"

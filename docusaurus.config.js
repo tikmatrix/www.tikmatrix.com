@@ -88,6 +88,11 @@ const config = {
             label: 'Contact',
           },
           {
+            href: '/#faq',
+            position: 'right',
+            label: 'FAQ',
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
           },
