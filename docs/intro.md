@@ -6,21 +6,27 @@ sidebar_position: 1
 
 Let's discover **TikMatrix in less than 5 minutes**.
 
-## Getting Started
+## Software Introduction
 
-Get started by **run an auto train job**.
-and **run an auto publish job**.
+TikMatrix is a **computer software** designed to manage and control multiple **Android phones** (including motherboard devices) to perform TikTok automation tasks. These tasks include account registration, account login, account nurturing (following, liking, commenting, collecting), bulk messaging, collecting fan lists, collecting videos from the entire network, scheduling video posts, and scheduling image posts.
+
+## Pricing
+
+- Free users can download and use all software features (with the limitation that they can only connect one phone, even if multiple phones are connected, only one will be displayed).
+- Paid users have no limit on the number of connected phones. The purchase entry for paid users is on the software's authorization code purchase interface. One authorization code binds to one computer, and the computer can be replaced for free.
+  - Although the software does not limit the number of connected phones, the number of connections may be limited by the computer's motherboard configuration. A standard motherboard can connect to around 40 USB devices.
+  - The price is $99 per month and $599 per year.
 
 ### What you'll need
 
 - Android Device
   - The Android device requires at least API 21 (Android 5.0).
   - Make sure you enabled USB debugging on your device(s).
-  - On some devices, you also need to enable an additional option USB debugging (Security Settings) (this is an item different from USB debugging) to control it using a keyboard and mouse. Rebooting the device is necessary once this option is set.
+  - On some devices, you also need to enable an additional option USB debugging (Security Settings) (this is an item different from USB debugging) to control it using a keyboard and mouse.
 
 - Windows PC
   - Windows 7 or later
-- USB Cable or TCP/IP connection
+- USB data cable or mobile phone and computer in the same local area network (LAN)
 
 ## Installation
 
