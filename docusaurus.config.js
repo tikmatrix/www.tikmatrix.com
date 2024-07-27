@@ -69,7 +69,7 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          { to: '/ProductList', label: 'PhoneFarmBox', position: 'right' },
+          { to: '/ProductList', label: 'Buy hardware', position: 'right' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',

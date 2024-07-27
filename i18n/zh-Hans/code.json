@@ -448,8 +448,24 @@
     "message": "联系购买",
     "description": "The contact to purchase label"
   },
-  "PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access": {
-    "message": "PhoneFarm Box 是 20 个 Sumsung 手机 Motherboard。它是一台自启动的，统一的电源系统，统一的热敏，统一的 USB 连接，支持 OTG 无线互联网络。",
+  "The motherboard machine consists of 20 Samsung phone motherboards. It powers on automatically when connected to electricity, shares a unified power supply, has a unified multi-fan cooling system, and unified USB connectivity. It also supports OTG wired network connections.": {
+    "message": "手机主板机是20个三星手机主板。它是一台通电自启动的，统一电源供电，统一的多风扇散热，统一的 USB 连接，支持 OTG 有线网络连接。",
+    "description": "The description of PhoneFarm Box"
+  },
+  "Buy hardware": {
+    "message": "购买硬件",
+    "description": "The product label"
+  },
+  "The length and width are relatively small, but the height is high": {
+    "message": "长度和宽度相对较小，但高度高",
+    "description": "The description of PhoneFarm Box"
+  },
+  "The length and width are relatively big, but the height is low(2u size)": {
+    "message": "长度和宽度相对较大，但高度低（2u 尺寸）",
+    "description": "The description of PhoneFarm Box"
+  },
+  "US native non-activated Sim card,Used for tiktok android app to detect sim card location": {
+    "message": "美国原生非激活的 SIM 卡，用于 tiktok Android 应用来检测 SIM 卡位置",
     "description": "The description of PhoneFarm Box"
   }
 }

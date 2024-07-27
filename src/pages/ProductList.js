@@ -7,7 +7,7 @@ const products = [
     {
         id: 1,
         name: 'A4',
-        description: 'The length and width are relatively small, but the height is high',
+        description: translate({ message: 'The length and width are relatively small, but the height is high' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '640$-1190$',
         imageUrl: '/img/A4.png',
@@ -15,26 +15,35 @@ const products = [
     {
         id: 2,
         name: 'A6',
-        description: 'The length and width are relatively big, but the height is low(2u size)',
+        description: translate({ message: 'The length and width are relatively big, but the height is low(2u size)' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
-        price: '650$-1200$',
+        price: '700$-1250$',
         imageUrl: '/img/A6.png',
     },
     {
         id: 3,
         name: 'AK',
-        description: 'The length and width are relatively big, but the height is low(2u size) and more beautiful',
+        description: translate({ message: 'The length and width are relatively big, but the height is low(2u size)' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '700$-1250$',
         imageUrl: '/img/AK.png',
     },
+    {
+        id: 4,
+        name: 'InActive SIM Card',
+        description: translate({ message: 'US native non-activated Sim card,Used for tiktok android app to detect sim card location' }),
+        model: 'T-Mobile',
+        price: '5$/pre',
+        imageUrl: '/img/tmobile.png',
+    },
 ];
+
 
 function ProductList() {
     return (
-        <Layout title="PhoneFarm Box" description="PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access">
+        <Layout title={translate({ message: 'Buy hardware' })} description="The motherboard machine consists of 20 Samsung phone motherboards. It powers on automatically when connected to electricity, shares a unified power supply, has a unified multi-fan cooling system, and unified USB connectivity. It also supports OTG wired network connections.">
             <div className={styles.productTitle}>
-                <Translate>PhoneFarm Box is 20 Sumsung Phone Motherboard In an Box.Power-on self-starting, unified power supply, unified heat dissipation, unified usb connection, support OTG wired Internet access</Translate>
+                <Translate>The motherboard machine consists of 20 Samsung phone motherboards. It powers on automatically when connected to electricity, shares a unified power supply, has a unified multi-fan cooling system, and unified USB connectivity. It also supports OTG wired network connections.</Translate>
             </div>
             <div className={styles.productList}>
                 {products.map(product => (
