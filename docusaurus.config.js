@@ -114,6 +114,10 @@ const config = {
                 to: '/docs/intro',
               },
               {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
                 label: 'Youtube',
                 href: 'https://youtube.com/@tikmatrix',
               },
@@ -131,18 +135,26 @@ const config = {
                 label: 'Twitter',
                 href: 'https://twitter.com/niostack',
               },
+              {
+                label: 'WhatsApp',
+                href: 'https://chat.whatsapp.com/G15tFqXqbRGADnggV5OEvg',
+              },
             ],
           },
           {
             title: 'More',
             items: [
-              // {
-              //   label: 'Blog',
-              //   to: '/blog',
-              // },
               {
-                label: 'GitHub',
-                href: 'https://github.com/tikmatrix/tiktok-matrix',
+                label: 'Tiktok001',
+                href: 'https://www.tiktok.com/@tikmatrix001',
+              },
+              {
+                label: 'Tiktok002',
+                href: 'https://www.tiktok.com/@tikmatrix002',
+              },
+              {
+                label: '#TikMatrix',
+                href: 'https://www.tiktok.com/tag/tikmatrix',
               },
             ],
           },
