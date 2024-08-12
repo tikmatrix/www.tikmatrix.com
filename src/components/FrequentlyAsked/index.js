@@ -30,7 +30,7 @@ export default function FrequentlyAsked() {
                                 <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-1" className="collapse show" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix is a powerful tool for batch controlling Android phones to achieve matrix-based operations.</Translate>
+                                    <Translate>TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency.</Translate>
                                 </p>
                             </div>
                         </li>
