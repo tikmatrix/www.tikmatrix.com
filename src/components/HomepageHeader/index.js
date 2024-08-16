@@ -12,7 +12,9 @@ export default function HomepageHeader() {
             <div className="row">
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
-                        {siteConfig.title}
+                        <Translate>
+                            TikMatrix is a TikTok group control operation tool
+                        </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
@@ -41,6 +43,7 @@ export default function HomepageHeader() {
                 </div>
                 <div className="col col--6">
                     <img
+                        alt="App Preview Image"
                         className="hero__img "
                         src="img/startup.png?v=1"
                         data-aos="fade-up"

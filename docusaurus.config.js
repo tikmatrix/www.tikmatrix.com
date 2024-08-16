@@ -8,9 +8,9 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikMatrix',
+  title: 'TikMatrix - A professional TikTok account matrix marketing tool',
   tagline: 'TikMatrix is a Tiktok android phonefarm batch control tool',
-  favicon: 'img/favicon.ico',
+  favicon: 'favicon.ico',
 
   // Set the production url of your site here
   url: 'https://www.tikmatrix.com/',
@@ -75,7 +75,7 @@ const config = {
             position: 'left',
             label: 'Get Started',
           },
-          { to: '/ProductList', label: 'Buy hardware', position: 'left' },
+          { to: '/ProductList/', label: 'Buy hardware', position: 'left' },
           { to: '/blog', label: 'Blog', position: 'right' },
           {
             href: '/#pricing',
