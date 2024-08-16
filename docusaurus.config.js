@@ -69,22 +69,27 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          { to: '/ProductList', label: 'Buy hardware', position: 'right' },
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'right',
-            label: 'Tutorial',
+            position: 'left',
+            label: 'Get Started',
           },
+          { to: '/ProductList', label: 'Buy hardware', position: 'left' },
           { to: '/blog', label: 'Blog', position: 'right' },
           {
             href: '/#pricing',
-            position: 'right',
+            position: 'left',
             label: 'Pricing',
           },
           {
+            href: '/#features',
+            position: 'left',
+            label: 'Features',
+          },
+          {
             href: '/#contact',
-            position: 'right',
+            position: 'left',
             label: 'Contact',
           },
           {

@@ -30,6 +30,13 @@ export default function HomepageHeader() {
                                 Contact
                             </Translate>
                         </a>
+                        <Link to="/docs/intro" className="download-btn">
+                            <i className="bx bxs-book"></i>
+                            <Translate>
+                                Get Started
+                            </Translate>
+                        </Link>
+
                     </div>
                 </div>
                 <div className="col col--6">

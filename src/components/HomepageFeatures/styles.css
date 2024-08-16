@@ -1,28 +1,44 @@
-.featuresRow {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
-  background: #fff;
+/*--------------------------------------------------------------
+# App Features
+--------------------------------------------------------------*/
+.features .content {
+  padding: 30px 0;
 }
 
-.featuresCol {
-  align-items: center;
-  align-content: center;
+.features .content .icon-box {
+  margin-top: 25px;
 }
 
-.featuresTitle {
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: green;
+.features .content .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 5px 0 10px 60px;
 }
 
-.featuresDetail {
-  text-align: center;
-  font-size: medium;
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: green;
+.features .content .icon-box i {
+  font-size: 48px;
+  float: left;
+  color: #5777ba;
+}
+
+.features .content .icon-box p {
+  font-size: 15px;
+  color: #979aa1;
+  margin-left: 60px;
+}
+
+@media (max-width: 991px) {
+  .features .image {
+    text-align: center;
+  }
+
+  .features .image img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 667px) {
+  .features .image img {
+    max-width: 100%;
+  }
 }

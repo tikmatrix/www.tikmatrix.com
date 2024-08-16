@@ -467,5 +467,97 @@
   "US native non-activated Sim card,Used for tiktok android app to detect sim card location": {
     "message": "美国原生非激活的 SIM 卡，用于 tiktok Android 应用来检测 SIM 卡位置",
     "description": "The description of PhoneFarm Box"
+  },
+  "Our Core Features": {
+    "message": "我们的核心功能",
+    "description": "The description of Our Core Features"
+  },
+  "Phone screen mirroring to a computer": {
+    "message": "手机投屏到电脑",
+    "description": "The description of Phone screen mirroring to a computer"
+  },
+  "Supports 200+ phones mirroring to a computer, with synchronized operation": {
+    "message": "支持 200+ 手机投屏到电脑，支持同步操作",
+    "description": "The description of Phone screen mirroring to a computer"
+  },
+  "One-click batch automatic registration of TikTok accounts, supports business email": {
+    "message": "一键批量自动注册 TikTok 账号，支持企业邮箱",
+    "description": "The description of Automatic registration"
+  },
+  "Automatic profile setup": {
+    "message": "自动设置资料",
+    "description": "The description of Automatic profile setup"
+  },
+  "One-click batch automatic setup of avatars, nicknames, signatures, usernames": {
+    "message": "一键批量自动设置头像、昵称、签名、用户名",
+    "description": "The description of Automatic profile setup"
+  },
+  "One-click batch automatic login to TikTok accounts, supports batch import/export of accounts": {
+    "message": "一键批量自动登录 TikTok 账号，支持批量导入导出账号",
+    "description": "The description of Automatic login"
+  },
+  "Automatic matching": {
+    "message": "自动匹配",
+    "description": "The description of Automatic matching"
+  },
+  "One-click batch automatic matching of logged-in accounts, no manual binding needed": {
+    "message": "一键批量自动匹配已登录的账号，无需手动绑定",
+    "description": "The description of Automatic matching"
+  },
+  "Automatic account nurturing": {
+    "message": "自动养号",
+    "description": "The description of Automatic account nurturing"
+  },
+  "One-click batch automatic account nurturing, supports keyword search, random follow, like, comment, and bookmark": {
+    "message": "一键批量自动养号，支持搜索关键字、随机关注、点赞、评论、收藏",
+    "description": "The description of Automatic account nurturing"
+  },
+  "Automatic posting": {
+    "message": "自动发布",
+    "description": "The description of Automatic posting"
+  },
+  "One-click batch automatic posting, supports adding product links": {
+    "message": "一键批量自动发布，支持添加商品链接",
+    "description": "The description of Automatic posting"
+  },
+  "Automatic following": {
+    "message": "自动关注",
+    "description": "The description of Automatic following"
+  },
+  "One-click batch automatic follow of target accounts": {
+    "message": "一键批量自动关注目标账号",
+    "description": "The description of Automatic following"
+  },
+  "Automatic direct messaging": {
+    "message": "自动私信",
+    "description": "The description of Automatic direct messaging"
+  },
+  "One-click batch automatic direct messaging to multiple target users": {
+    "message": "一键批量自动给大量目标用户发送私信",
+    "description": "The description of Automatic direct messaging"
+  },
+  "Automatic commenting": {
+    "message": "自动评论",
+    "description": "The description of Automatic commenting"
+  },
+  "One-click batch automatic commenting on multiple videos with specified scripts and random emojis": {
+    "message": "一键批量自动在大量的视频中评论指定的话术，并添加随机表情",
+    "description": "The description of Automatic commenting"
+  },
+  "Fan collection": {
+    "message": "采集粉丝",
+    "description": "The description of Fan collection"
+  },
+  "One-click automatic collection of target account fan lists, can be used for direct messaging": {
+    "message": "一键自动采集目标账号的粉丝列表，可用于发送私信",
+    "description": "The description of Fan collection"
+  },
+  "Video collection": {
+    "message": "采集视频",
+    "description": "The description of Video collection"
+  },
+  "One-click download of videos from the entire network": {
+    "message": "全网视频一键下载",
+    "description": "The description of Video collection"
   }
 }

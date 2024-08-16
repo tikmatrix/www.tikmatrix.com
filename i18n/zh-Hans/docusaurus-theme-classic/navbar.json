@@ -6,9 +6,13 @@
   "item.label.Docs": {
     "message": "文档"
   },
-  "item.label.Tutorial": {
-    "message": "教程",
+  "item.label.Get Started": {
+    "message": "开始使用",
     "description": "Navbar item with label Tutorial"
+  },
+  "item.label.Features": {
+    "message": "功能",
+    "description": "Navbar item with label Features"
   },
   "item.label.Blog": {
     "message": "博客",
