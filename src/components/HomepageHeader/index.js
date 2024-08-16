@@ -18,7 +18,7 @@ export default function HomepageHeader() {
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency.
+                            TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency
                         </Translate>
                     </p>
                     <div>
