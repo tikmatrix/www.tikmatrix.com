@@ -4318,6 +4318,26 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
+"doc-niostack-com@file:":
+  version "0.0.0"
+  resolved "file:"
+  dependencies:
+    "@docusaurus/core" "^3.3.2"
+    "@docusaurus/plugin-google-gtag" "^3.3.2"
+    "@docusaurus/plugin-sitemap" "^3.3.2"
+    "@docusaurus/preset-classic" "3.3.2"
+    "@mdx-js/react" "^3.0.0"
+    "@radix-ui/react-label" "^2.0.2"
+    "@radix-ui/themes" "^3.0.5"
+    aos "^2.3.4"
+    bootstrap "^5.3.3"
+    boxicons "^2.1.4"
+    clsx "^2.0.0"
+    doc-niostack-com "file:"
+    prism-react-renderer "^2.3.0"
+    react "^18.0.0"
+    react-dom "^18.0.0"
+
 dom-converter@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/dom-converter/-/dom-converter-0.2.0.tgz"
