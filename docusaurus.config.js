@@ -213,6 +213,15 @@ const config = {
   //     crossorigin: 'anonymous'
   //   },
   // ],
+  //<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314"
+  // crossorigin="anonymous"></script>
+  scripts: [
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',
+      async: true,
+      crossorigin: 'anonymous'
+    },
+  ],
 };
 
 export default config;
