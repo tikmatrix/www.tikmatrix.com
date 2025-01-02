@@ -102,6 +102,11 @@ const config = {
             position: 'right',
           },
           {
+            href: 'https://user.tikmatrix.com',
+            label: 'User Finder',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/tikmatrix/tiktok-matrix',
             label: 'GitHub',
             position: 'right',
