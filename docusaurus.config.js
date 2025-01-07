@@ -93,6 +93,11 @@ const config = {
             label: 'Contact',
           },
           {
+            href: '/',
+            position: 'left',
+            label: 'Download',
+          },
+          {
             href: '/#faq',
             position: 'right',
             label: 'FAQ',

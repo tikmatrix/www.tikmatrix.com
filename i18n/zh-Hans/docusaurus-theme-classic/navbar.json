@@ -30,6 +30,10 @@
     "message": "联系我们",
     "description": "Navbar item with label Contact"
   },
+  "item.label.Download": {
+    "message": "下载",
+    "description": "Navbar item with label Download"
+  },
   "item.label.FAQ": {
     "message": "常见问题",
     "description": "Navbar item with label FAQ"
