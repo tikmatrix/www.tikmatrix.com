@@ -6,6 +6,8 @@ tags: [tikmatrix, tiktok, follow, error]
 ---
 
 If you're unable to follow anyone on TikTok, there could be several reasons behind this issue. Here are some common causes and solutions to help you resolve the problem:
+<!--truncate-->
+---
 
 ## 1. Account Restrictions
 
