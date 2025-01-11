@@ -106,11 +106,7 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            href: 'https://user.tikmatrix.com',
-            label: 'User Finder',
-            position: 'right',
-          },
+
           {
             href: 'https://github.com/tikmatrix/tiktok-matrix',
             label: 'GitHub',
@@ -173,6 +169,19 @@ const config = {
               },
             ],
           },
+          {
+            title: 'Tools',
+            items: [
+              {
+                href: 'https://user.tikmatrix.com',
+                label: 'TikTok User Finder',
+              },
+              {
+                href: 'https://ws.tikmatrix.com',
+                label: 'WhatsApp Number Checker',
+              },
+            ],
+          }
         ],
         copyright: `Copyright © ${new Date().getFullYear()} TikMatrix, Inc. All rights reserved.`,
       },
