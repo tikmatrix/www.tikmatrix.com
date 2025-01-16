@@ -4,9 +4,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import './index.css';
 import Heading from '@theme/Heading';
 import Translate, { translate } from '@docusaurus/Translate';
+import ImageSlider from '../ImageSlider';
+
 
 export default function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
+
     return (
         <header className='hero shadow--lw' >
             <div className="row">
@@ -41,13 +44,8 @@ export default function HomepageHeader() {
 
                     </div>
                 </div>
-                <div className="col col--6">
-                    <img
-                        alt="App Preview Image"
-                        className="hero__img "
-                        src="img/startup.png?v=1"
-                        data-aos="fade-up"
-                    />
+                <div className="col col--6 image-slider">
+                    <ImageSlider />
                 </div>
 
             </div>
