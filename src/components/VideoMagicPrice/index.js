@@ -28,7 +28,7 @@ export default function PricingPage() {
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video Download</Translate>
+                                    <Translate>Video download</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>
@@ -73,7 +73,7 @@ export default function PricingPage() {
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video Download</Translate>
+                                    <Translate>Video download</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>
@@ -119,7 +119,7 @@ export default function PricingPage() {
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video Download</Translate>
+                                    <Translate>Video download</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>

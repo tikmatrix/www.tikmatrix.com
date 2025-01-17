@@ -566,5 +566,49 @@
   "One-click download of videos from the entire network": {
     "message": "全网视频一键下载",
     "description": "The description of Video collection"
+  },
+  "Video Magic is a tool that can generate unique videos": {
+    "message": "视频魔法是一款可以生成独特视频的工具",
+    "description": "The description of Video Magic"
+  },
+  "Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency": {
+    "message": "视频魔法是一款专业的视频生成软件，专为运营者设计。它可以为您生成独特的视频，极大提升运营效率。",
+    "description": "The description of Video Magic"
+  },
+  "Video download": {
+    "message": "视频下载",
+    "description": "The description of Video download"
+  },
+  "One-click download of videos from all video websites": {
+    "message": "一键下载所有视频网站的视频",
+    "description": "The description of Video download"
+  },
+  "Video generate": {
+    "message": "视频生成",
+    "description": "The description of Video generate"
+  },
+  "Generate unique videos from one source video": {
+    "message": "从一个源视频生成唯一的视频",
+    "description": "The description of Video generate"
+  },
+  "Recognize subtitles": {
+    "message": "识别字幕",
+    "description": "The description of Recognize subtitles"
+  },
+  "Automatically recognize subtitles and append them to the video": {
+    "message": "自动识别字幕并附加到视频中",
+    "description": "The description of Recognize subtitles"
+  },
+  "Translate subtitles": {
+    "message": "翻译字幕",
+    "description": "The description of Translate subtitles"
+  },
+  "Automatically translate subtitles to any language": {
+    "message": "自动将字幕翻译成任何语言",
+    "description": "The description of Translate subtitles"
+  },
+  "Unlimited process tasks": {
+    "message": "无限处理任务",
+    "description": "The description of Unlimited process tasks"
   }
 }
