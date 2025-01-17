@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import './index.css';
 import Heading from '@theme/Heading';
 import Translate, { translate } from '@docusaurus/Translate';
-import ImageSlider from '../ImageSlider';
+import VideoMagicSlider from '../VideoMagicSlider';
 
 
 export default function HomepageHeader() {
@@ -16,39 +16,25 @@ export default function HomepageHeader() {
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
-                            TikMatrix is a TikTok group control operation tool
+                            Video Magic is a tool that can generate unique videos
                         </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency
+                            Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency
                         </Translate>
                     </p>
                     <div>
-                        <a href="https://api.tikmatrix.com/download" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="https://api.tikmatrix.com/download-videomagic" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>
                         </a>
 
-                        <Link to="/docs/intro" className="download-btn">
-                            <i className="bx bxs-book"></i>
-                            <Translate>
-                                Get Started
-                            </Translate>
-                        </Link>
-                        <Link to="VideoMagic" className="link-btn">
-                            <i className="bx bxs-video-plus"></i>
-                            <Translate>
-                                Video Magic
-                            </Translate>
-                        </Link>
-
-
                     </div>
                 </div>
                 <div className="col col--6 image-slider">
-                    <ImageSlider />
+                    <VideoMagicSlider />
                 </div>
 
             </div>

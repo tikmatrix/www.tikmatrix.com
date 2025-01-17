@@ -75,8 +75,8 @@ const config = {
             position: 'left',
             label: 'Get Started',
           },
-          { to: '/ProductList/', label: 'Buy hardware', position: 'left' },
-          { to: '/blog', label: 'Blog', position: 'right' },
+          { to: '/ProductList', label: 'Buy hardware', position: 'left' },
+
           {
             href: '/#pricing',
             position: 'left',
@@ -97,11 +97,7 @@ const config = {
             position: 'left',
             label: 'Download',
           },
-          {
-            href: '/#faq',
-            position: 'right',
-            label: 'FAQ',
-          },
+          { to: '/VideoMagic', label: 'VideoMagic', position: 'right' },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -128,10 +124,7 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
-              {
-                label: 'Youtube',
-                href: 'https://youtube.com/@tikmatrix',
-              },
+
             ],
           },
           {
@@ -147,8 +140,8 @@ const config = {
                 href: 'https://twitter.com/niostack',
               },
               {
-                label: 'WhatsApp',
-                href: 'https://chat.whatsapp.com/G15tFqXqbRGADnggV5OEvg',
+                label: 'Youtube',
+                href: 'https://youtube.com/@tikmatrix',
               },
             ],
           },

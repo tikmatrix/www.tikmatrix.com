@@ -459,6 +459,10 @@
     "message": "购买硬件",
     "description": "The product label"
   },
+  "VideoMagic": {
+    "message": "视频魔法",
+    "description": "The product label"
+  },
   "The length and width are relatively small, but the height is high": {
     "message": "长度和宽度相对较小，但高度高",
     "description": "The description of PhoneFarm Box"
