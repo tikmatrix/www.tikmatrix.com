@@ -1,5 +1,5 @@
 ---
-slug: How to fix vcruntime140.dll not found when open TikMatrix
+slug: how-to-fix-vcruntime140.dll-not-found-when-open-TikMatrix
 title: How to fix vcruntime140.dll not found when open TikMatrix
 authors: tikMatrix
 tags: [vcruntime140.ddl not found,fixed,tikmatrix]
