@@ -5,7 +5,7 @@ authors: tikMatrix
 tags: [tiktok, 0views, fixed,tikmatrix]
 ---
 如果你的 TikTok 视频0播放，可能是你的内容策略存在一些问题。在这篇文章中，我将深入探讨常见问题并提供解决方案，帮助你克服这些问题：
-
+<!--truncate-->
 ---
 
 ## 为什么你的 TikTok 视频没有浏览量以及如何解决

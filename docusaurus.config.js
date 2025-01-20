@@ -45,6 +45,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -121,9 +122,13 @@ const config = {
                 to: '/docs/intro',
               },
               {
-                label: 'Blog',
+                label: 'Recent posts',
                 to: '/blog',
               },
+              {
+                label: 'Archive posts',
+                to: '/blog/archive',
+              }
 
             ],
           },

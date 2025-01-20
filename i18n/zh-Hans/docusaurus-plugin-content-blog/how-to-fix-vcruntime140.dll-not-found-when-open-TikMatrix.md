@@ -5,7 +5,7 @@ authors: tikMatrix
 tags: [vcruntime140.ddl not found,fixed,tikmatrix]
 ---
 "vcruntime140.dll 找不到" 错误通常是因为 Microsoft Visual C++ 可再发行包未安装或已损坏。以下是修复此问题的步骤：
-
+<!--truncate-->
 ---
 
 1. **下载 Microsoft Visual C++ 可再发行包**：
