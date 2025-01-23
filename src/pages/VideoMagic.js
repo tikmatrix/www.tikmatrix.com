@@ -26,6 +26,7 @@ export default function VideoMagic() {
     "screenshot": [
       "https://tikmatrix.com/img/video-magic-startup1.png",
       "https://tikmatrix.com/img/video-magic-startup2.png",
+      "https://tikmatrix.com/img/video-magic-startup3.png",
     ],
 
     "offers": {
@@ -39,7 +40,7 @@ export default function VideoMagic() {
       translate({ message: 'Video download' }),
       translate({ message: 'Video generate' }),
       translate({ message: 'Recognize subtitles' }),
-      translate({ message: 'Translate subtitles' }),
+      // translate({ message: 'Translate subtitles' }),
     ],
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://api.tikmatrix.com/download-videomagic",
