@@ -41,11 +41,11 @@ export default function PricingPage() {
                                     <Translate>Recognize subtitles</Translate>
                                 </span>
                             </li>
-                            {/* <li><i className="bx bx-check"></i>
+                            <li className="na"><i className="bx bx-x"></i>
                                 <span>
                                     <Translate>Translate subtitles</Translate>
                                 </span>
-                            </li> */}
+                            </li>
                             <li className="na"><i className="bx bx-x"></i>
                                 <span>
                                     <Translate>Unlimited process tasks</Translate>
@@ -86,11 +86,11 @@ export default function PricingPage() {
                                     <Translate>Recognize subtitles</Translate>
                                 </span>
                             </li>
-                            {/* <li><i className="bx bx-check"></i>
+                            <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Translate subtitles</Translate>
                                 </span>
-                            </li> */}
+                            </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Unlimited process tasks</Translate>
@@ -132,11 +132,11 @@ export default function PricingPage() {
                                     <Translate>Recognize subtitles</Translate>
                                 </span>
                             </li>
-                            {/* <li><i className="bx bx-check"></i>
+                            <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Translate subtitles</Translate>
                                 </span>
-                            </li> */}
+                            </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Unlimited process tasks</Translate>

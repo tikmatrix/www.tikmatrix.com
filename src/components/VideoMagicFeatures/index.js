@@ -50,7 +50,7 @@ export default function HomepageFeatures() {
                     <Translate>Automatically recognize subtitles and append them to the video</Translate>
                   </p>
                 </div>
-                {/* <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-transfer"></i>
                   <h4>
                     <Translate>Translate subtitles</Translate>
@@ -58,7 +58,7 @@ export default function HomepageFeatures() {
                   <p>
                     <Translate>Automatically translate subtitles to any language</Translate>
                   </p>
-                </div> */}
+                </div>
               </div>
 
             </div>
