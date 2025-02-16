@@ -11,7 +11,7 @@ export default function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
 
     return (
-        <header className='hero shadow--lw' >
+        <header id="start" className='hero shadow--lw' >
             <div className="row">
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">

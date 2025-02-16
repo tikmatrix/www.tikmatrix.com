@@ -61,8 +61,8 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
+                        <a href="#start" className="get-started-btn">
+                            <Translate>Get Started</Translate>
                         </a>
                     </div>
                     <div className="box featured" data-aos="fade-up">
@@ -110,8 +110,8 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
+                        <a href="#start" className="get-started-btn">
+                            <Translate>Get Started</Translate>
                         </a>
 
                     </div>
@@ -160,8 +160,8 @@ export default function PricingPage() {
                                 <Translate>Customer support</Translate>
                             </span></li>
                         </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
+                        <a href="#start" className="get-started-btn">
+                            <Translate>Get Started</Translate>
                         </a>
 
                     </div>

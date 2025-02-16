@@ -16,7 +16,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="row">
-                    <div className="box" data-aos="fade-right">
+                    {/* <div className="box" data-aos="fade-right">
                         <h3>
                             <Translate>Free</Translate>
                         </h3>
@@ -60,7 +60,7 @@ export default function PricingPage() {
                         <a href="#contact" className="get-started-btn">
                             <Translate>Contact</Translate>
                         </a>
-                    </div>
+                    </div> */}
                     <div className="box featured" data-aos="fade-up">
                         <h3>
                             <Translate>Monthly</Translate>
@@ -102,8 +102,8 @@ export default function PricingPage() {
                                 </span>
                             </li>
                         </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
+                        <a href="#start" className="get-started-btn">
+                            <Translate>Get Started</Translate>
                         </a>
 
                     </div>
@@ -111,7 +111,7 @@ export default function PricingPage() {
                         <h3>
                             <Translate>Yearly</Translate>
                         </h3>
-                        <h4>120$
+                        <h4>119$
                             <span>
                                 <Translate>Per Year</Translate>
                             </span>
@@ -148,8 +148,8 @@ export default function PricingPage() {
                                 </span>
                             </li>
                         </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
+                        <a href="#start" className="get-started-btn">
+                            <Translate>Get Started</Translate>
                         </a>
 
                     </div>

@@ -32,21 +32,35 @@ const ImageSlider = () => {
                 <img
                     alt="App Preview Image"
                     className="hero__img "
-                    src="img/startup1.png?v=2"
+                    src="img/startup1.png?v=3"
                     data-aos="fade-up" />
             </SwiperSlide>
             <SwiperSlide>
                 <img
                     alt="App Preview Image"
                     className="hero__img "
-                    src="img/startup2.png?v=2"
+                    src="img/startup2.png?v=3"
                     data-aos="fade-up" />
             </SwiperSlide>
             <SwiperSlide>
                 <img
                     alt="App Preview Image"
                     className="hero__img "
-                    src="img/startup3.png?v=2"
+                    src="img/startup3.png?v=3"
+                    data-aos="fade-up" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img
+                    alt="App Preview Image"
+                    className="hero__img "
+                    src="img/startup4.png?v=3"
+                    data-aos="fade-up" />
+            </SwiperSlide>
+            <SwiperSlide>
+                <img
+                    alt="App Preview Image"
+                    className="hero__img "
+                    src="img/startup5.png?v=3"
                     data-aos="fade-up" />
             </SwiperSlide>
 
