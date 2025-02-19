@@ -74,9 +74,9 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Get Started',
+            label: 'Tutorial',
           },
-          { to: '/ProductList', label: 'Buy hardware', position: 'left' },
+          // { to: '/ProductList', label: 'Buy hardware', position: 'left' },
 
           {
             href: '/#pricing',

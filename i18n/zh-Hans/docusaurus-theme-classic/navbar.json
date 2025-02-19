@@ -10,6 +10,10 @@
     "message": "开始使用",
     "description": "Navbar item with label Tutorial"
   },
+  "item.label.Tutorial": {
+    "message": "教程",
+    "description": "Navbar item with label Tutorial"
+  },
   "item.label.Features": {
     "message": "功能",
     "description": "Navbar item with label Features"

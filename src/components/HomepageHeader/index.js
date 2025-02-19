@@ -25,18 +25,14 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div>
-                        <a href="https://api.tikmatrix.com/download" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="https://api.tikmatrix.com/download" className="download-btn">
+                            <i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>
                         </a>
 
-                        <Link to="/docs/intro" className="download-btn">
-                            <i className="bx bxs-book"></i>
-                            <Translate>
-                                Get Started
-                            </Translate>
-                        </Link>
+
                         <Link to="VideoMagic" className="link-btn">
                             <i className="bx bxs-video-plus"></i>
                             <Translate>
