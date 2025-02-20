@@ -26,12 +26,12 @@ export default function PricingPage() {
                             </span>
                         </h4>
                         <ul>
-                            <li><i className="bx bx-check"></i>
+                            <li className="na"><i className="bx bx-x"></i>
                                 <span>
                                     <Translate>Automatic registration</Translate>
                                 </span>
                             </li>
-                            <li><i className="bx bx-check"></i>
+                            <li className="na"><i className="bx bx-x"></i>
                                 <span>
                                     <Translate>Automatic login</Translate>
                                 </span>
@@ -95,6 +95,11 @@ export default function PricingPage() {
                                     <Translate>Automated Message</Translate>
                                 </span>
                             </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Automated Follow</Translate>
+                                </span>
+                            </li>
                             <li><i className="bx bx-check"></i> <span>
                                 <Translate>Automated account nurturing</Translate>
                             </span></li>
@@ -143,6 +148,11 @@ export default function PricingPage() {
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Automated Message</Translate>
+                                </span>
+                            </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Automated Follow</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i> <span>

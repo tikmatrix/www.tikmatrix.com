@@ -122,15 +122,7 @@ export default function HomepageFeatures() {
                     <Translate>One-click automatic collection of target account fan lists, can be used for direct messaging</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
-                  <i className="bx bx-cloud-download"></i>
-                  <h4>
-                    <Translate>Video collection</Translate>
-                  </h4>
-                  <p>
-                    <Translate>One-click download of videos from the entire network</Translate>
-                  </p>
-                </div>
+
               </div>
 
             </div>

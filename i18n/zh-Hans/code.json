@@ -26,11 +26,11 @@
   "TikMatrix RealPhone Matrix": {
     "message": "TikMatrix 真机矩阵"
   },
-  "Fingerprint Browser Matrix": {
-    "message": "指纹浏览器矩阵"
+  "Fingerprint Browser": {
+    "message": "指纹浏览器"
   },
-  "Protocol Matrix": {
-    "message": "协议矩阵"
+  "API Protocol": {
+    "message": "API协议"
   },
   "Account Safe": {
     "message": "账号安全"
@@ -59,8 +59,8 @@
   "Automatic Capture": {
     "message": "自动采集"
   },
-  "Full Network Video Download": {
-    "message": "全网视频下载"
+  "Automated Follow": {
+    "message": "自动关注"
   },
   "Our plans": {
     "message": "我们的套餐"
