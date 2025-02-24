@@ -35,7 +35,7 @@ export default function HomepageFeatures() {
                         <Translate>Features</Translate>
                     </div>
                     <div className="featuresCol featuresTitle">
-                        <Translate>TikMatrix RealPhone Matrix</Translate>
+                        <Translate>TikMatrix</Translate>
                     </div>
                     <div className="featuresCol featuresDetail">
                         <Translate>Fingerprint Browser</Translate>
