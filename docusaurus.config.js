@@ -98,7 +98,11 @@ const config = {
             position: 'left',
             label: 'Download',
           },
-          { to: '/IgMatrix', label: 'IgMatrix', position: 'right' },
+          {
+            to: '/IgMatrix',
+            label: 'IgMatrix',
+            position: 'right'
+          },
           { to: '/YtMatrix', label: 'YtMatrix', position: 'right' },
           { to: '/VideoMagic', label: 'VideoMagic', position: 'right' },
           {

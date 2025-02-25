@@ -35,7 +35,7 @@ export default function HomepageFeatures() {
                 <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-extension"></i>
                   <h4>
-                    <Translate>Video generate</Translate>
+                    <Translate>Video unique</Translate>
                   </h4>
                   <p>
                     <Translate>Generate unique videos from one source video</Translate>
@@ -57,6 +57,15 @@ export default function HomepageFeatures() {
                   </h4>
                   <p>
                     <Translate>Automatically translate subtitles to any language</Translate>
+                  </p>
+                </div>
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
+                  <i className="bx bx-bot"></i>
+                  <h4>
+                    <Translate>AI Voiceover</Translate>
+                  </h4>
+                  <p>
+                    <Translate>Automatically generate AI voiceover for videos</Translate>
                   </p>
                 </div>
               </div>

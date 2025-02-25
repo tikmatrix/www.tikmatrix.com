@@ -38,7 +38,7 @@ export default function VideoMagic() {
     "description": translate({ message: 'Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency' }),
     "featureList": [
       translate({ message: 'Video download' }),
-      translate({ message: 'Video generate' }),
+      translate({ message: 'Video unique' }),
       translate({ message: 'Recognize subtitles' }),
       translate({ message: 'Translate subtitles' }),
     ],

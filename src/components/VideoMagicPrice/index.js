@@ -33,7 +33,7 @@ export default function PricingPage() {
                             </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video generate</Translate>
+                                    <Translate>Video unique</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>
@@ -78,7 +78,7 @@ export default function PricingPage() {
                             </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video generate</Translate>
+                                    <Translate>Video unique</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>
@@ -124,7 +124,7 @@ export default function PricingPage() {
                             </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Video generate</Translate>
+                                    <Translate>Video unique</Translate>
                                 </span>
                             </li>
                             <li><i className="bx bx-check"></i>

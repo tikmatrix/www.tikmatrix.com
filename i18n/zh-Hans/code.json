@@ -586,13 +586,13 @@
     "message": "一键下载所有视频网站的视频",
     "description": "The description of Video download"
   },
-  "Video generate": {
+  "Video unique": {
     "message": "视频生成",
-    "description": "The description of Video generate"
+    "description": "The description of Video unique"
   },
   "Generate unique videos from one source video": {
     "message": "从一个源视频生成唯一的视频",
-    "description": "The description of Video generate"
+    "description": "The description of Video unique"
   },
   "Recognize subtitles": {
     "message": "识别字幕",
@@ -613,5 +613,13 @@
   "Unlimited process tasks": {
     "message": "无限处理任务",
     "description": "The description of Unlimited process tasks"
+  },
+  "AI voiceover": {
+    "message": "AI 配音",
+    "description": "The product label"
+  },
+  "Automatically generate AI voiceover for videos": {
+    "message": "自动为视频生成AI配音",
+    "description": "The description of AI voiceover"
   }
 }
