@@ -76,7 +76,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          // { to: '/ProductList', label: 'Buy hardware', position: 'left' },
+
 
           {
             href: '/#pricing',
@@ -109,7 +109,11 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-
+          {
+            href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
+            label: 'Buy hardware',
+            position: 'right'
+          },
           {
             href: 'https://github.com/tikmatrix/tiktok-matrix',
             label: 'GitHub',
@@ -148,7 +152,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/niostack',
+                href: 'https://twitter.com/TikMatrix',
               },
               {
                 label: 'Youtube',
