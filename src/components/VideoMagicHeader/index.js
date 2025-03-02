@@ -25,7 +25,7 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div>
-                        <a href="https://api.tikmatrix.com/download-videomagic" className="download-btn"><i className="bx bxl-windows"></i>
+                        <a href="https://pro.api.tikmatrix.com/front-api/download-videomagic" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
                                 Download for Windows
                             </Translate>

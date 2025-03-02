@@ -51,7 +51,7 @@ export default function Home() {
       translate({ message: 'Automatic commenting' }),
     ],
     "softwareVersion": "1.9.5",
-    "downloadUrl": "https://api.tikmatrix.com/download",
+    "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download",
     "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
     "aggregateRating": {
       "@type": "AggregateRating",

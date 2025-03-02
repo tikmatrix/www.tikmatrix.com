@@ -37,7 +37,7 @@ export default function VideoMagic() {
       translate({ message: 'Automatic commenting' }),
     ],
     "softwareVersion": "1.0.0",
-    "downloadUrl": "https://api.tikmatrix.com/download-igmatrix",
+    "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download-igmatrix",
     "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
     "aggregateRating": {
       "@type": "AggregateRating",
