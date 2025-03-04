@@ -14,6 +14,10 @@
     "message": "教程",
     "description": "Navbar item with label Tutorial"
   },
+  "item.label.Rewards": {
+    "message": "推广赚钱",
+    "description": "Navbar item with label Rewards"
+  },
   "item.label.Features": {
     "message": "功能",
     "description": "Navbar item with label Features"

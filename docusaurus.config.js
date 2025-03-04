@@ -76,7 +76,11 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-
+          {
+            to: '/rewards',           // 添加新的导航项
+            position: 'left',
+            label: 'Rewards',
+          },
 
           {
             href: '/#pricing',

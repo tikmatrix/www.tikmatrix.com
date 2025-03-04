@@ -37,12 +37,12 @@ export default function FrequentlyAsked() {
                             </div>
 
                             <div className="col col--6 info">
-                                <i className="bx bx-time-five"></i>
+                                <i className="bx bx-envelope"></i>
                                 <h4>
-                                    <Translate>Working Hours</Translate>
+                                    <Translate>Email</Translate>
                                 </h4>
                                 <p>
-                                    <Translate>Mon - Fri: 9:00AM - 5:00PM(UTC+8)</Translate>
+                                    <Translate>support@tikmatrix.com</Translate>
                                 </p>
                             </div>
                         </div>
