@@ -12,19 +12,19 @@ export default function HomepageHeader() {
 
     return (
         <header id="start" className='hero shadow--lw' >
-            <div className="row">
-                <div className='col col--6'>
+            <div className="row header-row">
+                <div className='col col--6 header-content'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
-                            TikMatrix is a TikTok group control operation tool
+                            Professional TikTok Account Management & Marketing Tool
                         </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency
+                            Streamline your TikTok phone farm with advanced batch control and marketing automation
                         </Translate>
                     </p>
-                    <div>
+                    <div className="header-buttons">
                         <a href="https://pro.api.tikmatrix.com/front-api/download" className="download-btn">
                             <i className="bx bxl-windows"></i>
                             <Translate>
@@ -32,21 +32,17 @@ export default function HomepageHeader() {
                             </Translate>
                         </a>
 
-
                         <Link to="VideoMagic" className="link-btn">
                             <i className="bx bxs-video-plus"></i>
                             <Translate>
                                 Video Magic
                             </Translate>
                         </Link>
-
-
                     </div>
                 </div>
                 <div className="col col--6 image-slider">
                     <ImageSlider />
                 </div>
-
             </div>
         </header>
     );

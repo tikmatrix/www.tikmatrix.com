@@ -8,8 +8,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikMatrix - A professional TikTok account matrix marketing tool',
-  tagline: 'TikMatrix is a Tiktok android phonefarm batch control tool',
+  title: 'TikMatrix - Professional TikTok Account Management & Marketing Tool',
+  tagline: 'Streamline your TikTok phone farm with advanced batch control and marketing automation',
   favicon: 'favicon.ico',
 
   // Set the production url of your site here
@@ -77,7 +77,7 @@ const config = {
             label: 'Tutorial',
           },
           {
-            to: '/rewards',           // 添加新的导航项
+            to: '/rewards',
             position: 'left',
             label: 'Rewards',
           },
@@ -102,22 +102,12 @@ const config = {
             position: 'left',
             label: 'Download',
           },
-          {
-            to: '/IgMatrix',
-            label: 'IgMatrix',
-            position: 'right'
-          },
-          { to: '/YtMatrix', label: 'YtMatrix', position: 'right' },
-          { to: '/VideoMagic', label: 'VideoMagic', position: 'right' },
+
           {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
-            label: 'Buy hardware',
-            position: 'right'
-          },
+
           {
             href: 'https://github.com/tikmatrix/tiktok-matrix',
             label: 'GitHub',
@@ -168,22 +158,26 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Tiktok001',
-                href: 'https://www.tiktok.com/@tikmatrix001',
+                label: 'VideoMagic',
+                href: '/VideoMagic',
               },
               {
-                label: 'Tiktok002',
-                href: 'https://www.tiktok.com/@tikmatrix002',
+                label: 'IgMatrix',
+                href: '/IgMatrix',
               },
               {
-                label: '#TikMatrix',
-                href: 'https://www.tiktok.com/tag/tikmatrix',
+                label: 'YtMatrix',
+                href: '/YtMatrix',
               },
             ],
           },
           {
             title: 'Tools',
             items: [
+              {
+                href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
+                label: 'Buy hardware',
+              },
               {
                 href: 'https://user.tikmatrix.com',
                 label: 'TikTok User Finder',
@@ -202,9 +196,16 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'TikMatrix, Tiktok, Phonefarm, Batch Control' },
-        { name: 'description', content: 'TikMatrix is a Tiktok android phonefarm batch control tool' },
+        { name: 'keywords', content: 'TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool' },
+        { name: 'description', content: 'TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.' },
         { name: 'author', content: 'TikMatrix' },
+        { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool' },
+        { property: 'og:description', content: 'Streamline your TikTok phone farm with advanced batch control and marketing automation' },
+        { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
+        { property: 'og:url', content: 'https://tikmatrix.com/' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@TikMatrix' },
       ],
       colorMode: {
         defaultMode: 'light',
@@ -214,6 +215,37 @@ const config = {
 
     }),
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: 'https://tikmatrix.com/',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'SoftwareApplication',
+        'name': 'TikMatrix',
+        'description': 'Professional marketing software designed for TikTok phone farms',
+        'applicationCategory': 'BusinessApplication',
+        'operatingSystem': 'Windows',
+        'offers': {
+          '@type': 'Offer',
+          'price': '0',
+          'priceCurrency': 'USD'
+        },
+        'publisher': {
+          '@type': 'Organization',
+          'name': 'TikMatrix, Inc.',
+          'logo': 'https://tikmatrix.com/img/logo.png'
+        }
+      }),
+    },
     // Declare a <link> preconnect tag
     // {
     //   tagName: 'link',

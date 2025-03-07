@@ -5,8 +5,8 @@
   "Download for Windows": {
     "message": "Windows 下载"
   },
-  "TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency": {
-    "message": "TikMatrix 是一款专业的TikTok矩阵软件，专为TikTok运营者设计，通过电脑控制多部安卓手机进行自动注册、登录、养号、私信和发布，极大提升运营效率。"
+  "TikMatrix is a professional marketing software designed for TikTok phone farms": {
+    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件"
   },
   "Why TikMatrix?": {
     "message": "为什么使用 TikMatrix?"
@@ -80,8 +80,8 @@
   "Per Year": {
     "message": "每年"
   },
-  "Manage unlimited devices": {
-    "message": "管理无限设备"
+  "Unlimited devices": {
+    "message": "无限设备"
   },
   "Customer support": {
     "message": "客户支持"
@@ -105,7 +105,7 @@
     "message": "如何使用?"
   },
   "Go to the \"Download\" page and download the latest version of TikMatrix.": {
-    "message": "前往“下载”页面并下载最新版本的 TikMatrix。"
+    "message": "前往\"下载\"页面并下载最新版本的 TikMatrix。"
   },
   "What devices can I use?": {
     "message": "我可以使用哪些设备?"
@@ -462,10 +462,6 @@
     "message": "购买硬件",
     "description": "The product label"
   },
-  "VideoMagic": {
-    "message": "视频魔法",
-    "description": "The product label"
-  },
   "The length and width are relatively small, but the height is high": {
     "message": "长度和宽度相对较小，但高度高",
     "description": "The description of PhoneFarm Box"
@@ -621,5 +617,81 @@
   "Automatically generate AI voiceover for videos": {
     "message": "自动为视频生成AI配音",
     "description": "The description of AI voiceover"
+  },
+  "Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence.": {
+    "message": "专业的TikTok账号管理及营销工具，专为手机农场设计。自动发布、关注，并增长您的TikTok影响力。",
+    "description": "The description of Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence."
+  },
+  "TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
+    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
+    "description": "The description of TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
+  },
+  "Streamline your TikTok phone farm with advanced batch control and marketing automation": {
+    "message": "通过先进的批量控制和营销自动化，轻松管理您的TikTok手机农场。",
+    "description": "The description of Streamline your TikTok phone farm with advanced batch control and marketing automation"
+  },
+  "Batch account management": {
+    "message": "批量账号管理",
+    "description": "The description of Batch account management"
+  },
+  "Performance analytics": {
+    "message": "性能分析",
+    "description": "The description of Performance analytics"
+  },
+  "Professional TikTok Account Management & Marketing Tool": {
+    "message": "专业的TikTok账号管理及营销工具",
+    "description": "The description of Professional TikTok Account Management & Marketing Tool"
+  },
+  "Our Competitive Advantages": {
+    "message": "我们的竞争优势",
+    "description": "The description of Our Competitive Advantages"
+  },
+  "TikMatrix delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
+    "message": "TikMatrix 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
+    "description": "The description of TikMatrix competitive advantage"
+  },
+  "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
+    "message": "我们专有的真机矩阵系统完美规避TikTok的风控措施，实现0%的账号封停率。",
+    "description": "The description of TikMatrix proprietary technology"
+  },
+  "Powerful TikTok Automation & Management Tools": {
+    "message": "强大的TikTok自动化和管理工具",
+    "description": "The description of Powerful TikTok Automation & Management Tools"
+  },
+  "Basic Automation": {
+    "message": "基础自动化"
+  },
+  "Comments, Messages, Follows": {
+    "message": "评论、私信、关注"
+  },
+  "Content Management": {
+    "message": "内容管理"
+  },
+  "Video posting, Account nurturing": {
+    "message": "视频发布、账号养护"
+  },
+  "Account Setup": {
+    "message": "账号设置"
+  },
+  "Automatic registration & login": {
+    "message": "自动注册和登录"
+  },
+  "All Free Features": {
+    "message": "所有免费功能"
+  },
+  "Automation & Content Management": {
+    "message": "自动化和内容管理"
+  },
+  "Premium Benefits": {
+    "message": "高级特权"
+  },
+  "Unlimited devices, Customer support": {
+    "message": "无限设备、客户支持"
+  },
+  "All Monthly Features": {
+    "message": "所有月付功能"
+  },
+  "Save 50% compared to monthly plan": {
+    "message": "比月付方案节省50%"
   }
 }

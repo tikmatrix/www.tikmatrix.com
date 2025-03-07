@@ -26,21 +26,20 @@ export default function Home() {
     "@type": "SoftwareApplication",
     "name": "TikMatrix",
     "url": "https://tikmatrix.com",
-    "applicationCategory": "Social Media Management",
+    "applicationCategory": "BusinessApplication",
     "operatingSystem": "Windows",
     "screenshot": [
       "https://tikmatrix.com/img/startup1.png",
       "https://tikmatrix.com/img/startup2.png",
       "https://tikmatrix.com/img/startup3.png",
     ],
-
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "USDT",
+      "priceCurrency": "USD",
       "price": "0",
       "description": translate({ message: 'Free' }),
     },
-    "description": translate({ message: 'TikMatrix is a professional TikTok matrix software designed for operators. It controls multiple Android phones via a computer for automatic registration, login, account nurturing, messaging, and posting, greatly enhancing operational efficiency' }),
+    "description": translate({ message: 'Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence.' }),
     "featureList": [
       translate({ message: 'Phone screen mirroring to a computer' }),
       translate({ message: 'Automatic registration' }),
@@ -49,14 +48,16 @@ export default function Home() {
       translate({ message: 'Automatic posting' }),
       translate({ message: 'Automatic following' }),
       translate({ message: 'Automatic commenting' }),
+      translate({ message: 'Batch account management' }),
+      translate({ message: 'Performance analytics' }),
     ],
-    "softwareVersion": "1.9.5",
+    "softwareVersion": "2.1.9",
     "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download",
     "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "ratingCount": "1000000",
+      "ratingCount": "230809",
       "bestRating": "5",
       "worstRating": "1",
     },
@@ -66,6 +67,8 @@ export default function Home() {
       "url": "https://tikmatrix.com",
       "logo": "https://tikmatrix.com/img/logo.png",
     },
+    "keywords": "TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix",
+    "datePublished": "2025-03-07",
   }
   return (
     <Layout>

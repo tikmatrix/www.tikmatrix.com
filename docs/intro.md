@@ -30,8 +30,7 @@ TikMatrix is a **computer software** designed to manage and control multiple **A
 
 ## Installation
 
-1. Download the latest version install package(`tiktok-matrix_x.x.x_x64_en-US.msi
-`) from the [GitHub Releases](https://github.com/tikmatrix/tiktok-matrix/releases) page.
+1. Download the latest version install package from the [Download](https://pro.api.tikmatrix.com/front-api/download) page.
 2. Run the installer.
 3. Wait for the installation to complete.
 4. Open the **TikMatrix** app on your Windows PC Desktop.

@@ -14,7 +14,7 @@ export default function HomepageFeatures() {
             <Translate>Features</Translate>
           </h2>
           <p>
-            <Translate>Our Core Features</Translate>
+            <Translate>Powerful TikTok Automation & Management Tools</Translate>
           </p>
         </div>
 

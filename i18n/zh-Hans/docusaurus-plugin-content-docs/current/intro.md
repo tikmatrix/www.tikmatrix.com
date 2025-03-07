@@ -30,7 +30,7 @@ TikMatrix 是一个**电脑软件**，它可以用于管理和控制多个**安�
 
 ## 安装
 
-1. 点击 [下载](https://api/tikmatrix.com/download) 最新版本安装包。
+1. 点击 [下载](https://pro.api.tikmatrix.com/front-api/download) 最新版本安装包。
 2. 双击运行安装程序。
 3. 等待安装完成。
 4. 在你的 Windows 电脑桌面上打开 **TikMatrix** 应用程序。

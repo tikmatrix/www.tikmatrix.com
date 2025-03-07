@@ -1,113 +1,159 @@
+.pricing {
+    padding: 60px 0;
+    background: #f6f9fe;
+}
+
+.pricing .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pricing .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2d405f;
+}
+
+.pricing .section-title p {
+    font-size: 16px;
+    color: #919191;
+}
+
 .pricing .row {
-    padding-top: 40px;
     display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
 .pricing .box {
-    padding: 40px;
-    box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
-    background: #fff;
-    text-align: center;
     flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    padding: 40px 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+}
+
+.pricing .box:hover {
+    transform: translateY(-10px);
+}
+
+.pricing .box.featured {
+    background: #2d405f;
+    color: #fff;
 }
 
 .pricing h3 {
-    font-weight: 300;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 15px;
-    font-size: 28px;
+}
+
+.pricing .box.featured h3,
+.pricing .box.featured h4,
+.pricing .box.featured h4 span {
+    color: #fff;
 }
 
 .pricing h4 {
-    font-size: 46px;
-    color: #5777ba;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;
+    font-size: 42px;
+    color: #2d405f;
+    font-weight: 700;
     margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .pricing h4 span {
-    color: #bababa;
-    font-size: 18px;
-    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #919191;
+    display: inline;
+    margin-top: 0;
 }
 
 .pricing ul {
-    padding: 0;
     list-style: none;
-    color: #999;
-    text-align: left;
-    line-height: 20px;
+    padding: 0;
+    margin: 0 0 25px 0;
 }
 
 .pricing ul li {
-    padding-bottom: 12px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.pricing ul i {
-    color: #5777ba;
-    font-size: 18px;
-    padding-right: 4px;
-}
-
-.pricing ul .na {
+.pricing ul li.na {
     color: #ccc;
 }
 
-.pricing ul .na i {
-    color: #ccc;
+.pricing .box.featured ul li {
+    color: #fff;
 }
 
-.pricing ul .na span {
-    text-decoration: line-through;
+.pricing .box.featured ul li.na {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .pricing .get-started-btn {
-    background: #47536e;
     display: inline-block;
-    padding: 8px 30px;
-    border-radius: 20px;
-    color: #fff;
-    transition: none;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: "Raleway", sans-serif;
+    padding: 12px 35px;
+    border-radius: 50px;
+    color: #2d405f;
+    background: #f6f9fe;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
     transition: 0.3s;
 }
 
 .pricing .get-started-btn:hover {
-    background: #5777ba;
+    background: #3b4ef8;
+    color: #fff;
 }
 
-.pricing .featured {
-    z-index: 10;
-    margin: -30px -5px 0 -5px;
+.pricing .box.featured .get-started-btn {
+    background: #fff;
+    color: #2d405f;
 }
 
-.pricing .featured .get-started-btn {
-    background: #5777ba;
+.pricing .box.featured .get-started-btn:hover {
+    background: #3b4ef8;
+    color: #fff;
 }
 
-.pricing .featured .get-started-btn:hover {
-    background: #748ec6;
+.pricing .box h4 {
+    white-space: nowrap;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .pricing .box {
-        max-width: 60%;
-        margin: 0 auto 30px auto;
+        margin-bottom: 30px;
+    }
+
+    .pricing .row {
+        gap: 20px;
     }
 }
 
-@media (max-width: 767px) {
-    .pricing .box {
-        max-width: 80%;
-        margin: 0 auto 30px auto;
-    }
+.feature-details {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 2px;
+    margin-left: 24px;
 }
 
-@media (max-width: 420px) {
-    .pricing .box {
-        max-width: 100%;
-        margin: 0 auto 30px auto;
-    }
+.pricing .box ul li {
+    padding: 15px 0;
 }
