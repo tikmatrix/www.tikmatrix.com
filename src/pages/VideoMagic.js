@@ -28,14 +28,14 @@ export default function VideoMagic() {
       "https://tikmatrix.com/img/video-magic-startup2.png",
       "https://tikmatrix.com/img/video-magic-startup3.png",
     ],
-
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "USDT",
+      "priceCurrency": "USD",
       "price": "0",
       "description": translate({ message: 'Free' }),
+      "availability": "https://schema.org/InStock"
     },
-    "description": translate({ message: 'Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency' }),
+    "description": translate({ message: 'Video Magic is a Software for Batch Generating Unique Videos' }),
     "featureList": [
       translate({ message: 'Video download' }),
       translate({ message: 'Video unique' }),
@@ -58,13 +58,32 @@ export default function VideoMagic() {
       "url": "https://tikmatrix.com",
       "logo": "https://tikmatrix.com/img/logo.png",
     },
+    "keywords": "video magic,video generation,video editing,subtitle translation,unique videos,social media videos",
+    "datePublished": "2023-01-01",
+    "applicationSubCategory": "Video Editing",
+    "fileSize": "50MB",
+    "requirements": "Windows 10 or later"
   }
   return (
-    <Layout title={translate({ message: 'VideoMagic' })} description="Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency">
+    <Layout
+      title={translate({ message: 'VideoMagic - Batch Generating Unique Videos' })}
+      description="Batch Generating Unique Videos"
+    >
       <Head>
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
+        <meta name="keywords" content="video magic, video generation, video editing, subtitle translation, unique videos, social media videos" />
+        <meta property="og:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
+        <meta property="og:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
+        <meta property="og:image" content="https://tikmatrix.com/img/video-magic-startup1.png" />
+        <meta property="og:url" content="https://tikmatrix.com/videomagic" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
+        <meta name="twitter:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/video-magic-startup1.png" />
+        <link rel="canonical" href="https://tikmatrix.com/videomagic" />
       </Head>
       <VideoMagicHeader />
       <main>

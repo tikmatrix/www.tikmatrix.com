@@ -693,5 +693,17 @@
   },
   "Save 50% compared to monthly plan": {
     "message": "比月付方案节省50%"
+  },
+  "Video Magic is a Software for Batch Generating Unique Videos": {
+    "message": "Video Magic是一款用于批量生成唯一视频的软件",
+    "description": "The description of Video Magic"
+  },
+  "Batch Generating Unique Videos": {
+    "message": "批量生成唯一视频",
+    "description": "The description of Batch Generating Unique Videos"
+  },
+  "VideoMagic - Batch Generating Unique Videos": {
+    "message": "Video Magic - 批量生成唯一视频",
+    "description": "The description of Video Magic"
   }
 }

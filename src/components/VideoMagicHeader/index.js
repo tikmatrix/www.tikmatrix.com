@@ -16,12 +16,12 @@ export default function HomepageHeader() {
                 <div className='col col--6'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
-                            Video Magic is a tool that can generate unique videos
+                            Batch Generating Unique Videos
                         </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            Video Magic is a professional video generation software designed for operators. It can generate unique videos for you, greatly enhancing operational efficiency
+                            Video Magic is a Software for Batch Generating Unique Videos
                         </Translate>
                     </p>
                     <div>

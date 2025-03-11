@@ -59,7 +59,7 @@ export default function HomepageFeatures() {
                     <Translate>Automatically translate subtitles to any language</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
+                {/* <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-bot"></i>
                   <h4>
                     <Translate>AI Voiceover</Translate>
@@ -67,7 +67,7 @@ export default function HomepageFeatures() {
                   <p>
                     <Translate>Automatically generate AI voiceover for videos</Translate>
                   </p>
-                </div>
+                </div> */}
               </div>
 
             </div>

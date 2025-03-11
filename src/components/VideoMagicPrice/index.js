@@ -16,51 +16,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="row">
-                    {/* <div className="box" data-aos="fade-right">
-                        <h3>
-                            <Translate>Free</Translate>
-                        </h3>
-                        <h4>0$
-                            <span>
-                                <Translate>Per Month</Translate>
-                            </span>
-                        </h4>
-                        <ul>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Video download</Translate>
-                                </span>
-                            </li>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Video unique</Translate>
-                                </span>
-                            </li>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Recognize subtitles</Translate>
-                                </span>
-                            </li>
-                            <li className="na"><i className="bx bx-x"></i>
-                                <span>
-                                    <Translate>Translate subtitles</Translate>
-                                </span>
-                            </li>
-                            <li className="na"><i className="bx bx-x"></i>
-                                <span>
-                                    <Translate>Unlimited process tasks</Translate>
-                                </span>
-                            </li>
-                            <li className="na"><i className="bx bx-x"></i>
-                                <span>
-                                    <Translate>Customer support</Translate>
-                                </span>
-                            </li>
-                        </ul>
-                        <a href="#contact" className="get-started-btn">
-                            <Translate>Contact</Translate>
-                        </a>
-                    </div> */}
+
                     <div className="box featured" data-aos="fade-up">
                         <h3>
                             <Translate>Monthly</Translate>
@@ -91,11 +47,7 @@ export default function PricingPage() {
                                     <Translate>Translate subtitles</Translate>
                                 </span>
                             </li>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Unlimited process tasks</Translate>
-                                </span>
-                            </li>
+
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Customer support</Translate>
@@ -137,11 +89,7 @@ export default function PricingPage() {
                                     <Translate>Translate subtitles</Translate>
                                 </span>
                             </li>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Unlimited process tasks</Translate>
-                                </span>
-                            </li>
+
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Customer support</Translate>
