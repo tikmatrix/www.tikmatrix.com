@@ -8,7 +8,7 @@ Let's discover **TikMatrix in less than 5 minutes**.
 
 ## Software Introduction
 
-TikMatrix is a **computer software** designed to manage and control multiple **Android phones** (including motherboard devices) to perform TikTok automation tasks. These tasks include account registration, account login, account nurturing (following, liking, commenting, collecting), bulk messaging, collecting fan lists, collecting videos from the entire network, scheduling video posts, and scheduling image posts.
+TikMatrix is a **computer software** designed to manage and control multiple **Android phones** (including motherboard devices) to perform TikTok automation tasks. These tasks include account registration, account login, account nurturing (following, liking, commenting, collecting), bulk messaging, collecting fan lists, scheduling video posts, and scheduling image posts.
 
 ## Pricing
 
@@ -20,6 +20,7 @@ TikMatrix is a **computer software** designed to manage and control multiple **A
 ### What you'll need
 
 - Android Device
+  - You can use real Android devices, motherboard devices, emulators, cloud phones, virtual machines.
   - The Android device requires at least API 21 (Android 5.0).
   - Make sure you enabled USB debugging on your device(s).
   - On some devices, you also need to enable an additional option USB debugging (Security Settings) (this is an item different from USB debugging) to control it using a keyboard and mouse.
