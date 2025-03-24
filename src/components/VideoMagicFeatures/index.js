@@ -23,7 +23,7 @@ export default function HomepageFeatures() {
             className="col col--12 d-flex align-items-stretch order-2 order-lg-1">
             <div className="content d-flex flex-column justify-content-center">
               <div className="row">
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
+                {/* <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-cloud-download"></i>
                   <h4>
                     <Translate>Video download</Translate>
@@ -31,7 +31,7 @@ export default function HomepageFeatures() {
                   <p>
                     <Translate>One-click download of videos from all video websites</Translate>
                   </p>
-                </div>
+                </div> */}
                 <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-extension"></i>
                   <h4>

@@ -21,17 +21,17 @@ export default function PricingPage() {
                         <h3>
                             <Translate>Monthly</Translate>
                         </h3>
-                        <h4>19$
+                        <h4>59$
                             <span>
                                 <Translate>Per Month</Translate>
                             </span>
                         </h4>
                         <ul>
-                            <li><i className="bx bx-check"></i>
+                            {/* <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Video download</Translate>
                                 </span>
-                            </li>
+                            </li> */}
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Video unique</Translate>
@@ -63,17 +63,17 @@ export default function PricingPage() {
                         <h3>
                             <Translate>Yearly</Translate>
                         </h3>
-                        <h4>119$
+                        <h4>359$
                             <span>
                                 <Translate>Per Year</Translate>
                             </span>
                         </h4>
                         <ul>
-                            <li><i className="bx bx-check"></i>
+                            {/* <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Video download</Translate>
                                 </span>
-                            </li>
+                            </li> */}
                             <li><i className="bx bx-check"></i>
                                 <span>
                                     <Translate>Video unique</Translate>
