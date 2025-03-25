@@ -12,8 +12,8 @@ export default function HomepageHeader() {
 
     return (
         <header id="start" className='hero shadow--lw' >
-            <div className="row">
-                <div className='col col--6'>
+            <div className="row header-row">
+                <div className='col col--6 header-content'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
                             Batch Generating Unique Videos
