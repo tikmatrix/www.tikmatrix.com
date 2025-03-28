@@ -21,13 +21,13 @@ export default function HomepageHeader() {
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            Video Magic is a Software for Batch Generating Unique Videos
+                            VideoMagic is a Software for Batch Generating Unique Videos
                         </Translate>
                     </p>
                     <div>
                         <a href="https://pro.api.tikmatrix.com/front-api/download-videomagic" className="download-btn"><i className="bx bxl-windows"></i>
                             <Translate>
-                                Download for Windows
+                                Download VideoMagic
                             </Translate>
                         </a>
 

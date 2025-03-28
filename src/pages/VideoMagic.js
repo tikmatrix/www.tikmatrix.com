@@ -1,8 +1,5 @@
 import Layout from '@theme/Layout';
 import VideoMagicHeader from '@site/src/components/VideoMagicHeader';
-import VideoMagicFeatures from '@site/src/components/VideoMagicFeatures';
-import VideoMagicPrice from '@site/src/components/VideoMagicPrice';
-import ContactPage from '@site/src/components/ContactPage';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -93,9 +90,6 @@ export default function VideoMagic() {
       </Head>
       <VideoMagicHeader />
       <main>
-        <VideoMagicFeatures />
-        <VideoMagicPrice />
-        <ContactPage />
       </main>
     </Layout>
   );

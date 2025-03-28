@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import './index.css';
 import Heading from '@theme/Heading';
 import Translate, { translate } from '@docusaurus/Translate';
-import ImageSlider from '../ImageSlider';
+import IgMatrixImageSlider from '../IgMatrixImageSlider';
 
 
 export default function HomepageHeader() {
@@ -16,38 +16,27 @@ export default function HomepageHeader() {
                 <div className='col col--6 header-content'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
-                            Professional TikTok Account Management & Marketing Tool
+                            Instagram Phone Farm Batch Control Tool
                         </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            Streamline your TikTok phone farm with advanced batch control and marketing automation
+                            Streamline your Instagram phone farm with advanced batch control and marketing automation
                         </Translate>
                     </p>
                     <div className="header-buttons">
-                        <a href="https://pro.api.tikmatrix.com/front-api/download" className="download-btn">
+                        <a href="https://pro.api.tikmatrix.com/front-api/download-igmatrix" className="download-btn">
                             <i className="bx bxl-windows"></i>
                             <Translate>
-                                Download TikMatrix
+                                Download IgMatrix(Beta)
                             </Translate>
                         </a>
 
-                        <Link to="IgMatrix" className="link-btn">
-                            <i className="bx bxl-instagram"></i>
-                            <Translate>
-                                IgMatrix
-                            </Translate>
-                        </Link>
-                        <Link to="VideoMagic" className="link-btn">
-                            <i className="bx bxs-video-plus"></i>
-                            <Translate>
-                                VideoMagic
-                            </Translate>
-                        </Link>
+                        
                     </div>
                 </div>
                 <div className="col col--6 image-slider">
-                    <ImageSlider />
+                    <IgMatrixImageSlider />
                 </div>
             </div>
         </header>

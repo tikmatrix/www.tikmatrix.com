@@ -98,21 +98,25 @@ const config = {
             label: 'Contact',
           },
           {
-            href: '/',
-            position: 'left',
+            href: '/IgMatrix',
+            position: 'right',
+            label: 'IgMatrix',
+          },
+          {
+            href: '/VideoMagic',
+            position: 'right',
+            label: 'VideoMagic',
+          },
+          {
+            href: 'https://pro.api.tikmatrix.com/front-api/download',
+            position: 'right',
             label: 'Download',
           },
-
+          
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-
-          {
-            href: 'https://github.com/tikmatrix/tiktok-matrix',
-            label: 'GitHub',
-            position: 'right',
-          },
+          }
         ],
       },
       footer: {
@@ -139,7 +143,10 @@ const config = {
           {
             title: 'Community',
             items: [
-
+              {
+                label: 'Github',
+                href: 'https://github.com/tikmatrix/tiktok-matrix',
+              },
               {
                 label: 'Telegram',
                 href: 'https://t.me/+iGhozoBfAbI5YmE1',

@@ -26,14 +26,7 @@
     "message": "博客",
     "description": "Navbar item with label Blog"
   },
-  "item.label.Buy hardware": {
-    "message": "购买硬件",
-    "description": "Navbar item with label ProductList"
-  },
-  "item.label.VideoMagic": {
-    "message": "视频魔法",
-    "description": "Navbar item with label VideoMagic"
-  },
+ 
   "item.label.Pricing": {
     "message": "价格",
     "description": "Navbar item with label Pricing"

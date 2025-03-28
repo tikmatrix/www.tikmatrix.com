@@ -6,7 +6,8 @@ import 'boxicons/css/boxicons.min.css';
 import './IgMatrix.css'
 import Translate, { translate } from '@docusaurus/Translate';
 import Head from '@docusaurus/Head';
-export default function VideoMagic() {
+import IgMatrixHeader from '@site/src/components/IgMatrixHeader';
+export default function IgMatrix() {
   useEffect(() => {
     AOS.init({
       duration: 1000, // 动画持续时间，单位毫秒
@@ -54,22 +55,14 @@ export default function VideoMagic() {
     },
   }
   return (
-    <Layout title={translate({ message: 'IgMatrix' })} description="IgMatrix is a Instagram android phonefarm batch control tool">
+    <Layout>
       <Head>
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
       </Head>
-      <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', textAlign: 'center' }}>
-        <h1><Translate>IgMatrix</Translate></h1>
-        <h3><Translate>IgMatrix is a Instagram android phonefarm batch control tool</Translate></h3>
-        <p><Translate>IgMatrix is coming soon!</Translate></p>
-        <a href="//t.me/+iGhozoBfAbI5YmE1" target="_blank">
-          <i className="bx bxl-telegram"></i>
-          <Translate>Join Telegram Group</Translate>
-        </a>
-        <img src="/img/igmatrix_logo.png" alt="IgMatrix Logo" style={{ width: '200px', marginTop: '20px' }} />
-      </main>
+      <IgMatrixHeader />
+     
     </Layout>
   );
 }

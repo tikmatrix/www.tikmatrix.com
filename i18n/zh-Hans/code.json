@@ -694,8 +694,8 @@
   "Save 50% compared to monthly plan": {
     "message": "比月付方案节省50%"
   },
-  "Video Magic is a Software for Batch Generating Unique Videos": {
-    "message": "Video Magic是一款用于批量生成唯一视频的软件",
+  "VideoMagic is a Software for Batch Generating Unique Videos": {
+    "message": "VideoMagic是一款用于批量生成唯一视频的软件",
     "description": "The description of Video Magic"
   },
   "Batch Generating Unique Videos": {
@@ -703,7 +703,35 @@
     "description": "The description of Batch Generating Unique Videos"
   },
   "VideoMagic - Batch Generating Unique Videos": {
-    "message": "Video Magic - 批量生成唯一视频",
+    "message": "VideoMagic - 批量生成唯一视频",
     "description": "The description of Video Magic"
+  },
+  "IgMatrix": {
+    "message": "IgMatrix",
+    "description": "The description of IgMatrix"
+  },
+  "IgMatrix is a Instagram android phonefarm batch control tool": {
+    "message": "IgMatrix 是一款Instagram安卓手机农场批量控制工具",
+    "description": "The description of IgMatrix"
+  },
+  "Download IgMatrix(Beta)": {
+    "message": "下载 IgMatrix(Beta)",
+    "description": "The description of Download IgMatrix(Beta)"
+  },
+  "Download TikMatrix": {
+    "message": "下载 TikMatrix",
+    "description": "The description of Download TikMatrix"
+  },
+  "Download VideoMagic": {
+    "message": "下载 VideoMagic",
+    "description": "The description of Download VideoMagic"
+  },
+  "Instagram Phone Farm Batch Control Tool": {
+    "message": "Instagram手机农场批量控制工具",
+    "description": "The description of Instagram Phone Farm Batch Control Tool"
+  },
+  "Streamline your Instagram phone farm with advanced batch control and marketing automation": {
+    "message": "通过先进的批量控制和营销自动化，轻松管理您的Instagram手机农场。",
+    "description": "The description of Streamline your Instagram phone farm with advanced batch control and marketing automation"
   }
 }
