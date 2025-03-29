@@ -21,11 +21,14 @@ export default function IgMatrix() {
     "applicationCategory": "Social Media Management",
     "operatingSystem": "Windows",
     "screenshot": [
+      "https://tikmatrix.com/img/igmatrix-startup1.png",
+      "https://tikmatrix.com/img/igmatrix-startup2.png",
+      "https://tikmatrix.com/img/igmatrix-startup3.png",
     ],
 
     "offers": {
       "@type": "Offer",
-      "priceCurrency": "USDT",
+      "priceCurrency": "USD",
       "price": "0",
       "description": translate({ message: 'Free' }),
     },
