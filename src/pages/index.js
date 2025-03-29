@@ -76,6 +76,17 @@ export default function Home() {
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
+        <meta name="keywords" content="TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
+        <meta property="og:title" content="TikMatrix - TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
+        <meta property="og:description" content="TikMatrix is a TikTok marketing, TikTok automation, phone farm, social media growth, TikTok management, TikTok phone farm, TikTok matrix, TikMatrix" />
+        <meta property="og:image" content="https://tikmatrix.com/img/startup1.png" />
+        <meta property="og:url" content="https://tikmatrix.com" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TikMatrix - TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
+        <meta name="twitter:description" content="TikMatrix is a TikTok marketing, TikTok automation, phone farm, social media growth, TikTok management, TikTok phone farm, TikTok matrix, TikMatrix" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.png" />
+        <link rel="canonical" href="https://tikmatrix.com" />
       </Head>
       <HomepageHeader />
       <main>

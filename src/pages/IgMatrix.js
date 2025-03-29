@@ -63,6 +63,17 @@ export default function IgMatrix() {
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
+        <meta name="keywords" content="Instagram Phone Farm Batch Control Tool, Instagram Phone Farm, Instagram Phone Farm Batch Control, Instagram Phone Farm Batch Control Tool" />
+        <meta property="og:title" content="IgMatrix - Instagram Phone Farm Batch Control Tool" />
+        <meta property="og:description" content="IgMatrix is a Instagram phone farm batch control tool" />
+        <meta property="og:image" content="https://tikmatrix.com/img/igmatrix-startup1.png" />
+        <meta property="og:url" content="https://tikmatrix.com/igmatrix" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IgMatrix - Instagram Phone Farm Batch Control Tool" />
+        <meta name="twitter:description" content="IgMatrix is a Instagram phone farm batch control tool" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/igmatrix-startup1.png" />
+        <link rel="canonical" href="https://tikmatrix.com/igmatrix" />
       </Head>
       <IgMatrixHeader />
      
