@@ -82,7 +82,7 @@ const config = {
             label: 'Rewards',
           },
           {
-            to: '/download',
+            to: '/Download',
             position: 'left',
             label: 'Download',
           },

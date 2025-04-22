@@ -25,7 +25,7 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div className="header-buttons">
-                        <Link to="/download" className="download-btn">
+                        <Link to="/Download" className="download-btn">
                             <i className="bx bx-download"></i>
                             <Translate>
                                 Download TikMatrix

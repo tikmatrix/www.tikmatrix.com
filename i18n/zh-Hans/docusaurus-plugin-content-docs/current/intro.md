@@ -32,11 +32,12 @@ TikMatrix 是一个**电脑软件**，它可以用于管理和控制多个**安�
 
 ## 安装
 
-1. 点击 [下载](/zh-Hans/download) 最新版本安装包。
+1. 点击 [下载](https://tikmatrix.com/zh-Hans/Download) 最新版本安装包。
 2. 双击运行安装程序。
 3. 等待安装完成。
 4. 在你的电脑上打开 **TikMatrix** 应用程序。
    - Mac用户：安装后，需要在终端执行以下命令以允许运行：
+
      ```bash
      xattr -cr /Applications/TikMatrix.app
      ```

@@ -32,11 +32,12 @@ TikMatrix is a **computer software** designed to manage and control multiple **A
 
 ## Installation
 
-1. Download the latest version install package from the [Download](/download) page.
+1. Download the latest version install package from the [Download](https://tikmatrix.com/Download) page.
 2. Run the installer.
 3. Wait for the installation to complete.
 4. Open the **TikMatrix** app on your computer.
    - For Mac users: After installation, you need to run the following command in Terminal to allow the app to run:
+
      ```bash
      xattr -cr /Applications/TikMatrix.app
      ```
