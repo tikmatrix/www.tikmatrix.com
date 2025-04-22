@@ -56,7 +56,7 @@ function ProductList() {
                         <p className={styles.shipping}>
                             <Translate>Shipping worldwide</Translate>
                         </p>
-                        <a href="//t.me/+iGhozoBfAbI5YmE1" className="get-started-btn" target='_blank'>
+                        <a href="//t.me/tikmatrix_support" className="get-started-btn" target='_blank'>
                             <Translate>Contact to purchase</Translate>
                         </a>
                     </div>

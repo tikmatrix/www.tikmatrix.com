@@ -620,9 +620,9 @@
     "message": "自动为视频生成AI配音",
     "description": "The description of AI voiceover"
   },
-  "Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence.": {
-    "message": "专业的TikTok账号管理及营销工具，专为手机农场设计。自动发布、关注，并增长您的TikTok影响力。",
-    "description": "The description of Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence."
+  "Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate.": {
+    "message": "专业TikTok账号管理与营销工具，专为Windows和Mac上的安卓手机农场设计。实现自动发布、关注等功能，促进TikTok影响力增长，确保零封号率。",
+    "description": "The description of Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate."
   },
   "TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
     "message": "TikMatrix 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
@@ -819,5 +819,11 @@
   "navbar.download": {
     "message": "下载",
     "description": "导航栏下载链接文本"
+  },
+  "Professional TikTok Account Management & Marketing Tool for Windows & Mac": {
+    "message": "专业TikTok账号管理与营销工具 - 支持Windows和Mac"
+  },
+  "Streamline your Android TikTok phone farm with advanced batch control and marketing automation": {
+    "message": "通过先进的批量控制和营销自动化，高效管理您的安卓TikTok手机农场"
   }
 }

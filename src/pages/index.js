@@ -27,7 +27,7 @@ export default function Home() {
     "name": "TikMatrix",
     "url": "https://tikmatrix.com",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Windows",
+    "operatingSystem": "Windows, macOS",
     "screenshot": [
       "https://tikmatrix.com/img/startup1.png",
       "https://tikmatrix.com/img/startup2.png",
@@ -39,7 +39,7 @@ export default function Home() {
       "price": "0",
       "description": translate({ message: 'Free' }),
     },
-    "description": translate({ message: 'Professional TikTok account management and marketing tool designed for phone farms. Automate posting, following, and grow your TikTok presence.' }),
+    "description": translate({ message: 'Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate.' }),
     "featureList": [
       translate({ message: 'Phone screen mirroring to a computer' }),
       translate({ message: 'Automatic registration' }),
@@ -52,8 +52,8 @@ export default function Home() {
       translate({ message: 'Performance analytics' }),
     ],
     "softwareVersion": "2.1.9",
-    "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download",
-    "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
+    "downloadUrl": "https://tikmatrix.com/Download",
+    "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -67,7 +67,7 @@ export default function Home() {
       "url": "https://tikmatrix.com",
       "logo": "https://tikmatrix.com/img/logo.png",
     },
-    "keywords": "TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix",
+    "keywords": "TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix, Windows, Mac",
     "datePublished": "2025-03-07",
   }
   return (
@@ -76,15 +76,15 @@ export default function Home() {
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
-        <meta name="keywords" content="TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
-        <meta property="og:title" content="TikMatrix - TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
-        <meta property="og:description" content="TikMatrix is a TikTok marketing, TikTok automation, phone farm, social media growth, TikTok management, TikTok phone farm, TikTok matrix, TikMatrix" />
+        <meta name="keywords" content="TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Growth, TikTok Management, Android Phone Farm, Windows and Mac Support" />
+        <meta property="og:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
+        <meta property="og:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
         <meta property="og:image" content="https://tikmatrix.com/img/startup1.png" />
         <meta property="og:url" content="https://tikmatrix.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="TikMatrix - TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix" />
-        <meta name="twitter:description" content="TikMatrix is a TikTok marketing, TikTok automation, phone farm, social media growth, TikTok management, TikTok phone farm, TikTok matrix, TikMatrix" />
+        <meta name="twitter:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
+        <meta name="twitter:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
         <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.png" />
         <link rel="canonical" href="https://tikmatrix.com" />
       </Head>

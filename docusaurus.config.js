@@ -8,8 +8,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikMatrix - Professional TikTok Account Management & Marketing Tool',
-  tagline: 'Streamline your TikTok phone farm with advanced batch control and marketing automation',
+  title: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac',
+  tagline: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation',
   favicon: 'favicon.ico',
 
   // Set the production url of your site here
@@ -147,7 +147,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/+iGhozoBfAbI5YmE1',
+                href: 'https://t.me/tikmatrix_support',
               },
               {
                 label: 'Twitter',
@@ -201,11 +201,11 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool' },
-        { name: 'description', content: 'TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.' },
+        { name: 'keywords', content: 'TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool, Windows and Mac Support' },
+        { name: 'description', content: 'TikMatrix is a professional marketing software designed for TikTok phone farms on Windows and Mac. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease. Zero account suspension rate.' },
         { name: 'author', content: 'TikMatrix' },
-        { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool' },
-        { property: 'og:description', content: 'Streamline your TikTok phone farm with advanced batch control and marketing automation' },
+        { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
+        { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
         { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
         { property: 'og:url', content: 'https://tikmatrix.com/' },
         { property: 'og:type', content: 'website' },
@@ -236,9 +236,9 @@ const config = {
         '@context': 'https://schema.org/',
         '@type': 'SoftwareApplication',
         'name': 'TikMatrix',
-        'description': 'Professional marketing software designed for TikTok phone farms',
+        'description': 'Professional marketing software designed for TikTok phone farms on Windows and Mac. Advanced batch control and marketing automation with zero account suspension rate.',
         'applicationCategory': 'BusinessApplication',
-        'operatingSystem': 'Windows',
+        'operatingSystem': 'Windows, macOS',
         'offers': {
           '@type': 'Offer',
           'price': '0',
@@ -251,38 +251,7 @@ const config = {
         }
       }),
     },
-    // Declare a <link> preconnect tag
-    // {
-    //   tagName: 'link',
-    //   attributes: {
-    //     rel: 'preconnect',
-    //     href: 'https://example.com',
-    //   },
-    // },
-    // // Declare some json-ld structured data
-    // {
-    //   tagName: 'script',
-    //   attributes: {
-    //     type: 'application/ld+json',
-    //   },
-    //   innerHTML: JSON.stringify({
-    //     '@context': 'https://schema.org/',
-    //     '@type': 'Organization',
-    //     name: 'Meta Open Source',
-    //     url: 'https://opensource.fb.com/',
-    //     logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-    //   }),
-    // },
   ],
-  // scripts: [
-  //   {
-  //     src: 'https://embed.tawk.to/665309c6981b6c564774cafe/1huq5scl7',
-  //     async: true,
-  //     crossorigin: 'anonymous'
-  //   },
-  // ],
-  //<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314"
-  // crossorigin="anonymous"></script>
   scripts: [
     {
       src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',

@@ -47,7 +47,7 @@ export default function VideoMagic() {
     ],
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download-videomagic",
-    "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
+    "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

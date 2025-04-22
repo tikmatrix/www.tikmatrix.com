@@ -45,4 +45,4 @@ TikTok 搜索栏不工作可能是一个令人沮丧的问题，但幸运的是�
 
 如果以上方法都无法解决问题，请联系 TikTok 支持寻求帮助。
 
-## 如果你需要更多TikTok相关信息，请加入我们的[Telegram讨论群组](https://t.me/+iGhozoBfAbI5YmE1)
+## 如果你需要更多TikTok相关信息，请加入我们的[Telegram讨论群组](https://t.me/tikmatrix_support)

@@ -16,12 +16,12 @@ export default function HomepageHeader() {
                 <div className='col col--6 header-content'>
                     <Heading as="h1" className="hero__title">
                         <Translate>
-                            Professional TikTok Account Management & Marketing Tool
+                            Professional TikTok Account Management & Marketing Tool for Windows & Mac
                         </Translate>
                     </Heading>
                     <p className="hero__subtitle">
                         <Translate>
-                            Streamline your TikTok phone farm with advanced batch control and marketing automation
+                            Streamline your Android TikTok phone farm with advanced batch control and marketing automation
                         </Translate>
                     </p>
                     <div className="header-buttons">

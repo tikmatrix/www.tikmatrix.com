@@ -42,7 +42,7 @@ export default function IgMatrix() {
     ],
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download-igmatrix",
-    "supportUrl": "https://t.me/+iGhozoBfAbI5YmE1",
+    "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -76,7 +76,7 @@ export default function IgMatrix() {
         <link rel="canonical" href="https://tikmatrix.com/igmatrix" />
       </Head>
       <IgMatrixHeader />
-     
+
     </Layout>
   );
 }
