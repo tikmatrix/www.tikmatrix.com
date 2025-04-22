@@ -25,13 +25,18 @@ TikMatrix 是一个**电脑软件**，它可以用于管理和控制多个**安�
   - 确保你在设备上启用了 USB 调试。
   - 在某些设备上，你还需要启用一个额外的选项 USB 调试（安全设置）（这是一个不同于 USB 调试的项目）以使用键盘和鼠标控制设备。
 
-- Windows 电脑
-  - Windows 7 或更高版本
+- 电脑
+  - Windows：Windows 7 或更高版本
+  - Mac：macOS 10.15 或更高版本
 - USB 数据线或手机和电脑处于相同的局域网中
 
 ## 安装
 
-1. 点击 [下载](https://pro.api.tikmatrix.com/front-api/download) 最新版本安装包。
+1. 点击 [下载](/zh-Hans/download) 最新版本安装包。
 2. 双击运行安装程序。
 3. 等待安装完成。
-4. 在你的 Windows 电脑桌面上打开 **TikMatrix** 应用程序。
+4. 在你的电脑上打开 **TikMatrix** 应用程序。
+   - Mac用户：安装后，需要在终端执行以下命令以允许运行：
+     ```bash
+     xattr -cr /Applications/TikMatrix.app
+     ```

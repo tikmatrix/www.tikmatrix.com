@@ -32,6 +32,14 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+      },
+      'zh-Hans': {
+        label: '简体中文',
+      },
+    },
   },
 
   presets: [
@@ -81,7 +89,11 @@ const config = {
             position: 'left',
             label: 'Rewards',
           },
-
+          {
+            to: '/download',
+            position: 'left',
+            label: 'Download',
+          },
           {
             href: '/#pricing',
             position: 'left',
@@ -107,12 +119,6 @@ const config = {
             position: 'right',
             label: 'VideoMagic',
           },
-          {
-            href: 'https://pro.api.tikmatrix.com/front-api/download',
-            position: 'right',
-            label: 'Download',
-          },
-          
           {
             type: 'localeDropdown',
             position: 'right',

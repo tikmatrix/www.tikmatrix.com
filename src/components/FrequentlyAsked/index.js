@@ -98,7 +98,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-6" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikMatrix supports Windows 10 and above.</Translate>
+                                    <Translate>TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app</Translate>
                                 </p>
                             </div>
                         </li>

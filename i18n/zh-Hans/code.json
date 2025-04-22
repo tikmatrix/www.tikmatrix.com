@@ -126,10 +126,12 @@
     "message": "TikMatrix 支持每个手机登录8个tiktok账号"
   },
   "What computer can I use?": {
-    "message": "我可以使用哪些电脑?"
+    "message": "我可以使用哪些电脑?",
+    "description": "电脑支持问题"
   },
-  "TikMatrix supports Windows 10 and above.": {
-    "message": "TikMatrix 支持 Windows 10 及以上版本。"
+  "TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app": {
+    "message": "TikMatrix 支持 Windows 10 及以上版本，以及 macOS 10.15 或更高版本。Mac用户安装后，需要在终端执行以下命令以允许运行：xattr -cr /Applications/TikMatrix.app",
+    "description": "电脑支持回答"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
@@ -733,5 +735,89 @@
   "Streamline your Instagram phone farm with advanced batch control and marketing automation": {
     "message": "通过先进的批量控制和营销自动化，轻松管理您的Instagram手机农场。",
     "description": "The description of Streamline your Instagram phone farm with advanced batch control and marketing automation"
+  },
+  "download.title": {
+    "message": "下载 TikMatrix",
+    "description": "下载页面的标题"
+  },
+  "download.description": {
+    "message": "下载 TikMatrix 的 Windows、Mac 和 Linux 版本",
+    "description": "下载页面的描述"
+  },
+  "download.subtitle": {
+    "message": "选择您的平台下载 TikMatrix",
+    "description": "下载页面的副标题"
+  },
+  "download.windows.title": {
+    "message": "Windows",
+    "description": "Windows平台标题"
+  },
+  "download.windows.description": {
+    "message": "Windows 10/11 (64位)",
+    "description": "Windows平台描述"
+  },
+  "download.windows.button": {
+    "message": "下载 Windows 版本",
+    "description": "Windows下载按钮文本"
+  },
+  "download.mac.title": {
+    "message": "Mac",
+    "description": "Mac平台标题"
+  },
+  "download.mac.description": {
+    "message": "macOS 10.15 或更高版本",
+    "description": "Mac平台描述"
+  },
+  "download.mac.button": {
+    "message": "下载 Mac 版本",
+    "description": "Mac下载按钮文本"
+  },
+  "download.mac.install_tip": {
+    "message": "安装后请在终端执行以下命令以允许运行：",
+    "description": "Mac安装后需要执行的命令提示"
+  },
+  "download.linux.title": {
+    "message": "Linux",
+    "description": "Linux平台标题"
+  },
+  "download.linux.coming_soon": {
+    "message": "即将推出",
+    "description": "Linux即将推出提示"
+  },
+  "download.linux.development": {
+    "message": "开发中",
+    "description": "Linux开发中状态"
+  },
+  "download.linux.description": {
+    "message": "Linux 版本正在开发中",
+    "description": "Linux开发中描述"
+  },
+  "download.requirements.title": {
+    "message": "系统要求",
+    "description": "系统要求标题"
+  },
+  "download.requirements.os": {
+    "message": "操作系统：Windows 10/11、macOS 10.15+ 或 Ubuntu 20.04+",
+    "description": "操作系统要求"
+  },
+  "download.requirements.processor": {
+    "message": "处理器：Intel Core i5 或同等性能",
+    "description": "处理器要求"
+  },
+  "download.requirements.memory": {
+    "message": "内存：8 GB RAM",
+    "description": "内存要求"
+  },
+  "download.requirements.storage": {
+    "message": "存储空间：500 MB 可用空间",
+    "description": "存储空间要求"
+  },
+  "download.requirements.internet": {
+    "message": "网络连接：必需",
+    "description": "网络连接要求"
+  },
+  "navbar.download": {
+    "message": "下载",
+    "description": "导航栏下载链接文本"
   }
 }
