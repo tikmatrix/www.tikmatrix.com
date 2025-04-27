@@ -14,5 +14,9 @@
   "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
     "message": "了解如何使用 TIKTOK 矩阵的基础知识。",
     "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "故障排查",
+    "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
   }
 }
