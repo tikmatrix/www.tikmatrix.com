@@ -97,6 +97,11 @@ const config = {
             label: 'Features',
           },
           {
+            to: '/about-us',
+            position: 'left',
+            label: 'About Us',
+          },
+          {
             href: '/#contact',
             position: 'left',
             label: 'Contact',
@@ -163,6 +168,23 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'About Us',
+                to: '/about-us',
+              },
+              {
+                label: 'Privacy Policy',
+                to: '/privacy-policy',
+              },
+              {
+                label: 'Terms of Service',
+                to: '/terms-of-service',
+              },
+            ],
+          },
+          {
+            title: 'Tools',
+            items: [
+              {
                 label: 'VideoMagic',
                 href: '/VideoMagic',
               },
@@ -174,11 +196,6 @@ const config = {
                 label: 'YtMatrix',
                 href: '/YtMatrix',
               },
-            ],
-          },
-          {
-            title: 'Tools',
-            items: [
               {
                 href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
                 label: 'Buy hardware',
