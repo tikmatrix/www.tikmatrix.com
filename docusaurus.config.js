@@ -31,7 +31,15 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans']
+    locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en',
+      },
+      'zh-Hans': {
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
 
   presets: [
@@ -275,6 +283,9 @@ const config = {
       async: true,
       crossorigin: 'anonymous'
     },
+  ],
+  clientModules: [
+    require.resolve('./src/clientModules/detectBrowserLanguage.js'),
   ],
 };
 
