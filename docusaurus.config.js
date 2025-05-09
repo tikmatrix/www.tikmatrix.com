@@ -49,10 +49,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          sidebarCollapsible: false,
+          sidebarCollapsible: true,
         },
         blog: {
           showReadingTime: true,
+          postsPerPage: 200
 
         },
         theme: {
@@ -85,9 +86,9 @@ const config = {
             label: 'Tutorial',
           },
           {
-            to: '/rewards',
+            to: '/blog',
             position: 'left',
-            label: 'Rewards',
+            label: 'Blog',
           },
           {
             to: '/Download',
@@ -160,11 +161,11 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/tikmatrix_support',
+                href: 'https://t.me/tikmatrix',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/TikMatrix',
+                label: 'X',
+                href: 'https://x.com/TikMatrix',
               },
               {
                 label: 'Youtube',

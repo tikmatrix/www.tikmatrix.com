@@ -32,18 +32,13 @@ export default function HomepageHeader() {
                             </Translate>
                         </Link>
 
-                        <Link to="IgMatrix" className="link-btn">
-                            <i className="bx bxl-instagram"></i>
+                        <Link to="docs/intro" className="link-btn">
+                            <i className="bx bx-book"></i>
                             <Translate>
-                                IgMatrix
+                                Tutorial
                             </Translate>
                         </Link>
-                        <Link to="VideoMagic" className="link-btn">
-                            <i className="bx bxs-video-plus"></i>
-                            <Translate>
-                                VideoMagic
-                            </Translate>
-                        </Link>
+
                     </div>
                 </div>
                 <div className="col col--6 image-slider">

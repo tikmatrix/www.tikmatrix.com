@@ -436,6 +436,10 @@
     "message": "加入群组",
     "description": "The join group button label"
   },
+  "Join Channel": {
+    "message": "加入频道",
+    "description": "The join channel button label"
+  },
   "Email": {
     "message": "邮箱",
     "description": "The email label"
