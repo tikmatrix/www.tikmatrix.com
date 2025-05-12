@@ -46,7 +46,7 @@ export default function VideoMagic() {
       translate({ message: 'Translate subtitles' }),
     ],
     "softwareVersion": "1.0.0",
-    "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download-videomagic",
+    "downloadUrl": "https://tikmatrix.com/Download?software=VideoMagic",
     "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",

@@ -11,7 +11,29 @@
 .download-subtitle {
   font-size: 1.2rem;
   color: var(--ifm-color-emphasis-600);
+  margin-bottom: 1.5rem;
+}
+
+/* 软件选择器样式 */
+.software-selector {
+  font-size: 1rem;
   margin-bottom: 3rem;
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.software-link {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.software-link:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
 }
 
 .download-buttons {

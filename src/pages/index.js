@@ -52,7 +52,7 @@ export default function Home() {
       translate({ message: 'Performance analytics' }),
     ],
     "softwareVersion": "2.1.9",
-    "downloadUrl": "https://tikmatrix.com/Download",
+    "downloadUrl": "https://tikmatrix.com/Download?software=TikMatrix",
     "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",
