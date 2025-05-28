@@ -29,6 +29,7 @@ export default function TermsOfService() {
                     <h2>3. Services and Subscription</h2>
                     <p>TikMatrix provides software tools for TikTok account management and marketing automation. Access to these services may require a subscription or one-time payment. By subscribing to our services, you agree to:</p>
                     <ul>
+                        <li>During the trial period, you can cancel the subscription at any time. If the subscription is not canceled, it will automatically convert to a paid subscription.</li>
                         <li>Provide accurate and complete billing information</li>
                         <li>Pay all charges at the rates in effect when the charges are incurred</li>
                         <li>Not use the services for any illegal purposes or in violation of any applicable laws or regulations</li>
