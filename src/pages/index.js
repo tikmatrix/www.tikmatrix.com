@@ -20,6 +20,8 @@ export default function Home() {
     AOS.init({
       duration: 1000, // 动画持续时间，单位毫秒
     });
+    window.DocsBotAI = window.DocsBotAI || {}, DocsBotAI.init = function (e) { return new Promise((t, r) => { var n = document.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = "https://widget.docsbot.ai/chat.js"; let o = document.getElementsByTagName("script")[0]; o.parentNode.insertBefore(n, o), n.addEventListener("load", () => { let n; Promise.all([new Promise((t, r) => { window.DocsBotAI.mount(Object.assign({}, e)).then(t).catch(r) }), (n = function e(t) { return new Promise(e => { if (document.querySelector(t)) return e(document.querySelector(t)); let r = new MutationObserver(n => { if (document.querySelector(t)) return e(document.querySelector(t)), r.disconnect() }); r.observe(document.body, { childList: !0, subtree: !0 }) }) })("#docsbotai-root"),]).then(() => t()).catch(r) }), n.addEventListener("error", e => { r(e.message) }) }) };
+    DocsBotAI.init({ id: "fiywYSuca4WByQ4aVy0S/TAsDGIdu6jjTusoy3plq" });
   }, []);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -95,6 +97,24 @@ export default function Home() {
         <PricingPage />
         <FrequentlyAsked />
         <ContactPage />
+        {/* Start of Tawk.to Script */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+              (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/683bc34961be34190fe14eed/1iskn5mjr';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+              })();
+            `
+          }}
+        />
+        {/* End of Tawk.to Script */}
       </main>
     </Layout>
   );
