@@ -20,8 +20,24 @@ export default function Home() {
     AOS.init({
       duration: 1000, // 动画持续时间，单位毫秒
     });
-    window.DocsBotAI = window.DocsBotAI || {}, DocsBotAI.init = function (e) { return new Promise((t, r) => { var n = document.createElement("script"); n.type = "text/javascript", n.async = !0, n.src = "https://widget.docsbot.ai/chat.js"; let o = document.getElementsByTagName("script")[0]; o.parentNode.insertBefore(n, o), n.addEventListener("load", () => { let n; Promise.all([new Promise((t, r) => { window.DocsBotAI.mount(Object.assign({}, e)).then(t).catch(r) }), (n = function e(t) { return new Promise(e => { if (document.querySelector(t)) return e(document.querySelector(t)); let r = new MutationObserver(n => { if (document.querySelector(t)) return e(document.querySelector(t)), r.disconnect() }); r.observe(document.body, { childList: !0, subtree: !0 }) }) })("#docsbotai-root"),]).then(() => t()).catch(r) }), n.addEventListener("error", e => { r(e.message) }) }) };
-    DocsBotAI.init({ id: "fiywYSuca4WByQ4aVy0S/TAsDGIdu6jjTusoy3plq" });
+    // 动态插入 AnythingLLM 聊天小部件
+    const script = document.createElement('script');
+    script.src = 'https://llm.tikmatrix.com/embed/anythingllm-chat-widget.min.js';
+    script.async = true;
+    script.setAttribute('data-embed-id', 'b69ccd65-9f2b-4d8c-9c6e-66f523abc798');
+    script.setAttribute('data-base-api-url', 'https://llm.tikmatrix.com/api/embed');
+    script.setAttribute('data-chat-icon', 'support');
+    script.setAttribute('data-brand-image-url', '/img/logo.png');
+    script.setAttribute('data-assistant-icon', '/img/logo.png');
+    script.setAttribute('data-no-sponsor', '1');
+    script.setAttribute('data-assistant-name', 'TikMatrix Support');
+    script.onload = () => {
+      console.log('AnythingLLM chat widget script loaded');
+    };
+    script.onerror = () => {
+      console.error('Failed to load AnythingLLM chat widget script');
+    };
+    document.body.appendChild(script);
   }, []);
   const jsonLd = {
     "@context": "https://schema.org",
