@@ -193,18 +193,18 @@ const config = {
           {
             title: 'Tools',
             items: [
-              {
-                label: 'VideoMagic',
-                href: '/VideoMagic',
-              },
-              {
-                label: 'IgMatrix',
-                href: '/IgMatrix',
-              },
-              {
-                label: 'YtMatrix',
-                href: '/YtMatrix',
-              },
+              // {
+              //   label: 'VideoMagic',
+              //   href: '/VideoMagic',
+              // },
+              // {
+              //   label: 'IgMatrix',
+              //   href: '/IgMatrix',
+              // },
+              // {
+              //   label: 'YtMatrix',
+              //   href: '/YtMatrix',
+              // },
               {
                 href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
                 label: 'Buy hardware',
@@ -220,7 +220,7 @@ const config = {
             ],
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} TikMatrix, Inc. All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} TikMatrix LLC. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,

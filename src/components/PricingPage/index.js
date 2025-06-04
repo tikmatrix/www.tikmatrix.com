@@ -18,30 +18,30 @@ export default function PricingPage() {
                 <div className="row">
                     <div className="box" data-aos="fade-up" data-aos-delay="100">
                         <h3>
-                            <Translate>Free</Translate>
+                            <Translate>Trial</Translate>
                         </h3>
                         <h4>
-                            0$ <span><Translate>Per Month</Translate></span>
+                            1$ <span><Translate>For 7 Days</Translate></span>
                         </h4>
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Basic Automation</Translate>
+                                    <Translate>All Features</Translate>
                                 </span>
                                 <div className="feature-details">
-                                    <Translate>Comments, Messages, Follows</Translate>
+                                    <Translate>Full automation & content management</Translate>
                                 </div>
                             </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Content Management</Translate>
+                                    <Translate>Human Technical Support</Translate>
                                 </span>
                                 <div className="feature-details">
-                                    <Translate>Video posting, Account nurturing</Translate>
+                                    <Translate>Professional support team</Translate>
                                 </div>
                             </li>
                         </ul>
-                        <a href="#start" className="get-started-btn">
+                        <a href="/Download" className="get-started-btn">
                             <Translate>Get Started</Translate>
                         </a>
                     </div>
@@ -55,30 +55,22 @@ export default function PricingPage() {
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>Account Setup</Translate>
+                                    <Translate>All Features</Translate>
                                 </span>
                                 <div className="feature-details">
-                                    <Translate>Automatic registration & login</Translate>
+                                    <Translate>Full automation & content management</Translate>
                                 </div>
                             </li>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>All Free Features</Translate>
+                                    <Translate>Human Technical Support</Translate>
                                 </span>
                                 <div className="feature-details">
-                                    <Translate>Automation & Content Management</Translate>
-                                </div>
-                            </li>
-                            <li><i className="bx bx-check"></i>
-                                <span>
-                                    <Translate>Premium Benefits</Translate>
-                                </span>
-                                <div className="feature-details">
-                                    <Translate>Unlimited devices, Customer support</Translate>
+                                    <Translate>Professional support team</Translate>
                                 </div>
                             </li>
                         </ul>
-                        <a href="#start" className="get-started-btn">
+                        <a href="/Download" className="get-started-btn">
                             <Translate>Get Started</Translate>
                         </a>
                     </div>
@@ -92,14 +84,30 @@ export default function PricingPage() {
                         <ul>
                             <li><i className="bx bx-check"></i>
                                 <span>
-                                    <Translate>All Monthly Features</Translate>
+                                    <Translate>All Features</Translate>
+                                </span>
+                                <div className="feature-details">
+                                    <Translate>Full automation & content management</Translate>
+                                </div>
+                            </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Human Technical Support</Translate>
+                                </span>
+                                <div className="feature-details">
+                                    <Translate>Professional support team</Translate>
+                                </div>
+                            </li>
+                            <li><i className="bx bx-check"></i>
+                                <span>
+                                    <Translate>Best Value</Translate>
                                 </span>
                                 <div className="feature-details">
                                     <Translate>Save 50% compared to monthly plan</Translate>
                                 </div>
                             </li>
                         </ul>
-                        <a href="#start" className="get-started-btn">
+                        <a href="/Download" className="get-started-btn">
                             <Translate>Get Started</Translate>
                         </a>
                     </div>

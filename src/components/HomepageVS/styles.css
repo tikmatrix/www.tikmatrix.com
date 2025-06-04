@@ -1,33 +1,94 @@
 .featuresRow {
     display: flex;
     flex-wrap: wrap;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 2rem 0;
+    overflow: hidden;
 }
 
 .featuresCol {
     width: 25%;
-    padding: 10px;
+    padding: 1.25rem;
     box-sizing: border-box;
     text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .featuresTitle {
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    background: #f8f9fa;
+    padding: 1.5rem;
 }
 
 .featuresRow>.featuresCol:nth-child(4n+2) {
-    background-color: #e9f7ef;
-    /* 浅绿色背景 */
-    color: #28a745;
-    /* 绿色文字 */
+    background-color: #f0f7ff;
+    color: #1a73e8;
     font-weight: 500;
 }
 
+.featuresRow>.featuresCol:nth-child(4n+3) {
+    background-color: #fff5f5;
+    color: #e53e3e;
+}
+
+.featuresRow>.featuresCol:nth-child(4n+4) {
+    background-color: #f0fff4;
+    color: #38a169;
+}
+
+.featuresDetail {
+    font-size: 1.2rem;
+}
+
 .checkmark {
-    color: green;
+    color: #38a169;
+    font-size: 1.4rem;
 }
 
 .cross {
-    color: red;
+    color: #e53e3e;
+    font-size: 1.4rem;
+}
+
+/* 表头样式 */
+.featuresRow>.featuresCol:nth-child(-n+4) {
+    background: #2c3e50;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+}
+
+/* 悬停效果 */
+.featuresCol:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .featuresCol {
+        width: 50%;
+    }
+
+    .featuresRow>.featuresCol:nth-child(4n+2),
+    .featuresRow>.featuresCol:nth-child(4n+3),
+    .featuresRow>.featuresCol:nth-child(4n+4) {
+        background-color: #fff;
+        color: inherit;
+    }
+}
+
+@media (max-width: 480px) {
+    .featuresCol {
+        width: 100%;
+    }
 }

@@ -111,7 +111,7 @@ export default function Home() {
         <HomepageVS />
         <HomepageFeatures />
         <PricingPage />
-        <FrequentlyAsked />
+        {/* <FrequentlyAsked /> */}
         <ContactPage />
         {/* Start of Tawk.to Script */}
         <script
