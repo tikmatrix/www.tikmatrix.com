@@ -31,14 +31,14 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    locales: ['en'/* , 'zh-Hans' */],
     localeConfigs: {
       en: {
         htmlLang: 'en',
       },
-      'zh-Hans': {
-        htmlLang: 'zh-Hans',
-      },
+      // 'zh-Hans': {
+      //   htmlLang: 'zh-Hans',
+      // },
     },
   },
 
@@ -125,10 +125,10 @@ const config = {
             position: 'right',
             label: 'VideoMagic',
           },
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          }
+          // {
+          //   type: 'localeDropdown',
+          //   position: 'right',
+          // }
         ],
       },
       footer: {
@@ -220,7 +220,7 @@ const config = {
             ],
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} TikMatrix LLC. All rights reserved.`,
+        copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikMatrix LLC. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
@@ -272,7 +272,7 @@ const config = {
         },
         'publisher': {
           '@type': 'Organization',
-          'name': 'TikMatrix, Inc.',
+          'name': 'TikMatrix, LLC.',
           'logo': 'https://tikmatrix.com/img/logo.png'
         }
       }),
@@ -286,7 +286,7 @@ const config = {
     },
   ],
   clientModules: [
-    require.resolve('./src/clientModules/detectBrowserLanguage.js'),
+    // require.resolve('./src/clientModules/detectBrowserLanguage.js'),
   ],
 };
 
