@@ -32,11 +32,19 @@ TikMatrix is a **computer software** designed to manage and control multiple **A
 
 ## Pricing
 
-- TikMatrix offers a **$1** for **7-day trial** with unlimited phone connections and full feature access. The trial is automatically activated upon download.
-- The purchase entry for paid users is on the software's license code purchase interface. One license code binds to one computer, and the computer can be replaced for free.
-  - Although the software does not limit the number of connected phones, the number of connections may be limited by the computer's motherboard configuration. A standard motherboard can connect to around 40 USB devices.
-  - The price is **$99** per month and **$599**(50% off) per year.
-  - Accept **Card/Credit Card/USDT (TRC20/BEP20)**
+TikMatrix offers flexible pricing plans for every need:
+
+- **Starter**: $29/month/PC — Manage up to 5 phones, all features included, dedicated support.
+- **Pro**: $59/month/PC — Manage up to 20 phones, all features included, dedicated support.
+- **Business**: $149/month/PC — Manage up to 100 phones, all features included, dedicated support.
+
+- All plans include unlimited feature access and 1:1 Telegram support.
+- Annual billing enjoys a 30% discount.
+- Payment methods: Card/Credit Card/USDT (TRC20/BEP20).
+- One license code binds to one computer, and the computer can be replaced for free.
+- The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
+
+If you need a trial, please contact support.
 
 ### What you'll need
 
