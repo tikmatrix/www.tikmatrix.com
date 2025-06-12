@@ -4,31 +4,31 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **TikMatrix in less than 5 minutes**.
+Discover **TikMatrix in less than 5 minutes**.
 
 ## Software Introduction
 
-TikMatrix is a **computer software** designed to manage and control multiple **Android phones** (including motherboard devices) to perform TikTok automation tasks. These tasks include account registration, account login, account nurturing (following, liking, commenting, collecting), bulk messaging, collecting fan lists, scheduling video posts, and scheduling image posts.
+**TikMatrix** is a PC desktop software for automating TikTok on Android phones.
 
 ## Features
 
-- **Multi-account switching** (1 phone can log in to 8 TikTok accounts simultaneously) For All Tasks
-- **Auto register**(with email), auto login(with email/pwd or username/pwd), but not auto captcha solving, email verification, you need to manually solve captcha and verify email.
-- **Auto fill Profile**: Avatar, Nickname, Bio, username.
-- **Auto recognition** of the TikTok account logged in on the phone.
-- **Auto account warming** by search keywords, viewing videos, liking videos, following users, commenting videos, favorite videos.
-- **Auto posting** videos or images(supports sort and count) with text, hashtags, music, product link.
+- **Multi-account switching**: One phone can log in to 8 TikTok accounts simultaneously for all tasks.
+- **Auto registration** (with email) and auto login (with email/password or username/password). *Note: Captcha solving and email verification must be done manually.*
+- **Auto profile filling**: Avatar, nickname, bio, and username.
+- **Automatic recognition** of the TikTok account logged in on the phone.
+- **Auto account warming**: Search keywords, view videos, like videos, follow users, comment on videos, and favorite videos.
+- **Auto posting**: Post videos or images (supports sorting and count) with text, hashtags, music, and product links.
 - **Auto delete** posts by view count.
-- **Mass Boosting** User follow/unfollow
-- **Mass Boosting** Post like/comment/favorite/share/follow
-- **Mass Boosting** Live like/comment
-- **Mass Direct Message**
-- **Scrape TikTok** user followers
-- **Mass Follow back** All followers and Send Hello Direct Message
-- **Minute-level task** auto-scheduling
-- **Importing/Exporting** accounts.
-- **Add any functionality** on request.
-- TikMatrix Support **EN/RU/CN** Languages. But The TikTok App on the phone must be in **English**, otherwise, some features may not work properly.
+- **Mass boosting (User)**: Follow/unfollow users in bulk.
+- **Mass boosting (Post)**: Like, comment, favorite, share, and follow posts in bulk.
+- **Mass boosting (Live)**: Like and comment on live streams in bulk.
+- **Mass direct messaging**: Send bulk messages to users.
+- **Scrape TikTok** user followers.
+- **Mass follow back**: Follow all followers and send a hello direct message.
+- **Minute-level task scheduling**: Automate tasks with minute-level precision.
+- **Import/export accounts**.
+- **Custom functionality**: Add any feature on request.
+- **Multilingual support**: TikMatrix supports EN/RU/CN. *Note: The TikTok app on the phone must be in English for all features to work properly.*
 
 ## Pricing
 
@@ -38,41 +38,52 @@ TikMatrix offers flexible pricing plans for every need:
 - **Pro**: $59/month/PC — Manage up to 20 phones, all features included, dedicated support.
 - **Business**: $149/month/PC — Manage up to 100 phones, all features included, dedicated support.
 
-- All plans include unlimited feature access and 1:1 Telegram support.
-- Annual billing enjoys a 30% discount.
-- Payment methods: Card/Credit Card/USDT (TRC20/BEP20).
-- One license code binds to one computer, and the computer can be replaced for free.
+All plans include unlimited feature access and 1:1 Telegram support.
+
+- Annual billing receives a 30% discount.
+- Payment methods: Card, Credit Card, USDT (TRC20/BEP20).
+- One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
 
 If you need a trial, please contact support.
 
-### What you'll need
+## What You'll Need
 
-- Android Device
-  - You can use real Android devices, motherboard devices, emulators, cloud phones, virtual machines.
-  - The Android device requires at least API 21 (Android 5.0), do not require root access.
-  - Make sure you enabled USB debugging on your device(s).
-  - On some devices, you also need to enable an additional option USB debugging (Security Settings) (this is an item different from USB debugging) to control it using a keyboard and mouse.
+### Android Device
 
-- Computer
-  - Windows: Windows 7 or later
-  - Mac: macOS 10.15 or later
-- USB data cable or mobile phone and computer in the same local area network (LAN)
+You can use any Android device to run TikMatrix, including:
 
-## Recommended Computer Configuration [Supports 150+ phones ]
+- **Real Android devices**
+- **[Motherboard Android Devices](https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix)**
+- **[Cloud phones](https://www.geelark.cn?invite_code=XHY6a8)**
+- **Emulators**
+- **Virtual machines**
 
-- Motherboard: X79 motherboard
-- Graphics Card: GTX 1050 4G or higher
-- RAM: 16G or more
-- System: Windows 10 x64 Pro or above
+> Android devices require at least API 21 (Android 5.0) and **do not require root access**.
+>
+> Make sure USB debugging is enabled on your device(s).
+> On some devices (e.g., Xiaomi), you may also need to enable "USB debugging (Security Settings)" to control the device using a keyboard and mouse.
+
+### Computer
+
+#### Windows: Windows 7 or later
+
+> **Recommended configuration for supporting 100+ phones:**
+>
+> - Motherboard: X79 motherboard
+> - Graphics Card: GTX 1050 4G or higher
+> - RAM: 16GB or more
+> - System: Windows 10 x64 Pro or above
+
+#### Mac: macOS 10.15 or later
 
 ## Installation
 
-1. Download the latest version install package from the [Download](https://tikmatrix.com/Download) page.
+1. Download the latest installer from the [Download](https://tikmatrix.com/Download) page.
 2. Run the installer.
 3. Wait for the installation to complete.
 4. Open the **TikMatrix** app on your computer.
-   - For Mac users: After installation, you need to run the following command in Terminal to allow the app to run:
+   - For Mac users: After installation, run the following command in Terminal to allow the app to run:
 
      ```bash
      xattr -cr /Applications/TikMatrix.app
