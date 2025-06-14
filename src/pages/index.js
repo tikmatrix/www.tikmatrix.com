@@ -5,6 +5,7 @@ import HomepageVS from '@site/src/components/HomepageVS';
 import PricingPage from '@site/src/components/PricingPage';
 import FrequentlyAsked from '@site/src/components/FrequentlyAsked';
 import ContactPage from '@site/src/components/ContactPage';
+import Testimonials from '@site/src/components/Testimonials';
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -113,6 +114,7 @@ export default function Home() {
         <PricingPage />
         {/* <FrequentlyAsked /> */}
         <ContactPage />
+        <Testimonials />
         {/* Start of Tawk.to Script */}
         <script
           type="text/javascript"
