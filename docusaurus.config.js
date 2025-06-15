@@ -285,6 +285,14 @@ const config = {
       async: true,
       crossorigin: 'anonymous'
     },
+    //<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="cb53432e-3f00-40d5-9f10-ac995f571c04" type="text/javascript" async></script>
+    {
+      src: 'https://consent.cookiebot.com/uc.js',
+      id: 'Cookiebot',
+      'data-cbid': 'cb53432e-3f00-40d5-9f10-ac995f571c04',
+      type: 'text/javascript',
+      async: true,
+    },
   ],
   clientModules: [
     // require.resolve('./src/clientModules/detectBrowserLanguage.js'),
