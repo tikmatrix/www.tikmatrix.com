@@ -25,14 +25,15 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div className="header-buttons">
-                        <a href="https://pro.api.tikmatrix.com/front-api/download-igmatrix" className="download-btn">
-                            <i className="bx bxl-windows"></i>
+                        <Link to="/Download-IgMatrix" className="download-btn">
+                            <i className="bx bx-download"></i>
                             <Translate>
-                                Download IgMatrix(Beta)
+                                Download IgMatrix
                             </Translate>
-                        </a>
+                        </Link>
 
-                        
+
+
                     </div>
                 </div>
                 <div className="col col--6 image-slider">

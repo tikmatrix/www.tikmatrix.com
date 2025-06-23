@@ -41,7 +41,7 @@ export default function IgMatrix() {
       translate({ message: 'Automatic commenting' }),
     ],
     "softwareVersion": "1.0.0",
-    "downloadUrl": "https://pro.api.tikmatrix.com/front-api/download-igmatrix",
+    "downloadUrl": "https://tikmatrix.com/Download-IgMatrix",
     "supportUrl": "https://t.me/tikmatrix_support",
     "aggregateRating": {
       "@type": "AggregateRating",
