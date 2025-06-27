@@ -25,12 +25,12 @@ export default function HomepageHeader() {
                         </Translate>
                     </p>
                     <div>
-                        <a href="/Download-VideoMagic" className="download-btn"><i className="bx bxl-windows"></i>
+                        <Link to="/Download-VideoMagic" className="download-btn">
+                            <i className="bx bx-download"></i>
                             <Translate>
                                 Download VideoMagic
                             </Translate>
-                        </a>
-
+                        </Link>
                     </div>
                 </div>
                 <div className="col col--6 image-slider">

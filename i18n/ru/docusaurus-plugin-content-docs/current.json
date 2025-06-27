@@ -1,0 +1,22 @@
+{
+    "version.label": {
+        "message": "Next",
+        "description": "The label for version current"
+    },
+    "sidebar.tutorialSidebar.category.Tutorial - Basics": {
+        "message": "Основы руководства",
+        "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+    },
+    "sidebar.tutorialSidebar.category.Tutorial - Scripts": {
+        "message": "Руководство по скриптам",
+        "description": "The label for category Tutorial - Scripts in sidebar tutorialSidebar"
+    },
+    "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
+        "message": "Изучите основы использования матрицы TIKTOK.",
+        "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+    },
+    "sidebar.tutorialSidebar.category.Troubleshooting": {
+        "message": "Устранение неполадок",
+        "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
+    }
+}

@@ -1,33 +1,66 @@
 import React from 'react';
+import Translate, { translate } from '@docusaurus/Translate';
 import './Testimonials.css';
 
 const testimonials = [
     {
         stars: 5,
-        text: "TikMatrix is a lifesaver for our studio! We can control so many phones at once, and the automation is super powerful. Posting and account farming are so much easier now. TikTok anti-detection really works—our posts get more natural traffic than before.",
+        text: translate({
+            id: 'testimonials.user1.text',
+            message: "TikMatrix is a lifesaver for our studio! We can control so many phones at once, and the automation is super powerful. Posting and account farming are so much easier now. TikTok anti-detection really works—our posts get more natural traffic than before.",
+            description: 'First testimonial text'
+        }),
         user: "StudioOps",
-        usage: "1 year",
+        usage: translate({
+            id: 'testimonials.user1.usage',
+            message: "1 year",
+            description: 'First user usage duration'
+        }),
         avatar: "/img/user-1.png",
     },
     {
         stars: 5,
-        text: "After using TikMatrix, our ad team’s efficiency shot up. The automation scripts save us tons of manual work, and accounts stay safe—no bans so far. Perfect for agencies like us!",
+        text: translate({
+            id: 'testimonials.user2.text',
+            message: "After using TikMatrix, our ad team's efficiency shot up. The automation scripts save us tons of manual work, and accounts stay safe—no bans so far. Perfect for agencies like us!",
+            description: 'Second testimonial text'
+        }),
         user: "AdTeam Lee",
-        usage: "10 months",
+        usage: translate({
+            id: 'testimonials.user2.usage',
+            message: "10 months",
+            description: 'Second user usage duration'
+        }),
         avatar: "/img/user-2.png",
     },
     {
         stars: 5,
-        text: "Controlling 100 phones at once is a game changer. Batch operations are super convenient, and our TikTok posts get more organic reach. Great for overseas marketing, and the price is really fair!",
+        text: translate({
+            id: 'testimonials.user3.text',
+            message: "Controlling 100 phones at once is a game changer. Batch operations are super convenient, and our TikTok posts get more organic reach. Great for overseas marketing, and the price is really fair!",
+            description: 'Third testimonial text'
+        }),
         user: "MarketPro",
-        usage: "6 months",
+        usage: translate({
+            id: 'testimonials.user3.usage',
+            message: "6 months",
+            description: 'Third user usage duration'
+        }),
         avatar: "/img/user-3.png",
     },
     {
         stars: 5,
-        text: "Tried other tools before, but TikMatrix is the most worry-free. Automation and anti-ban are both reliable. Perfect for marketing teams that need high-efficiency batch operations.",
+        text: translate({
+            id: 'testimonials.user4.text',
+            message: "Tried other tools before, but TikMatrix is the most worry-free. Automation and anti-ban are both reliable. Perfect for marketing teams that need high-efficiency batch operations.",
+            description: 'Fourth testimonial text'
+        }),
         user: "Ken from Marketing",
-        usage: "8 months",
+        usage: translate({
+            id: 'testimonials.user4.usage',
+            message: "8 months",
+            description: 'Fourth user usage duration'
+        }),
         avatar: "/img/user-4.png",
     },
 ];
@@ -35,8 +68,20 @@ const testimonials = [
 export default function Testimonials() {
     return (
         <section className="testimonials-section">
-            <h2 className="testimonials-title">Real User Testimonials</h2>
-            <p className="testimonials-subtitle">What TikMatrix Users Say</p>
+            <h2 className="testimonials-title">
+                <Translate
+                    id="testimonials.title"
+                    description="Testimonials section title">
+                    Real User Testimonials
+                </Translate>
+            </h2>
+            <p className="testimonials-subtitle">
+                <Translate
+                    id="testimonials.subtitle"
+                    description="Testimonials section subtitle">
+                    What TikMatrix Users Say
+                </Translate>
+            </p>
             <div className="testimonials-list">
                 {testimonials.map((t, i) => (
                     <div className="testimonial-card" key={i}>
@@ -53,7 +98,13 @@ export default function Testimonials() {
                             <img className="testimonial-avatar" src={t.avatar} alt={t.user} />
                             <span className="testimonial-username">{t.user}</span>
                         </div>
-                        <div className="testimonial-usage">Usage: {t.usage}</div>
+                        <div className="testimonial-usage">
+                            <Translate
+                                id="testimonials.usage_label"
+                                description="Usage label">
+                                Usage
+                            </Translate>: {t.usage}
+                        </div>
                     </div>
                 ))}
             </div>

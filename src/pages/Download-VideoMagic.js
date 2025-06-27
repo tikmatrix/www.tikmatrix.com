@@ -9,14 +9,14 @@ export default function Download() {
   return (
     <Layout
       title={translate({
-        id: 'download.title',
+        id: 'download.videomagic.title',
         message: 'Download VideoMagic',
-        description: 'The title of the download page'
+        description: 'The title of the VideoMagic download page'
       })}
       description={translate({
-        id: 'download.description',
+        id: 'download.videomagic.description',
         message: 'Download VideoMagic for Windows, Mac and Linux',
-        description: 'The description of the download page'
+        description: 'The description of the VideoMagic download page'
       })}>
       <main className="download-page">
         <div className="container">
@@ -24,21 +24,21 @@ export default function Download() {
             <div className="col col--12">
               <h1 className="download-title">
                 <Translate
-                  id="download.title"
-                  description="The title of the download page">
+                  id="download.videomagic.title"
+                  description="The title of the VideoMagic download page">
                   Download VideoMagic
                 </Translate>
               </h1>
               <p className="download-subtitle">
                 <Translate
-                  id="download.subtitle"
-                  description="The subtitle of the download page">
+                  id="download.videomagic.subtitle"
+                  description="The subtitle of the VideoMagic download page">
                   Choose your platform to download VideoMagic
                 </Translate>
               </p>
             </div>
           </div>
-          
+
           <div className="row download-buttons">
             <div className="col col--4">
               <a href="https://pro.api.tikmatrix.com/front-api/download-windows?app=videomagic" className="download-card">
@@ -68,7 +68,7 @@ export default function Download() {
                 </div>
               </a>
             </div>
-            
+
             <div className="col col--4">
               <div className="download-card mac-card">
                 <div className="platform-icon">
@@ -105,7 +105,7 @@ export default function Download() {
                 </p>
               </div>
             </div>
-            
+
             <div className="col col--4">
               <div className="download-card linux-card">
                 <div className="platform-icon">
@@ -142,7 +142,7 @@ export default function Download() {
               </div>
             </div>
           </div>
-          
+
           <div className="row system-requirements">
             <div className="col col--12">
               <h2>

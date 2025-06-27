@@ -32,14 +32,17 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'/* , 'zh-Hans' */],
+    locales: ['en', 'zh-Hans', 'ru'],
     localeConfigs: {
       en: {
         htmlLang: 'en',
       },
-      // 'zh-Hans': {
-      //   htmlLang: 'zh-Hans',
-      // },
+      'zh-Hans': {
+        htmlLang: 'zh-Hans',
+      },
+      ru: {
+        htmlLang: 'ru',
+      },
     },
   },
 
@@ -126,10 +129,10 @@ const config = {
             position: 'right',
             label: 'VideoMagic',
           },
-          // {
-          //   type: 'localeDropdown',
-          //   position: 'right',
-          // }
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          }
         ],
       },
       footer: {

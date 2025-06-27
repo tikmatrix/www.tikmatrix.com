@@ -720,9 +720,9 @@
     "message": "IgMatrix 是一款Instagram安卓手机农场批量控制工具",
     "description": "The description of IgMatrix"
   },
-  "Download IgMatrix(Beta)": {
-    "message": "下载 IgMatrix(Beta)",
-    "description": "The description of Download IgMatrix(Beta)"
+  "Download IgMatrix": {
+    "message": "下载 IgMatrix",
+    "description": "The description of Download IgMatrix"
   },
   "Download TikMatrix": {
     "message": "下载 TikMatrix",
@@ -841,5 +841,201 @@
   },
   "Human Technical Support": {
     "message": "人工技术支持"
+  },
+  "pricing.title": {
+    "message": "定价",
+    "description": "定价部分标题"
+  },
+  "pricing.subtitle": {
+    "message": "适合每个人的灵活计划。年付享受30%折扣！",
+    "description": "定价部分副标题"
+  },
+  "pricing.starter.name": {
+    "message": "入门版",
+    "description": "入门版计划名称"
+  },
+  "pricing.starter.description": {
+    "message": "适合个人和小团队",
+    "description": "入门版计划描述"
+  },
+  "pricing.starter.manage_phones": {
+    "message": "管理多达5部手机",
+    "description": "入门版计划功能"
+  },
+  "pricing.pro.name": {
+    "message": "专业版",
+    "description": "专业版计划名称"
+  },
+  "pricing.pro.description": {
+    "message": "适合专业人士和小企业",
+    "description": "专业版计划描述"
+  },
+  "pricing.pro.manage_phones": {
+    "message": "管理多达20部手机",
+    "description": "专业版计划功能"
+  },
+  "pricing.business.name": {
+    "message": "商业版",
+    "description": "商业版计划名称"
+  },
+  "pricing.business.description": {
+    "message": "适合大型企业",
+    "description": "商业版计划描述"
+  },
+  "pricing.business.manage_phones": {
+    "message": "管理多达100部手机",
+    "description": "商业版计划功能"
+  },
+  "pricing.all_features": {
+    "message": "包含所有功能",
+    "description": "包含所有功能文本"
+  },
+  "pricing.dedicated_support": {
+    "message": "专属支持和Telegram一对一",
+    "description": "专属支持文本"
+  },
+  "pricing.per_month_pc": {
+    "message": "每月/每台电脑",
+    "description": "每月每台电脑文本"
+  },
+  "pricing.get_started": {
+    "message": "开始使用",
+    "description": "开始使用按钮文本"
+  },
+  "testimonials.title": {
+    "message": "真实用户评价",
+    "description": "用户评价部分标题"
+  },
+  "testimonials.subtitle": {
+    "message": "TikMatrix用户怎么说",
+    "description": "用户评价部分副标题"
+  },
+  "testimonials.usage_label": {
+    "message": "使用时长",
+    "description": "使用时长标签"
+  },
+  "testimonials.user1.text": {
+    "message": "TikMatrix对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
+    "description": "第一个用户评价文本"
+  },
+  "testimonials.user1.usage": {
+    "message": "1年",
+    "description": "第一个用户使用时长"
+  },
+  "testimonials.user2.text": {
+    "message": "使用TikMatrix后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
+    "description": "第二个用户评价文本"
+  },
+  "testimonials.user2.usage": {
+    "message": "10个月",
+    "description": "第二个用户使用时长"
+  },
+  "testimonials.user3.text": {
+    "message": "同时控制100部手机是改变游戏规则的。批量操作超级方便，我们的TikTok帖子获得了更多有机触达。非常适合海外营销，价格也很公道！",
+    "description": "第三个用户评价文本"
+  },
+  "testimonials.user3.usage": {
+    "message": "6个月",
+    "description": "第三个用户使用时长"
+  },
+  "testimonials.user4.text": {
+    "message": "之前试过其他工具，但TikMatrix是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
+    "description": "第四个用户评价文本"
+  },
+  "testimonials.user4.usage": {
+    "message": "8个月",
+    "description": "第四个用户使用时长"
+  },
+  "download.igmatrix.title": {
+    "message": "下载 IgMatrix",
+    "description": "IgMatrix下载页面的标题"
+  },
+  "download.igmatrix.description": {
+    "message": "下载 IgMatrix 的 Windows、Mac 和 Linux 版本",
+    "description": "IgMatrix下载页面的描述"
+  },
+  "download.igmatrix.subtitle": {
+    "message": "选择您的平台下载 IgMatrix",
+    "description": "IgMatrix下载页面的副标题"
+  },
+  "download.igmatrix.windows.title": {
+    "message": "Windows",
+    "description": "IgMatrix Windows平台标题"
+  },
+  "download.igmatrix.windows.description": {
+    "message": "Windows 10/11 (64位)",
+    "description": "IgMatrix Windows平台描述"
+  },
+  "download.igmatrix.windows.button": {
+    "message": "下载 Windows 版本",
+    "description": "IgMatrix Windows下载按钮文本"
+  },
+  "download.igmatrix.mac.title": {
+    "message": "Mac",
+    "description": "IgMatrix Mac平台标题"
+  },
+  "download.igmatrix.mac.description": {
+    "message": "macOS 10.15 或更高版本",
+    "description": "IgMatrix Mac平台描述"
+  },
+  "download.igmatrix.mac.button": {
+    "message": "下载 Mac 版本",
+    "description": "IgMatrix Mac下载按钮文本"
+  },
+  "download.igmatrix.mac.install_tip": {
+    "message": "安装后请在终端执行以下命令以允许运行：",
+    "description": "IgMatrix Mac安装后需要执行的命令提示"
+  },
+  "download.igmatrix.linux.title": {
+    "message": "Linux",
+    "description": "IgMatrix Linux平台标题"
+  },
+  "download.igmatrix.linux.coming_soon": {
+    "message": "即将推出",
+    "description": "IgMatrix Linux即将推出提示"
+  },
+  "download.igmatrix.linux.development": {
+    "message": "开发中",
+    "description": "IgMatrix Linux开发中状态"
+  },
+  "download.igmatrix.linux.description": {
+    "message": "Linux 版本正在开发中",
+    "description": "IgMatrix Linux开发中描述"
+  },
+  "download.igmatrix.requirements.title": {
+    "message": "系统要求",
+    "description": "IgMatrix系统要求标题"
+  },
+  "download.igmatrix.requirements.os": {
+    "message": "操作系统：Windows 10/11、macOS 10.15+ 或 Ubuntu 20.04+",
+    "description": "IgMatrix操作系统要求"
+  },
+  "download.igmatrix.requirements.processor": {
+    "message": "处理器：Intel Core i5 或同等性能",
+    "description": "IgMatrix处理器要求"
+  },
+  "download.igmatrix.requirements.memory": {
+    "message": "内存：8 GB RAM",
+    "description": "IgMatrix内存要求"
+  },
+  "download.igmatrix.requirements.storage": {
+    "message": "存储空间：500 MB 可用空间",
+    "description": "IgMatrix存储空间要求"
+  },
+  "download.igmatrix.requirements.internet": {
+    "message": "网络连接：必需",
+    "description": "IgMatrix网络连接要求"
+  },
+  "download.videomagic.title": {
+    "message": "下载 VideoMagic",
+    "description": "VideoMagic下载页面的标题"
+  },
+  "download.videomagic.description": {
+    "message": "下载 VideoMagic 的 Windows、Mac 和 Linux 版本",
+    "description": "VideoMagic下载页面的描述"
+  },
+  "download.videomagic.subtitle": {
+    "message": "选择您的平台下载 VideoMagic",
+    "description": "VideoMagic下载页面的副标题"
   }
 }
