@@ -68,6 +68,38 @@ const plans = [
         ]
     },
     {
+        id: 'team',
+        name: translate({
+            id: 'pricing.team.name',
+            message: 'Team',
+            description: 'Team plan name'
+        }),
+        description: translate({
+            id: 'pricing.team.description',
+            message: 'For growing teams and companies',
+            description: 'Team plan description'
+        }),
+        price: 99,
+        device_count: 50,
+        includes: [
+            translate({
+                id: 'pricing.team.manage_phones',
+                message: 'Manage up to 50 phones',
+                description: 'Team plan feature'
+            }),
+            translate({
+                id: 'pricing.all_features',
+                message: 'All features included',
+                description: 'All features included text'
+            }),
+            translate({
+                id: 'pricing.dedicated_support',
+                message: 'Dedicated support & Telegram 1:1',
+                description: 'Dedicated support text'
+            })
+        ]
+    },
+    {
         id: 'business',
         name: translate({
             id: 'pricing.business.name',
@@ -123,7 +155,7 @@ export default function PricingPage() {
                 </div>
                 <div className="row">
                     {plans.map((plan, idx) => (
-                        <div className={clsx('box', idx === 1 && 'featured')} data-aos="fade-up" data-aos-delay={100 * (idx + 1)} key={plan.id}>
+                        <div className={clsx('box', idx === 2 && 'featured')} data-aos="fade-up" data-aos-delay={100 * (idx + 1)} key={plan.id}>
                             <h3>{plan.name}</h3>
                             <div className="plan-desc">{plan.description}</div>
                             <h4>

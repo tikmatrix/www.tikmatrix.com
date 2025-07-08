@@ -874,6 +874,18 @@
         "message": "Управление до 20 телефонами",
         "description": "Функция профессионального плана"
     },
+    "pricing.team.name": {
+        "message": "Команда",
+        "description": "Название командного плана"
+    },
+    "pricing.team.description": {
+        "message": "Для растущих команд и компаний",
+        "description": "Описание командного плана"
+    },
+    "pricing.team.manage_phones": {
+        "message": "Управление до 50 телефонами",
+        "description": "Функция командного плана"
+    },
     "pricing.business.name": {
         "message": "Бизнес",
         "description": "Название бизнес плана"

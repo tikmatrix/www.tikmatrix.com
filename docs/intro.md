@@ -36,6 +36,7 @@ TikMatrix offers flexible pricing plans for every need:
 
 - **Starter**: $29/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
 - **Pro**: $59/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
+- **Team**: $99/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
 - **Business**: $149/month/PC — Manage up to 100 phones (800 TikTok accounts), all features included, dedicated support.
 
 All plans include unlimited feature access and 1:1 Telegram support.
@@ -45,7 +46,7 @@ All plans include unlimited feature access and 1:1 Telegram support.
 - One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
 
-If you need a trial, please contact support.
+We don't offer free trials, but we can provide a free feature demonstration. Please contact our support team.
 
 ## What You'll Need
 

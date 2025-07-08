@@ -874,6 +874,18 @@
     "message": "管理多达20部手机",
     "description": "专业版计划功能"
   },
+  "pricing.team.name": {
+    "message": "团队版",
+    "description": "团队版计划名称"
+  },
+  "pricing.team.description": {
+    "message": "适合成长中的团队和公司",
+    "description": "团队版计划描述"
+  },
+  "pricing.team.manage_phones": {
+    "message": "管理多达50部手机",
+    "description": "团队版计划功能"
+  },
   "pricing.business.name": {
     "message": "商业版",
     "description": "商业版计划名称"
