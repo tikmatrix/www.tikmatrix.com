@@ -10,6 +10,43 @@ Work Profile（工作资料）是 Android 的一个功能，它允许在同一�
 - 为不同的应用环境设置不同的用户配置
 - 实现更精细的设备管理和权限控制
 
+## 使用 Shelter 工具克隆应用
+
+在配置 Work Profile 之前，您需要使用 Shelter 工具克隆 TikTok 和 TikMatrix 应用：
+
+### 什么是 Shelter
+
+Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理 Work Profile。它允许您在隔离的工作环境中运行重复的应用程序。
+
+### 安装 Shelter
+
+1. 从 [F-Droid](https://f-droid.org/packages/net.typeblog.shelter/) 或 [Google Play 商店](https://play.google.com/store/apps/details?id=net.typeblog.shelter) 下载 Shelter
+2. 在设备上安装并打开 Shelter
+3. 按照设置向导创建 Work Profile
+
+### 克隆所需应用
+
+设置 Shelter 后，您需要克隆 TikTok 和 TikMatrix 应用：
+
+1. **克隆 TikTok 应用**：
+   - 打开 Shelter 并转到"主界面"选项卡
+   - 在应用程序列表中找到 TikTok
+   - 点击"克隆到工作资料"按钮
+   - 等待克隆过程完成
+
+2. **克隆 TikMatrix 应用**：
+   - 在 Shelter 中，在应用程序列表中找到 TikMatrix
+   - 点击"克隆到工作资料"按钮
+   - 确认克隆操作
+
+### 验证克隆成功
+
+克隆成功后：
+
+- 您将在应用抽屉中看到带有公文包图标的 TikTok 和 TikMatrix
+- 这些是应用程序的 Work Profile 版本
+- 主配置文件中的原始应用程序保持不变
+
 ## 如何配置 Work Profile
 
 ### 1. 打开设备工具栏
@@ -116,6 +153,15 @@ A: 在配置对话框中清空用户 ID 输入框，然后点击保存即可。
 
 A: 配置存储在本地 JSON 文件中，如果丢失可以重新设置，或者从备份中恢复 `data/work_profile_user.json` 文件。
 
+#### Q: Shelter 相关问题
+
+A: 如果遇到 Shelter 相关问题：
+
+- **克隆失败**: 确保您拥有管理员权限和足够的存储空间
+- **克隆应用不可见**: 检查 Shelter 中的 Work Profile 是否正确激活
+- **应用在 Work Profile 中崩溃**: 尝试重新克隆应用程序或更新 Shelter
+- **找不到克隆应用**: 在应用抽屉中查找带有公文包图标的应用
+
 ## 最佳实践
 
 ### 企业环境使用
@@ -129,6 +175,13 @@ A: 配置存储在本地 JSON 文件中，如果丢失可以重新设置，或�
 1. **应用隔离**: 为不同用途的应用设置不同用户环境
 2. **测试环境**: 使用独立的用户 ID 进行应用测试
 3. **隐私保护**: 通过用户分离提高隐私安全性
+
+### Shelter 工具管理
+
+1. **定期更新**: 保持 Shelter 应用程序最新以确保兼容性
+2. **应用同步**: 确保在配置 Work Profile 之前克隆了 TikTok 和 TikMatrix
+3. **备份 Shelter 设置**: 导出并备份 Shelter 配置以便轻松恢复
+4. **监控应用更新**: 当 TikTok 或 TikMatrix 更新时，您可能需要更新克隆版本
 
 ## 技术说明
 

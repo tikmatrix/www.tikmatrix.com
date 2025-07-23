@@ -10,6 +10,43 @@ Work Profile is an Android feature that allows creating an independent work envi
 - Set different user configurations for different app environments
 - Achieve more granular device management and permission control
 
+## Using Shelter Tool to Clone Applications
+
+Before configuring Work Profile, you need to use the Shelter tool to clone TikTok and TikMatrix applications:
+
+### What is Shelter
+
+Shelter is an open-source application that creates and manages Work Profile on Android devices. It allows you to run duplicate applications in an isolated work environment.
+
+### Installing Shelter
+
+1. Download Shelter from [F-Droid](https://f-droid.org/packages/net.typeblog.shelter/) or [Google Play Store](https://play.google.com/store/apps/details?id=net.typeblog.shelter)
+2. Install and open Shelter on your device
+3. Follow the setup wizard to create a Work Profile
+
+### Cloning Required Applications
+
+After setting up Shelter, you need to clone both TikTok and TikMatrix applications:
+
+1. **Clone TikTok Application**:
+   - Open Shelter and go to the "Main" tab
+   - Find TikTok in the application list
+   - Tap the "Clone to Work Profile" button
+   - Wait for the cloning process to complete
+
+2. **Clone TikMatrix Application**:
+   - In Shelter, locate TikMatrix in the application list
+   - Tap the "Clone to Work Profile" button
+   - Confirm the cloning operation
+
+### Verify Cloning Success
+
+After successful cloning:
+
+- You'll see both TikTok and TikMatrix with a briefcase icon in your app drawer
+- These are the Work Profile versions of the applications
+- The original applications remain unchanged in the main profile
+
 ## How to Configure Work Profile
 
 ### 1. Open Device Toolbar
@@ -116,6 +153,15 @@ A: Clear the user ID input field in the configuration dialog and click save.
 
 A: Configurations are stored in a local JSON file. If lost, you can reconfigure or restore the `data/work_profile_user.json` file from backup.
 
+#### Q: Shelter-related issues
+
+A: If you encounter issues with Shelter:
+
+- **Cloning fails**: Ensure you have administrator permissions and sufficient storage space
+- **Cloned apps not visible**: Check if Work Profile is properly activated in Shelter
+- **Apps crash in Work Profile**: Try re-cloning the applications or updating Shelter
+- **Can't find cloned apps**: Look for apps with briefcase icons in your app drawer
+
 ## Best Practices
 
 ### Enterprise Environment
@@ -129,6 +175,13 @@ A: Configurations are stored in a local JSON file. If lost, you can reconfigure 
 1. **App Isolation**: Set different user environments for different purposes
 2. **Testing Environment**: Use independent user IDs for app testing
 3. **Privacy Protection**: Improve privacy security through user separation
+
+### Shelter Tool Management
+
+1. **Regular Updates**: Keep Shelter application updated to ensure compatibility
+2. **Application Synchronization**: Ensure both TikTok and TikMatrix are cloned before configuring Work Profile
+3. **Backup Shelter Settings**: Export and backup Shelter configurations for easy recovery
+4. **Monitor App Updates**: When TikTok or TikMatrix updates, you may need to update the cloned versions as well
 
 ## Technical Details
 
