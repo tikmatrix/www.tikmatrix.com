@@ -55,7 +55,7 @@ We don't offer free trials, but we can provide a free feature demonstration. Ple
 You can use any Android device to run TikMatrix, including:
 
 - **Real Android devices**
-- **[Motherboard Android Devices](https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix)**
+- **[Motherboard Android Devices](http://www.niaozun.shop?cid=934ec2fe)**
 - **[Cloud phones](https://www.geelark.cn?invite_code=XHY6a8)**
 - **Emulators**
 - **Virtual machines**

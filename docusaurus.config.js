@@ -210,7 +210,7 @@ const config = {
               //   href: '/YtMatrix',
               // },
               {
-                href: 'https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix',
+                href: 'http://www.niaozun.shop?cid=934ec2fe',
                 label: 'Buy hardware',
               },
               {

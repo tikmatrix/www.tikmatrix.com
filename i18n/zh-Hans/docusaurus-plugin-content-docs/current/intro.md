@@ -55,7 +55,7 @@ TikMatrix为各种需求提供灵活的定价方案：
 你可以使用任何安卓设备来运行TikMatrix，包括：
 
 - **真实安卓设备**
-- **[主板安卓设备](https://gou.niaozun.com/products/samsung-s10-mobile-farm-b8wu4pb1-1x414m0f-ahisqnqd?variant=466&f_tracking_id=tikmatrix)**
+- **[主板安卓设备](http://www.niaozun.shop?cid=934ec2fe)**
 - **[云手机](https://www.geelark.cn?invite_code=XHY6a8)**
 - **模拟器**
 - **虚拟机**
