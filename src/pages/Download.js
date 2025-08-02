@@ -38,10 +38,10 @@ export default function Download() {
               </p>
             </div>
           </div>
-          
+
           <div className="row download-buttons">
             <div className="col col--4">
-              <a href="https://pro.api.tikmatrix.com/front-api/download-windows" className="download-card">
+              <a href="https://api.tikmatrix.com/front-api/download-windows" className="download-card">
                 <div className="platform-icon">
                   <i className="bx bxl-windows"></i>
                 </div>
@@ -68,7 +68,7 @@ export default function Download() {
                 </div>
               </a>
             </div>
-            
+
             <div className="col col--4">
               <div className="download-card mac-card">
                 <div className="platform-icon">
@@ -88,7 +88,7 @@ export default function Download() {
                     macOS 10.15 or later
                   </Translate>
                 </p>
-                <a href="https://pro.api.tikmatrix.com/front-api/download-mac" className="download-btn">
+                <a href="https://api.tikmatrix.com/front-api/download-mac" className="download-btn">
                   <Translate
                     id="download.mac.button"
                     description="Mac download button text">
@@ -105,7 +105,7 @@ export default function Download() {
                 </p>
               </div>
             </div>
-            
+
             <div className="col col--4">
               <div className="download-card linux-card">
                 <div className="platform-icon">
@@ -142,7 +142,7 @@ export default function Download() {
               </div>
             </div>
           </div>
-          
+
           <div className="row system-requirements">
             <div className="col col--12">
               <h2>
