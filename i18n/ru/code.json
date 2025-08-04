@@ -1049,5 +1049,53 @@
     "download.videomagic.subtitle": {
         "message": "Выберите свою платформу для скачивания VideoMagic",
         "description": "Подзаголовок страницы скачивания VideoMagic"
+    },
+    "whitelabel.title": {
+        "message": "Белая метка",
+        "description": "Заголовок функции белой метки"
+    },
+    "whitelabel.description": {
+        "message": "Настройте брендинг TikMatrix в соответствии с корпоративной идентичностью вашей компании",
+        "description": "Описание функции белой метки"
+    },
+    "whitelabel.annualRequired": {
+        "message": "Требуется годовая подписка",
+        "description": "Белая метка требует годовую подписку"
+    },
+    "whitelabel.annualRequiredDesc": {
+        "message": "Функциональность белой метки доступна исключительно для пользователей с годовой подпиской. Свяжитесь с нашей службой поддержки через Telegram, чтобы получить код разблокировки.",
+        "description": "Описание требования годовой подписки для белой метки"
+    },
+    "whitelabel.contactSupport": {
+        "message": "Связаться с поддержкой для получения кода разблокировки",
+        "description": "Связаться с поддержкой для получения кода разблокировки белой метки"
+    },
+    "whitelabel.setup": {
+        "message": "Настройка белой метки",
+        "description": "Настройка белой метки"
+    },
+    "whitelabel.customization": {
+        "message": "Настройка бренда",
+        "description": "Настройка бренда"
+    },
+    "whitelabel.appName": {
+        "message": "Название приложения",
+        "description": "Название приложения"
+    },
+    "whitelabel.logo": {
+        "message": "Логотип",
+        "description": "Логотип"
+    },
+    "whitelabel.supportEmail": {
+        "message": "Email поддержки",
+        "description": "Email поддержки"
+    },
+    "whitelabel.tutorialUrl": {
+        "message": "Ссылка на обучение",
+        "description": "Ссылка на обучение"
+    },
+    "whitelabel.telegramUrl": {
+        "message": "Ссылка на Telegram",
+        "description": "Ссылка на Telegram"
     }
 }

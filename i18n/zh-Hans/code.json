@@ -1049,5 +1049,53 @@
   "download.videomagic.subtitle": {
     "message": "选择您的平台下载 VideoMagic",
     "description": "VideoMagic下载页面的副标题"
+  },
+  "whitelabel.title": {
+    "message": "白标功能",
+    "description": "白标功能标题"
+  },
+  "whitelabel.description": {
+    "message": "自定义TikMatrix的品牌标识以匹配您的公司形象",
+    "description": "白标功能描述"
+  },
+  "whitelabel.annualRequired": {
+    "message": "需要年付订阅",
+    "description": "白标功能需要年付订阅"
+  },
+  "whitelabel.annualRequiredDesc": {
+    "message": "白标功能仅对年付订阅用户开放。购买年付计划后，请通过Telegram联系客服获取解锁码。",
+    "description": "白标功能年付订阅说明"
+  },
+  "whitelabel.contactSupport": {
+    "message": "联系客服获取解锁码",
+    "description": "联系客服获取白标解锁码"
+  },
+  "whitelabel.setup": {
+    "message": "白标设置",
+    "description": "白标设置"
+  },
+  "whitelabel.customization": {
+    "message": "品牌定制",
+    "description": "品牌定制"
+  },
+  "whitelabel.appName": {
+    "message": "应用名称",
+    "description": "应用名称"
+  },
+  "whitelabel.logo": {
+    "message": "Logo",
+    "description": "Logo"
+  },
+  "whitelabel.supportEmail": {
+    "message": "支持邮箱",
+    "description": "支持邮箱"
+  },
+  "whitelabel.tutorialUrl": {
+    "message": "教程链接",
+    "description": "教程链接"
+  },
+  "whitelabel.telegramUrl": {
+    "message": "Telegram链接",
+    "description": "Telegram链接"
   }
 }
