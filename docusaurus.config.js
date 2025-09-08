@@ -89,11 +89,11 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {
-            to: '/blog',
-            position: 'left',
-            label: 'Blog',
-          },
+          // {
+          //   to: '/blog',
+          //   position: 'left',
+          //   label: 'Blog',
+          // },
           {
             to: '/Download',
             position: 'left',
