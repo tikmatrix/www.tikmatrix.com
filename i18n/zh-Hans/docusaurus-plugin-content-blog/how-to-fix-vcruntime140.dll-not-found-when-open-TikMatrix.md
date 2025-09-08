@@ -1,5 +1,5 @@
 ---
-slug: How-to-fix-vcruntime140.dll-not-found-when-open-TikMatrix
+slug: How-to-fix-vcruntime140.dll-not-found-when-open-TikZenX
 title: 怎么解决 "vcruntime140.dll 没有找到" 的错误
 authors: tikMatrix
 tags: [vcruntime140.ddl not found,fixed,tikmatrix]
@@ -22,8 +22,8 @@ tags: [vcruntime140.ddl not found,fixed,tikmatrix]
 4. **检查更新**：
    - 确保你的 Windows 是最新的。前往 `设置 > 更新和安全 > Windows 更新` 并检查更新。
 
-5. **重新安装 TikMatrix**：
-   - 如果上述步骤不起作用，尝试卸载并重新安装 TikMatrix。确保从官方下载最新版本。
+5. **重新安装 TikZenX**：
+   - 如果上述步骤不起作用，尝试卸载并重新安装 TikZenX。确保从官方下载最新版本。
 
 如果在尝试这些步骤后错误仍然存在，你可能需要通过运行系统文件检查工具来检查是否存在进一步的问题，例如系统文件损坏：
 
@@ -32,4 +32,4 @@ tags: [vcruntime140.ddl not found,fixed,tikmatrix]
    - 输入 `sfc /scannow` 并按回车键。
    - 等待过程完成。如果 SFC 发现任何问题，它将尝试修复它们。
 
-这些步骤应该能帮助解决“vcruntime140.dll 找不到”错误，并使 TikMatrix 正常运行。
+这些步骤应该能帮助解决“vcruntime140.dll 找不到”错误，并使 TikZenX 正常运行。

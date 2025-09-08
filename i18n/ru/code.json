@@ -1,15 +1,15 @@
 {
-    "TikMatrix is a TikTok group control operation tool": {
-        "message": "TikMatrix - это инструмент групповых операций для TikTok"
+    "TikZenX is a TikTok group control operation tool": {
+        "message": "TikZenX - это инструмент групповых операций для TikTok"
     },
     "Download for Windows": {
         "message": "Скачать для Windows"
     },
-    "TikMatrix is a professional marketing software designed for TikTok phone farms": {
-        "message": "TikMatrix - это профессиональное маркетинговое программное обеспечение для TikTok фермы телефонов"
+    "TikZenX is a professional marketing software designed for TikTok phone farms": {
+        "message": "TikZenX - это профессиональное маркетинговое программное обеспечение для TikTok фермы телефонов"
     },
-    "Why TikMatrix?": {
-        "message": "Почему TikMatrix?"
+    "Why TikZenX?": {
+        "message": "Почему TikZenX?"
     },
     "Our Core Advantages": {
         "message": "Наши основные преимущества"
@@ -23,8 +23,8 @@
     "Features": {
         "message": "Функции"
     },
-    "TikMatrix": {
-        "message": "TikMatrix Матрица реальных устройств"
+    "TikZenX": {
+        "message": "TikZenX Матрица реальных устройств"
     },
     "Fingerprint Browser": {
         "message": "Браузер отпечатков"
@@ -98,39 +98,39 @@
     "Here are some frequently asked questions.": {
         "message": "Вот некоторые часто задаваемые вопросы."
     },
-    "What is TikMatrix?": {
-        "message": "Что такое TikMatrix?"
+    "What is TikZenX?": {
+        "message": "Что такое TikZenX?"
     },
     "How to use?": {
         "message": "Как использовать?"
     },
-    "Go to the \"Download\" page and download the latest version of TikMatrix.": {
-        "message": "Перейдите на страницу \"Скачать\" и загрузите последнюю версию TikMatrix."
+    "Go to the \"Download\" page and download the latest version of TikZenX.": {
+        "message": "Перейдите на страницу \"Скачать\" и загрузите последнюю версию TikZenX."
     },
     "What devices can I use?": {
         "message": "Какие устройства я могу использовать?"
     },
-    "TikMatrix supports Android phones running Android 5.0 and above.": {
-        "message": "TikMatrix поддерживает телефоны Android с версией Android 5.0 и выше."
+    "TikZenX supports Android phones running Android 5.0 and above.": {
+        "message": "TikZenX поддерживает телефоны Android с версией Android 5.0 и выше."
     },
     "How many devices can I manage?": {
         "message": "Сколько устройств я могу управлять?"
     },
-    "TikMatrix supports up to 200+ devices.": {
-        "message": "TikMatrix поддерживает до 200+ устройств."
+    "TikZenX supports up to 200+ devices.": {
+        "message": "TikZenX поддерживает до 200+ устройств."
     },
     "How many TikTok accounts can each phone log into?": {
         "message": "Сколько аккаунтов TikTok может войти на каждый телефон?"
     },
-    "TikMatrix supports 8 TikTok accounts on each phone.": {
-        "message": "TikMatrix поддерживает 8 аккаунтов TikTok на каждом телефоне"
+    "TikZenX supports 8 TikTok accounts on each phone.": {
+        "message": "TikZenX поддерживает 8 аккаунтов TikTok на каждом телефоне"
     },
     "What computer can I use?": {
         "message": "Какой компьютер я могу использовать?",
         "description": "Вопрос о поддержке компьютеров"
     },
-    "TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app": {
-        "message": "TikMatrix поддерживает Windows 10 и выше, а также macOS 10.15 или более поздние версии. Для пользователей Mac после установки необходимо выполнить следующую команду в Терминале, чтобы разрешить запуск приложения: xattr -cr /Applications/TikMatrix.app",
+    "TikZenX supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikZenX.app": {
+        "message": "TikZenX поддерживает Windows 10 и выше, а также macOS 10.15 или более поздние версии. Для пользователей Mac после установки необходимо выполнить следующую команду в Терминале, чтобы разрешить запуск приложения: xattr -cr /Applications/TikZenX.app",
         "description": "Ответ о поддержке компьютеров"
     },
     "theme.ErrorPageContent.title": {
@@ -628,9 +628,9 @@
         "message": "Профессиональный инструмент управления аккаунтами TikTok и маркетинга, предназначенный для Android ферм телефонов на Windows и Mac. Автоматизируйте публикации, подписки и увеличивайте свое присутствие в TikTok с нулевым уровнем блокировки аккаунтов.",
         "description": "The description of Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate."
     },
-    "TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
-        "message": "TikMatrix - это профессиональное маркетинговое программное обеспечение, предназначенное для TikTok ферм телефонов. Управляйте множественными аккаунтами, автоматизируйте публикации и масштабируйте свой TikTok маркетинг с легкостью.",
-        "description": "The description of TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
+    "TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
+        "message": "TikZenX - это профессиональное маркетинговое программное обеспечение, предназначенное для TikTok ферм телефонов. Управляйте множественными аккаунтами, автоматизируйте публикации и масштабируйте свой TikTok маркетинг с легкостью.",
+        "description": "The description of TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
     },
     "Streamline your TikTok phone farm with advanced batch control and marketing automation": {
         "message": "Оптимизируйте свою TikTok ферму телефонов с помощью продвинутого пакетного управления и автоматизации маркетинга",
@@ -652,13 +652,13 @@
         "message": "Наши конкурентные преимущества",
         "description": "The description of Our Competitive Advantages"
     },
-    "TikMatrix delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
-        "message": "TikMatrix обеспечивает как минимум на 30% более высокую вовлеченность по сравнению с аналогичными продуктами, с продвинутой технологией реальных устройств, которая обеспечивает полную безопасность аккаунтов.",
-        "description": "The description of TikMatrix competitive advantage"
+    "TikZenX delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
+        "message": "TikZenX обеспечивает как минимум на 30% более высокую вовлеченность по сравнению с аналогичными продуктами, с продвинутой технологией реальных устройств, которая обеспечивает полную безопасность аккаунтов.",
+        "description": "The description of TikZenX competitive advantage"
     },
     "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
         "message": "Наша собственная система матрицы реальных устройств идеально избегает мер контроля рисков TikTok, что приводит к 0% уровню блокировки аккаунтов.",
-        "description": "The description of TikMatrix proprietary technology"
+        "description": "The description of TikZenX proprietary technology"
     },
     "Powerful TikTok Automation & Management Tools": {
         "message": "Мощные инструменты автоматизации и управления TikTok",
@@ -724,9 +724,9 @@
         "message": "Скачать IgMatrix",
         "description": "The description of Download IgMatrix"
     },
-    "Download TikMatrix": {
-        "message": "Скачать TikMatrix",
-        "description": "The description of Download TikMatrix"
+    "Download TikZenX": {
+        "message": "Скачать TikZenX",
+        "description": "The description of Download TikZenX"
     },
     "Download VideoMagic": {
         "message": "Скачать VideoMagic",
@@ -741,15 +741,15 @@
         "description": "The description of Streamline your Instagram phone farm with advanced batch control and marketing automation"
     },
     "download.title": {
-        "message": "Скачать TikMatrix",
+        "message": "Скачать TikZenX",
         "description": "Заголовок страницы скачивания"
     },
     "download.description": {
-        "message": "Скачать TikMatrix для Windows, Mac и Linux",
+        "message": "Скачать TikZenX для Windows, Mac и Linux",
         "description": "Описание страницы скачивания"
     },
     "download.subtitle": {
-        "message": "Выберите свою платформу для скачивания TikMatrix",
+        "message": "Выберите свою платформу для скачивания TikZenX",
         "description": "Подзаголовок страницы скачивания"
     },
     "download.windows.title": {
@@ -919,7 +919,7 @@
         "description": "Заголовок раздела отзывов пользователей"
     },
     "testimonials.subtitle": {
-        "message": "Что говорят пользователи TikMatrix",
+        "message": "Что говорят пользователи TikZenX",
         "description": "Подзаголовок раздела отзывов пользователей"
     },
     "testimonials.usage_label": {
@@ -927,7 +927,7 @@
         "description": "Метка длительности использования"
     },
     "testimonials.user1.text": {
-        "message": "TikMatrix - спасение для нашей студии! Мы можем одновременно управлять таким количеством телефонов, функции автоматизации очень мощные. Публикация и развитие аккаунтов стали намного проще. Обнаружение TikTok действительно работает - наши посты получают более естественный трафик, чем раньше.",
+        "message": "TikZenX - спасение для нашей студии! Мы можем одновременно управлять таким количеством телефонов, функции автоматизации очень мощные. Публикация и развитие аккаунтов стали намного проще. Обнаружение TikTok действительно работает - наши посты получают более естественный трафик, чем раньше.",
         "description": "Текст отзыва первого пользователя"
     },
     "testimonials.user1.usage": {
@@ -935,7 +935,7 @@
         "description": "Длительность использования первого пользователя"
     },
     "testimonials.user2.text": {
-        "message": "После использования TikMatrix эффективность нашей рекламной команды резко возросла. Скрипты автоматизации экономят нам огромное количество ручной работы, аккаунты остаются безопасными - пока что никаких блокировок. Идеально подходит для таких агентств, как наше!",
+        "message": "После использования TikZenX эффективность нашей рекламной команды резко возросла. Скрипты автоматизации экономят нам огромное количество ручной работы, аккаунты остаются безопасными - пока что никаких блокировок. Идеально подходит для таких агентств, как наше!",
         "description": "Текст отзыва второго пользователя"
     },
     "testimonials.user2.usage": {
@@ -951,7 +951,7 @@
         "description": "Длительность использования третьего пользователя"
     },
     "testimonials.user4.text": {
-        "message": "Пробовал другие инструменты раньше, но TikMatrix самый беспроблемный. Автоматизация и защита от блокировок очень надежны. Отлично подходит для маркетинговых команд, которым нужны эффективные пакетные операции.",
+        "message": "Пробовал другие инструменты раньше, но TikZenX самый беспроблемный. Автоматизация и защита от блокировок очень надежны. Отлично подходит для маркетинговых команд, которым нужны эффективные пакетные операции.",
         "description": "Текст отзыва четвертого пользователя"
     },
     "testimonials.user4.usage": {
@@ -1055,7 +1055,7 @@
         "description": "Заголовок функции белой метки"
     },
     "whitelabel.description": {
-        "message": "Настройте брендинг TikMatrix в соответствии с корпоративной идентичностью вашей компании",
+        "message": "Настройте брендинг TikZenX в соответствии с корпоративной идентичностью вашей компании",
         "description": "Описание функции белой метки"
     },
     "whitelabel.annualRequired": {

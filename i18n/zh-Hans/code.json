@@ -1,15 +1,15 @@
 {
-  "TikMatrix is a TikTok group control operation tool": {
+  "TikZenX is a TikTok group control operation tool": {
     "message": "TikMatrix是一款Tiktok群控运营工具"
   },
   "Download for Windows": {
     "message": "Windows 下载"
   },
-  "TikMatrix is a professional marketing software designed for TikTok phone farms": {
-    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件"
+  "TikZenX is a professional marketing software designed for TikTok phone farms": {
+    "message": "TikZenX 是一款专业的TikTok手机农场营销软件"
   },
-  "Why TikMatrix?": {
-    "message": "为什么使用 TikMatrix?"
+  "Why TikZenX?": {
+    "message": "为什么使用 TikZenX?"
   },
   "Our Core Advantages": {
     "message": "我们的核心优势"
@@ -23,8 +23,8 @@
   "Features": {
     "message": "功能"
   },
-  "TikMatrix": {
-    "message": "TikMatrix 真机矩阵"
+  "TikZenX": {
+    "message": "TikZenX 真机矩阵"
   },
   "Fingerprint Browser": {
     "message": "指纹浏览器"
@@ -98,39 +98,39 @@
   "Here are some frequently asked questions.": {
     "message": "以下是常见问题。"
   },
-  "What is TikMatrix?": {
-    "message": "什么是 TikMatrix?"
+  "What is TikZenX?": {
+    "message": "什么是 TikZenX?"
   },
   "How to use?": {
     "message": "如何使用?"
   },
-  "Go to the \"Download\" page and download the latest version of TikMatrix.": {
-    "message": "前往\"下载\"页面并下载最新版本的 TikMatrix。"
+  "Go to the \"Download\" page and download the latest version of TikZenX.": {
+    "message": "前往\"下载\"页面并下载最新版本的 TikZenX。"
   },
   "What devices can I use?": {
     "message": "我可以使用哪些设备?"
   },
-  "TikMatrix supports Android phones running Android 5.0 and above.": {
-    "message": "TikMatrix 支持 Android 手机，运行 Android 5.0 及以上版本。"
+  "TikZenX supports Android phones running Android 5.0 and above.": {
+    "message": "TikZenX 支持 Android 手机，运行 Android 5.0 及以上版本。"
   },
   "How many devices can I manage?": {
     "message": "我可以管理多少设备?"
   },
-  "TikMatrix supports up to 200+ devices.": {
-    "message": "TikMatrix 支持 200+ 个设备。"
+  "TikZenX supports up to 200+ devices.": {
+    "message": "TikZenX 支持 200+ 个设备。"
   },
   "How many TikTok accounts can each phone log into?": {
     "message": "每个手机可以登录几个tiktok账号?"
   },
-  "TikMatrix supports 8 TikTok accounts on each phone.": {
-    "message": "TikMatrix 支持每个手机登录8个tiktok账号"
+  "TikZenX supports 8 TikTok accounts on each phone.": {
+    "message": "TikZenX 支持每个手机登录8个tiktok账号"
   },
   "What computer can I use?": {
     "message": "我可以使用哪些电脑?",
     "description": "电脑支持问题"
   },
-  "TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app": {
-    "message": "TikMatrix 支持 Windows 10 及以上版本，以及 macOS 10.15 或更高版本。Mac用户安装后，需要在终端执行以下命令以允许运行：xattr -cr /Applications/TikMatrix.app",
+  "TikZenX supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikZenX.app": {
+    "message": "TikZenX 支持 Windows 10 及以上版本，以及 macOS 10.15 或更高版本。Mac用户安装后，需要在终端执行以下命令以允许运行：xattr -cr /Applications/TikZenX.app",
     "description": "电脑支持回答"
   },
   "theme.ErrorPageContent.title": {
@@ -628,9 +628,9 @@
     "message": "专业TikTok账号管理与营销工具，专为Windows和Mac上的安卓手机农场设计。实现自动发布、关注等功能，促进TikTok影响力增长，确保零封号率。",
     "description": "The description of Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate."
   },
-  "TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
-    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
-    "description": "The description of TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
+  "TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
+    "message": "TikZenX 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
+    "description": "The description of TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
   },
   "Streamline your TikTok phone farm with advanced batch control and marketing automation": {
     "message": "通过先进的批量控制和营销自动化，轻松管理您的TikTok手机农场。",
@@ -652,13 +652,13 @@
     "message": "我们的竞争优势",
     "description": "The description of Our Competitive Advantages"
   },
-  "TikMatrix delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
-    "message": "TikMatrix 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
-    "description": "The description of TikMatrix competitive advantage"
+  "TikZenX delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
+    "message": "TikZenX 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
+    "description": "The description of TikZenX competitive advantage"
   },
   "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
     "message": "我们专有的真机矩阵系统完美规避TikTok的风控措施，实现0%的账号封停率。",
-    "description": "The description of TikMatrix proprietary technology"
+    "description": "The description of TikZenX proprietary technology"
   },
   "Powerful TikTok Automation & Management Tools": {
     "message": "强大的TikTok自动化和管理工具",
@@ -724,9 +724,9 @@
     "message": "下载 IgMatrix",
     "description": "The description of Download IgMatrix"
   },
-  "Download TikMatrix": {
-    "message": "下载 TikMatrix",
-    "description": "The description of Download TikMatrix"
+  "Download TikZenX": {
+    "message": "下载 TikZenX",
+    "description": "The description of Download TikZenX"
   },
   "Download VideoMagic": {
     "message": "下载 VideoMagic",
@@ -741,15 +741,15 @@
     "description": "The description of Streamline your Instagram phone farm with advanced batch control and marketing automation"
   },
   "download.title": {
-    "message": "下载 TikMatrix",
+    "message": "下载 TikZenX",
     "description": "下载页面的标题"
   },
   "download.description": {
-    "message": "下载 TikMatrix 的 Windows、Mac 和 Linux 版本",
+    "message": "下载 TikZenX 的 Windows、Mac 和 Linux 版本",
     "description": "下载页面的描述"
   },
   "download.subtitle": {
-    "message": "选择您的平台下载 TikMatrix",
+    "message": "选择您的平台下载 TikZenX",
     "description": "下载页面的副标题"
   },
   "download.windows.title": {

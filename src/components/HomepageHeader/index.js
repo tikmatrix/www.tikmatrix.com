@@ -28,7 +28,7 @@ export default function HomepageHeader() {
                         <Link to="/Download" className="download-btn">
                             <i className="bx bx-download"></i>
                             <Translate>
-                                Download TikMatrix
+                                Download TikZenX
                             </Translate>
                         </Link>
 

@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac',
+  title: 'TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac',
   tagline: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation',
   favicon: 'favicon.ico',
 
@@ -77,9 +77,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/logo.png',
       navbar: {
-        title: 'TikMatrix',
+        title: 'TikZenX',
         logo: {
-          alt: 'TikMatrix Logo',
+          alt: 'TikZenX Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -169,7 +169,7 @@ const config = {
               },
               {
                 label: 'X',
-                href: 'https://x.com/TikMatrix',
+                href: 'https://x.com/TikZenX',
               },
               {
                 label: 'Youtube',
@@ -224,23 +224,23 @@ const config = {
             ],
           }
         ],
-        copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikMatrix LLC. All rights reserved.`,
+        copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikZenX LLC. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool, Windows and Mac Support' },
-        { name: 'description', content: 'TikMatrix is a professional marketing software designed for TikTok phone farms on Windows and Mac. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease. Zero account suspension rate.' },
-        { name: 'author', content: 'TikMatrix' },
-        { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
+        { name: 'keywords', content: 'TikZenX, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool, Windows and Mac Support' },
+        { name: 'description', content: 'TikZenX is a professional marketing software designed for TikTok phone farms on Windows and Mac. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease. Zero account suspension rate.' },
+        { name: 'author', content: 'TikZenX' },
+        { property: 'og:title', content: 'TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
         { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
         { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
         { property: 'og:url', content: 'https://tikmatrix.com/' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: '@TikMatrix' },
+        { name: 'twitter:site', content: '@TikZenX' },
       ],
       colorMode: {
         defaultMode: 'light',
@@ -265,7 +265,7 @@ const config = {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'SoftwareApplication',
-        'name': 'TikMatrix',
+        'name': 'TikZenX',
         'description': 'Professional marketing software designed for TikTok phone farms on Windows and Mac. Advanced batch control and marketing automation with zero account suspension rate.',
         'applicationCategory': 'BusinessApplication',
         'operatingSystem': 'Windows, macOS',
@@ -276,7 +276,7 @@ const config = {
         },
         'publisher': {
           '@type': 'Organization',
-          'name': 'TikMatrix, LLC.',
+          'name': 'TikZenX, LLC.',
           'logo': 'https://tikmatrix.com/img/logo.png'
         }
       }),

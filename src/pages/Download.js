@@ -10,12 +10,12 @@ export default function Download() {
     <Layout
       title={translate({
         id: 'download.title',
-        message: 'Download TikMatrix',
+        message: 'Download TikZenX',
         description: 'The title of the download page'
       })}
       description={translate({
         id: 'download.description',
-        message: 'Download TikMatrix for Windows, Mac and Linux',
+        message: 'Download TikZenX for Windows, Mac and Linux',
         description: 'The description of the download page'
       })}>
       <main className="download-page">
@@ -26,14 +26,14 @@ export default function Download() {
                 <Translate
                   id="download.title"
                   description="The title of the download page">
-                  Download TikMatrix
+                  Download TikZenX
                 </Translate>
               </h1>
               <p className="download-subtitle">
                 <Translate
                   id="download.subtitle"
                   description="The subtitle of the download page">
-                  Choose your platform to download TikMatrix
+                  Choose your platform to download TikZenX
                 </Translate>
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function Download() {
                     description="Mac installation tip">
                     After installation, please run the following command in Terminal to allow the app to run:
                   </Translate>
-                  <code>xattr -cr /Applications/TikMatrix.app</code>
+                  <code>xattr -cr /Applications/TikZenX.app</code>
                 </p>
               </div>
             </div>

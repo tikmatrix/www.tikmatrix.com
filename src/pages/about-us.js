@@ -6,22 +6,22 @@ export default function AboutUs() {
     return (
         <Layout
             title="About Us"
-            description="Learn more about TikMatrix: who we are, our mission, and our vision."
+            description="Learn more about TikZenX: who we are, our mission, and our vision."
         >
             <div className="container">
                 <div className={styles.aboutContent}>
                     <h1>About Us</h1>
 
                     <h2>Our Company</h2>
-                    <p>TikMatrix is developed by TikMatrix LLC, registered in Wyoming, USA. Since our founding, we have focused on creating innovative social media marketing tools to help businesses and creators maximize their online presence.</p>
+                    <p>TikZenX is developed by TikZenX LLC, registered in Wyoming, USA. Since our founding, we have focused on creating innovative social media marketing tools to help businesses and creators maximize their online presence.</p>
 
                     <h2>Our Mission</h2>
                     <p>Our mission is to develop powerful, user-friendly social media marketing tools that empower businesses of all sizes to grow efficiently and effectively. We strive to make advanced marketing technology accessible to everyone.</p>
 
                     <h2>Our Products</h2>
-                    <p>Our flagship product, TikMatrix, is designed for professional TikTok account management and marketing automation. We also offer tools for other platforms:</p>
+                    <p>Our flagship product, TikZenX, is designed for professional TikTok account management and marketing automation. We also offer tools for other platforms:</p>
                     <ul>
-                        <li><strong>TikMatrix</strong> – Professional TikTok account management and marketing tool</li>
+                        <li><strong>TikZenX</strong> – Professional TikTok account management and marketing tool</li>
                         <li><strong>IgMatrix</strong> – Instagram marketing and account management solution</li>
                         <li><strong>VideoMagic</strong> – Video content creation and optimization tool</li>
                         <li><strong>YtMatrix</strong> – YouTube channel growth and management platform</li>
@@ -40,7 +40,7 @@ export default function AboutUs() {
                     </ul>
 
                     <h2>Join Us</h2>
-                    <p>Whether you're a business owner, content creator, or marketing professional, TikMatrix has the tools you need to succeed in today's social media landscape. Our team is committed to helping you achieve your marketing goals and grow your online presence.</p>
+                    <p>Whether you're a business owner, content creator, or marketing professional, TikZenX has the tools you need to succeed in today's social media landscape. Our team is committed to helping you achieve your marketing goals and grow your online presence.</p>
 
                     <h2>Contact Us</h2>
                     <p>Have questions or need assistance? We're here to help!</p>
