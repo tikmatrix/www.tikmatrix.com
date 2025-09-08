@@ -38,7 +38,7 @@ export default function Home() {
     script.onerror = () => {
       console.error('Failed to load AnythingLLM chat widget script');
     };
-    document.body.appendChild(script);
+    // document.body.appendChild(script);
   }, []);
   const jsonLd = {
     "@context": "https://schema.org",

@@ -109,26 +109,26 @@ const config = {
             position: 'left',
             label: 'Features',
           },
-          {
-            to: '/about-us',
-            position: 'left',
-            label: 'About Us',
-          },
+          // {
+          //   to: '/about-us',
+          //   position: 'left',
+          //   label: 'About Us',
+          // },
           {
             href: '/#contact',
             position: 'left',
             label: 'Contact',
           },
-          {
-            href: '/IgMatrix',
-            position: 'right',
-            label: 'IgMatrix',
-          },
-          {
-            href: '/VideoMagic',
-            position: 'right',
-            label: 'VideoMagic',
-          },
+          // {
+          //   href: '/IgMatrix',
+          //   position: 'right',
+          //   label: 'IgMatrix',
+          // },
+          // {
+          //   href: '/VideoMagic',
+          //   position: 'right',
+          //   label: 'VideoMagic',
+          // },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -138,91 +138,91 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-              {
-                label: 'Recent posts',
-                to: '/blog',
-              },
-              {
-                label: 'Archive posts',
-                to: '/blog/archive',
-              }
+          // {
+          //   title: 'Docs',
+          //   items: [
+          //     {
+          //       label: 'Tutorial',
+          //       to: '/docs/intro',
+          //     },
+          // {
+          //   label: 'Recent posts',
+          //   to: '/blog',
+          // },
+          // {
+          //   label: 'Archive posts',
+          //   to: '/blog/archive',
+          // }
 
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/tikmatrix/tiktok-matrix',
-              },
-              {
-                label: 'Telegram',
-                href: 'https://t.me/tikmatrix',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/TikZenX',
-              },
-              {
-                label: 'Youtube',
-                href: 'https://youtube.com/@tikmatrix',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'About Us',
-                to: '/about-us',
-              },
-              {
-                label: 'Privacy Policy',
-                to: '/privacy-policy',
-              },
-              {
-                label: 'Terms of Service',
-                to: '/terms-of-service',
-              },
-            ],
-          },
-          {
-            title: 'Tools',
-            items: [
-              // {
-              //   label: 'VideoMagic',
-              //   href: '/VideoMagic',
-              // },
-              // {
-              //   label: 'IgMatrix',
-              //   href: '/IgMatrix',
-              // },
-              // {
-              //   label: 'YtMatrix',
-              //   href: '/YtMatrix',
-              // },
-              {
-                href: 'http://www.niaozun.shop?cid=934ec2fe',
-                label: 'Buy hardware',
-              },
-              {
-                href: 'https://user.tikmatrix.com',
-                label: 'TikTok User Finder',
-              },
-              {
-                href: 'https://ws.tikmatrix.com',
-                label: 'WhatsApp Number Checker',
-              },
-            ],
-          }
+          //   ],
+          // },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Github',
+          //       href: 'https://github.com/tikmatrix/tiktok-matrix',
+          //     },
+          //     {
+          //       label: 'Telegram',
+          //       href: 'https://t.me/tikmatrix',
+          //     },
+          //     {
+          //       label: 'X',
+          //       href: 'https://x.com/TikZenX',
+          //     },
+          //     {
+          //       label: 'Youtube',
+          //       href: 'https://youtube.com/@tikmatrix',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'More',
+          //   items: [
+          //     {
+          //       label: 'About Us',
+          //       to: '/about-us',
+          //     },
+          //     {
+          //       label: 'Privacy Policy',
+          //       to: '/privacy-policy',
+          //     },
+          //     {
+          //       label: 'Terms of Service',
+          //       to: '/terms-of-service',
+          //     },
+          //   ],
+          // },
+          // {
+          //   title: 'Tools',
+          //   items: [
+          // {
+          //   label: 'VideoMagic',
+          //   href: '/VideoMagic',
+          // },
+          // {
+          //   label: 'IgMatrix',
+          //   href: '/IgMatrix',
+          // },
+          // {
+          //   label: 'YtMatrix',
+          //   href: '/YtMatrix',
+          // },
+          // {
+          //   href: 'http://www.niaozun.shop?cid=934ec2fe',
+          //   label: 'Buy hardware',
+          // },
+          // {
+          //   href: 'https://user.tikmatrix.com',
+          //   label: 'TikTok User Finder',
+          // },
+          // {
+          //   href: 'https://ws.tikmatrix.com',
+          //   label: 'WhatsApp Number Checker',
+          // },
+          //   ],
+          // }
         ],
         copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikZenX LLC. All rights reserved.`,
       },
@@ -283,11 +283,11 @@ const config = {
     },
   ],
   scripts: [
-    {
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',
-      async: true,
-      crossorigin: 'anonymous'
-    },
+    // {
+    //   src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',
+    //   async: true,
+    //   crossorigin: 'anonymous'
+    // },
 
   ],
   clientModules: [
