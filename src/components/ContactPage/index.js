@@ -25,18 +25,15 @@ export default function FrequentlyAsked() {
                         <div className="row">
 
                             <div className="col col--6 info">
-                                <i className="bx bxl-telegram"></i>
+                                <i className="bx bxl-whatsapp"></i>
                                 <h4>
-                                    <Translate>Telegram</Translate>
+                                    <Translate>WhatsApp</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//t.me/tikmatrix" target="_blank">
-                                        <Translate>Join Channel</Translate>
+                                    <a href="https://wa.me/6588387587" target="_blank">
+                                        <Translate>+6588387587</Translate>
                                     </a>
-                                    &nbsp;|&nbsp;
-                                    <a href="//t.me/tikmatrix_support" target="_blank">
-                                        <Translate>Join Group</Translate>
-                                    </a>
+
                                 </p>
                             </div>
 
@@ -46,7 +43,7 @@ export default function FrequentlyAsked() {
                                     <Translate>Email</Translate>
                                 </h4>
                                 <p>
-                                    <Translate>support@tikmatrix.com</Translate>
+                                    <Translate>admin@tikzenx.com</Translate>
                                 </p>
                             </div>
                         </div>

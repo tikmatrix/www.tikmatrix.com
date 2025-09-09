@@ -99,11 +99,11 @@ const config = {
             position: 'left',
             label: 'Download',
           },
-          {
-            href: '/#pricing',
-            position: 'left',
-            label: 'Pricing',
-          },
+          // {
+          //   href: '/#pricing',
+          //   position: 'left',
+          //   label: 'Pricing',
+          // },
           {
             href: '/#features',
             position: 'left',

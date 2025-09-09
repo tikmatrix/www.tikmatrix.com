@@ -111,7 +111,7 @@ export default function Home() {
       <main>
         <HomepageVS />
         <HomepageFeatures />
-        <PricingPage />
+        {/* <PricingPage /> */}
         {/* <FrequentlyAsked /> */}
         <ContactPage />
         <Testimonials />
