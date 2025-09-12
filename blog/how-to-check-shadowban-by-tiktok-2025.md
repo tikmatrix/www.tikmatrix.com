@@ -1,8 +1,8 @@
 ---
 sulg: how-to-check-shadowban-by-tiktok-2025
 title: How to Check Shadowban by TikTok 2025
-authors: Tikzenx
-tags: [Tikzenx, tiktok, shadowban, check]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, shadowban, check]
 ---
 
 Shadowban is a term used to describe the situation where a user's content is hidden or suppressed by a social media platform without the user's knowledge. If you suspect that you have been shadowbanned by TikTok, there are several ways to check and confirm it. Here are some steps to check if you have been shadowbanned by TikTok in 2025:

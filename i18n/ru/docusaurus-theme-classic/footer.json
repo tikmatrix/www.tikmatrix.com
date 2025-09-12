@@ -32,22 +32,22 @@
     },
     "link.item.label.Youtube": {
         "message": "Youtube",
-        "description": "The label of footer link with label=Youtube linking to https://youtube.com/@tikzenx"
+        "description": "The label of footer link with label=Youtube linking to https://youtube.com/@tikmatrix"
     },
     "link.item.label.Telegram": {
         "message": "Telegram",
-        "description": "The label of footer link with label=Telegram linking to https://t.me/fayelsyahmi"
+        "description": "The label of footer link with label=Telegram linking to https://t.me/tikmatrix_support"
     },
     "link.item.label.Twitter": {
         "message": "Twitter",
-        "description": "The label of footer link with label=Twitter linking to https://twitter.com/tikzenx"
+        "description": "The label of footer link with label=Twitter linking to https://twitter.com/niostack"
     },
     "link.item.label.GitHub": {
         "message": "GitHub",
-        "description": "The label of footer link with label=GitHub linking to https://github.com/tikzenx/tiktok-matrix"
+        "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tiktok-matrix"
     },
     "copyright": {
-        "message": "Авторские права © 2024 TikZenX LLC. Все права защищены.",
+        "message": "Авторские права © 2024 TikMatrix LLC. Все права защищены.",
         "description": "The footer copyright"
     },
     "link.item.label.Privacy Policy": {

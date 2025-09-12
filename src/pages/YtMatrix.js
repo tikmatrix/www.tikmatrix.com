@@ -48,7 +48,7 @@ export default function VideoMagic() {
     },
     "author": {
       "@type": "Organization",
-      "name": "TikZenX",
+      "name": "TikMatrix",
       "url": "https://tikmatrix.com",
       "logo": "https://tikmatrix.com/img/ytmatrix_logo.png",
     },

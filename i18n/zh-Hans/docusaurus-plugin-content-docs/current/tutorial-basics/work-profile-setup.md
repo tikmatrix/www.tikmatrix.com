@@ -1,18 +1,18 @@
 # Work Profile 工作资料配置
 
-TikZenX 支持为每台设备单独配置 Work Profile 用户，这对于使用企业设备或双开应用非常有用。
+TikMatrix 支持为每台设备单独配置 Work Profile 用户，这对于使用企业设备或双开应用非常有用。
 
 ## 什么是 Work Profile
 
 Work Profile（工作资料）是 Android 的一个功能，它允许在同一设备上创建一个独立的工作环境。通过配置不同的用户 ID，您可以：
 
-- 在企业管理的设备上正常使用 TikZenX
+- 在企业管理的设备上正常使用 TikMatrix
 - 为不同的应用环境设置不同的用户配置
 - 实现更精细的设备管理和权限控制
 
 ## 使用 Shelter 工具克隆应用
 
-在配置 Work Profile 之前，您需要使用 Shelter 工具克隆 TikTok 和 TikZenX 应用：
+在配置 Work Profile 之前，您需要使用 Shelter 工具克隆 TikTok 和 TikMatrix 应用：
 
 ### 什么是 Shelter
 
@@ -26,7 +26,7 @@ Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理
 
 ### 克隆所需应用
 
-设置 Shelter 后，您需要克隆 TikTok 和 TikZenX 应用：
+设置 Shelter 后，您需要克隆 TikTok 和 TikMatrix 应用：
 
 1. **克隆 TikTok 应用**：
    - 打开 Shelter 并转到"主界面"选项卡
@@ -34,8 +34,8 @@ Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理
    - 点击"克隆到工作资料"按钮
    - 等待克隆过程完成
 
-2. **克隆 TikZenX 应用**：
-   - 在 Shelter 中，在应用程序列表中找到 TikZenX
+2. **克隆 TikMatrix 应用**：
+   - 在 Shelter 中，在应用程序列表中找到 TikMatrix
    - 点击"克隆到工作资料"按钮
    - 确认克隆操作
 
@@ -43,7 +43,7 @@ Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理
 
 克隆成功后：
 
-- 您将在应用抽屉中看到带有公文包图标的 TikTok 和 TikZenX
+- 您将在应用抽屉中看到带有公文包图标的 TikTok 和 TikMatrix
 - 这些是应用程序的 Work Profile 版本
 - 主配置文件中的原始应用程序保持不变
 
@@ -51,7 +51,7 @@ Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理
 
 ### 1. 打开设备工具栏
 
-当您的设备连接并显示在 TikZenX 主界面时：
+当您的设备连接并显示在 TikMatrix 主界面时：
 
 1. 双击设备卡片进入大屏模式
 2. 在设备屏幕右侧会出现一个工具栏
@@ -88,7 +88,7 @@ Shelter 是一个开源应用程序，可以在 Android 设备上创建和管理
 adb shell pm list users
 ```
 
-或在 TikZenX 的调试工具中执行：
+或在 TikMatrix 的调试工具中执行：
 
 ```bash
 pm list users
@@ -128,10 +128,10 @@ Work Profile 配置会自动保存到 `data/work_profile_user.json` 文件中，
 
 如果您需要管理大量设备，可以直接编辑 `data/work_profile_user.json` 文件：
 
-1. 关闭 TikZenX 应用
+1. 关闭 TikMatrix 应用
 2. 打开配置文件
 3. 按 JSON 格式添加或修改设备配置
-4. 重新启动 TikZenX
+4. 重新启动 TikMatrix
 
 ## 故障排除
 
@@ -179,9 +179,9 @@ A: 如果遇到 Shelter 相关问题：
 ### Shelter 工具管理
 
 1. **定期更新**: 保持 Shelter 应用程序最新以确保兼容性
-2. **应用同步**: 确保在配置 Work Profile 之前克隆了 TikTok 和 TikZenX
+2. **应用同步**: 确保在配置 Work Profile 之前克隆了 TikTok 和 TikMatrix
 3. **备份 Shelter 设置**: 导出并备份 Shelter 配置以便轻松恢复
-4. **监控应用更新**: 当 TikTok 或 TikZenX 更新时，您可能需要更新克隆版本
+4. **监控应用更新**: 当 TikTok 或 TikMatrix 更新时，您可能需要更新克隆版本
 
 ## 技术说明
 
@@ -199,4 +199,4 @@ adb shell --user 10 input tap 100 200
 
 ---
 
-通过合理配置 Work Profile，您可以在各种复杂的设备环境中顺利使用 TikZenX，提高工作效率和管理便利性。
+通过合理配置 Work Profile，您可以在各种复杂的设备环境中顺利使用 TikMatrix，提高工作效率和管理便利性。

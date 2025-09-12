@@ -26,11 +26,11 @@ export default function FrequentlyAsked() {
                             <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse"
                                 onClick={() => handleTagClick("accordion-list-1")}
                                 data-bs-target="#accordion-list-1">
-                                <Translate>What is TikZenX?</Translate>
+                                <Translate>What is TikMatrix?</Translate>
                                 <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-1" className="collapse show" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikZenX is a professional marketing software designed for TikTok phone farms</Translate>
+                                    <Translate>TikMatrix is a professional marketing software designed for TikTok phone farms</Translate>
                                 </p>
                             </div>
                         </li>
@@ -44,7 +44,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-2" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>Go to the "Download" page and download the latest version of TikZenX.</Translate>
+                                    <Translate>Go to the "Download" page and download the latest version of TikMatrix.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -58,7 +58,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-3" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikZenX supports Android phones running Android 5.0 and above.</Translate>
+                                    <Translate>TikMatrix supports Android phones running Android 5.0 and above.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -72,7 +72,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-4" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikZenX supports up to 200+ devices.</Translate>
+                                    <Translate>TikMatrix supports up to 200+ devices.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -85,7 +85,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-5" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikZenX supports 8 TikTok accounts on each phone.</Translate>
+                                    <Translate>TikMatrix supports 8 TikTok accounts on each phone.</Translate>
                                 </p>
                             </div>
                         </li>
@@ -98,7 +98,7 @@ export default function FrequentlyAsked() {
                                     className="bx bx-chevron-up icon-close"></i></a>
                             <div id="accordion-list-6" className="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    <Translate>TikZenX supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikZenX.app</Translate>
+                                    <Translate>TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app</Translate>
                                 </p>
                             </div>
                         </li>

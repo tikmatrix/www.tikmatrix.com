@@ -28,7 +28,7 @@ export default function HomepageHeader() {
                         <Link to="/Download" className="download-btn">
                             <i className="bx bx-download"></i>
                             <Translate>
-                                Download TikZenX
+                                Download TikMatrix
                             </Translate>
                         </Link>
 
@@ -42,7 +42,7 @@ export default function HomepageHeader() {
                     </div>
                 </div>
                 <div className="col col--6 image-slider">
-                    {/* <ImageSlider /> */}
+                    <ImageSlider />
                 </div>
             </div>
         </header>

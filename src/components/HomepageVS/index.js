@@ -7,14 +7,14 @@ export default function HomepageFeatures() {
             <div className="container" data-aos="fade-up">
                 <div className="section-title">
                     <h2>
-                        <Translate>Why TikZenX?</Translate>
+                        <Translate>Why TikMatrix?</Translate>
                     </h2>
                     <p>
                         <Translate>Our Competitive Advantages</Translate>
                     </p>
                     <p>
                         <Translate>
-                            TikZenX delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.
+                            TikMatrix delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.
                         </Translate>
                     </p>
                     <p>
@@ -30,7 +30,7 @@ export default function HomepageFeatures() {
                         <Translate>Features</Translate>
                     </div>
                     <div className="featuresCol featuresTitle">
-                        <Translate>TikZenX</Translate>
+                        <Translate>TikMatrix</Translate>
                     </div>
                     <div className="featuresCol featuresTitle">
                         <Translate>Fingerprint Browser</Translate>

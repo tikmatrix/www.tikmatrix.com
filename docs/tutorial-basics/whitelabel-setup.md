@@ -8,7 +8,7 @@ sidebar_position: 9
 White Label functionality is available exclusively for **Annual Subscription** users. Contact our support team via [Telegram](https://t.me/tikmatrix) to obtain your unlock code after purchasing an annual plan.
 :::
 
-The White Label feature allows you to customize TikZenX's branding to match your company identity. You can modify the app name, logo, and brand information to create a personalized version of TikZenX.
+The White Label feature allows you to customize TikMatrix's branding to match your company identity. You can modify the app name, logo, and brand information to create a personalized version of TikMatrix.
 
 ## Features
 
@@ -33,7 +33,7 @@ The White Label feature allows you to customize TikZenX's branding to match your
 
 ### Method 1: UI Configuration
 
-1. Launch TikZenX application
+1. Launch TikMatrix application
 2. Click the palette icon 🎨 in the title bar
 3. Configure parameters in the White Label Settings dialog:
    - **App Name**: Enter your custom application name
