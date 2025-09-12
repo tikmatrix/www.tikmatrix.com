@@ -1,6 +1,6 @@
 {
   "TikZenX is a TikTok group control operation tool": {
-    "message": "TikZenx是一款Tiktok群控运营工具"
+    "message": "TikMatrix是一款Tiktok群控运营工具"
   },
   "Download for Windows": {
     "message": "Windows 下载"
@@ -919,7 +919,7 @@
     "description": "用户评价部分标题"
   },
   "testimonials.subtitle": {
-    "message": "TikZenx用户怎么说",
+    "message": "TikMatrix用户怎么说",
     "description": "用户评价部分副标题"
   },
   "testimonials.usage_label": {
@@ -927,7 +927,7 @@
     "description": "使用时长标签"
   },
   "testimonials.user1.text": {
-    "message": "TikZenx对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
+    "message": "TikMatrix对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
     "description": "第一个用户评价文本"
   },
   "testimonials.user1.usage": {
@@ -935,7 +935,7 @@
     "description": "第一个用户使用时长"
   },
   "testimonials.user2.text": {
-    "message": "使用TikZenx后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
+    "message": "使用TikMatrix后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
     "description": "第二个用户评价文本"
   },
   "testimonials.user2.usage": {
@@ -951,7 +951,7 @@
     "description": "第三个用户使用时长"
   },
   "testimonials.user4.text": {
-    "message": "之前试过其他工具，但TikZenx是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
+    "message": "之前试过其他工具，但TikMatrix是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
     "description": "第四个用户评价文本"
   },
   "testimonials.user4.usage": {
@@ -1055,7 +1055,7 @@
     "description": "白标功能标题"
   },
   "whitelabel.description": {
-    "message": "自定义TikZenx的品牌标识以匹配您的公司形象",
+    "message": "自定义TikMatrix的品牌标识以匹配您的公司形象",
     "description": "白标功能描述"
   },
   "whitelabel.annualRequired": {
@@ -1097,197 +1097,5 @@
   "whitelabel.telegramUrl": {
     "message": "Telegram链接",
     "description": "Telegram链接"
-  },
-  "Setup Tutorial": {
-    "message": "设置教程"
-  },
-  "Follow these steps to get started with IgMatrix": {
-    "message": "按照以下步骤开始使用IgMatrix"
-  },
-  "Important Notice": {
-    "message": "重要提示"
-  },
-  "IgMatrix setup tutorial is identical to TikMatrix. The only difference is their script logic, so you can directly refer to the TikMatrix tutorial documentation.": {
-    "message": "IgMatrix的设置教程与TikMatrix相同。唯一的不同就是他们的脚本逻辑不同，所以您可以直接参考TikMatrix的教程文档。"
-  },
-  "Please download IgMatrix to view the script list directly. Currently, not all TikMatrix scripts are 100% supported in IgMatrix. Please refer to the actual features in the software.": {
-    "message": "请直接下载IgMatrix查看脚本列表。目前TikMatrix的脚本没有100%被IgMatrix中支持，请以软件中的功能为准。"
-  },
-  "Quick Setup Guide": {
-    "message": "快速设置指南"
-  },
-  "Download and Install": {
-    "message": "下载并安装"
-  },
-  "Download IgMatrix from our official website and follow the installation instructions.": {
-    "message": "从我们的官方网站下载IgMatrix，并按照安装说明进行操作。"
-  },
-  "Follow TikMatrix Tutorial": {
-    "message": "参考TikMatrix教程"
-  },
-  "Since the setup process is identical, please refer to our comprehensive TikMatrix documentation for detailed instructions on device connection, account management, and script configuration.": {
-    "message": "由于设置过程完全相同，请参考我们全面的TikMatrix文档，获取设备连接、账户管理和脚本配置的详细说明。"
-  },
-  "View TikMatrix Tutorial": {
-    "message": "查看TikMatrix教程"
-  },
-  "Check Available Scripts": {
-    "message": "查看可用脚本"
-  },
-  "After installation, open IgMatrix to view the complete list of available Instagram automation scripts. The script selection may differ from TikMatrix.": {
-    "message": "安装后，打开IgMatrix查看可用的Instagram自动化脚本完整列表。脚本选择可能与TikMatrix不同。"
-  },
-  "Get Support": {
-    "message": "获取支持"
-  },
-  "If you need help with IgMatrix-specific features or encounter any issues, our support team is ready to assist you.": {
-    "message": "如果您需要IgMatrix特定功能的帮助或遇到任何问题，我们的支持团队随时为您提供帮助。"
-  },
-  "Key Differences from TikMatrix": {
-    "message": "与TikMatrix的主要区别"
-  },
-  "Same Setup Process": {
-    "message": "相同的设置过程"
-  },
-  "Device connection": {
-    "message": "设备连接"
-  },
-  "Account management": {
-    "message": "账户管理"
-  },
-  "Basic configuration": {
-    "message": "基础配置"
-  },
-  "User interface": {
-    "message": "用户界面"
-  },
-  "Different Script Logic": {
-    "message": "不同的脚本逻辑"
-  },
-  "Instagram-specific automation": {
-    "message": "Instagram专用自动化"
-  },
-  "Different script availability": {
-    "message": "不同的脚本可用性"
-  },
-  "Platform-optimized features": {
-    "message": "平台优化功能"
-  },
-  "Custom Instagram workflows": {
-    "message": "自定义Instagram工作流程"
-  },
-  "Important Reminder": {
-    "message": "重要提醒"
-  },
-  "Always check the actual features available in your IgMatrix software, as the script functionality may vary from TikMatrix. The software interface will show you exactly which automation scripts are available for Instagram.": {
-    "message": "请始终检查您的IgMatrix软件中的实际可用功能，因为脚本功能可能与TikMatrix不同。软件界面将确切显示哪些自动化脚本可用于Instagram。"
-  },
-  "IgMatrix Features": {
-    "message": "IgMatrix功能"
-  },
-  "Powerful Instagram automation tools designed for professional marketers and businesses": {
-    "message": "为专业营销人员和企业设计的强大Instagram自动化工具"
-  },
-  "Multi-Device Control": {
-    "message": "多设备控制"
-  },
-  "Control multiple Instagram accounts across different Android devices simultaneously": {
-    "message": "同时控制不同Android设备上的多个Instagram账户"
-  },
-  "Instagram Automation": {
-    "message": "Instagram自动化"
-  },
-  "Automate posting, following, commenting, and engagement activities on Instagram": {
-    "message": "自动化Instagram上的发布、关注、评论和互动活动"
-  },
-  "Safe & Secure": {
-    "message": "安全可靠"
-  },
-  "Built with safety mechanisms to protect your Instagram accounts from suspension": {
-    "message": "内置安全机制，保护您的Instagram账户免受封禁"
-  },
-  "Smart Scheduling": {
-    "message": "智能调度"
-  },
-  "Schedule your Instagram activities with intelligent timing algorithms": {
-    "message": "使用智能时间算法安排您的Instagram活动"
-  },
-  "24/7 Support": {
-    "message": "24/7支持"
-  },
-  "Get dedicated support from our expert team whenever you need help": {
-    "message": "随时从我们的专家团队获得专门支持"
-  },
-  "Why Choose IgMatrix?": {
-    "message": "为什么选择IgMatrix？"
-  },
-  "IgMatrix brings the same powerful automation capabilities of TikMatrix to Instagram, helping you scale your Instagram marketing efforts efficiently and safely.": {
-    "message": "IgMatrix将TikMatrix的强大自动化功能带到Instagram，帮助您高效、安全地扩展Instagram营销工作。"
-  },
-  "Same reliable technology as TikMatrix": {
-    "message": "与TikMatrix相同的可靠技术"
-  },
-  "Instagram-optimized automation scripts": {
-    "message": "Instagram优化的自动化脚本"
-  },
-  "Multi-language support (English, Chinese, Russian)": {
-    "message": "多语言支持（英语、中文、俄语）"
-  },
-  "Professional phone farm management": {
-    "message": "专业手机农场管理"
-  },
-  "Advanced safety mechanisms": {
-    "message": "先进的安全机制"
-  },
-  "Start automating your Instagram marketing today with IgMatrix and experience the same professional-grade tools that thousands of marketers trust.": {
-    "message": "立即使用IgMatrix开始自动化您的Instagram营销，体验成千上万营销人员信赖的专业级工具。"
-  },
-  "Find answers to common questions about IgMatrix": {
-    "message": "查找有关IgMatrix常见问题的答案"
-  },
-  "What is the difference between IgMatrix and TikMatrix?": {
-    "message": "IgMatrix和TikMatrix有什么区别？"
-  },
-  "IgMatrix and TikMatrix share the same setup process and user interface. The main difference is that IgMatrix is specifically designed for Instagram automation, while TikMatrix is for TikTok. The script logic and available features are optimized for each respective platform.": {
-    "message": "IgMatrix和TikMatrix具有相同的设置过程和用户界面。主要区别是IgMatrix专门为Instagram自动化设计，而TikMatrix用于TikTok。脚本逻辑和可用功能针对各自的平台进行了优化。"
-  },
-  "Can I use the same tutorial for both IgMatrix and TikMatrix?": {
-    "message": "我可以对IgMatrix和TikMatrix使用相同的教程吗？"
-  },
-  "Yes! The setup tutorial for IgMatrix is identical to TikMatrix. You can follow the TikMatrix documentation for installation, device connection, and basic configuration. Only the automation scripts will differ based on the platform.": {
-    "message": "是的！IgMatrix的设置教程与TikMatrix完全相同。您可以按照TikMatrix文档进行安装、设备连接和基本配置。只有自动化脚本会根据平台而有所不同。"
-  },
-  "Which scripts from TikMatrix are available in IgMatrix?": {
-    "message": "IgMatrix中有哪些来自TikMatrix的脚本可用？"
-  },
-  "Not all TikMatrix scripts are available in IgMatrix, as they are platform-specific. The exact list of available scripts can be found within the IgMatrix software interface after installation. Please refer to the actual features shown in your software.": {
-    "message": "由于脚本是平台特定的，并非所有TikMatrix脚本都在IgMatrix中可用。安装后可以在IgMatrix软件界面中找到可用脚本的确切列表。请参考软件中显示的实际功能。"
-  },
-  "Do I need separate licenses for IgMatrix and TikMatrix?": {
-    "message": "我需要为IgMatrix和TikMatrix单独购买许可证吗？"
-  },
-  "Yes, IgMatrix and TikMatrix require separate licenses as they are different products optimized for different social media platforms. Each license is tied to specific software and cannot be used interchangeably.": {
-    "message": "是的，IgMatrix和TikMatrix需要单独的许可证，因为它们是针对不同社交媒体平台优化的不同产品。每个许可证都绑定到特定软件，不能互换使用。"
-  },
-  "Is the pricing the same as TikMatrix?": {
-    "message": "定价与TikMatrix相同吗？"
-  },
-  "IgMatrix follows a similar pricing structure to TikMatrix, but may have different rates. Please check our official pricing page or contact our support team for current IgMatrix pricing information.": {
-    "message": "IgMatrix遵循与TikMatrix类似的定价结构，但可能有不同的费率。请查看我们的官方定价页面或联系我们的支持团队了解当前的IgMatrix定价信息。"
-  },
-  "Can I run both IgMatrix and TikMatrix on the same computer?": {
-    "message": "我可以在同一台计算机上同时运行IgMatrix和TikMatrix吗？"
-  },
-  "You can install both IgMatrix and TikMatrix on the same computer, but they cannot run simultaneously due to runtime conflicts. You can only run one software at a time - either IgMatrix or TikMatrix.": {
-    "message": "您可以在同一台计算机上安装IgMatrix和TikMatrix，但由于运行时冲突，它们不能同时运行。您一次只能运行其中一个软件 - IgMatrix或TikMatrix。"
-  },
-  "Still have questions?": {
-    "message": "还有问题？"
-  },
-  "Our support team is here to help you with any IgMatrix-related questions or issues.": {
-    "message": "我们的支持团队在这里帮助您解决任何与IgMatrix相关的问题或疑问。"
-  },
-  "Contact Support": {
-    "message": "联系支持"
   }
 }

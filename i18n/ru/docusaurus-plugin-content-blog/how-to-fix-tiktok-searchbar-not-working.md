@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-tiktok-searchbar-not-working
 title: Как исправить неработающую строку поиска в TikTok
-authors: Tikzenx
-tags: [Tikzenx, tiktok, searchbar, fix]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, searchbar, fix]
 ---
 
 Неработающая строка поиска в TikTok может быть раздражающей проблемой, но к счастью, есть несколько способов решить эту проблему. Вот несколько советов о том, как исправить неработающую строку поиска в TikTok:
@@ -45,4 +45,4 @@ tags: [Tikzenx, tiktok, searchbar, fix]
 
 Если ни один из вышеперечисленных методов не решает проблему, обратитесь в поддержку TikTok за помощью.
 
-## Если вам нужна дополнительная информация о TikTok, присоединяйтесь к нашей [группе обсуждения в Telegram](https://t.me/fayelsyahmi)
+## Если вам нужна дополнительная информация о TikTok, присоединяйтесь к нашей [группе обсуждения в Telegram](https://t.me/tikmatrix_support)

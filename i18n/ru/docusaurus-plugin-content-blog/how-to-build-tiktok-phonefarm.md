@@ -1,8 +1,8 @@
 ---
 slug: how-to-build-tiktok-phonefarm
 title: Как построить TikTok ферму телефонов
-authors: Tikzenx
-tags: [Tikzenx, tiktok, phone, farm, automation, accounts]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, phone, farm, automation, accounts]
 ---
 
 TikTok ферма телефонов - это установка, в которой используется несколько устройств для автоматизации задач TikTok, таких как управление аккаунтами, публикация видео и взаимодействие. Фермы телефонов могут помочь пользователям увеличить свое присутствие в TikTok, повысить вовлеченность и сэкономить время, автоматизируя повторяющиеся задачи. Вот как построить TikTok ферму телефонов с помощью TikZenX:
