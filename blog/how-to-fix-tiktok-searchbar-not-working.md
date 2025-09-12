@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-tiktok-searchbar-not-working
 title: How to Fix TikTok Searchbar Not Working
-authors: Tikzenx
-tags: [Tikzenx, tiktok, searchbar, fix]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, searchbar, fix]
 ---
 
 A non-working TikTok search bar can be a frustrating issue, but fortunately, there are several methods to resolve this problem. Here are some tips on how to fix the TikTok search bar when it's not working:
@@ -45,4 +45,4 @@ Ensure that your TikTok account has not been suspended or disabled. If your acco
 
 If none of the above methods solve the problem, please contact TikTok support for assistance.
 
-## If you need more TikTok-related information, please join our [Telegram discussion group](https://t.me/fayelsyahmi)
+## If you need more TikTok-related information, please join our [Telegram discussion group](https://t.me/tikmatrix_support)
