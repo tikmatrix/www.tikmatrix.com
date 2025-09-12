@@ -1,8 +1,8 @@
 ---
-sulg: how-to-avoid-shadowban-when-mass-posting-tiktok-content-with-tikzenx
+sulg: how-to-avoid-shadowban-when-mass-posting-tiktok-content-with-tikmatrix
 title: How to Avoid Shadowbans When Mass Posting TikTok Content with TikZenX Phone Farm
-authors: tikzenx
-tags: [tikzenx, tiktok, phonefarm, shadowban, prevention, automation, mass posting]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, phonefarm, shadowban, prevention, automation, mass posting]
 ---
 
 While TikZenX enables efficient management of multiple TikTok accounts, maintaining those accounts in good standing requires careful strategy. Shadowbans—where TikTok limits your content's reach without notification—pose a significant risk when mass posting across multiple accounts. This guide outlines proven methods to avoid detection and maintain account health when using TikZenX for large-scale content deployment.
