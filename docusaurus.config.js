@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac',
+  title: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac',
   tagline: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation',
   favicon: 'favicon.ico',
 
@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'TikZenx', // Usually your GitHub org/user name.
+  organizationName: 'tikmatrix', // Usually your GitHub org/user name.
   projectName: 'tiktok-matrix', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -77,9 +77,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/logo.png',
       navbar: {
-        title: 'TikZenX',
+        title: 'TikMatrix',
         logo: {
-          alt: 'TikZenX Logo',
+          alt: 'TikMatrix Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -89,46 +89,46 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          // {
-          //   to: '/blog',
-          //   position: 'left',
-          //   label: 'Blog',
-          // },
+          {
+            to: '/blog',
+            position: 'left',
+            label: 'Blog',
+          },
           {
             to: '/Download',
             position: 'left',
             label: 'Download',
           },
-          // {
-          //   href: '/#pricing',
-          //   position: 'left',
-          //   label: 'Pricing',
-          // },
+          {
+            href: '/#pricing',
+            position: 'left',
+            label: 'Pricing',
+          },
           {
             href: '/#features',
             position: 'left',
             label: 'Features',
           },
-          // {
-          //   to: '/about-us',
-          //   position: 'left',
-          //   label: 'About Us',
-          // },
+          {
+            to: '/about-us',
+            position: 'left',
+            label: 'About Us',
+          },
           {
             href: '/#contact',
             position: 'left',
             label: 'Contact',
           },
-          // {
-          //   href: '/IgMatrix',
-          //   position: 'right',
-          //   label: 'IgMatrix',
-          // },
-          // {
-          //   href: '/VideoMagic',
-          //   position: 'right',
-          //   label: 'VideoMagic',
-          // },
+          {
+            href: '/IgMatrix',
+            position: 'right',
+            label: 'IgMatrix',
+          },
+          {
+            href: '/VideoMagic',
+            position: 'right',
+            label: 'VideoMagic',
+          },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -138,109 +138,109 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          // {
-          //   title: 'Docs',
-          //   items: [
-          //     {
-          //       label: 'Tutorial',
-          //       to: '/docs/intro',
-          //     },
-          // {
-          //   label: 'Recent posts',
-          //   to: '/blog',
-          // },
-          // {
-          //   label: 'Archive posts',
-          //   to: '/blog/archive',
-          // }
+          {
+            title: 'Docs',
+            items: [
+              {
+                label: 'Tutorial',
+                to: '/docs/intro',
+              },
+              {
+                label: 'Recent posts',
+                to: '/blog',
+              },
+              {
+                label: 'Archive posts',
+                to: '/blog/archive',
+              }
 
-          //   ],
-          // },
-          // {
-          //   title: 'Community',
-          //   items: [
-          //     {
-          //       label: 'Github',
-          //       href: 'https://github.com/tikmatrix/tiktok-matrix',
-          //     },
-          //     {
-          //       label: 'Telegram',
-          //       href: 'https://t.me/TikZenx',
-          //     },
-          //     {
-          //       label: 'X',
-          //       href: 'https://x.com/TikZenX',
-          //     },
-          //     {
-          //       label: 'Youtube',
-          //       href: 'https://youtube.com/@TikZenx',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'More',
-          //   items: [
-          //     {
-          //       label: 'About Us',
-          //       to: '/about-us',
-          //     },
-          //     {
-          //       label: 'Privacy Policy',
-          //       to: '/privacy-policy',
-          //     },
-          //     {
-          //       label: 'Terms of Service',
-          //       to: '/terms-of-service',
-          //     },
-          //   ],
-          // },
-          // {
-          //   title: 'Tools',
-          //   items: [
-          // {
-          //   label: 'VideoMagic',
-          //   href: '/VideoMagic',
-          // },
-          // {
-          //   label: 'IgMatrix',
-          //   href: '/IgMatrix',
-          // },
-          // {
-          //   label: 'YtMatrix',
-          //   href: '/YtMatrix',
-          // },
-          // {
-          //   href: 'http://www.niaozun.shop?cid=934ec2fe',
-          //   label: 'Buy hardware',
-          // },
-          // {
-          //   href: 'https://user.TikZenx.com',
-          //   label: 'TikTok User Finder',
-          // },
-          // {
-          //   href: 'https://ws.TikZenx.com',
-          //   label: 'WhatsApp Number Checker',
-          // },
-          //   ],
-          // }
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Github',
+                href: 'https://github.com/tikmatrix/tiktok-matrix',
+              },
+              {
+                label: 'Telegram',
+                href: 'https://t.me/tikmatrix',
+              },
+              {
+                label: 'X',
+                href: 'https://x.com/TikMatrix',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://youtube.com/@tikmatrix',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'About Us',
+                to: '/about-us',
+              },
+              {
+                label: 'Privacy Policy',
+                to: '/privacy-policy',
+              },
+              {
+                label: 'Terms of Service',
+                to: '/terms-of-service',
+              },
+            ],
+          },
+          {
+            title: 'Tools',
+            items: [
+              // {
+              //   label: 'VideoMagic',
+              //   href: '/VideoMagic',
+              // },
+              // {
+              //   label: 'IgMatrix',
+              //   href: '/IgMatrix',
+              // },
+              // {
+              //   label: 'YtMatrix',
+              //   href: '/YtMatrix',
+              // },
+              {
+                href: 'http://www.niaozun.shop?cid=934ec2fe',
+                label: 'Buy hardware',
+              },
+              {
+                href: 'https://user.tikmatrix.com',
+                label: 'TikTok User Finder',
+              },
+              {
+                href: 'https://ws.tikmatrix.com',
+                label: 'WhatsApp Number Checker',
+              },
+            ],
+          }
         ],
-        copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikZenX LLC. All rights reserved.`,
+        copyright: `Copyright © 2023 - ${new Date().getFullYear()} TikMatrix LLC. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
       metadata: [
-        { name: 'keywords', content: 'TikZenX, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool, Windows and Mac Support' },
-        { name: 'description', content: 'TikZenX is a professional marketing software designed for TikTok phone farms on Windows and Mac. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease. Zero account suspension rate.' },
-        { name: 'author', content: 'TikZenX' },
-        { property: 'og:title', content: 'TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
+        { name: 'keywords', content: 'TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Marketing, TikTok Account Management, Batch Control, Marketing Software, TikTok Growth Tool, Windows and Mac Support' },
+        { name: 'description', content: 'TikMatrix is a professional marketing software designed for TikTok phone farms on Windows and Mac. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease. Zero account suspension rate.' },
+        { name: 'author', content: 'TikMatrix' },
+        { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
         { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
-        { property: 'og:image', content: 'https://TikZenx.com/img/logo.png' },
-        { property: 'og:url', content: 'https://TikZenx.com/' },
+        { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
+        { property: 'og:url', content: 'https://tikmatrix.com/' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: '@TikZenX' },
+        { name: 'twitter:site', content: '@TikMatrix' },
       ],
       colorMode: {
         defaultMode: 'light',
@@ -254,7 +254,7 @@ const config = {
       tagName: 'link',
       attributes: {
         rel: 'canonical',
-        href: 'https://tikzenx.com/',
+        href: 'https://tikmatrix.com/',
       },
     },
     {
@@ -265,7 +265,7 @@ const config = {
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org/',
         '@type': 'SoftwareApplication',
-        'name': 'TikZenX',
+        'name': 'TikMatrix',
         'description': 'Professional marketing software designed for TikTok phone farms on Windows and Mac. Advanced batch control and marketing automation with zero account suspension rate.',
         'applicationCategory': 'BusinessApplication',
         'operatingSystem': 'Windows, macOS',
@@ -276,18 +276,18 @@ const config = {
         },
         'publisher': {
           '@type': 'Organization',
-          'name': 'TikZenX, LLC.',
-          'logo': 'https://tikzenx.com/img/logo.png'
+          'name': 'TikMatrix, LLC.',
+          'logo': 'https://tikmatrix.com/img/logo.png'
         }
       }),
     },
   ],
   scripts: [
-    // {
-    //   src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',
-    //   async: true,
-    //   crossorigin: 'anonymous'
-    // },
+    {
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6160068729774314',
+      async: true,
+      crossorigin: 'anonymous'
+    },
 
   ],
   clientModules: [

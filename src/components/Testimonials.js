@@ -7,7 +7,7 @@ const testimonials = [
         stars: 5,
         text: translate({
             id: 'testimonials.user1.text',
-            message: "TikZenX is a lifesaver for our studio! We can control so many phones at once, and the automation is super powerful. Posting and account farming are so much easier now. TikTok anti-detection really works—our posts get more natural traffic than before.",
+            message: "TikMatrix is a lifesaver for our studio! We can control so many phones at once, and the automation is super powerful. Posting and account farming are so much easier now. TikTok anti-detection really works—our posts get more natural traffic than before.",
             description: 'First testimonial text'
         }),
         user: "StudioOps",
@@ -22,7 +22,7 @@ const testimonials = [
         stars: 5,
         text: translate({
             id: 'testimonials.user2.text',
-            message: "After using TikZenX, our ad team's efficiency shot up. The automation scripts save us tons of manual work, and accounts stay safe—no bans so far. Perfect for agencies like us!",
+            message: "After using TikMatrix, our ad team's efficiency shot up. The automation scripts save us tons of manual work, and accounts stay safe—no bans so far. Perfect for agencies like us!",
             description: 'Second testimonial text'
         }),
         user: "AdTeam Lee",
@@ -52,7 +52,7 @@ const testimonials = [
         stars: 5,
         text: translate({
             id: 'testimonials.user4.text',
-            message: "Tried other tools before, but TikZenX is the most worry-free. Automation and anti-ban are both reliable. Perfect for marketing teams that need high-efficiency batch operations.",
+            message: "Tried other tools before, but TikMatrix is the most worry-free. Automation and anti-ban are both reliable. Perfect for marketing teams that need high-efficiency batch operations.",
             description: 'Fourth testimonial text'
         }),
         user: "Ken from Marketing",
@@ -79,7 +79,7 @@ export default function Testimonials() {
                 <Translate
                     id="testimonials.subtitle"
                     description="Testimonials section subtitle">
-                    What TikZenX Users Say
+                    What TikMatrix Users Say
                 </Translate>
             </p>
             <div className="testimonials-list">

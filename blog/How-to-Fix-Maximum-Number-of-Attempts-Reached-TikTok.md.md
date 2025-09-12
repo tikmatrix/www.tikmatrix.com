@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-maximum-number-of-attempts-reached-tiktok
 title: How to Fix Maximum Number of Attempts Reached TikTok
-authors: Tikzenx
-tags: [Tikzenx, tiktok, maximum number of attempts reached, error]
+authors: tikMatrix
+tags: [tikmatrix, tiktok, maximum number of attempts reached, error]
 ---
 
 If you've received the "Maximum Number of Attempts Reached" error on TikTok, you're not alone. This error message can be frustrating, especially if you're trying to log in to your account or perform certain actions on the app. However, there are several steps you can take to fix the "Maximum Number of Attempts Reached" error on TikTok and regain access to your account. Here's what you need to do:

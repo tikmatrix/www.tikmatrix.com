@@ -1,15 +1,15 @@
 {
-  "TikZenX is a TikTok group control operation tool": {
-    "message": "TikZenx是一款Tiktok群控运营工具"
+  "TikMatrix is a TikTok group control operation tool": {
+    "message": "TikMatrix是一款Tiktok群控运营工具"
   },
   "Download for Windows": {
     "message": "Windows 下载"
   },
-  "TikZenX is a professional marketing software designed for TikTok phone farms": {
-    "message": "TikZenX 是一款专业的TikTok手机农场营销软件"
+  "TikMatrix is a professional marketing software designed for TikTok phone farms": {
+    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件"
   },
-  "Why TikZenX?": {
-    "message": "为什么使用 TikZenX?"
+  "Why TikMatrix?": {
+    "message": "为什么使用 TikMatrix?"
   },
   "Our Core Advantages": {
     "message": "我们的核心优势"
@@ -23,8 +23,8 @@
   "Features": {
     "message": "功能"
   },
-  "TikZenX": {
-    "message": "TikZenX 真机矩阵"
+  "TikMatrix": {
+    "message": "TikMatrix 真机矩阵"
   },
   "Fingerprint Browser": {
     "message": "指纹浏览器"
@@ -98,39 +98,39 @@
   "Here are some frequently asked questions.": {
     "message": "以下是常见问题。"
   },
-  "What is TikZenX?": {
-    "message": "什么是 TikZenX?"
+  "What is TikMatrix?": {
+    "message": "什么是 TikMatrix?"
   },
   "How to use?": {
     "message": "如何使用?"
   },
-  "Go to the \"Download\" page and download the latest version of TikZenX.": {
-    "message": "前往\"下载\"页面并下载最新版本的 TikZenX。"
+  "Go to the \"Download\" page and download the latest version of TikMatrix.": {
+    "message": "前往\"下载\"页面并下载最新版本的 TikMatrix。"
   },
   "What devices can I use?": {
     "message": "我可以使用哪些设备?"
   },
-  "TikZenX supports Android phones running Android 5.0 and above.": {
-    "message": "TikZenX 支持 Android 手机，运行 Android 5.0 及以上版本。"
+  "TikMatrix supports Android phones running Android 5.0 and above.": {
+    "message": "TikMatrix 支持 Android 手机，运行 Android 5.0 及以上版本。"
   },
   "How many devices can I manage?": {
     "message": "我可以管理多少设备?"
   },
-  "TikZenX supports up to 200+ devices.": {
-    "message": "TikZenX 支持 200+ 个设备。"
+  "TikMatrix supports up to 200+ devices.": {
+    "message": "TikMatrix 支持 200+ 个设备。"
   },
   "How many TikTok accounts can each phone log into?": {
     "message": "每个手机可以登录几个tiktok账号?"
   },
-  "TikZenX supports 8 TikTok accounts on each phone.": {
-    "message": "TikZenX 支持每个手机登录8个tiktok账号"
+  "TikMatrix supports 8 TikTok accounts on each phone.": {
+    "message": "TikMatrix 支持每个手机登录8个tiktok账号"
   },
   "What computer can I use?": {
     "message": "我可以使用哪些电脑?",
     "description": "电脑支持问题"
   },
-  "TikZenX supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikZenX.app": {
-    "message": "TikZenX 支持 Windows 10 及以上版本，以及 macOS 10.15 或更高版本。Mac用户安装后，需要在终端执行以下命令以允许运行：xattr -cr /Applications/TikZenX.app",
+  "TikMatrix supports Windows 10 and above, and macOS 10.15 or later. For Mac users, after installation, you need to run the following command in Terminal to allow the app to run: xattr -cr /Applications/TikMatrix.app": {
+    "message": "TikMatrix 支持 Windows 10 及以上版本，以及 macOS 10.15 或更高版本。Mac用户安装后，需要在终端执行以下命令以允许运行：xattr -cr /Applications/TikMatrix.app",
     "description": "电脑支持回答"
   },
   "theme.ErrorPageContent.title": {
@@ -628,9 +628,9 @@
     "message": "专业TikTok账号管理与营销工具，专为Windows和Mac上的安卓手机农场设计。实现自动发布、关注等功能，促进TikTok影响力增长，确保零封号率。",
     "description": "The description of Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate."
   },
-  "TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
-    "message": "TikZenX 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
-    "description": "The description of TikZenX is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
+  "TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease.": {
+    "message": "TikMatrix 是一款专业的TikTok手机农场营销软件。管理多个账号，自动发布，并轻松扩展您的TikTok营销。",
+    "description": "The description of TikMatrix is a professional marketing software designed for TikTok phone farms. Manage multiple accounts, automate posting, and scale your TikTok marketing with ease."
   },
   "Streamline your TikTok phone farm with advanced batch control and marketing automation": {
     "message": "通过先进的批量控制和营销自动化，轻松管理您的TikTok手机农场。",
@@ -652,13 +652,13 @@
     "message": "我们的竞争优势",
     "description": "The description of Our Competitive Advantages"
   },
-  "TikZenX delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
-    "message": "TikZenX 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
-    "description": "The description of TikZenX competitive advantage"
+  "TikMatrix delivers at least 30% higher engagement compared to similar products, with advanced real-device technology that ensures complete account safety.": {
+    "message": "TikMatrix 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
+    "description": "The description of TikMatrix competitive advantage"
   },
   "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
     "message": "我们专有的真机矩阵系统完美规避TikTok的风控措施，实现0%的账号封停率。",
-    "description": "The description of TikZenX proprietary technology"
+    "description": "The description of TikMatrix proprietary technology"
   },
   "Powerful TikTok Automation & Management Tools": {
     "message": "强大的TikTok自动化和管理工具",
@@ -724,9 +724,9 @@
     "message": "下载 IgMatrix",
     "description": "The description of Download IgMatrix"
   },
-  "Download TikZenX": {
-    "message": "下载 TikZenX",
-    "description": "The description of Download TikZenX"
+  "Download TikMatrix": {
+    "message": "下载 TikMatrix",
+    "description": "The description of Download TikMatrix"
   },
   "Download VideoMagic": {
     "message": "下载 VideoMagic",
@@ -741,15 +741,15 @@
     "description": "The description of Streamline your Instagram phone farm with advanced batch control and marketing automation"
   },
   "download.title": {
-    "message": "下载 TikZenX",
+    "message": "下载 TikMatrix",
     "description": "下载页面的标题"
   },
   "download.description": {
-    "message": "下载 TikZenX 的 Windows、Mac 和 Linux 版本",
+    "message": "下载 TikMatrix 的 Windows、Mac 和 Linux 版本",
     "description": "下载页面的描述"
   },
   "download.subtitle": {
-    "message": "选择您的平台下载 TikZenX",
+    "message": "选择您的平台下载 TikMatrix",
     "description": "下载页面的副标题"
   },
   "download.windows.title": {
@@ -919,7 +919,7 @@
     "description": "用户评价部分标题"
   },
   "testimonials.subtitle": {
-    "message": "TikZenx用户怎么说",
+    "message": "TikMatrix用户怎么说",
     "description": "用户评价部分副标题"
   },
   "testimonials.usage_label": {
@@ -927,7 +927,7 @@
     "description": "使用时长标签"
   },
   "testimonials.user1.text": {
-    "message": "TikZenx对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
+    "message": "TikMatrix对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
     "description": "第一个用户评价文本"
   },
   "testimonials.user1.usage": {
@@ -935,7 +935,7 @@
     "description": "第一个用户使用时长"
   },
   "testimonials.user2.text": {
-    "message": "使用TikZenx后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
+    "message": "使用TikMatrix后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
     "description": "第二个用户评价文本"
   },
   "testimonials.user2.usage": {
@@ -951,7 +951,7 @@
     "description": "第三个用户使用时长"
   },
   "testimonials.user4.text": {
-    "message": "之前试过其他工具，但TikZenx是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
+    "message": "之前试过其他工具，但TikMatrix是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
     "description": "第四个用户评价文本"
   },
   "testimonials.user4.usage": {
@@ -1055,7 +1055,7 @@
     "description": "白标功能标题"
   },
   "whitelabel.description": {
-    "message": "自定义TikZenx的品牌标识以匹配您的公司形象",
+    "message": "自定义TikMatrix的品牌标识以匹配您的公司形象",
     "description": "白标功能描述"
   },
   "whitelabel.annualRequired": {

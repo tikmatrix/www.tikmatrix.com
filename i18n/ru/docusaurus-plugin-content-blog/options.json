@@ -1,14 +1,14 @@
 {
     "title": {
         "message": "Блог",
-        "description": "Блог TikZenX"
+        "description": "Блог TikMatrix"
     },
     "description": {
-        "message": "Блог TikZenX",
-        "description": "Блог TikZenX"
+        "message": "Блог TikMatrix",
+        "description": "Блог TikMatrix"
     },
     "sidebar.title": {
         "message": "Последние посты",
-        "description": "Последние посты TikZenX"
+        "description": "Последние посты TikMatrix"
     }
 }

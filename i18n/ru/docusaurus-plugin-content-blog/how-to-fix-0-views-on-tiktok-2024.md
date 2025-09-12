@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-0-views-on-tiktok-2024
 title: Как решить проблему 0 просмотров в TikTok (версия 2024)
-authors: Tikzenx
-tags: [tiktok, 0views, fixed,Tikzenx]
+authors: tikMatrix
+tags: [tiktok, 0views, fixed,tikmatrix]
 ---
 Если ваши видео в TikTok получают 0 просмотров, возможно, в вашей контентной стратегии есть проблемы. В этой статье я глубоко изучу распространенные проблемы и предоставлю решения, которые помогут вам их преодолеть:
 <!--truncate-->
