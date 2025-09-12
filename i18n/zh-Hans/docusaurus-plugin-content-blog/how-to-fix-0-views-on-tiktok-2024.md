@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-0-views-on-tiktok-2024
 title: 怎么解决TikTok 0播问题（2024版）
-authors: tikMatrix
-tags: [tiktok, 0views, fixed,tikmatrix]
+authors: Tikzenx
+tags: [tiktok, 0views, fixed,Tikzenx]
 ---
 如果你的 TikTok 视频0播放，可能是你的内容策略存在一些问题。在这篇文章中，我将深入探讨常见问题并提供解决方案，帮助你克服这些问题：
 <!--truncate-->

@@ -34,10 +34,10 @@ Discover **TikZenX in less than 5 minutes**.
 
 TikZenX offers flexible pricing plans for every need:
 
-- **Starter**: $29/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
-- **Pro**: $59/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
-- **Team**: $99/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
-- **Business**: $149/month/PC — Manage up to 100 phones (800 TikTok accounts), all features included, dedicated support.
+- **Starter**: $59/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
+- **Pro**: $99/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
+- **Team**: $149/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
+
 
 All plans include unlimited feature access and 1:1 Telegram support.
 
@@ -80,7 +80,7 @@ You can use any Android device to run TikZenX, including:
 
 ## Installation
 
-1. Download the latest installer from the [Download](https://tikmatrix.com/Download) page.
+1. Download the latest installer from the [Download](https://tikzenx.com/Download) page.
 2. Run the installer.
 3. Wait for the installation to complete.
 4. Open the **TikZenX** app on your computer.

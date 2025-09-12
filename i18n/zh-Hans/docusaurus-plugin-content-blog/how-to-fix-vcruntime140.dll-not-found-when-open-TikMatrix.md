@@ -1,8 +1,8 @@
 ---
 slug: How-to-fix-vcruntime140.dll-not-found-when-open-TikZenX
 title: 怎么解决 "vcruntime140.dll 没有找到" 的错误
-authors: tikMatrix
-tags: [vcruntime140.ddl not found,fixed,tikmatrix]
+authors: Tikzenx
+tags: [vcruntime140.ddl not found,fixed,Tikzenx]
 ---
 "vcruntime140.dll 找不到" 错误通常是因为 Microsoft Visual C++ 可再发行包未安装或已损坏。以下是修复此问题的步骤：
 <!--truncate-->

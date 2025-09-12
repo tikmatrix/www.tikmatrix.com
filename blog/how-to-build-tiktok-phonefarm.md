@@ -1,8 +1,8 @@
 ---
 sulg: how-to-build-tiktok-phonefarm
 title: How to build a TikTok phone farm
-authors: tikMatrix
-tags: [tikmatrix, tiktok, phone, farm, automation, accounts]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, phone, farm, automation, accounts]
 ---
 
 A TikTok phone farm is a setup where multiple devices are used to automate TikTok tasks, such as account management, video posting, and engagement. Phone farms can help users grow their TikTok presence, increase engagement, and save time by automating repetitive tasks. Here's how you can build a TikTok phone farm with TikZenX:

@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-maximum-number-of-attempts-reached-tiktok
 title: 如何解决TikTok的“最大尝试次数已达到”错误
-authors: tikMatrix
-tags: [tikmatrix, tiktok, maximum number of attempts reached, error]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, maximum number of attempts reached, error]
 ---
 
 如果你在 TikTok 上收到“尝试次数已达上限”的错误提示，不要担心，你并不孤单。这个错误信息可能会让人感到沮丧，尤其是当你试图登录账户或执行某些操作时。然而，有几个步骤可以帮助你修复 TikTok 上的“尝试次数已达上限”错误，并重新获得账户访问权限。以下是你需要做的：

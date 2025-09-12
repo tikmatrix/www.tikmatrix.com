@@ -24,7 +24,20 @@ export default function FrequentlyAsked() {
                     <div className="col col--12">
                         <div className="row">
 
-                            <div className="col col--6 info">
+                            <div className="col col--4 info">
+                                <i className="bx bxl-telegram"></i>
+                                <h4>
+                                    <Translate>Telegram</Translate>
+                                </h4>
+                                <p>
+                                    <a href="https://t.me/fayelsyahmi" target="_blank">
+                                        <Translate>Username : Fayelsyahmi</Translate>
+                                    </a>
+
+                                </p>
+                            </div>
+
+                            <div className="col col--4 info">
                                 <i className="bx bxl-whatsapp"></i>
                                 <h4>
                                     <Translate>WhatsApp</Translate>
@@ -37,7 +50,7 @@ export default function FrequentlyAsked() {
                                 </p>
                             </div>
 
-                            <div className="col col--6 info">
+                            <div className="col col--4 info">
                                 <i className="bx bx-envelope"></i>
                                 <h4>
                                     <Translate>Email</Translate>

@@ -1,8 +1,8 @@
 ---
 slug: how-to-get-tiktok-user-country
 title: How to get tiktok user country
-authors: tikMatrix
-tags: [tikmatrix, tiktok, country, user]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, country, user]
 ---
 
 To determine a TikTok user's country, you can consider a few indirect methods since TikTok doesn't provide direct API access for this purpose:
@@ -37,6 +37,6 @@ Looking at where the majority of a user's followers come from might give you an 
 
 ## 7. TikZenX User Finder
 
-TikZenX offers a user finder tool that can help you search for TikTok users based on various criteria, including country. This tool can be useful for finding users from specific regions or countries.[User Finder](https://user.tikmatrix.com)
+TikZenX offers a user finder tool that can help you search for TikTok users based on various criteria, including country. This tool can be useful for finding users from specific regions or countries.[User Finder](https://user.Tikzenx.com)
 
 Please note, while these methods can give you hints, they are not foolproof due to the use of VPNs, privacy settings, or simply because users might not share accurate location details. Also, attempting to get a user's location without explicit consent can raise privacy concerns. Always respect privacy and use any gathered information ethically.

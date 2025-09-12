@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-maximum-number-of-attempts-reached-tiktok
 title: Как исправить ошибку "Достигнуто максимальное количество попыток" в TikTok
-authors: tikMatrix
-tags: [tikmatrix, tiktok, maximum number of attempts reached, error]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, maximum number of attempts reached, error]
 ---
 
 Если вы получаете ошибку "Достигнуто максимальное количество попыток" в TikTok, не волнуйтесь, вы не одни. Это сообщение об ошибке может расстраивать, особенно когда вы пытаетесь войти в свой аккаунт или выполнить определенные действия. Однако есть несколько шагов, которые могут помочь вам исправить ошибку "Достигнуто максимальное количество попыток" в TikTok и восстановить доступ к аккаунту. Вот что вам нужно сделать:

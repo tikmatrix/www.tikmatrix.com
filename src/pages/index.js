@@ -23,10 +23,10 @@ export default function Home() {
     });
     // 动态插入 AnythingLLM 聊天小部件
     const script = document.createElement('script');
-    script.src = 'https://llm.tikmatrix.com/embed/anythingllm-chat-widget.min.js';
+    script.src = 'https://llm.tikzenx.com/embed/anythingllm-chat-widget.min.js';
     script.async = true;
     script.setAttribute('data-embed-id', 'b69ccd65-9f2b-4d8c-9c6e-66f523abc798');
-    script.setAttribute('data-base-api-url', 'https://llm.tikmatrix.com/api/embed');
+    script.setAttribute('data-base-api-url', 'https://llm.tikzenx.com/api/embed');
     script.setAttribute('data-chat-icon', 'support');
     script.setAttribute('data-brand-image-url', '/img/logo.png');
     script.setAttribute('data-assistant-icon', '/img/logo.png');
@@ -44,13 +44,13 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "TikZenX",
-    "url": "https://tikmatrix.com",
+    "url": "https://Tikzenx.com",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Windows, macOS",
     "screenshot": [
-      "https://tikmatrix.com/img/startup1.png",
-      "https://tikmatrix.com/img/startup2.png",
-      "https://tikmatrix.com/img/startup3.png",
+      "https://tikzenx.com/img/startup1.png",
+      "https://tikzenx.com/img/startup2.png",
+      "https://tikzenx.com/img/startup3.png",
     ],
     "offers": {
       "@type": "Offer",
@@ -71,8 +71,8 @@ export default function Home() {
       translate({ message: 'Performance analytics' }),
     ],
     "softwareVersion": "2.1.9",
-    "downloadUrl": "https://tikmatrix.com/Download?software=TikZenX",
-    "supportUrl": "https://t.me/tikmatrix_support",
+    "downloadUrl": "https://tikzenx.com/Download?software=TikZenX",
+    "supportUrl": "https://t.me/fayelsyahmi",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -83,8 +83,8 @@ export default function Home() {
     "author": {
       "@type": "Organization",
       "name": "TikZenX",
-      "url": "https://tikmatrix.com",
-      "logo": "https://tikmatrix.com/img/logo.png",
+      "url": "https://tikzenx.com",
+      "logo": "https://tikzenx.com/img/logo.png",
     },
     "keywords": "TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikZenX, Windows, Mac",
     "datePublished": "2025-03-07",
@@ -98,16 +98,16 @@ export default function Home() {
         <meta name="keywords" content="TikZenX, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Growth, TikTok Management, Android Phone Farm, Windows and Mac Support" />
         <meta property="og:title" content="TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta property="og:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta property="og:image" content="https://tikmatrix.com/img/startup1.png" />
-        <meta property="og:url" content="https://tikmatrix.com" />
+        <meta property="og:image" content="https://tikzenx.com/img/startup1.png" />
+        <meta property="og:url" content="https://tikzenx.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta name="twitter:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.png" />
-        <link rel="canonical" href="https://tikmatrix.com" />
+        <meta name="twitter:image" content="https://tikzenx.com/img/startup1.png" />
+        <link rel="canonical" href="https://tikzenx.com" />
       </Head>
-TESTTEST
+
       <HomepageHeader />
       <main>
         <HomepageVS />
