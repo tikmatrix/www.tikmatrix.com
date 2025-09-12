@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Discover **TikMatrix in less than 5 minutes**.
+Discover **TikZenX in less than 5 minutes**.
 
 ## Software Introduction
 
-**TikMatrix** is a PC desktop software for automating TikTok on Android phones.
+**TikZenX** is a PC desktop software for automating TikTok on Android phones.
 
 ## Features
 
@@ -28,16 +28,16 @@ Discover **TikMatrix in less than 5 minutes**.
 - **Minute-level task scheduling**: Automate tasks with minute-level precision.
 - **Import/export accounts**.
 - **Custom functionality**: Add any feature on request.
-- **Multilingual support**: TikMatrix supports EN/RU/CN. *Note: The TikTok app on the phone must be in English for all features to work properly.*
+- **Multilingual support**: TikZenX supports EN/RU/CN. *Note: The TikTok app on the phone must be in English for all features to work properly.*
 
 ## Pricing
 
-TikMatrix offers flexible pricing plans for every need:
+TikZenX offers flexible pricing plans for every need:
 
-- **Starter**: $29/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
-- **Pro**: $59/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
-- **Team**: $99/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
-- **Business**: $149/month/PC — Manage up to 100 phones (800 TikTok accounts), all features included, dedicated support.
+- **Starter**: $59/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
+- **Pro**: $99/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
+- **Team**: $149/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
+
 
 All plans include unlimited feature access and 1:1 Telegram support.
 
@@ -52,7 +52,7 @@ We don't offer free trials, but we can provide a free feature demonstration. Ple
 
 ### Android Device
 
-You can use any Android device to run TikMatrix, including:
+You can use any Android device to run TikZenX, including:
 
 - **Real Android devices**
 - **[Motherboard Android Devices](http://www.niaozun.shop?cid=934ec2fe)**
@@ -80,12 +80,12 @@ You can use any Android device to run TikMatrix, including:
 
 ## Installation
 
-1. Download the latest installer from the [Download](https://tikmatrix.com/Download) page.
+1. Download the latest installer from the [Download](https://tikzenx.com/Download) page.
 2. Run the installer.
 3. Wait for the installation to complete.
-4. Open the **TikMatrix** app on your computer.
+4. Open the **TikZenX** app on your computer.
    - For Mac users: After installation, run the following command in Terminal to allow the app to run:
 
      ```bash
-     xattr -cr /Applications/TikMatrix.app
+     xattr -cr /Applications/TikZenX.app
      ```

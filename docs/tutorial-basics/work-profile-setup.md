@@ -1,18 +1,18 @@
 # Work Profile Configuration
 
-TikMatrix supports configuring Work Profile users for each device individually, which is very useful for enterprise-managed devices or dual-app environments.
+TikZenX supports configuring Work Profile users for each device individually, which is very useful for enterprise-managed devices or dual-app environments.
 
 ## What is Work Profile
 
 Work Profile is an Android feature that allows creating an independent work environment on the same device. By configuring different user IDs, you can:
 
-- Use TikMatrix normally on enterprise-managed devices
+- Use TikZenX normally on enterprise-managed devices
 - Set different user configurations for different app environments
 - Achieve more granular device management and permission control
 
 ## Using Shelter Tool to Clone Applications
 
-Before configuring Work Profile, you need to use the Shelter tool to clone TikTok and TikMatrix applications:
+Before configuring Work Profile, you need to use the Shelter tool to clone TikTok and TikZenX applications:
 
 ### What is Shelter
 
@@ -26,7 +26,7 @@ Shelter is an open-source application that creates and manages Work Profile on A
 
 ### Cloning Required Applications
 
-After setting up Shelter, you need to clone both TikTok and TikMatrix applications:
+After setting up Shelter, you need to clone both TikTok and TikZenX applications:
 
 1. **Clone TikTok Application**:
    - Open Shelter and go to the "Main" tab
@@ -34,8 +34,8 @@ After setting up Shelter, you need to clone both TikTok and TikMatrix applicatio
    - Tap the "Clone to Work Profile" button
    - Wait for the cloning process to complete
 
-2. **Clone TikMatrix Application**:
-   - In Shelter, locate TikMatrix in the application list
+2. **Clone TikZenX Application**:
+   - In Shelter, locate TikZenX in the application list
    - Tap the "Clone to Work Profile" button
    - Confirm the cloning operation
 
@@ -43,7 +43,7 @@ After setting up Shelter, you need to clone both TikTok and TikMatrix applicatio
 
 After successful cloning:
 
-- You'll see both TikTok and TikMatrix with a briefcase icon in your app drawer
+- You'll see both TikTok and TikZenX with a briefcase icon in your app drawer
 - These are the Work Profile versions of the applications
 - The original applications remain unchanged in the main profile
 
@@ -51,7 +51,7 @@ After successful cloning:
 
 ### 1. Open Device Toolbar
 
-When your device is connected and displayed in the TikMatrix main interface:
+When your device is connected and displayed in the TikZenX main interface:
 
 1. Double-click the device card to enter fullscreen mode
 2. A toolbar will appear on the right side of the device screen
@@ -88,7 +88,7 @@ If you're unsure about the user IDs on your device, you can find them using:
 adb shell pm list users
 ```
 
-Or execute in TikMatrix debug tools:
+Or execute in TikZenX debug tools:
 
 ```bash
 pm list users
@@ -128,10 +128,10 @@ Each device's Work Profile configuration is independent. You can:
 
 If you need to manage a large number of devices, you can directly edit the `data/work_profile_user.json` file:
 
-1. Close the TikMatrix application
+1. Close the TikZenX application
 2. Open the configuration file
 3. Add or modify device configurations in JSON format
-4. Restart TikMatrix
+4. Restart TikZenX
 
 ## Troubleshooting
 
@@ -179,9 +179,9 @@ A: If you encounter issues with Shelter:
 ### Shelter Tool Management
 
 1. **Regular Updates**: Keep Shelter application updated to ensure compatibility
-2. **Application Synchronization**: Ensure both TikTok and TikMatrix are cloned before configuring Work Profile
+2. **Application Synchronization**: Ensure both TikTok and TikZenX are cloned before configuring Work Profile
 3. **Backup Shelter Settings**: Export and backup Shelter configurations for easy recovery
-4. **Monitor App Updates**: When TikTok or TikMatrix updates, you may need to update the cloned versions as well
+4. **Monitor App Updates**: When TikTok or TikZenX updates, you may need to update the cloned versions as well
 
 ## Technical Details
 
@@ -199,4 +199,4 @@ This ensures commands execute in the correct user environment, avoiding permissi
 
 ---
 
-By properly configuring Work Profile, you can smoothly use TikMatrix in various complex device environments, improving work efficiency and management convenience.
+By properly configuring Work Profile, you can smoothly use TikZenX in various complex device environments, improving work efficiency and management convenience.

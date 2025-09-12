@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # 教程介绍
 
-在不到 5 分钟内了解 **TikMatrix**。
+在不到 5 分钟内了解 **TikZenX**。
 
 ## 软件介绍
 
-**TikMatrix** 是一款在安卓手机上自动执行 TikTok 任务的PC桌面软件。
+**TikZenX** 是一款在安卓手机上自动执行 TikTok 任务的PC桌面软件。
 
 ## 功能特性
 
@@ -83,9 +83,9 @@ TikMatrix为各种需求提供灵活的定价方案：
 1. 从[下载](https://tikmatrix.com/Download)页面下载最新安装程序。
 2. 运行安装程序。
 3. 等待安装完成。
-4. 在你的电脑上打开**TikMatrix**应用程序。
+4. 在你的电脑上打开**TikZenX**应用程序。
    - Mac用户：安装后，在终端运行以下命令以允许应用运行：
 
      ```bash
-     xattr -cr /Applications/TikMatrix.app
+     xattr -cr /Applications/TikZenX.app
      ```

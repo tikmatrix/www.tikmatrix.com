@@ -1,8 +1,8 @@
 ---
-slug: how-to-fix-vcruntime140.dll-not-found-when-open-TikMatrix
-title: How to fix vcruntime140.dll not found when open TikMatrix
-authors: tikMatrix
-tags: [vcruntime140.ddl not found,fixed,tikmatrix]
+slug: how-to-fix-vcruntime140.dll-not-found-when-open-TikZenX
+title: How to fix vcruntime140.dll not found when open TikZenX
+authors: Tikzenx
+tags: [vcruntime140.ddl not found,fixed,Tikzenx]
 ---
 
 The "vcruntime140.dll not found" error typically occurs because the Microsoft Visual C++ Redistributable package is not installed or is corrupted. Here are the steps to fix this issue:
@@ -23,8 +23,8 @@ The "vcruntime140.dll not found" error typically occurs because the Microsoft Vi
 4. **Check for Updates**:
    - Make sure your Windows is up to date. Go to `Settings > Update & Security > Windows Update` and check for updates.
 
-5. **Reinstall TikMatrix**:
-   - If the above steps don't work, try uninstalling and then reinstalling TikMatrix. Make sure to download the latest version from the official website.
+5. **Reinstall TikZenX**:
+   - If the above steps don't work, try uninstalling and then reinstalling TikZenX. Make sure to download the latest version from the official website.
 
 If the error persists after trying these steps, you may need to check for further issues, such as corrupted system files, by running the System File Checker tool:
 
@@ -33,4 +33,4 @@ If the error persists after trying these steps, you may need to check for furthe
    - Type `sfc /scannow` and press Enter.
    - Wait for the process to complete. If SFC finds any issues, it will attempt to fix them.
 
-These steps should help resolve the "vcruntime140.dll not found" error and allow TikMatrix to run properly.
+These steps should help resolve the "vcruntime140.dll not found" error and allow TikZenX to run properly.

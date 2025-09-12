@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-tiktok-searchbar-not-working
 title: 怎么修复TikTok搜索栏不工作
-authors: tikMatrix
-tags: [tikmatrix, tiktok, searchbar, fix]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, searchbar, fix]
 ---
 
 TikTok 搜索栏不工作可能是一个令人沮丧的问题，但幸运的是，有几种方法可以解决这个问题。以下是一些关于如何修复 TikTok 搜索栏不工作的技巧：
@@ -45,4 +45,4 @@ TikTok 搜索栏不工作可能是一个令人沮丧的问题，但幸运的是�
 
 如果以上方法都无法解决问题，请联系 TikTok 支持寻求帮助。
 
-## 如果你需要更多TikTok相关信息，请加入我们的[Telegram讨论群组](https://t.me/tikmatrix_support)
+## 如果你需要更多TikTok相关信息，请加入我们的[Telegram讨论群组](https://t.me/fayelsyahmi)

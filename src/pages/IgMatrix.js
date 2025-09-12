@@ -55,7 +55,7 @@ export default function IgMatrix() {
     },
     "author": {
       "@type": "Organization",
-      "name": "TikMatrix",
+      "name": "TikZenX",
       "url": "https://tikmatrix.com",
       "logo": "https://tikmatrix.com/img/igmatrix_logo.png",
     },

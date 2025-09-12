@@ -6,14 +6,14 @@ export default function PrivacyPolicy() {
     return (
         <Layout
             title="隐私政策"
-            description="TikMatrix 隐私政策 - 我们如何收集、使用和保护您的数据">
+            description="TikZenX 隐私政策 - 我们如何收集、使用和保护您的数据">
             <div className="container">
                 <div className={styles.privacyContent}>
                     <h1>隐私政策</h1>
                     <p>最后更新日期: {new Date().toISOString().split('T')[0]}</p>
 
                     <h2>1. 引言</h2>
-                    <p>欢迎访问 TikMatrix（以下简称"我们"、"我们的"或"本公司"）。我们致力于保护您的个人信息和隐私权。本隐私政策解释了当您访问我们的网站或使用我们的服务时，我们如何收集、使用、披露和保护您的信息。</p>
+                    <p>欢迎访问 TikZenX（以下简称"我们"、"我们的"或"本公司"）。我们致力于保护您的个人信息和隐私权。本隐私政策解释了当您访问我们的网站或使用我们的服务时，我们如何收集、使用、披露和保护您的信息。</p>
 
                     <h2>2. 我们收集的信息</h2>
                     <p>我们可能会收集网站和服务用户的几类信息，包括：</p>

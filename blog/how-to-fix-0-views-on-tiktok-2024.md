@@ -1,8 +1,8 @@
 ---
 slug: how-to-fix-0-views-on-tiktok-2024
 title: How to Fix 0 Views on TikTok 2024
-authors: tikMatrix
-tags: [tiktok, 0views, fixed,tikmatrix]
+authors: Tikzenx
+tags: [tiktok, 0views, fixed,Tikzenx]
 ---
 
 If you're experiencing 0 views on your TikTok page, there may be underlying issues with your content strategy. In this post, I'll delve into common problems and offer solutions to help you overcome them:

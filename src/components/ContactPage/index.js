@@ -24,29 +24,39 @@ export default function FrequentlyAsked() {
                     <div className="col col--12">
                         <div className="row">
 
-                            <div className="col col--6 info">
+                            <div className="col col--4 info">
                                 <i className="bx bxl-telegram"></i>
                                 <h4>
                                     <Translate>Telegram</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//t.me/tikmatrix" target="_blank">
-                                        <Translate>Join Channel</Translate>
+                                    <a href="https://t.me/fayelsyahmi" target="_blank">
+                                        <Translate>Username : Fayelsyahmi</Translate>
                                     </a>
-                                    &nbsp;|&nbsp;
-                                    <a href="//t.me/tikmatrix_support" target="_blank">
-                                        <Translate>Join Group</Translate>
-                                    </a>
+
                                 </p>
                             </div>
 
-                            <div className="col col--6 info">
+                            <div className="col col--4 info">
+                                <i className="bx bxl-whatsapp"></i>
+                                <h4>
+                                    <Translate>WhatsApp</Translate>
+                                </h4>
+                                <p>
+                                    <a href="https://wa.me/6588387587" target="_blank">
+                                        <Translate>+6588387587</Translate>
+                                    </a>
+
+                                </p>
+                            </div>
+
+                            <div className="col col--4 info">
                                 <i className="bx bx-envelope"></i>
                                 <h4>
                                     <Translate>Email</Translate>
                                 </h4>
                                 <p>
-                                    <Translate>support@tikmatrix.com</Translate>
+                                    <Translate>admin@tikzenx.com</Translate>
                                 </p>
                             </div>
                         </div>

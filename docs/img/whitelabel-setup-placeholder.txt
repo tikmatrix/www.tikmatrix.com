@@ -2,7 +2,7 @@
 
 This file serves as a placeholder for the White Label setup screenshot.
 
-The actual screenshot (whitelabel-setup.png) should be captured from the TikMatrix application showing the White Label settings dialog interface with all the configuration options:
+The actual screenshot (whitelabel-setup.png) should be captured from the TikZenX application showing the White Label settings dialog interface with all the configuration options:
 
 1. App Name input field
 2. Logo upload section
