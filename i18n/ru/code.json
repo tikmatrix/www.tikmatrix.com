@@ -1097,5 +1097,197 @@
     "whitelabel.telegramUrl": {
         "message": "Ссылка на Telegram",
         "description": "Ссылка на Telegram"
+    },
+    "Setup Tutorial": {
+        "message": "Руководство по настройке"
+    },
+    "Follow these steps to get started with IgMatrix": {
+        "message": "Следуйте этим шагам, чтобы начать работу с IgMatrix"
+    },
+    "Important Notice": {
+        "message": "Важное уведомление"
+    },
+    "IgMatrix setup tutorial is identical to TikMatrix. The only difference is their script logic, so you can directly refer to the TikMatrix tutorial documentation.": {
+        "message": "Руководство по настройке IgMatrix идентично TikMatrix. Единственное отличие - логика их скриптов, поэтому вы можете напрямую обращаться к документации TikMatrix."
+    },
+    "Please download IgMatrix to view the script list directly. Currently, not all TikMatrix scripts are 100% supported in IgMatrix. Please refer to the actual features in the software.": {
+        "message": "Пожалуйста, скачайте IgMatrix, чтобы напрямую просмотреть список скриптов. В настоящее время не все скрипты TikMatrix 100% поддерживаются в IgMatrix. Пожалуйста, ориентируйтесь на фактические функции в программном обеспечении."
+    },
+    "Quick Setup Guide": {
+        "message": "Краткое руководство по настройке"
+    },
+    "Download and Install": {
+        "message": "Скачать и установить"
+    },
+    "Download IgMatrix from our official website and follow the installation instructions.": {
+        "message": "Скачайте IgMatrix с нашего официального сайта и следуйте инструкциям по установке."
+    },
+    "Follow TikMatrix Tutorial": {
+        "message": "Следуйте руководству TikMatrix"
+    },
+    "Since the setup process is identical, please refer to our comprehensive TikMatrix documentation for detailed instructions on device connection, account management, and script configuration.": {
+        "message": "Поскольку процесс настройки идентичен, пожалуйста, обращайтесь к нашей подробной документации TikMatrix для получения детальных инструкций по подключению устройств, управлению аккаунтами и настройке скриптов."
+    },
+    "View TikMatrix Tutorial": {
+        "message": "Просмотреть руководство TikMatrix"
+    },
+    "Check Available Scripts": {
+        "message": "Проверить доступные скрипты"
+    },
+    "After installation, open IgMatrix to view the complete list of available Instagram automation scripts. The script selection may differ from TikMatrix.": {
+        "message": "После установки откройте IgMatrix, чтобы просмотреть полный список доступных скриптов автоматизации Instagram. Выбор скриптов может отличаться от TikMatrix."
+    },
+    "Get Support": {
+        "message": "Получить поддержку"
+    },
+    "If you need help with IgMatrix-specific features or encounter any issues, our support team is ready to assist you.": {
+        "message": "Если вам нужна помощь с функциями IgMatrix или вы столкнулись с проблемами, наша команда поддержки готова помочь вам."
+    },
+    "Key Differences from TikMatrix": {
+        "message": "Ключевые отличия от TikMatrix"
+    },
+    "Same Setup Process": {
+        "message": "Тот же процесс настройки"
+    },
+    "Device connection": {
+        "message": "Подключение устройства"
+    },
+    "Account management": {
+        "message": "Управление аккаунтом"
+    },
+    "Basic configuration": {
+        "message": "Базовая конфигурация"
+    },
+    "User interface": {
+        "message": "Пользовательский интерфейс"
+    },
+    "Different Script Logic": {
+        "message": "Другая логика скриптов"
+    },
+    "Instagram-specific automation": {
+        "message": "Автоматизация специфичная для Instagram"
+    },
+    "Different script availability": {
+        "message": "Различная доступность скриптов"
+    },
+    "Platform-optimized features": {
+        "message": "Функции, оптимизированные под платформу"
+    },
+    "Custom Instagram workflows": {
+        "message": "Пользовательские рабочие процессы Instagram"
+    },
+    "Important Reminder": {
+        "message": "Важное напоминание"
+    },
+    "Always check the actual features available in your IgMatrix software, as the script functionality may vary from TikMatrix. The software interface will show you exactly which automation scripts are available for Instagram.": {
+        "message": "Всегда проверяйте фактические функции, доступные в вашем программном обеспечении IgMatrix, поскольку функциональность скриптов может отличаться от TikMatrix. Интерфейс программы покажет вам точно, какие скрипты автоматизации доступны для Instagram."
+    },
+    "IgMatrix Features": {
+        "message": "Функции IgMatrix"
+    },
+    "Powerful Instagram automation tools designed for professional marketers and businesses": {
+        "message": "Мощные инструменты автоматизации Instagram, предназначенные для профессиональных маркетологов и бизнеса"
+    },
+    "Multi-Device Control": {
+        "message": "Управление несколькими устройствами"
+    },
+    "Control multiple Instagram accounts across different Android devices simultaneously": {
+        "message": "Управляйте несколькими аккаунтами Instagram на разных Android устройствах одновременно"
+    },
+    "Instagram Automation": {
+        "message": "Автоматизация Instagram"
+    },
+    "Automate posting, following, commenting, and engagement activities on Instagram": {
+        "message": "Автоматизируйте публикации, подписки, комментарии и активность взаимодействия в Instagram"
+    },
+    "Safe & Secure": {
+        "message": "Безопасно и надежно"
+    },
+    "Built with safety mechanisms to protect your Instagram accounts from suspension": {
+        "message": "Создан с механизмами безопасности для защиты ваших аккаунтов Instagram от блокировки"
+    },
+    "Smart Scheduling": {
+        "message": "Умное планирование"
+    },
+    "Schedule your Instagram activities with intelligent timing algorithms": {
+        "message": "Планируйте свою активность в Instagram с помощью интеллектуальных алгоритмов времени"
+    },
+    "24/7 Support": {
+        "message": "Поддержка 24/7"
+    },
+    "Get dedicated support from our expert team whenever you need help": {
+        "message": "Получите специализированную поддержку от нашей команды экспертов, когда вам нужна помощь"
+    },
+    "Why Choose IgMatrix?": {
+        "message": "Почему выбрать IgMatrix?"
+    },
+    "IgMatrix brings the same powerful automation capabilities of TikMatrix to Instagram, helping you scale your Instagram marketing efforts efficiently and safely.": {
+        "message": "IgMatrix привносит те же мощные возможности автоматизации TikMatrix в Instagram, помогая вам эффективно и безопасно масштабировать ваши маркетинговые усилия в Instagram."
+    },
+    "Same reliable technology as TikMatrix": {
+        "message": "Та же надежная технология, что и TikMatrix"
+    },
+    "Instagram-optimized automation scripts": {
+        "message": "Скрипты автоматизации, оптимизированные для Instagram"
+    },
+    "Multi-language support (English, Chinese, Russian)": {
+        "message": "Поддержка нескольких языков (английский, китайский, русский)"
+    },
+    "Professional phone farm management": {
+        "message": "Профессиональное управление фермой телефонов"
+    },
+    "Advanced safety mechanisms": {
+        "message": "Продвинутые механизмы безопасности"
+    },
+    "Start automating your Instagram marketing today with IgMatrix and experience the same professional-grade tools that thousands of marketers trust.": {
+        "message": "Начните автоматизировать свой маркетинг в Instagram сегодня с IgMatrix и испытайте те же профессиональные инструменты, которым доверяют тысячи маркетологов."
+    },
+    "Find answers to common questions about IgMatrix": {
+        "message": "Найдите ответы на часто задаваемые вопросы об IgMatrix"
+    },
+    "What is the difference between IgMatrix and TikMatrix?": {
+        "message": "В чем разница между IgMatrix и TikMatrix?"
+    },
+    "IgMatrix and TikMatrix share the same setup process and user interface. The main difference is that IgMatrix is specifically designed for Instagram automation, while TikMatrix is for TikTok. The script logic and available features are optimized for each respective platform.": {
+        "message": "IgMatrix и TikMatrix имеют одинаковый процесс настройки и пользовательский интерфейс. Основное отличие заключается в том, что IgMatrix специально разработан для автоматизации Instagram, а TikMatrix - для TikTok. Логика скриптов и доступные функции оптимизированы для каждой соответствующей платформы."
+    },
+    "Can I use the same tutorial for both IgMatrix and TikMatrix?": {
+        "message": "Могу ли я использовать одно и то же руководство для IgMatrix и TikMatrix?"
+    },
+    "Yes! The setup tutorial for IgMatrix is identical to TikMatrix. You can follow the TikMatrix documentation for installation, device connection, and basic configuration. Only the automation scripts will differ based on the platform.": {
+        "message": "Да! Руководство по настройке IgMatrix идентично TikMatrix. Вы можете следовать документации TikMatrix для установки, подключения устройств и базовой настройки. Только скрипты автоматизации будут отличаться в зависимости от платформы."
+    },
+    "Which scripts from TikMatrix are available in IgMatrix?": {
+        "message": "Какие скрипты из TikMatrix доступны в IgMatrix?"
+    },
+    "Not all TikMatrix scripts are available in IgMatrix, as they are platform-specific. The exact list of available scripts can be found within the IgMatrix software interface after installation. Please refer to the actual features shown in your software.": {
+        "message": "Не все скрипты TikMatrix доступны в IgMatrix, поскольку они специфичны для платформы. Точный список доступных скриптов можно найти в интерфейсе программного обеспечения IgMatrix после установки. Пожалуйста, ориентируйтесь на фактические функции, показанные в вашем программном обеспечении."
+    },
+    "Do I need separate licenses for IgMatrix and TikMatrix?": {
+        "message": "Нужны ли мне отдельные лицензии для IgMatrix и TikMatrix?"
+    },
+    "Yes, IgMatrix and TikMatrix require separate licenses as they are different products optimized for different social media platforms. Each license is tied to specific software and cannot be used interchangeably.": {
+        "message": "Да, IgMatrix и TikMatrix требуют отдельных лицензий, поскольку это разные продукты, оптимизированные для разных платформ социальных сетей. Каждая лицензия привязана к конкретному программному обеспечению и не может использоваться взаимозаменяемо."
+    },
+    "Is the pricing the same as TikMatrix?": {
+        "message": "Такая ли цена, как у TikMatrix?"
+    },
+    "IgMatrix follows a similar pricing structure to TikMatrix, but may have different rates. Please check our official pricing page or contact our support team for current IgMatrix pricing information.": {
+        "message": "IgMatrix следует аналогичной структуре ценообразования TikMatrix, но может иметь разные тарифы. Пожалуйста, проверьте нашу официальную страницу цен или свяжитесь с нашей командой поддержки для получения актуальной информации о ценах на IgMatrix."
+    },
+    "Can I run both IgMatrix and TikMatrix on the same computer?": {
+        "message": "Могу ли я запускать IgMatrix и TikMatrix на одном компьютере?"
+    },
+    "You can install both IgMatrix and TikMatrix on the same computer, but they cannot run simultaneously due to runtime conflicts. You can only run one software at a time - either IgMatrix or TikMatrix.": {
+        "message": "Вы можете установить IgMatrix и TikMatrix на одном компьютере, но они не могут работать одновременно из-за конфликтов времени выполнения. Вы можете запускать только одно программное обеспечение за раз - либо IgMatrix, либо TikMatrix."
+    },
+    "Still have questions?": {
+        "message": "Остались вопросы?"
+    },
+    "Our support team is here to help you with any IgMatrix-related questions or issues.": {
+        "message": "Наша команда поддержки здесь, чтобы помочь вам с любыми вопросами или проблемами, связанными с IgMatrix."
+    },
+    "Contact Support": {
+        "message": "Связаться с поддержкой"
     }
 }
