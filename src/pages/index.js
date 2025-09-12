@@ -107,6 +107,7 @@ export default function Home() {
         <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.png" />
         <link rel="canonical" href="https://tikmatrix.com" />
       </Head>
+TESTTEST
       <HomepageHeader />
       <main>
         <HomepageVS />
