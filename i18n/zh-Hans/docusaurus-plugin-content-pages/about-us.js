@@ -43,8 +43,8 @@ export default function AboutUs() {
 
                     <h2>联系我们</h2>
                     <p>有问题或需要帮助？我们随时为您服务！</p>
-                    <p>电子邮件：admin@TikZenx.com</p>
-                    <p>加入我们的社区：<a href="https://t.me/fayelsyahmi">Telegram 支持群组</a></p>
+                    <p>电子邮件：support@tikmatrix.com</p>
+                    <p>加入我们的社区：<a href="https://t.me/tikmatrix_support">Telegram 支持群组</a></p>
                 </div>
             </div>
         </Layout>

@@ -44,7 +44,7 @@ export default function AboutUs() {
                     <h2>Свяжитесь с нами</h2>
                     <p>Есть вопросы или нужна помощь? Мы всегда к вашим услугам!</p>
                     <p>Электронная почта: support@tikmatrix.com</p>
-                    <p>Присоединяйтесь к нашему сообществу: <a href="https://t.me/fayelsyahmi">Группа поддержки Telegram</a></p>
+                    <p>Присоединяйтесь к нашему сообществу: <a href="https://t.me/tikmatrix_support">Группа поддержки Telegram</a></p>
                 </div>
             </div>
         </Layout>
