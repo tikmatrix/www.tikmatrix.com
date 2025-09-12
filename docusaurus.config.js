@@ -20,7 +20,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'tikmatrix', // Usually your GitHub org/user name.
+  organizationName: 'TikZenx', // Usually your GitHub org/user name.
   projectName: 'tiktok-matrix', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -165,7 +165,7 @@ const config = {
           //     },
           //     {
           //       label: 'Telegram',
-          //       href: 'https://t.me/tikmatrix',
+          //       href: 'https://t.me/TikZenx',
           //     },
           //     {
           //       label: 'X',
@@ -173,7 +173,7 @@ const config = {
           //     },
           //     {
           //       label: 'Youtube',
-          //       href: 'https://youtube.com/@tikmatrix',
+          //       href: 'https://youtube.com/@TikZenx',
           //     },
           //   ],
           // },
@@ -214,11 +214,11 @@ const config = {
           //   label: 'Buy hardware',
           // },
           // {
-          //   href: 'https://user.tikmatrix.com',
+          //   href: 'https://user.TikZenx.com',
           //   label: 'TikTok User Finder',
           // },
           // {
-          //   href: 'https://ws.tikmatrix.com',
+          //   href: 'https://ws.TikZenx.com',
           //   label: 'WhatsApp Number Checker',
           // },
           //   ],
@@ -236,8 +236,8 @@ const config = {
         { name: 'author', content: 'TikZenX' },
         { property: 'og:title', content: 'TikZenX - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
         { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
-        { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
-        { property: 'og:url', content: 'https://tikmatrix.com/' },
+        { property: 'og:image', content: 'https://TikZenx.com/img/logo.png' },
+        { property: 'og:url', content: 'https://TikZenx.com/' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@TikZenX' },
@@ -254,7 +254,7 @@ const config = {
       tagName: 'link',
       attributes: {
         rel: 'canonical',
-        href: 'https://tikmatrix.com/',
+        href: 'https://tikzenx.com/',
       },
     },
     {
@@ -277,7 +277,7 @@ const config = {
         'publisher': {
           '@type': 'Organization',
           'name': 'TikZenX, LLC.',
-          'logo': 'https://tikmatrix.com/img/logo.png'
+          'logo': 'https://tikzenx.com/img/logo.png'
         }
       }),
     },

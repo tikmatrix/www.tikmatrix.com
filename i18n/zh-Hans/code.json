@@ -1,6 +1,6 @@
 {
   "TikZenX is a TikTok group control operation tool": {
-    "message": "TikMatrix是一款Tiktok群控运营工具"
+    "message": "TikZenx是一款Tiktok群控运营工具"
   },
   "Download for Windows": {
     "message": "Windows 下载"
@@ -919,7 +919,7 @@
     "description": "用户评价部分标题"
   },
   "testimonials.subtitle": {
-    "message": "TikMatrix用户怎么说",
+    "message": "TikZenx用户怎么说",
     "description": "用户评价部分副标题"
   },
   "testimonials.usage_label": {
@@ -927,7 +927,7 @@
     "description": "使用时长标签"
   },
   "testimonials.user1.text": {
-    "message": "TikMatrix对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
+    "message": "TikZenx对我们工作室来说是救星！我们可以同时控制这么多手机，自动化功能超级强大。发帖和养号变得容易多了。TikTok防检测真的有效——我们的帖子获得了比以前更自然的流量。",
     "description": "第一个用户评价文本"
   },
   "testimonials.user1.usage": {
@@ -935,7 +935,7 @@
     "description": "第一个用户使用时长"
   },
   "testimonials.user2.text": {
-    "message": "使用TikMatrix后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
+    "message": "使用TikZenx后，我们广告团队的效率飙升。自动化脚本为我们节省了大量手动工作，账户保持安全——到目前为止没有被封禁。对我们这样的代理商来说非常完美！",
     "description": "第二个用户评价文本"
   },
   "testimonials.user2.usage": {
@@ -951,7 +951,7 @@
     "description": "第三个用户使用时长"
   },
   "testimonials.user4.text": {
-    "message": "之前试过其他工具，但TikMatrix是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
+    "message": "之前试过其他工具，但TikZenx是最省心的。自动化和防封都很可靠。非常适合需要高效批量操作的营销团队。",
     "description": "第四个用户评价文本"
   },
   "testimonials.user4.usage": {
@@ -1055,7 +1055,7 @@
     "description": "白标功能标题"
   },
   "whitelabel.description": {
-    "message": "自定义TikMatrix的品牌标识以匹配您的公司形象",
+    "message": "自定义TikZenx的品牌标识以匹配您的公司形象",
     "description": "白标功能描述"
   },
   "whitelabel.annualRequired": {

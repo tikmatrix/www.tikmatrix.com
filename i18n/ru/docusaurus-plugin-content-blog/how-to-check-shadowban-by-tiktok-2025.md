@@ -1,8 +1,8 @@
 ---
 slug: how-to-check-shadowban-by-tiktok-2025
 title: Как проверить Shadowban в TikTok в 2025 году
-authors: tikMatrix
-tags: [tikmatrix, tiktok, shadowban, check]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, shadowban, check]
 ---
 
 Shadowban (теневой бан) — это термин, используемый для описания ситуации, когда контент пользователя скрывается или подавляется на социальных платформах без ведома пользователя. Если вы подозреваете, что попали под shadowban в TikTok, есть несколько способов проверить и подтвердить это. Вот шаги для проверки shadowban в TikTok в 2025 году:

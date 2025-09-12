@@ -1,8 +1,8 @@
 ---
 slug: How-to-fix-vcruntime140.dll-not-found-when-open-TikZenX
 title: Как исправить ошибку "vcruntime140.dll не найден"
-authors: tikMatrix
-tags: [vcruntime140.ddl not found,fixed,tikmatrix]
+authors: Tikzenx
+tags: [vcruntime140.ddl not found,fixed,Tikzenx]
 ---
 Ошибка "vcruntime140.dll не найден" обычно возникает из-за того, что Microsoft Visual C++ Redistributable Package не установлен или поврежден. Вот шаги для исправления этой проблемы:
 <!--truncate-->

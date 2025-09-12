@@ -1,8 +1,8 @@
 ---
 sulg: how-to-check-shadowban-by-tiktok-2025
 title: 如何检查2025年TikTok的Shadowban
-authors: tikMatrix
-tags: [tikmatrix, tiktok, shadowban, check]
+authors: Tikzenx
+tags: [Tikzenx, tiktok, shadowban, check]
 ---
 
 Shadowban 是一个术语，用来描述用户的内容在社交媒体平台上被隐藏或抑制，而用户却不知情的情况。如果你怀疑自己在 TikTok 上被隐形封禁了，有几种方法可以检查和确认。以下是在 2025 年检查是否被 TikTok 隐形封禁的步骤：
