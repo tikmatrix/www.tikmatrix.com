@@ -1373,5 +1373,86 @@
   },
   "24h AI Assistant": {
     "message": "24小时AI助手"
+  },
+  "Supports 100+ phones mirroring to a computer, with synchronized operation": {
+    "message": "支持100+手机投屏到电脑，同步操作"
+  },
+  "Create new TikTok accounts with email registration and password setup": {
+    "message": "创建新的TikTok账户，支持邮箱注册和密码设置"
+  },
+  "Batch login to TikTok accounts with account list management": {
+    "message": "批量登录TikTok账户，支持账户列表管理"
+  },
+  "Set up account profiles including avatars, nicknames, signatures, and usernames": {
+    "message": "设置账户资料，包括头像、昵称、签名和用户名"
+  },
+  "Automatic account matching": {
+    "message": "自动账户匹配"
+  },
+  "Recognize and match TikTok accounts from phones to add to account list": {
+    "message": "识别并匹配手机中的TikTok账户，添加到账户列表"
+  },
+  "Account warmup": {
+    "message": "账户养号"
+  },
+  "Warm up accounts by searching keywords, watching videos, following, liking, commenting, and favoriting": {
+    "message": "通过搜索关键词、观看视频、关注、点赞、评论和收藏来养号"
+  },
+  "Publish videos or images to TikTok with batch posting capabilities": {
+    "message": "发布视频或图片到TikTok，支持批量发布功能"
+  },
+  "User engagement boost": {
+    "message": "用户互动提升"
+  },
+  "Increase user engagement by following or unfollowing accounts in bulk": {
+    "message": "通过批量关注或取消关注账户来提升用户互动"
+  },
+  "Post engagement boost": {
+    "message": "帖子互动提升"
+  },
+  "Increase engagement on posts by liking, sharing, favoriting, and viewing them in bulk": {
+    "message": "通过批量点赞、分享、收藏和观看来提升帖子互动"
+  },
+  "Send messages to multiple TikTok accounts in bulk with personalized content": {
+    "message": "批量向多个TikTok账户发送个性化内容的消息"
+  },
+  "User scraping": {
+    "message": "用户采集"
+  },
+  "Scrape TikTok usernames from followers lists or keyword searches": {
+    "message": "从粉丝列表或关键词搜索中采集TikTok用户名"
+  },
+  "Post management": {
+    "message": "帖子管理"
+  },
+  "Remove posts based on their view count for content optimization": {
+    "message": "根据观看次数删除帖子，优化内容"
+  },
+  "Mass commenting": {
+    "message": "批量评论"
+  },
+  "Comment on multiple TikTok posts in bulk with customizable content and emojis": {
+    "message": "批量评论多个TikTok帖子，支持自定义内容和表情符号"
+  },
+  "Live stream boost": {
+    "message": "直播提升"
+  },
+  "Control farm accounts to watch, like, and comment on target live streams": {
+    "message": "控制矩阵账户观看、点赞和评论目标直播"
+  },
+  "Super boost": {
+    "message": "超级提升"
+  },
+  "Comprehensive automation combining multiple engagement strategies with AI-generated comments": {
+    "message": "综合自动化，结合多种互动策略和AI生成的评论"
+  },
+  "Mass direct messaging": {
+    "message": "批量私信"
+  },
+  "Comment boost": {
+    "message": "评论提升"
+  },
+  "Boost engagement on specific comments by liking and replying to them in bulk": {
+    "message": "通过批量点赞和回复特定评论来提升互动"
   }
 }

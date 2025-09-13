@@ -1373,5 +1373,86 @@
     },
     "24h AI Assistant": {
         "message": "24-часовой ИИ-помощник"
+    },
+    "Supports 100+ phones mirroring to a computer, with synchronized operation": {
+        "message": "Поддерживает отображение 100+ телефонов на компьютер с синхронизированной работой"
+    },
+    "Create new TikTok accounts with email registration and password setup": {
+        "message": "Создание новых аккаунтов TikTok с регистрацией по электронной почте и настройкой пароля"
+    },
+    "Batch login to TikTok accounts with account list management": {
+        "message": "Пакетный вход в аккаунты TikTok с управлением списком аккаунтов"
+    },
+    "Set up account profiles including avatars, nicknames, signatures, and usernames": {
+        "message": "Настройка профилей аккаунтов, включая аватары, никнеймы, подписи и имена пользователей"
+    },
+    "Automatic account matching": {
+        "message": "Автоматическое сопоставление аккаунтов"
+    },
+    "Recognize and match TikTok accounts from phones to add to account list": {
+        "message": "Распознавание и сопоставление аккаунтов TikTok с телефонов для добавления в список аккаунтов"
+    },
+    "Account warmup": {
+        "message": "Прогрев аккаунта"
+    },
+    "Warm up accounts by searching keywords, watching videos, following, liking, commenting, and favoriting": {
+        "message": "Прогрев аккаунтов через поиск по ключевым словам, просмотр видео, подписки, лайки, комментарии и добавление в избранное"
+    },
+    "Publish videos or images to TikTok with batch posting capabilities": {
+        "message": "Публикация видео или изображений в TikTok с возможностью пакетной публикации"
+    },
+    "User engagement boost": {
+        "message": "Повышение пользовательской активности"
+    },
+    "Increase user engagement by following or unfollowing accounts in bulk": {
+        "message": "Увеличение пользовательской активности через массовые подписки или отписки от аккаунтов"
+    },
+    "Post engagement boost": {
+        "message": "Повышение активности публикаций"
+    },
+    "Increase engagement on posts by liking, sharing, favoriting, and viewing them in bulk": {
+        "message": "Увеличение активности публикаций через массовые лайки, репосты, добавление в избранное и просмотры"
+    },
+    "Send messages to multiple TikTok accounts in bulk with personalized content": {
+        "message": "Отправка сообщений множеству аккаунтов TikTok с персонализированным контентом"
+    },
+    "User scraping": {
+        "message": "Парсинг пользователей"
+    },
+    "Scrape TikTok usernames from followers lists or keyword searches": {
+        "message": "Парсинг имен пользователей TikTok из списков подписчиков или поиска по ключевым словам"
+    },
+    "Post management": {
+        "message": "Управление публикациями"
+    },
+    "Remove posts based on their view count for content optimization": {
+        "message": "Удаление публикаций на основе количества просмотров для оптимизации контента"
+    },
+    "Mass commenting": {
+        "message": "Массовое комментирование"
+    },
+    "Comment on multiple TikTok posts in bulk with customizable content and emojis": {
+        "message": "Комментирование множества публикаций TikTok с настраиваемым контентом и эмодзи"
+    },
+    "Live stream boost": {
+        "message": "Повышение активности прямых эфиров"
+    },
+    "Control farm accounts to watch, like, and comment on target live streams": {
+        "message": "Управление фарм-аккаунтами для просмотра, лайков и комментирования целевых прямых эфиров"
+    },
+    "Super boost": {
+        "message": "Супер-буст"
+    },
+    "Comprehensive automation combining multiple engagement strategies with AI-generated comments": {
+        "message": "Комплексная автоматизация, объединяющая множественные стратегии взаимодействия с ИИ-генерируемыми комментариями"
+    },
+    "Mass direct messaging": {
+        "message": "Массовые личные сообщения"
+    },
+    "Comment boost": {
+        "message": "Буст комментариев"
+    },
+    "Boost engagement on specific comments by liking and replying to them in bulk": {
+        "message": "Повышение активности конкретных комментариев через массовые лайки и ответы"
     }
 }
