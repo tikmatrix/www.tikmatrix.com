@@ -1454,5 +1454,11 @@
   },
   "Boost engagement on specific comments by liking and replying to them in bulk": {
     "message": "通过批量点赞和回复特定评论来提升互动"
+  },
+  "AI-Generated Comments": {
+    "message": "AI智能评论"
+  },
+  "Generate intelligent and contextual comments through ChatGPT API integration": {
+    "message": "通过ChatGPT API集成生成智能且符合语境的评论"
   }
 }

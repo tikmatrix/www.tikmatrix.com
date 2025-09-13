@@ -190,6 +190,15 @@ export default function HomepageFeatures() {
             <div className="content d-flex flex-column justify-content-center">
               <div className="row">
                 <div className="col col--3 icon-box" data-aos="fade-up">
+                  <i className="bx bx-brain"></i>
+                  <h4>
+                    <Translate>AI-Generated Comments</Translate>
+                  </h4>
+                  <p>
+                    <Translate>Generate intelligent and contextual comments through ChatGPT API integration</Translate>
+                  </p>
+                </div>
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i className="bx bx-shuffle"></i>
                   <h4>
                     <Translate>Script Parameter Randomization</Translate>
@@ -198,7 +207,7 @@ export default function HomepageFeatures() {
                     <Translate>Randomized script parameters to avoid behavior detection patterns</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i className="bx bx-time"></i>
                   <h4>
                     <Translate>Scheduled Tasks</Translate>
@@ -207,7 +216,7 @@ export default function HomepageFeatures() {
                     <Translate>Automated scheduling for unattended operation</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="200">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i className="bx bx-mouse"></i>
                   <h4>
                     <Translate>Human-like Click Simulation</Translate>
@@ -216,7 +225,7 @@ export default function HomepageFeatures() {
                     <Translate>Script engine simulates natural human clicking with randomized button offset</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="300">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i className="bx bx-trending-up"></i>
                   <h4>
                     <Translate>Natural Swipe Gestures</Translate>
@@ -225,7 +234,7 @@ export default function HomepageFeatures() {
                     <Translate>Simulates natural right-hand arc swipe trajectories like real human interaction</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="400">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="500">
                   <i className="bx bx-text"></i>
                   <h4>
                     <Translate>Character-by-Character Input</Translate>
@@ -234,7 +243,7 @@ export default function HomepageFeatures() {
                     <Translate>Text input mimics human typing patterns with character-by-character simulation</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="500">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
                   <i className="bx bx-desktop"></i>
                   <h4>
                     <Translate>Computer-based Execution</Translate>
@@ -243,7 +252,7 @@ export default function HomepageFeatures() {
                     <Translate>Scripts run on computer to avoid mobile device detection</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="600">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="700">
                   <i className="bx bx-shield"></i>
                   <h4>
                     <Translate>No Root Required</Translate>
@@ -252,7 +261,7 @@ export default function HomepageFeatures() {
                     <Translate>No root permissions needed, ensuring device environment security</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="700">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="800">
                   <i className="bx bx-lock"></i>
                   <h4>
                     <Translate>Private Local Deployment</Translate>
@@ -261,7 +270,7 @@ export default function HomepageFeatures() {
                     <Translate>Completely local private deployment ensuring user data security</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="800">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="900">
                   <i className="bx bx-support"></i>
                   <h4>
                     <Translate>Expert Technical Team</Translate>
@@ -270,7 +279,7 @@ export default function HomepageFeatures() {
                     <Translate>Powerful technical team with real-time maintenance and updates ensuring script reliability</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="900">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1000">
                   <i className="bx bx-code"></i>
                   <h4>
                     <Translate>Open Source Client</Translate>
@@ -279,7 +288,7 @@ export default function HomepageFeatures() {
                     <Translate>Open source client code allows users to customize their own client</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1000">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1100">
                   <i className="bx bx-briefcase"></i>
                   <h4>
                     <Translate>Work Profile Support</Translate>
@@ -288,7 +297,7 @@ export default function HomepageFeatures() {
                     <Translate>Supports work profile enterprise space for professional use</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1100">
+                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1200">
                   <i className="bx bx-group"></i>
                   <h4>
                     <Translate>24/7 Technical Support</Translate>

@@ -1454,5 +1454,11 @@
     },
     "Boost engagement on specific comments by liking and replying to them in bulk": {
         "message": "Повышение активности конкретных комментариев через массовые лайки и ответы"
+    },
+    "AI-Generated Comments": {
+        "message": "ИИ-генерированные комментарии"
+    },
+    "Generate intelligent and contextual comments through ChatGPT API integration": {
+        "message": "Генерация умных и контекстных комментариев через интеграцию ChatGPT API"
     }
 }
