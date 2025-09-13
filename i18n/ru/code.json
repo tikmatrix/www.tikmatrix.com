@@ -656,8 +656,8 @@
         "message": "TikMatrix обеспечивает как минимум на 30% более высокую вовлеченность по сравнению с аналогичными продуктами, с продвинутой технологией реальных устройств, которая обеспечивает полную безопасность аккаунтов.",
         "description": "The description of TikMatrix competitive advantage"
     },
-    "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
-        "message": "Наша собственная система матрицы реальных устройств идеально избегает мер контроля рисков TikTok, что приводит к 0% уровню блокировки аккаунтов.",
+    "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in an extremely low account suspension rate.": {
+        "message": "Наша собственная система матрицы реальных устройств идеально избегает мер контроля рисков TikTok, что приводит к чрезвычайно низкому уровню блокировки аккаунтов.",
         "description": "The description of TikMatrix proprietary technology"
     },
     "Powerful TikTok Automation & Management Tools": {
@@ -1289,5 +1289,89 @@
     },
     "Contact Support": {
         "message": "Связаться с поддержкой"
+    },
+    "Technical Advantages": {
+        "message": "Технические преимущества"
+    },
+    "Advanced Technology for Superior Performance": {
+        "message": "Передовые технологии для превосходной производительности"
+    },
+    "Script Parameter Randomization": {
+        "message": "Рандомизация параметров скрипта"
+    },
+    "Randomized script parameters to avoid behavior detection patterns": {
+        "message": "Случайные параметры скрипта для избежания паттернов обнаружения поведения"
+    },
+    "Scheduled Tasks": {
+        "message": "Запланированные задачи"
+    },
+    "Automated scheduling for unattended operation": {
+        "message": "Автоматическое планирование для работы без присмотра"
+    },
+    "Human-like Click Simulation": {
+        "message": "Симуляция кликов как у человека"
+    },
+    "Script engine simulates natural human clicking with randomized button offset": {
+        "message": "Движок скрипта имитирует естественные человеческие клики со случайным смещением кнопок"
+    },
+    "Natural Swipe Gestures": {
+        "message": "Естественные жесты свайпа"
+    },
+    "Simulates natural right-hand arc swipe trajectories like real human interaction": {
+        "message": "Имитирует естественные дугообразные траектории свайпа правой руки как настоящее человеческое взаимодействие"
+    },
+    "Character-by-Character Input": {
+        "message": "Посимвольный ввод"
+    },
+    "Text input mimics human typing patterns with character-by-character simulation": {
+        "message": "Ввод текста имитирует паттерны человеческого набора с посимвольной симуляцией"
+    },
+    "Computer-based Execution": {
+        "message": "Выполнение на компьютере"
+    },
+    "Scripts run on computer to avoid mobile device detection": {
+        "message": "Скрипты выполняются на компьютере, чтобы избежать обнаружения мобильным устройством"
+    },
+    "No Root Required": {
+        "message": "Root не требуется"
+    },
+    "No root permissions needed, ensuring device environment security": {
+        "message": "Root-разрешения не нужны, обеспечивая безопасность среды устройства"
+    },
+    "Private Local Deployment": {
+        "message": "Частное локальное развертывание"
+    },
+    "Completely local private deployment ensuring user data security": {
+        "message": "Полностью локальное частное развертывание, обеспечивающее безопасность пользовательских данных"
+    },
+    "Expert Technical Team": {
+        "message": "Экспертная техническая команда"
+    },
+    "Powerful technical team with real-time maintenance and updates ensuring script reliability": {
+        "message": "Мощная техническая команда с обслуживанием и обновлениями в реальном времени, обеспечивающая надежность скриптов"
+    },
+    "Open Source Client": {
+        "message": "Клиент с открытым исходным кодом"
+    },
+    "Open source client code allows users to customize their own client": {
+        "message": "Код клиента с открытым исходным кодом позволяет пользователям настраивать собственный клиент"
+    },
+    "Work Profile Support": {
+        "message": "Поддержка рабочего профиля"
+    },
+    "Supports work profile enterprise space for professional use": {
+        "message": "Поддерживает корпоративное пространство рабочего профиля для профессионального использования"
+    },
+    "24/7 Technical Support": {
+        "message": "Техническая поддержка 24/7"
+    },
+    "Strong technical support team with open community ecosystem": {
+        "message": "Сильная команда технической поддержки с открытой экосистемой сообщества"
+    },
+    "Telegram Support": {
+        "message": "Поддержка в Telegram"
+    },
+    "24h AI Assistant": {
+        "message": "24-часовой ИИ-помощник"
     }
 }

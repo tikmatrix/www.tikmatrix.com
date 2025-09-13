@@ -656,8 +656,8 @@
     "message": "TikMatrix 提供比同类产品至少高30%的互动率，采用先进的真机技术确保账号完全安全。",
     "description": "The description of TikMatrix competitive advantage"
   },
-  "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.": {
-    "message": "我们专有的真机矩阵系统完美规避TikTok的风控措施，实现0%的账号封停率。",
+  "Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in an extremely low account suspension rate.": {
+    "message": "我们专有的真机矩阵系统完美规避TikTok的风控措施，实现极低的账号封禁率。",
     "description": "The description of TikMatrix proprietary technology"
   },
   "Powerful TikTok Automation & Management Tools": {
@@ -1289,5 +1289,89 @@
   },
   "Contact Support": {
     "message": "联系支持"
+  },
+  "Technical Advantages": {
+    "message": "技术优势"
+  },
+  "Advanced Technology for Superior Performance": {
+    "message": "先进技术打造卓越性能"
+  },
+  "Script Parameter Randomization": {
+    "message": "脚本参数随机化"
+  },
+  "Randomized script parameters to avoid behavior detection patterns": {
+    "message": "脚本参数随机化，避免行为检测"
+  },
+  "Scheduled Tasks": {
+    "message": "定时任务"
+  },
+  "Automated scheduling for unattended operation": {
+    "message": "定时任务实现无人值守"
+  },
+  "Human-like Click Simulation": {
+    "message": "真人点击模拟"
+  },
+  "Script engine simulates natural human clicking with randomized button offset": {
+    "message": "脚本引擎采用模拟真人的点击按钮随机化偏移"
+  },
+  "Natural Swipe Gestures": {
+    "message": "自然滑动轨迹"
+  },
+  "Simulates natural right-hand arc swipe trajectories like real human interaction": {
+    "message": "脚本滑动采用模拟真人的右手弧形滑动轨迹"
+  },
+  "Character-by-Character Input": {
+    "message": "逐字输入模拟"
+  },
+  "Text input mimics human typing patterns with character-by-character simulation": {
+    "message": "脚本输入文字采用模拟真人的逐字输入"
+  },
+  "Computer-based Execution": {
+    "message": "电脑端运行"
+  },
+  "Scripts run on computer to avoid mobile device detection": {
+    "message": "脚本运行在电脑端，避免手机端被检测"
+  },
+  "No Root Required": {
+    "message": "无需Root权限"
+  },
+  "No root permissions needed, ensuring device environment security": {
+    "message": "无需root权限，保证设备环境安全"
+  },
+  "Private Local Deployment": {
+    "message": "私有化本地部署"
+  },
+  "Completely local private deployment ensuring user data security": {
+    "message": "完全本地私有化部署，保证用户数据安全"
+  },
+  "Expert Technical Team": {
+    "message": "专业技术团队"
+  },
+  "Powerful technical team with real-time maintenance and updates ensuring script reliability": {
+    "message": "强大的技术团队，实时维护更新，保证脚本的可用率"
+  },
+  "Open Source Client": {
+    "message": "开源客户端"
+  },
+  "Open source client code allows users to customize their own client": {
+    "message": "开源的客户端代码，用户可以随意自定义客户端"
+  },
+  "Work Profile Support": {
+    "message": "企业空间支持"
+  },
+  "Supports work profile enterprise space for professional use": {
+    "message": "支持work profile企业空间"
+  },
+  "24/7 Technical Support": {
+    "message": "24/7技术支持"
+  },
+  "Strong technical support team with open community ecosystem": {
+    "message": "强大的技术支持团队，开放的社区生态"
+  },
+  "Telegram Support": {
+    "message": "Telegram支持群"
+  },
+  "24h AI Assistant": {
+    "message": "24小时AI助手"
   }
 }

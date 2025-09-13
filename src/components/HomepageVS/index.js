@@ -19,7 +19,7 @@ export default function HomepageFeatures() {
                     </p>
                     <p>
                         <Translate>
-                            Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in a 0% account suspension rate.
+                            Our proprietary real device matrix system perfectly avoids TikTok's risk control measures, resulting in an extremely low account suspension rate.
                         </Translate>
                     </p>
                 </div>
