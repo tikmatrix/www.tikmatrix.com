@@ -46,6 +46,8 @@ All plans include unlimited feature access and 1:1 Telegram support.
 - One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
 
+**Need to switch computers?** Check out our [License Migration Guide](tutorial-basics/license-migration.md) to learn how to transfer your license to a new computer.
+
 We don't offer free trials, but we can provide a free feature demonstration. Please contact our support team.
 
 ## What You'll Need
