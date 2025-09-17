@@ -35,13 +35,13 @@ export default function IgMatrixTutorial() {
                                         </h5>
                                         <p className="mb-2">
                                             <Translate>
-                                                IgMatrix setup tutorial is identical to TikMatrix. The only difference is their script logic, so you can directly refer to the TikMatrix tutorial documentation.
+                                                IgMatrix setup tutorial is identical to TikZenx. The only difference is their script logic, so you can directly refer to the TikZenx tutorial documentation.
                                             </Translate>
                                         </p>
                                         <p className="mb-0">
                                             <strong>
                                                 <Translate>
-                                                    Please download IgMatrix to view the script list directly. Currently, not all TikMatrix scripts are 100% supported in IgMatrix. Please refer to the actual features in the software.
+                                                    Please download IgMatrix to view the script list directly. Currently, not all TikZenx scripts are 100% supported in IgMatrix. Please refer to the actual features in the software.
                                                 </Translate>
                                             </strong>
                                         </p>
@@ -77,16 +77,16 @@ export default function IgMatrixTutorial() {
                                     <div className="step-number">2</div>
                                     <div className="step-content">
                                         <h5>
-                                            <Translate>Follow TikMatrix Tutorial</Translate>
+                                            <Translate>Follow TikZenx Tutorial</Translate>
                                         </h5>
                                         <p>
                                             <Translate>
-                                                Since the setup process is identical, please refer to our comprehensive TikMatrix documentation for detailed instructions on device connection, account management, and script configuration.
+                                                Since the setup process is identical, please refer to our comprehensive TikZenx documentation for detailed instructions on device connection, account management, and script configuration.
                                             </Translate>
                                         </p>
                                         <a href="/docs/intro" className="btn btn-outline-primary btn-sm">
                                             <i className="bx bx-book-open"></i>
-                                            <Translate>View TikMatrix Tutorial</Translate>
+                                            <Translate>View TikZenx Tutorial</Translate>
                                         </a>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ export default function IgMatrixTutorial() {
                                         </h5>
                                         <p>
                                             <Translate>
-                                                After installation, open IgMatrix to view the complete list of available Instagram automation scripts. The script selection may differ from TikMatrix.
+                                                After installation, open IgMatrix to view the complete list of available Instagram automation scripts. The script selection may differ from TikZenx.
                                             </Translate>
                                         </p>
                                     </div>
@@ -116,7 +116,7 @@ export default function IgMatrixTutorial() {
                                                 If you need help with IgMatrix-specific features or encounter any issues, our support team is ready to assist you.
                                             </Translate>
                                         </p>
-                                        <a href="https://t.me/tikmatrix_support" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm">
+                                        <a href="https://t.me/fayelsyahmi" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm">
                                             <i className="bx bxl-telegram"></i>
                                             <Translate>Get Support</Translate>
                                         </a>
@@ -127,7 +127,7 @@ export default function IgMatrixTutorial() {
                             {/* 功能对比 */}
                             <div className="feature-comparison mt-5">
                                 <h4 className="mb-4">
-                                    <Translate>Key Differences from TikMatrix</Translate>
+                                    <Translate>Key Differences from TikZenx</Translate>
                                 </h4>
                                 <div className="row">
                                     <div className="col-md-6">
@@ -173,7 +173,7 @@ export default function IgMatrixTutorial() {
                                         </h6>
                                         <p className="mb-0">
                                             <Translate>
-                                                Always check the actual features available in your IgMatrix software, as the script functionality may vary from TikMatrix. The software interface will show you exactly which automation scripts are available for Instagram.
+                                                Always check the actual features available in your IgMatrix software, as the script functionality may vary from TikZenx. The software interface will show you exactly which automation scripts are available for Instagram.
                                             </Translate>
                                         </p>
                                     </div>

@@ -10,50 +10,50 @@ export default function IgMatrixFAQ() {
 
     const faqs = [
         {
-            question: <Translate>What is the difference between IgMatrix and TikMatrix?</Translate>,
+            question: <Translate>What is the difference between IgMatrix and TikZenx?</Translate>,
             answer: (
                 <Translate>
-                    IgMatrix and TikMatrix share the same setup process and user interface. The main difference is that IgMatrix is specifically designed for Instagram automation, while TikMatrix is for TikTok. The script logic and available features are optimized for each respective platform.
+                    IgMatrix and TikZenx share the same setup process and user interface. The main difference is that IgMatrix is specifically designed for Instagram automation, while TikMatrix is for TikTok. The script logic and available features are optimized for each respective platform.
                 </Translate>
             )
         },
         {
-            question: <Translate>Can I use the same tutorial for both IgMatrix and TikMatrix?</Translate>,
+            question: <Translate>Can I use the same tutorial for both IgMatrix and TikZenx?</Translate>,
             answer: (
                 <Translate>
-                    Yes! The setup tutorial for IgMatrix is identical to TikMatrix. You can follow the TikMatrix documentation for installation, device connection, and basic configuration. Only the automation scripts will differ based on the platform.
+                    Yes! The setup tutorial for IgMatrix is identical to TikZenx. You can follow the TikZenx documentation for installation, device connection, and basic configuration. Only the automation scripts will differ based on the platform.
                 </Translate>
             )
         },
         {
-            question: <Translate>Which scripts from TikMatrix are available in IgMatrix?</Translate>,
+            question: <Translate>Which scripts from TikZenx are available in IgMatrix?</Translate>,
             answer: (
                 <Translate>
-                    Not all TikMatrix scripts are available in IgMatrix, as they are platform-specific. The exact list of available scripts can be found within the IgMatrix software interface after installation. Please refer to the actual features shown in your software.
+                    Not all TikZenx scripts are available in IgMatrix, as they are platform-specific. The exact list of available scripts can be found within the IgMatrix software interface after installation. Please refer to the actual features shown in your software.
                 </Translate>
             )
         },
         {
-            question: <Translate>Do I need separate licenses for IgMatrix and TikMatrix?</Translate>,
+            question: <Translate>Do I need separate licenses for IgMatrix and TikZenx?</Translate>,
             answer: (
                 <Translate>
-                    Yes, IgMatrix and TikMatrix require separate licenses as they are different products optimized for different social media platforms. Each license is tied to specific software and cannot be used interchangeably.
+                    Yes, IgMatrix and TikZenx require separate licenses as they are different products optimized for different social media platforms. Each license is tied to specific software and cannot be used interchangeably.
                 </Translate>
             )
         },
         {
-            question: <Translate>Is the pricing the same as TikMatrix?</Translate>,
+            question: <Translate>Is the pricing the same as TikZenx?</Translate>,
             answer: (
                 <Translate>
-                    IgMatrix follows a similar pricing structure to TikMatrix, but may have different rates. Please check our official pricing page or contact our support team for current IgMatrix pricing information.
+                    IgMatrix follows a similar pricing structure to TikZenx, but may have different rates. Please check our official pricing page or contact our support team for current IgMatrix pricing information.
                 </Translate>
             )
         },
         {
-            question: <Translate>Can I run both IgMatrix and TikMatrix on the same computer?</Translate>,
+            question: <Translate>Can I run both IgMatrix and TikZenx on the same computer?</Translate>,
             answer: (
                 <Translate>
-                    You can install both IgMatrix and TikMatrix on the same computer, but they cannot run simultaneously due to runtime conflicts. You can only run one software at a time - either IgMatrix or TikMatrix.
+                    You can install both IgMatrix and TikZenx on the same computer, but they cannot run simultaneously due to runtime conflicts. You can only run one software at a time - either IgMatrix or TikMatrix.
                 </Translate>
             )
         }
@@ -107,7 +107,7 @@ export default function IgMatrixFAQ() {
                                     Our support team is here to help you with any IgMatrix-related questions or issues.
                                 </Translate>
                             </p>
-                            <a href="https://t.me/tikmatrix_support" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            <a href="https://t.me/fayelsyahmi" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                                 <i className="bx bxl-telegram"></i>
                                 <Translate>Contact Support</Translate>
                             </a>
