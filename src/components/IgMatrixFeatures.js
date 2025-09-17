@@ -66,14 +66,14 @@ export default function IgMatrixFeatures() {
                         <h3><Translate>Why Choose IgMatrix?</Translate></h3>
                         <p className="fst-italic">
                             <Translate>
-                                IgMatrix brings the same powerful automation capabilities of TikMatrix to Instagram,
+                                IgMatrix brings the same powerful automation capabilities of TikZenx to Instagram,
                                 helping you scale your Instagram marketing efforts efficiently and safely.
                             </Translate>
                         </p>
                         <ul>
                             <li>
                                 <i className="bx bx-check-double"></i>
-                                <Translate>Same reliable technology as TikMatrix</Translate>
+                                <Translate>Same reliable technology as TikZenx</Translate>
                             </li>
                             <li>
                                 <i className="bx bx-check-double"></i>
