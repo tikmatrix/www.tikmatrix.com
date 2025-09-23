@@ -50,18 +50,17 @@ export default function HomepageFeatures() {
                     </div>
                     <div className="featuresCol featuresDetail">
                         <span>★</span>
+                    </div>                    {/* Automatic registration */}
+                    <div className="featuresCol featuresTitle" style={{ opacity: 0.5 }}>
+                        <strike><Translate>Automatic registration</Translate></strike> <span style={{ color: '#ff4444', fontSize: '12px' }}>[DISCONTINUED]</span>
                     </div>
-                    {/* Automatic registration */}
-                    <div className="featuresCol featuresTitle">
-                        <Translate>Automatic registration</Translate>
+                    <div className="featuresCol featuresDetail" style={{ opacity: 0.5 }}>
+                        <span className="cross">❌</span>
                     </div>
-                    <div className="featuresCol featuresDetail">
-                        <span className="checkmark">✅</span>
+                    <div className="featuresCol featuresDetail" style={{ opacity: 0.5 }}>
+                        <span className="cross">❌</span>
                     </div>
-                    <div className="featuresCol featuresDetail">
-                        <span className="checkmark">✅</span>
-                    </div>
-                    <div className="featuresCol featuresDetail">
+                    <div className="featuresCol featuresDetail" style={{ opacity: 0.5 }}>
                         <span className="cross">❌</span>
                     </div>
                     {/* Automated account nurturing */}

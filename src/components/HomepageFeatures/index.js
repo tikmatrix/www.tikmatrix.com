@@ -31,14 +31,13 @@ export default function HomepageFeatures() {
                   <p>
                     <Translate>Supports 100+ phones mirroring to a computer, with synchronized operation</Translate>
                   </p>
-                </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="100">
+                </div>                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="100" style={{ opacity: 0.5 }}>
                   <i className="bx bx-registered"></i>
                   <h4>
-                    <Translate>Automatic registration</Translate>
+                    <Translate>Automatic registration</Translate> <span style={{ color: '#ff4444', fontSize: '12px', fontWeight: 'bold' }}>[DISCONTINUED]</span>
                   </h4>
                   <p>
-                    <Translate>Create new TikTok accounts with email registration and password setup</Translate>
+                    <strike><Translate>Create new TikTok accounts with email registration and password setup</Translate></strike>
                   </p>
                 </div>
                 <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="200">

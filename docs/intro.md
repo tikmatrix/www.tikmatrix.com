@@ -13,7 +13,7 @@ Discover **TikMatrix in less than 5 minutes**.
 ## Features
 
 - **Multi-account switching**: One phone can log in to 8 TikTok accounts simultaneously for all tasks.
-- **Auto registration** (with email) and auto login (with email/password or username/password). *Note: Captcha solving and email verification must be done manually.*
+- ~~**Auto registration** (with email)~~ **[DISCONTINUED]** and auto login (with email/password or username/password). *Note: Captcha solving and email verification must be done manually.*
 - **Auto profile filling**: Avatar, nickname, bio, and username.
 - **Automatic recognition** of the TikTok account logged in on the phone.
 - **Auto account warming**: Search keywords, view videos, like videos, follow users, comment on videos, and favorite videos.
@@ -45,6 +45,8 @@ All plans include unlimited feature access and 1:1 Telegram support.
 - Payment methods: Card, Credit Card, USDT (TRC20/BEP20).
 - One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
+
+**Plan Upgrade Rules**: If you subscribed with a Stripe credit card, the system will automatically calculate the price difference when upgrading your plan. If you paid with cryptocurrency, please contact our Telegram support team, and we'll help you calculate the discounted upgrade price.
 
 **Need to switch computers?** Check out our [License Migration Guide](tutorial-basics/license-migration.md) to learn how to transfer your license to a new computer.
 
