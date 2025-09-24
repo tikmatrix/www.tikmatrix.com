@@ -42,7 +42,7 @@ export default function HomepageHeader() {
                     </div>
                 </div>
                 <div className="col col--6 image-slider">
-                    {/* <ImageSlider /> */}
+                    { <ImageSlider />}
                 </div>
             </div>
         </header>

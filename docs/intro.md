@@ -32,16 +32,17 @@ Discover **TikZenX in less than 5 minutes**.
 
 ## Pricing
 
-TikZenX offers flexible pricing plans for every need:
+TikZenX offers annual pricing plans for every need:
 
-- **Starter**: $59/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
-- **Pro**: $99/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
-- **Team**: $149/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
+12 Months usage 
+- **Starter**: $708 — Manage up to 40 TikTok accounts. ($59/month/PC)
+- **Pro**: $1188 — Manage up to 160 TikTok accounts. ($99/month/PC)
+
 
 
 All plans include unlimited feature access and 1:1 Telegram support.
 
-- Annual billing receives a 30% discount.
+
 - Payment methods: Card, Credit Card, USDT (TRC20/BEP20).
 - One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
@@ -55,8 +56,7 @@ We don't offer free trials, but we can provide a free feature demonstration. Ple
 You can use any Android device to run TikZenX, including:
 
 - **Real Android devices**
-- **[Motherboard Android Devices](http://www.niaozun.shop?cid=934ec2fe)**
-- **[Cloud phones](https://www.geelark.cn?invite_code=XHY6a8)**
+- **[Motherboard Android Devices](http://t.me/fayelsyahmi)**
 - **Emulators**
 - **Virtual machines**
 
