@@ -10,11 +10,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Deploy to server
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -24,21 +24,21 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             set -e  # 遇到错误立即退出
-            
+
             echo "🚀 Starting deployment..."
-            
+
             # 进入项目目录
             cd /root/www.tikmatrix.com
-            
+
             # 备份当前版本
             echo "📦 Creating backup..."
             cp -r . ../backup-$(date +%Y%m%d-%H%M%S) || true
-            
+
             # 拉取最新代码
             echo "📥 Pulling latest code..."
             git fetch origin main
             git reset --hard origin/main
-            
+
             # 使用 Docker 构建项目
             echo "🔨 Building project..."
             docker run --rm \
@@ -48,13 +48,13 @@ jobs:
               node:20-alpine \
               sh -c "
                 echo '📦 Installing dependencies...'
-                npm ci --only=production
+                npm install
                 echo '🏗️ Building project...'
-                npm run build
+                npm run build --verbose
               "
-            
+
             echo "✅ Deployment completed successfully!"
-            
+
       - name: Health check
         uses: appleboy/ssh-action@v1.0.3
         with:
@@ -70,7 +70,7 @@ jobs:
               echo "❌ Build directory not found"
               exit 1
             fi
-            
+
       - name: Notify deployment status
         if: always()
         run: |
