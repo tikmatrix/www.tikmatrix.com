@@ -113,11 +113,14 @@ const config = {
             to: '/about-us',
             position: 'left',
             label: 'About Us',
-          },
-          {
+          }, {
             href: '/#contact',
             position: 'left',
             label: 'Contact',
+          }, {
+            to: '/advertising',
+            position: 'left',
+            label: 'Advertising',
           },
           {
             href: '/IgMatrix',
@@ -193,33 +196,12 @@ const config = {
                 to: '/terms-of-service',
               },
             ],
-          },
-          {
-            title: 'Tools',
+          }, {
+            title: 'Advertising',
             items: [
-              // {
-              //   label: 'VideoMagic',
-              //   href: '/VideoMagic',
-              // },
-              // {
-              //   label: 'IgMatrix',
-              //   href: '/IgMatrix',
-              // },
-              // {
-              //   label: 'YtMatrix',
-              //   href: '/YtMatrix',
-              // },
               {
-                href: 'http://www.niaozun.shop?cid=934ec2fe',
-                label: 'Buy hardware',
-              },
-              {
-                href: 'https://user.tikmatrix.com',
-                label: 'TikTok User Finder',
-              },
-              {
-                href: 'https://ws.tikmatrix.com',
-                label: 'WhatsApp Number Checker',
+                label: 'View All Advertising',
+                to: '/advertising',
               },
             ],
           }

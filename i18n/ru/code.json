@@ -1460,5 +1460,65 @@
     },
     "Generate intelligent and contextual comments through ChatGPT API integration": {
         "message": "Генерация умных и контекстных комментариев через интеграцию ChatGPT API"
+    },
+    "advertising.page.title": {
+        "message": "Инструменты и Партнеры"
+    },
+    "advertising.page.subtitle": {
+        "message": "Рекомендуемые инструменты и услуги для улучшения вашего опыта автоматизации социальных сетей"
+    },
+    "advertising.disclaimer.title": {
+        "message": "Важное Уведомление"
+    },
+    "advertising.disclaimer.content": {
+        "message": "Рекомендации и ссылки ниже ведут на внешние веб-сайты и сервисы, которые не принадлежат и не управляются TikMatrix. Мы предоставляем эти ссылки исключительно для вашего удобства. TikMatrix не одобряет, не гарантирует и не несет ответственности за точность, полноту или полезность любой информации, продуктов или услуг, предлагаемых этими сторонними веб-сайтами. Пожалуйста, используйте собственное суждение при взаимодействии с внешними сервисами."
+    },
+    "advertising.visit.button": {
+        "message": "Посетить Сайт"
+    },
+    "advertising.back.home": {
+        "message": "Вернуться на Главную"
+    },
+    "advertising.buy.hardware.title": {
+        "message": "Купить Оборудование"
+    },
+    "advertising.buy.hardware.description": {
+        "message": "Профессиональное оборудование для фермы телефонов и автоматизации"
+    },
+    "advertising.tiktok.user.finder.title": {
+        "message": "Поиск Пользователей TikTok"
+    },
+    "advertising.tiktok.user.finder.description": {
+        "message": "Поиск и анализ пользователей TikTok и их данных"
+    },
+    "advertising.whatsapp.checker.title": {
+        "message": "Проверка Номеров WhatsApp"
+    },
+    "advertising.whatsapp.checker.description": {
+        "message": "Проверка номеров WhatsApp и их статуса"
+    },
+    "advertising.buy.accounts.title": {
+        "message": "Купить Аккаунты"
+    },
+    "advertising.buy.accounts.description": {
+        "message": "Профессиональный рынок аккаунтов социальных сетей"
+    },
+    "advertising.category.hardware": {
+        "message": "Оборудование"
+    },
+    "advertising.category.analytics": {
+        "message": "Аналитика"
+    },
+    "advertising.category.verification": {
+        "message": "Проверка"
+    },
+    "advertising.category.accounts": {
+        "message": "Аккаунты"
+    },
+    "theme.navbar.item.label.Advertising": {
+        "message": "Реклама"
+    },
+    "theme.footer.link.label.View All Advertising": {
+        "message": "Посмотреть Все Рекламные Инструменты"
     }
 }

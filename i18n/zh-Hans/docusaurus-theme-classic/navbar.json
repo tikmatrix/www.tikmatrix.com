@@ -53,5 +53,9 @@
   "item.label.About Us": {
     "message": "关于我们",
     "description": "Navbar item with label About Us"
+  },
+  "item.label.Advertising": {
+    "message": "广告",
+    "description": "Navbar item with label Advertising"
   }
 }

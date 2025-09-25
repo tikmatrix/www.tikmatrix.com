@@ -26,6 +26,66 @@
   "TikMatrix": {
     "message": "TikMatrix 真机矩阵"
   },
+  "advertising.page.title": {
+    "message": "广告与合作伙伴"
+  },
+  "advertising.page.subtitle": {
+    "message": "推荐的广告工具和服务，提升您的社交媒体自动化体验"
+  },
+  "advertising.disclaimer.title": {
+    "message": "重要声明"
+  },
+  "advertising.disclaimer.content": {
+    "message": "以下推荐和链接指向的是不属于或不由TikMatrix运营的外部网站和服务。我们提供这些链接仅为方便您使用。TikMatrix不认可、保证或承担这些第三方网站提供的任何信息、产品或服务的准确性、完整性或实用性的责任。在与外部服务交互时，请使用您自己的判断。"
+  },
+  "advertising.visit.button": {
+    "message": "访问网站"
+  },
+  "advertising.back.home": {
+    "message": "返回首页"
+  },
+  "advertising.buy.hardware.title": {
+    "message": "购买硬件"
+  },
+  "advertising.buy.hardware.description": {
+    "message": "专业的手机农场和自动化硬件设备"
+  },
+  "advertising.tiktok.user.finder.title": {
+    "message": "TikTok 用户查找器"
+  },
+  "advertising.tiktok.user.finder.description": {
+    "message": "查找和分析 TikTok 用户及其数据"
+  },
+  "advertising.whatsapp.checker.title": {
+    "message": "WhatsApp 号码检查器"
+  },
+  "advertising.whatsapp.checker.description": {
+    "message": "验证 WhatsApp 号码并检查其状态"
+  },
+  "advertising.buy.accounts.title": {
+    "message": "购买账号"
+  },
+  "advertising.buy.accounts.description": {
+    "message": "专业的社交媒体账号市场"
+  },
+  "advertising.category.hardware": {
+    "message": "硬件"
+  },
+  "advertising.category.analytics": {
+    "message": "分析工具"
+  },
+  "advertising.category.verification": {
+    "message": "验证工具"
+  },
+  "advertising.category.accounts": {
+    "message": "账号"
+  },
+  "theme.navbar.item.label.Tools": {
+    "message": "工具"
+  },
+  "theme.footer.link.label.View All Tools": {
+    "message": "查看所有工具"
+  },
   "Fingerprint Browser": {
     "message": "指纹浏览器"
   },
