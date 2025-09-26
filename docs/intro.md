@@ -46,7 +46,7 @@ All plans include unlimited feature access and 1:1 Telegram support.
 - One license code binds to one computer, but you can replace the computer for free.
 - The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
 
-**Plan Upgrade Rules**: If you subscribed with a Stripe credit card, the system will automatically calculate the price difference when upgrading your plan. If you paid with cryptocurrency, please contact our Telegram support team, and we'll help you calculate the discounted upgrade price.
+**Plan Upgrade Rules**: The system automatically calculates the price difference when upgrading your plan, regardless of whether you paid with Stripe credit card or cryptocurrency. The upgrade price will be the new plan price minus the remaining value of your current plan.
 
 **Need to switch computers?** Check out our [License Migration Guide](tutorial-basics/license-migration.md) to learn how to transfer your license to a new computer.
 
