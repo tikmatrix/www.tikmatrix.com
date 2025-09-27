@@ -45,7 +45,7 @@
     "message": "返回首页"
   },
   "advertising.buy.hardware.title": {
-    "message": "购买硬件"
+    "message": "NiaoZun Shop"
   },
   "advertising.buy.hardware.description": {
     "message": "专业的手机农场和自动化硬件设备"
@@ -63,10 +63,16 @@
     "message": "验证 WhatsApp 号码并检查其状态"
   },
   "advertising.buy.accounts.title": {
-    "message": "购买账号"
+    "message": "AccsMarket"
   },
   "advertising.buy.accounts.description": {
     "message": "专业的社交媒体账号市场"
+  },
+  "advertising.buy.accounts.leadsmm.title": {
+    "message": "LeadsSMM - 购买账号"
+  },
+  "advertising.buy.accounts.leadsmm.description": {
+    "message": "高品质社交媒体账号提供商，提供优质账号服务"
   },
   "advertising.category.hardware": {
     "message": "硬件"
@@ -79,6 +85,54 @@
   },
   "advertising.category.accounts": {
     "message": "账号"
+  },
+  "advertising.category.vps": {
+    "message": "VPS"
+  },
+  "advertising.category.proxy": {
+    "message": "代理"
+  },
+  "advertising.vps.lisahost.title": {
+    "message": "LisaHost"
+  },
+  "advertising.vps.lisahost.description": {
+    "message": "可靠的VPS主机服务，适用于自动化项目"
+  },
+  "advertising.vps.uuuvps.title": {
+    "message": "UUUVPS"
+  },
+  "advertising.vps.uuuvps.description": {
+    "message": "高性能VPS主机，提供全球多个位置"
+  },
+  "advertising.vps.vultr.title": {
+    "message": "Vultr"
+  },
+  "advertising.vps.vultr.description": {
+    "message": "全球云基础设施和VPS主机服务"
+  },
+  "advertising.proxy.ip2world.title": {
+    "message": "IP2World"
+  },
+  "advertising.proxy.ip2world.description": {
+    "message": "专业代理IP服务，提供全球连接解决方案"
+  },
+  "advertising.proxy.bartproxies.title": {
+    "message": "BartProxies"
+  },
+  "advertising.proxy.bartproxies.description": {
+    "message": "高质量住宅和数据中心代理服务"
+  },
+  "advertising.proxy.proxycheap.title": {
+    "message": "Proxy-Cheap"
+  },
+  "advertising.proxy.proxycheap.description": {
+    "message": "适用于各种用例的经济实惠代理解决方案"
+  },
+  "advertising.proxy.iproxy.title": {
+    "message": "iProxy"
+  },
+  "advertising.proxy.iproxy.description": {
+    "message": "优质代理服务，提供全球IP覆盖"
   },
   "theme.navbar.item.label.Tools": {
     "message": "工具"

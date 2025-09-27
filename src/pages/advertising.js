@@ -7,7 +7,7 @@ import styles from './advertising.module.css';
 const advertising = [
     {
         titleId: 'advertising.buy.hardware.title',
-        title: 'Buy Hardware',
+        title: 'NiaoZun Shop',
         url: 'http://www.niaozun.shop?cid=934ec2fe',
         descriptionId: 'advertising.buy.hardware.description',
         description: 'Professional hardware equipment for phone farming and automation',
@@ -16,10 +16,19 @@ const advertising = [
     },
     {
         titleId: 'advertising.buy.accounts.title',
-        title: 'Buy Accounts',
+        title: 'AccsMarket',
         url: 'https://accsmarket.com/en/?ref=802647',
         descriptionId: 'advertising.buy.accounts.description',
         description: 'Professional social media accounts marketplace',
+        categoryId: 'advertising.category.accounts',
+        category: 'Accounts'
+    },
+    {
+        titleId: 'advertising.buy.accounts.leadsmm.title',
+        title: 'LeadsSMM - Buy Accounts',
+        url: 'https://leadsmm.com/ref/xgene',
+        descriptionId: 'advertising.buy.accounts.leadsmm.description',
+        description: 'Premium social media accounts provider with high-quality accounts',
         categoryId: 'advertising.category.accounts',
         category: 'Accounts'
     },
@@ -40,6 +49,71 @@ const advertising = [
         description: 'Verify WhatsApp numbers and check their status',
         categoryId: 'advertising.category.verification',
         category: 'Verification'
+    },
+    // VPS Providers
+    {
+        titleId: 'advertising.vps.lisahost.title',
+        title: 'LisaHost',
+        url: 'https://lisahost.com/aff.php?aff=1886',
+        descriptionId: 'advertising.vps.lisahost.description',
+        description: 'Reliable VPS hosting services for automation projects',
+        categoryId: 'advertising.category.vps',
+        category: 'VPS'
+    },
+    {
+        titleId: 'advertising.vps.uuuvps.title',
+        title: 'UUUVPS',
+        url: 'https://uuuvps.hk/aff.php?aff=189',
+        descriptionId: 'advertising.vps.uuuvps.description',
+        description: 'High-performance VPS hosting with global locations',
+        categoryId: 'advertising.category.vps',
+        category: 'VPS'
+    },
+    {
+        titleId: 'advertising.vps.vultr.title',
+        title: 'Vultr',
+        url: 'https://www.vultr.com/?ref=8557792',
+        descriptionId: 'advertising.vps.vultr.description',
+        description: 'Cloud infrastructure and VPS hosting worldwide',
+        categoryId: 'advertising.category.vps',
+        category: 'VPS'
+    },
+    // Proxy IP Providers
+    {
+        titleId: 'advertising.proxy.ip2world.title',
+        title: 'IP2World',
+        url: 'https://www.ip2world.com/?ref=42CEY5RUTT',
+        descriptionId: 'advertising.proxy.ip2world.description',
+        description: 'Professional proxy IP services for global connectivity',
+        categoryId: 'advertising.category.proxy',
+        category: 'Proxy'
+    },
+    {
+        titleId: 'advertising.proxy.bartproxies.title',
+        title: 'BartProxies',
+        url: 'https://bartproxies.com/login?referral=nai50tep',
+        descriptionId: 'advertising.proxy.bartproxies.description',
+        description: 'High-quality residential and datacenter proxy services',
+        categoryId: 'advertising.category.proxy',
+        category: 'Proxy'
+    },
+    {
+        titleId: 'advertising.proxy.proxycheap.title',
+        title: 'Proxy-Cheap',
+        url: 'https://app.proxy-cheap.com/r/jY5Tfd',
+        descriptionId: 'advertising.proxy.proxycheap.description',
+        description: 'Affordable proxy solutions for various use cases',
+        categoryId: 'advertising.category.proxy',
+        category: 'Proxy'
+    },
+    {
+        titleId: 'advertising.proxy.iproxy.title',
+        title: 'iProxy',
+        url: 'https://iproxy.online/invite/friend/8O2RSxPc4J',
+        descriptionId: 'advertising.proxy.iproxy.description',
+        description: 'Premium proxy services with global IP coverage',
+        categoryId: 'advertising.category.proxy',
+        category: 'Proxy'
     }
 ];
 

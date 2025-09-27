@@ -1480,7 +1480,7 @@
         "message": "Вернуться на Главную"
     },
     "advertising.buy.hardware.title": {
-        "message": "Купить Оборудование"
+        "message": "NiaoZun Shop"
     },
     "advertising.buy.hardware.description": {
         "message": "Профессиональное оборудование для фермы телефонов и автоматизации"
@@ -1498,10 +1498,16 @@
         "message": "Проверка номеров WhatsApp и их статуса"
     },
     "advertising.buy.accounts.title": {
-        "message": "Купить Аккаунты"
+        "message": "AccsMarket"
     },
     "advertising.buy.accounts.description": {
         "message": "Профессиональный рынок аккаунтов социальных сетей"
+    },
+    "advertising.buy.accounts.leadsmm.title": {
+        "message": "LeadsSMM - Купить Аккаунты"
+    },
+    "advertising.buy.accounts.leadsmm.description": {
+        "message": "Премиум поставщик аккаунтов социальных сетей с высококачественными аккаунтами"
     },
     "advertising.category.hardware": {
         "message": "Оборудование"
@@ -1514,6 +1520,54 @@
     },
     "advertising.category.accounts": {
         "message": "Аккаунты"
+    },
+    "advertising.category.vps": {
+        "message": "VPS"
+    },
+    "advertising.category.proxy": {
+        "message": "Прокси"
+    },
+    "advertising.vps.lisahost.title": {
+        "message": "LisaHost"
+    },
+    "advertising.vps.lisahost.description": {
+        "message": "Надежные VPS-хостинг сервисы для проектов автоматизации"
+    },
+    "advertising.vps.uuuvps.title": {
+        "message": "UUUVPS"
+    },
+    "advertising.vps.uuuvps.description": {
+        "message": "Высокопроизводительный VPS-хостинг с глобальными локациями"
+    },
+    "advertising.vps.vultr.title": {
+        "message": "Vultr"
+    },
+    "advertising.vps.vultr.description": {
+        "message": "Облачная инфраструктура и VPS-хостинг по всему миру"
+    },
+    "advertising.proxy.ip2world.title": {
+        "message": "IP2World"
+    },
+    "advertising.proxy.ip2world.description": {
+        "message": "Профессиональные прокси IP-сервисы для глобального подключения"
+    },
+    "advertising.proxy.bartproxies.title": {
+        "message": "BartProxies"
+    },
+    "advertising.proxy.bartproxies.description": {
+        "message": "Высококачественные резидентные и дата-центровые прокси сервисы"
+    },
+    "advertising.proxy.proxycheap.title": {
+        "message": "Proxy-Cheap"
+    },
+    "advertising.proxy.proxycheap.description": {
+        "message": "Доступные прокси решения для различных случаев использования"
+    },
+    "advertising.proxy.iproxy.title": {
+        "message": "iProxy"
+    },
+    "advertising.proxy.iproxy.description": {
+        "message": "Премиум прокси сервисы с глобальным покрытием IP"
     },
     "theme.navbar.item.label.Advertising": {
         "message": "Реклама"
