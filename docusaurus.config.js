@@ -134,6 +134,11 @@ const config = {
             label: 'VideoMagic',
           },
           {
+            href: 'https://ai.tikmatrix.com',
+            position: 'right',
+            label: 'AI Search',
+          },
+          {
             type: 'localeDropdown',
             position: 'right',
           }

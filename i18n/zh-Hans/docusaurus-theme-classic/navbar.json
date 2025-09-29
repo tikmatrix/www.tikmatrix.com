@@ -57,5 +57,9 @@
   "item.label.Advertising": {
     "message": "广告",
     "description": "Navbar item with label Advertising"
+  },
+  "item.label.AI Search": {
+    "message": "AI 搜索",
+    "description": "Navbar item with label AI Search"
   }
 }

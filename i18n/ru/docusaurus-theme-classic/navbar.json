@@ -53,5 +53,13 @@
     "item.label.About Us": {
         "message": "О нас",
         "description": "Navbar item with label About Us"
+    },
+    "item.label.Advertising": {
+        "message": "Реклама",
+        "description": "Navbar item with label Advertising"
+    },
+    "item.label.AI Search": {
+        "message": "AI Поиск",
+        "description": "Navbar item with label AI Search"
     }
 }
