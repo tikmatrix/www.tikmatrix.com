@@ -76,12 +76,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/logo.png',
+      image: '//r2.tikmatrix.com/logo.png?v=2',
       navbar: {
-        title: 'TikMatrix',
+        title: '',
         logo: {
           alt: 'TikMatrix Logo',
-          src: 'img/logo.png',
+          src: '//r2.tikmatrix.com/logo.png?v=2',//720x480
         },
         items: [
           {
@@ -90,11 +90,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {
-            to: '/blog',
-            position: 'left',
-            label: 'Blog',
-          },
+
           {
             to: '/Download',
             position: 'left',
@@ -111,10 +107,6 @@ const config = {
             label: 'Features',
           },
           {
-            to: '/about-us',
-            position: 'left',
-            label: 'About Us',
-          }, {
             href: '/#contact',
             position: 'left',
             label: 'Contact',
