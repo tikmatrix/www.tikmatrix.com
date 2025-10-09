@@ -76,7 +76,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: '//r2.tikmatrix.com/logo.png?v=2',
+      image: 'img/startup1.webp?v=4',
       navbar: {
         title: '',
         logo: {
