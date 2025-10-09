@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,6 +6,24 @@ import Translate, { translate } from '@docusaurus/Translate';
 import './Download.css';
 
 export default function Download() {
+  const [downloadUrls, setDownloadUrls] = useState({
+    windows: 'https://api.tikmatrix.com/front-api/download-windows',
+    mac: 'https://api.tikmatrix.com/front-api/download-mac'
+  });
+
+  useEffect(() => {
+    // 从URL中获取distributor参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const distributor = urlParams.get('distributor');
+
+    if (distributor) {
+      setDownloadUrls({
+        windows: `https://api.tikmatrix.com/front-api/download-windows?distributor=${distributor}`,
+        mac: `https://api.tikmatrix.com/front-api/download-mac?distributor=${distributor}`
+      });
+    }
+  }, []);
+
   return (
     <Layout
       title={translate({
@@ -41,7 +59,7 @@ export default function Download() {
 
           <div className="row download-buttons">
             <div className="col col--4">
-              <a href="https://api.tikmatrix.com/front-api/download-windows" className="download-card">
+              <a href={downloadUrls.windows} className="download-card">
                 <div className="platform-icon">
                   <i className="bx bxl-windows"></i>
                 </div>
@@ -88,7 +106,7 @@ export default function Download() {
                     macOS 10.15 or later
                   </Translate>
                 </p>
-                <a href="https://api.tikmatrix.com/front-api/download-mac" className="download-btn">
+                <a href={downloadUrls.mac} className="download-btn">
                   <Translate
                     id="download.mac.button"
                     description="Mac download button text">
