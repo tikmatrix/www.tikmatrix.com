@@ -9,6 +9,7 @@ tags: [TikTok营销, 风险控制, 自动化, TikMatrix]
 > 本文基于真实测试和 TikMatrix 自动化实践，全面解析 **TikTok 风控的真实机制，以及如何在规模化运营时保持安全高效。**
 <!-- truncate -->
 ---
+![TikMatrix automation](/img/blog/tiktok-risk-control.webp)
 
 ## 🧠 1. 理解 TikTok 的风控体系
 
@@ -40,7 +41,7 @@ TikMatrix 建议：
 
 - ✅ 只使用 **实体安卓真机**（不要用模拟器或虚拟机）
 - ⚠️ 避免使用之前运营 TikTok 的二手设备
-- ⚠️ 避免插入暴露真实地区的 SIM 卡
+- ⚠️ 避免插入暴露真实地区的 SIM 卡(指TikTok禁止的国家和地区)
 
 即便配合代理，设备层面的身份依旧非常关键。
 我们的测试显示，**在相同 IP 下使用“脏设备”**，封禁风险会提升 5 倍以上。

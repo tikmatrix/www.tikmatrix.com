@@ -10,6 +10,7 @@ tags: [TikTok Marketing, Risk Control, Automation, TikMatrix]
 
 <!-- truncate -->
 ---
+![TikMatrix automation](/img/blog/tiktok-risk-control.webp)
 
 ## 🧠 1. Understanding TikTok’s Risk Control System
 
@@ -41,7 +42,7 @@ TikMatrix recommends:
 
 - ✅ Use **physical Android devices only** (no emulators or virtual phones)  
 - ⚠️ Avoid second-hand devices used for TikTok before  
-- ⚠️ Avoid inserting SIM cards that expose your real region
+- ⚠️ Avoid inserting SIM cards that expose your real region (referring to countries and regions prohibited by TikTok)
 
 Even with proxies, device-level identity still matters.  
 Our tests show that **using “dirty devices” under the same IP** increases ban risk up to 5x.
