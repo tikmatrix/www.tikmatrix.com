@@ -21,15 +21,15 @@ export default function VideoMagic() {
     "applicationCategory": "Social Media Management",
     "operatingSystem": "Windows",
     "screenshot": [
-      "https://tikmatrix.com/img/video-magic-startup1.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup2.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup3.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup4.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup5.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup6.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup7.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup8.jpeg",
-      "https://tikmatrix.com/img/video-magic-startup9.jpeg",
+      "https://tikmatrix.com/img/video-magic-startup1.webp",
+      "https://tikmatrix.com/img/video-magic-startup2.webp",
+      "https://tikmatrix.com/img/video-magic-startup3.webp",
+      "https://tikmatrix.com/img/video-magic-startup4.webp",
+      "https://tikmatrix.com/img/video-magic-startup5.webp",
+      "https://tikmatrix.com/img/video-magic-startup6.webp",
+      "https://tikmatrix.com/img/video-magic-startup7.webp",
+      "https://tikmatrix.com/img/video-magic-startup8.webp",
+      "https://tikmatrix.com/img/video-magic-startup9.webp",
     ],
     "offers": {
       "@type": "Offer",
@@ -59,7 +59,7 @@ export default function VideoMagic() {
       "@type": "Organization",
       "name": "TikMatrix",
       "url": "https://tikmatrix.com",
-      "logo": "https://tikmatrix.com/img/logo.png",
+      "logo": "https://tikmatrix.com/img/logo.webp",
     },
     "keywords": "video magic,video generation,video editing,subtitle translation,unique videos,social media videos",
     "datePublished": "2023-01-01",
@@ -79,13 +79,13 @@ export default function VideoMagic() {
         <meta name="keywords" content="video magic, video generation, video editing, subtitle translation, unique videos, social media videos" />
         <meta property="og:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
         <meta property="og:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
-        <meta property="og:image" content="https://tikmatrix.com/img/video-magic-startup1.jpeg" />
+        <meta property="og:image" content="https://tikmatrix.com/img/video-magic-startup1.webp" />
         <meta property="og:url" content="https://tikmatrix.com/videomagic" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
         <meta name="twitter:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/video-magic-startup1.jpeg" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/video-magic-startup1.webp" />
         <link rel="canonical" href="https://tikmatrix.com/videomagic" />
       </Head>
       <VideoMagicHeader />

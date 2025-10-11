@@ -20,7 +20,7 @@ Transfer your TikMatrix license from one computer to another. This is useful whe
 2. Click the **License icon** in the title bar
 3. Click the **"Migrate License"** button
 
-![License Migration Button](../img/migrate-button.png)
+![License Migration Button](../img/migrate-button.webp)
 
 ### Step 2: Get Target Machine ID
 
@@ -31,7 +31,7 @@ On your target computer:
 3. Copy the **Machine ID**
 4. Send this ID to your current computer
 
-![Target Machine ID](../img/target-machine-id.png)
+![Target Machine ID](../img/target-machine-id.webp)
 
 ### Step 3: Validate and Migrate
 
@@ -41,12 +41,12 @@ Back on your current computer:
 2. Click **"Validate"** to check compatibility
 3. Review the license details shown
 
-![Validation Success](../img/validation-success.png)
+![Validation Success](../img/validation-success.webp)
 
 1. Check the confirmation checkbox
 2. Click **"Migrate License"** and confirm
 
-![Migration Confirmation](../img/migration-confirm.png)
+![Migration Confirmation](../img/migration-confirm.webp)
 
 ### Step 4: Complete Setup
 
@@ -54,7 +54,7 @@ Back on your current computer:
 2. On your target computer, restart TikMatrix
 3. Your license is now active on the new computer
 
-![Migration Success](../img/migration-success.png)
+![Migration Success](../img/migration-success.webp)
 
 ## Important Warnings
 

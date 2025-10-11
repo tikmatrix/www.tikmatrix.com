@@ -16,7 +16,7 @@ const testimonials = [
             message: "1 year",
             description: 'First user usage duration'
         }),
-        avatar: "/img/user-1.png",
+        avatar: "/img/user-1.webp",
     },
     {
         stars: 5,
@@ -31,7 +31,7 @@ const testimonials = [
             message: "10 months",
             description: 'Second user usage duration'
         }),
-        avatar: "/img/user-2.png",
+        avatar: "/img/user-2.webp",
     },
     {
         stars: 5,
@@ -46,7 +46,7 @@ const testimonials = [
             message: "6 months",
             description: 'Third user usage duration'
         }),
-        avatar: "/img/user-3.png",
+        avatar: "/img/user-3.webp",
     },
     {
         stars: 5,
@@ -61,7 +61,7 @@ const testimonials = [
             message: "8 months",
             description: 'Fourth user usage duration'
         }),
-        avatar: "/img/user-4.png",
+        avatar: "/img/user-4.webp",
     },
 ];
 

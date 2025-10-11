@@ -28,8 +28,8 @@ export default function Home() {
     script.setAttribute('data-embed-id', 'b69ccd65-9f2b-4d8c-9c6e-66f523abc798');
     script.setAttribute('data-base-api-url', 'https://llm.tikmatrix.com/api/embed');
     script.setAttribute('data-chat-icon', 'support');
-    script.setAttribute('data-brand-image-url', '/img/logo.png');
-    script.setAttribute('data-assistant-icon', '/img/logo.png');
+    script.setAttribute('data-brand-image-url', '/img/logo.webp');
+    script.setAttribute('data-assistant-icon', '/img/logo.webp');
     script.setAttribute('data-no-sponsor', '1');
     script.setAttribute('data-assistant-name', 'TikMatrix Support');
     script.onload = () => {
@@ -48,9 +48,9 @@ export default function Home() {
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Windows, macOS",
     "screenshot": [
-      "https://tikmatrix.com/img/startup1.png",
-      "https://tikmatrix.com/img/startup2.png",
-      "https://tikmatrix.com/img/startup3.png",
+      "https://tikmatrix.com/img/startup1.webp",
+      "https://tikmatrix.com/img/startup2.webp",
+      "https://tikmatrix.com/img/startup3.webp",
     ],
     "offers": {
       "@type": "Offer",
@@ -84,7 +84,7 @@ export default function Home() {
       "@type": "Organization",
       "name": "TikMatrix",
       "url": "https://tikmatrix.com",
-      "logo": "https://tikmatrix.com/img/logo.png",
+      "logo": "https://tikmatrix.com/img/logo.webp",
     },
     "keywords": "TikTok Marketing, TikTok Automation, Phone Farm, Social Media Growth, TikTok Management, TikTok Phone Farm, TikTok Matrix, TikMatrix, Windows, Mac",
     "datePublished": "2025-03-07",
@@ -98,13 +98,13 @@ export default function Home() {
         <meta name="keywords" content="TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Growth, TikTok Management, Android Phone Farm, Windows and Mac Support" />
         <meta property="og:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta property="og:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta property="og:image" content="https://tikmatrix.com/img/startup1.png" />
+        <meta property="og:image" content="https://tikmatrix.com/img/startup1.webp" />
         <meta property="og:url" content="https://tikmatrix.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta name="twitter:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.png" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.webp" />
         <link rel="canonical" href="https://tikmatrix.com" />
       </Head>
       <HomepageHeader />

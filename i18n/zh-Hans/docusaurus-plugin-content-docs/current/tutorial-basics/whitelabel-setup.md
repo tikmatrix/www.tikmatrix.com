@@ -58,7 +58,7 @@ sidebar_position: 9
    {
      "appName": "您的应用名称",
      "logo": {
-       "main": "/path/to/your/logo.png",
+       "main": "/path/to/your/logo.webp",
        "favicon": "/path/to/your/favicon.ico"
      },
      "brand": {
@@ -97,7 +97,7 @@ sidebar_position: 9
 
 ```bash
 # 将您的Logo文件放在正确位置
-src/assets/your-logo.png       # 主Logo
+src/assets/your-logo.webp       # 主Logo
 public/your-favicon.ico        # 网页图标
 src-tauri/icons/               # 应用图标（各种尺寸）
 ```

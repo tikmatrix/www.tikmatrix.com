@@ -59,7 +59,7 @@ export default function IgMatrixFeatures() {
                 <div className="row mt-5">
                     <div className="col-lg-6" data-aos="fade-right">
                         <div className="feature-img">
-                            <img src="/img/igmatrix-startup1.png" className="img-fluid" alt="IgMatrix Interface" />
+                            <img src="/img/igmatrix-startup1.webp" className="img-fluid" alt="IgMatrix Interface" />
                         </div>
                     </div>
                     <div className="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">

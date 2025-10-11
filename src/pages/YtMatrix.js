@@ -50,7 +50,7 @@ export default function VideoMagic() {
       "@type": "Organization",
       "name": "TikMatrix",
       "url": "https://tikmatrix.com",
-      "logo": "https://tikmatrix.com/img/ytmatrix_logo.png",
+      "logo": "https://tikmatrix.com/img/ytmatrix_logo.webp",
     },
   }
   return (
@@ -68,7 +68,7 @@ export default function VideoMagic() {
           <i className="bx bxl-telegram"></i>
           <Translate>Join Telegram Group</Translate>
         </a>
-        <img src="/img/ytmatrix_logo.png" alt="YtMatrix Logo" style={{ width: '200px', marginTop: '20px' }} />
+        <img src="/img/ytmatrix_logo.webp" alt="YtMatrix Logo" style={{ width: '200px', marginTop: '20px' }} />
       </main>
     </Layout>
   );

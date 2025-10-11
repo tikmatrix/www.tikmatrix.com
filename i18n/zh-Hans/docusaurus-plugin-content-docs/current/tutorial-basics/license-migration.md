@@ -20,7 +20,7 @@ sidebar_position: 9
 2. 点击标题栏的**许可证图标**
 3. 点击**"迁移许可证"**按钮
 
-![许可证迁移按钮](../img/migrate-button.png)
+![许可证迁移按钮](../img/migrate-button.webp)
 
 ### 步骤2：获取目标机器ID
 
@@ -31,7 +31,7 @@ sidebar_position: 9
 3. 复制**机器ID**
 4. 将此ID发送到当前计算机
 
-![目标机器ID](../img/target-machine-id.png)
+![目标机器ID](../img/target-machine-id.webp)
 
 ### 步骤3：验证和迁移
 
@@ -41,12 +41,12 @@ sidebar_position: 9
 2. 点击**"验证"**检查兼容性
 3. 查看显示的许可证详细信息
 
-![验证成功](../img/validation-success.png)
+![验证成功](../img/validation-success.webp)
 
 1. 勾选确认复选框
 2. 点击**"迁移许可证"**并确认
 
-![迁移确认](../img/migration-confirm.png)
+![迁移确认](../img/migration-confirm.webp)
 
 ### 步骤4：完成设置
 
@@ -54,7 +54,7 @@ sidebar_position: 9
 2. 在目标计算机上重启TikMatrix
 3. 您的许可证现在在新计算机上处于活跃状态
 
-![迁移成功](../img/migration-success.png)
+![迁移成功](../img/migration-success.webp)
 
 ## 重要警告
 

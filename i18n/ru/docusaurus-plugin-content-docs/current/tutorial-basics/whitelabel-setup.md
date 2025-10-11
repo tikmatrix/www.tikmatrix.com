@@ -58,7 +58,7 @@ sidebar_position: 9
    {
      "appName": "Название вашего приложения",
      "logo": {
-       "main": "/path/to/your/logo.png",
+       "main": "/path/to/your/logo.webp",
        "favicon": "/path/to/your/favicon.ico"
      },
      "brand": {
@@ -97,7 +97,7 @@ sidebar_position: 9
 
 ```bash
 # Поместите файлы логотипов в правильные места
-src/assets/your-logo.png       # Основной логотип
+src/assets/your-logo.webp       # Основной логотип
 public/your-favicon.ico        # Веб-фавикон
 src-tauri/icons/               # Иконки приложения (различные размеры)
 ```

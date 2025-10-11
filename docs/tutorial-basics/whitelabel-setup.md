@@ -58,7 +58,7 @@ The White Label feature allows you to customize TikMatrix's branding to match yo
    {
      "appName": "Your App Name",
      "logo": {
-       "main": "/path/to/your/logo.png",
+       "main": "/path/to/your/logo.webp",
        "favicon": "/path/to/your/favicon.ico"
      },
      "brand": {
@@ -97,7 +97,7 @@ The White Label feature allows you to customize TikMatrix's branding to match yo
 
 ```bash
 # Place your logo files in the correct locations
-src/assets/your-logo.png       # Main logo
+src/assets/your-logo.webp       # Main logo
 public/your-favicon.ico        # Web favicon
 src-tauri/icons/               # Application icons (various sizes)
 ```

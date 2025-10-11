@@ -24,9 +24,9 @@ export default function IgMatrix() {
     "applicationCategory": "Social Media Management",
     "operatingSystem": "Windows",
     "screenshot": [
-      "https://tikmatrix.com/img/igmatrix-startup1.png",
-      "https://tikmatrix.com/img/igmatrix-startup2.png",
-      "https://tikmatrix.com/img/igmatrix-startup3.png",
+      "https://tikmatrix.com/img/igmatrix-startup1.webp",
+      "https://tikmatrix.com/img/igmatrix-startup2.webp",
+      "https://tikmatrix.com/img/igmatrix-startup3.webp",
     ],
 
     "offers": {
@@ -57,7 +57,7 @@ export default function IgMatrix() {
       "@type": "Organization",
       "name": "TikMatrix",
       "url": "https://tikmatrix.com",
-      "logo": "https://tikmatrix.com/img/igmatrix_logo.png",
+      "logo": "https://tikmatrix.com/img/igmatrix_logo.webp",
     },
   }
   return (
@@ -69,13 +69,13 @@ export default function IgMatrix() {
         <meta name="keywords" content="Instagram Phone Farm Batch Control Tool, Instagram Phone Farm, Instagram Phone Farm Batch Control, Instagram Phone Farm Batch Control Tool, IgMatrix Tutorial, Instagram Automation" />
         <meta property="og:title" content="IgMatrix - Instagram Phone Farm Batch Control Tool with Complete Tutorial" />
         <meta property="og:description" content="IgMatrix is a powerful Instagram phone farm batch control tool. Follow our comprehensive setup tutorial identical to TikMatrix documentation. Multi-language support: English, Chinese, Russian." />
-        <meta property="og:image" content="https://tikmatrix.com/img/igmatrix-startup1.png" />
+        <meta property="og:image" content="https://tikmatrix.com/img/igmatrix-startup1.webp" />
         <meta property="og:url" content="https://tikmatrix.com/igmatrix" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="IgMatrix - Instagram Phone Farm Batch Control Tool with Complete Tutorial" />
         <meta name="twitter:description" content="IgMatrix is a powerful Instagram phone farm batch control tool. Follow our comprehensive setup tutorial identical to TikMatrix documentation." />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/igmatrix-startup1.png" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/igmatrix-startup1.webp" />
         <link rel="canonical" href="https://tikmatrix.com/igmatrix" />
       </Head>
       <IgMatrixHeader />

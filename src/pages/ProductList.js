@@ -10,7 +10,7 @@ const products = [
         description: translate({ message: 'The length and width are relatively small, but the height is high' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '640$-1190$',
-        imageUrl: '/img/A4.png',
+        imageUrl: '/img/A4.webp',
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const products = [
         description: translate({ message: 'The length and width are relatively big, but the height is low(2u size)' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '700$-1250$',
-        imageUrl: '/img/A6.png',
+        imageUrl: '/img/A6.webp',
     },
     {
         id: 3,
@@ -26,7 +26,7 @@ const products = [
         description: translate({ message: 'The length and width are relatively big, but the height is low(2u size)' }),
         model: 'N8,N9,N10,S8,S9+,S10,S20',
         price: '700$-1250$',
-        imageUrl: '/img/AK.png',
+        imageUrl: '/img/AK.webp',
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const products = [
         description: translate({ message: 'US native non-activated Sim card,Used for tiktok android app to detect sim card location' }),
         model: 'T-Mobile',
         price: '5$/pre',
-        imageUrl: '/img/tmobile.png',
+        imageUrl: '/img/tmobile.webp',
     },
 ];
 
