@@ -45,7 +45,7 @@ export default function AboutUs() {
                     <h2>Contact Us</h2>
                     <p>Have questions or need assistance? We're here to help!</p>
                     <p>Email: support@tikmatrix.com</p>
-                    <p>Join our community: <a href="https://t.me/tikmatrix">Telegram Channel</a></p>
+                    <p>Join our community: <a href="https://t.me/tikmatrix_chat">Telegram Channel</a></p>
                 </div>
             </div>
         </Layout>

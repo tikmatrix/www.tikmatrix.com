@@ -72,7 +72,7 @@ export default function Home() {
     ],
     "softwareVersion": "2.1.9",
     "downloadUrl": "https://tikmatrix.com/Download?software=TikMatrix",
-    "supportUrl": "https://t.me/tikmatrix_support",
+    "supportUrl": "https://t.me/tikmatrix_chat",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

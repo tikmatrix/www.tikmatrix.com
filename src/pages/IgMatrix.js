@@ -45,7 +45,7 @@ export default function IgMatrix() {
     ],
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://tikmatrix.com/Download-IgMatrix",
-    "supportUrl": "https://t.me/tikmatrix_support",
+    "supportUrl": "https://t.me/tikmatrix_chat",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

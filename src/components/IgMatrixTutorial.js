@@ -116,7 +116,7 @@ export default function IgMatrixTutorial() {
                                                 If you need help with IgMatrix-specific features or encounter any issues, our support team is ready to assist you.
                                             </Translate>
                                         </p>
-                                        <a href="https://t.me/tikmatrix_support" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm">
+                                        <a href="https://t.me/tikmatrix_chat" target="_blank" rel="noopener noreferrer" className="btn btn-success btn-sm">
                                             <i className="bx bxl-telegram"></i>
                                             <Translate>Get Support</Translate>
                                         </a>

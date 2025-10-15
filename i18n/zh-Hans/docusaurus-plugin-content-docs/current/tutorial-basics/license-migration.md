@@ -103,7 +103,7 @@ sidebar_position: 9
 
 ### 获取支持
 
-联系[Telegram客服](https://t.me/tikmatrix_support)并提供：
+联系[Telegram客服](https://t.me/tikmatrix_chat)并提供：
 
 - 错误信息的截图
 - 您当前和目标的机器ID

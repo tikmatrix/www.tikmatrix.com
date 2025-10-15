@@ -103,7 +103,7 @@ sidebar_position: 9
 
 ### Получение поддержки
 
-Обратитесь в [поддержку Telegram](https://t.me/tikmatrix_support) с:
+Обратитесь в [поддержку Telegram](https://t.me/tikmatrix_chat) с:
 
 - Скриншотами сообщений об ошибках
 - Вашими текущим и целевым ID машин

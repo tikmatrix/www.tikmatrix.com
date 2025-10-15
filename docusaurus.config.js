@@ -166,7 +166,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/tikmatrix',
+                href: 'https://t.me/tikmatrix_chat',
               },
               {
                 label: 'X',

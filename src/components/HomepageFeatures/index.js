@@ -303,7 +303,7 @@ export default function HomepageFeatures() {
                   </h4>
                   <p>
                     <Translate>Strong technical support team with open community ecosystem</Translate>:&nbsp;
-                    <a href="https://t.me/tikmatrix_support" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/tikmatrix_chat" target="_blank" rel="noopener noreferrer">
                       <Translate>Telegram Support</Translate>
                     </a> |
                     <a href="https://t.me/tikmatrix_bot" target="_blank" rel="noopener noreferrer">
