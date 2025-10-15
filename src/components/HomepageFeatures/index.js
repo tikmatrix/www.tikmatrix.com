@@ -306,7 +306,7 @@ export default function HomepageFeatures() {
                     <a href="https://t.me/tikmatrix_chat" target="_blank" rel="noopener noreferrer">
                       <Translate>Telegram Support</Translate>
                     </a> |
-                    <a href="https://t.me/tikmatrix_bot" target="_blank" rel="noopener noreferrer">
+                    <a href="https://t.me/tikmatrix_agent_bot" target="_blank" rel="noopener noreferrer">
                       <Translate>24h AI Assistant</Translate>
                     </a>
                   </p>
