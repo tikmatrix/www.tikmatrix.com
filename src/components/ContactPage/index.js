@@ -45,6 +45,18 @@ export default function FrequentlyAsked() {
                                     <Translate>support@tikmatrix.com</Translate>
                                 </p>
                             </div>
+
+                            <div className="col col--6 info">
+                                <i className="bx bxl-discord"></i>
+                                <h4>
+                                    <Translate>Discord</Translate>
+                                </h4>
+                                <p>
+                                    <a href="https://discord.gg/TMksNwyN" target="_blank" rel="noopener noreferrer">
+                                        <Translate>Join Server</Translate>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
                     </div>
 

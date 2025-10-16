@@ -169,6 +169,10 @@ const config = {
                 href: 'https://t.me/tikmatrix_chat',
               },
               {
+                label: 'Discord',
+                href: 'https://discord.gg/TMksNwyN',
+              },
+              {
                 label: 'X',
                 href: 'https://x.com/TikMatrix',
               },
