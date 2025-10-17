@@ -29,6 +29,9 @@ Discover **TikMatrix in less than 5 minutes**.
 - **Import/export accounts**.
 - **Custom functionality**: Add any feature on request.
 - **Multilingual support**: TikMatrix supports EN/RU/CN. *Note: The TikTok app on the phone must be in English for all features to work properly.*
+- **Unified device dashboard**: All connected phones are visible by default, so you can review every device at a glance.
+- **Flexible licensing**: License limits only affect concurrent script execution—connect as many phones as your hardware supports, but only the licensed number can run automation scripts simultaneously.
+- **Generous free tier**: Free users can access multi-device screen mirroring (Windows, Android, and emulator devices), batch control, and keyboard input to explore TikMatrix before buying.
 
 ## Pricing
 
