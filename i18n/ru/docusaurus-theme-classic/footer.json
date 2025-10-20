@@ -36,7 +36,7 @@
     },
     "link.item.label.Telegram": {
         "message": "Telegram",
-        "description": "The label of footer link with label=Telegram linking to https://t.me/tikmatrix_chat"
+        "description": "The label of footer link with label=Telegram linking to https://t.me/tikmatrix_agent_bot"
     },
     "link.item.label.Twitter": {
         "message": "Twitter",

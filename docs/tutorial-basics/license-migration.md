@@ -103,7 +103,7 @@ Check that:
 
 ### Getting Support
 
-Contact [Telegram Support](https://t.me/tikmatrix_chat) with:
+Contact [Telegram Support](https://t.me/tikmatrix_agent_bot) with:
 
 - Screenshots of error messages
 - Your current and target Machine IDs

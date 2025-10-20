@@ -5,7 +5,7 @@ sidebar_position: 9
 # 白标功能设置
 
 :::info 需要年付订阅
-白标功能仅对**年付订阅**用户开放。购买年付计划后，请通过 [Telegram](https://t.me/tikmatrix_chat) 联系客服获取解锁码。
+白标功能仅对**年付订阅**用户开放。购买年付计划后，请通过 [Telegram](https://t.me/tikmatrix_agent_bot) 联系客服获取解锁码。
 :::
 
 白标功能允许您自定义 TikMatrix 的品牌标识以匹配您的公司形象。您可以修改应用名称、Logo和品牌信息，创建个性化的 TikMatrix 版本。
@@ -255,7 +255,7 @@ updateFavicon('/path/to/favicon.ico');
 
 1. 查看上述故障排除部分
 2. 检查配置文件语法
-3. 通过 [Telegram](https://t.me/tikmatrix_chat) 联系技术支持
+3. 通过 [Telegram](https://t.me/tikmatrix_agent_bot) 联系技术支持
 4. 报告问题时请包含您的配置文件和错误信息
 
 ## 许可和使用
@@ -267,4 +267,4 @@ updateFavicon('/path/to/favicon.ico');
 
 ---
 
-**需要解锁码？** 请携带您的年付订阅详情通过 [Telegram](https://t.me/tikmatrix_chat) 联系客服团队。
+**需要解锁码？** 请携带您的年付订阅详情通过 [Telegram](https://t.me/tikmatrix_agent_bot) 联系客服团队。

@@ -38,7 +38,7 @@ export default function VideoMagic() {
     ],
     "softwareVersion": "1.0.0",
     "downloadUrl": "https://api.tikmatrix.com/front-api/download-ytmatrix",
-    "supportUrl": "https://t.me/tikmatrix_chat",
+    "supportUrl": "https://t.me/tikmatrix_agent_bot",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -64,7 +64,7 @@ export default function VideoMagic() {
         <h1><Translate>YtMatrix</Translate></h1>
         <h3><Translate>YtMatrix is a Youtebe android phonefarm batch control tool</Translate></h3>
         <p><Translate>YtMatrix is coming soon!</Translate></p>
-        <a href="//t.me/tikmatrix_chat" target="_blank">
+        <a href="//t.me/tikmatrix_agent_bot" target="_blank">
           <i className="bx bxl-telegram"></i>
           <Translate>Join Telegram Group</Translate>
         </a>

@@ -45,4 +45,4 @@ Ensure that your TikTok account has not been suspended or disabled. If your acco
 
 If none of the above methods solve the problem, please contact TikTok support for assistance.
 
-## If you need more TikTok-related information, please join our [Telegram discussion group](https://t.me/tikmatrix_chat)
+## If you need more TikTok-related information, please join our [Telegram discussion group](https://t.me/tikmatrix_agent_bot)

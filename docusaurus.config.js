@@ -166,7 +166,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/tikmatrix_chat',
+                href: 'https://t.me/tikmatrix_agent_bot',
               },
               {
                 label: 'Discord',

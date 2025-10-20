@@ -30,7 +30,7 @@ export default function FrequentlyAsked() {
                                     <Translate>Telegram</Translate>
                                 </h4>
                                 <p>
-                                    <a href="//t.me/tikmatrix_chat" target="_blank">
+                                    <a href="//t.me/tikmatrix_agent_bot" target="_blank">
                                         <Translate>Join Group</Translate>
                                     </a>
                                 </p>

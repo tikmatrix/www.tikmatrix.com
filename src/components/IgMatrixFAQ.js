@@ -107,7 +107,7 @@ export default function IgMatrixFAQ() {
                                     Our support team is here to help you with any IgMatrix-related questions or issues.
                                 </Translate>
                             </p>
-                            <a href="https://t.me/tikmatrix_chat" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                            <a href="https://t.me/tikmatrix_agent_bot" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                                 <i className="bx bxl-telegram"></i>
                                 <Translate>Contact Support</Translate>
                             </a>

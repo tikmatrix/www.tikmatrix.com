@@ -5,7 +5,7 @@ sidebar_position: 9
 # White Label Setup
 
 :::info Annual Subscription Required
-White Label functionality is available exclusively for **Annual Subscription** users. Contact our support team via [Telegram](https://t.me/tikmatrix_chat) to obtain your unlock code after purchasing an annual plan.
+White Label functionality is available exclusively for **Annual Subscription** users. Contact our support team via [Telegram](https://t.me/tikmatrix_agent_bot) to obtain your unlock code after purchasing an annual plan.
 :::
 
 The White Label feature allows you to customize TikMatrix's branding to match your company identity. You can modify the app name, logo, and brand information to create a personalized version of TikMatrix.
@@ -255,7 +255,7 @@ If you encounter issues with White Label setup:
 
 1. Check the troubleshooting section above
 2. Review configuration file syntax
-3. Contact support via [Telegram](https://t.me/tikmatrix_chat)
+3. Contact support via [Telegram](https://t.me/tikmatrix_agent_bot)
 4. Include your configuration file and error messages when reporting issues
 
 ## License and Usage
@@ -267,4 +267,4 @@ If you encounter issues with White Label setup:
 
 ---
 
-**Need the unlock code?** Contact our support team via [Telegram](https://t.me/tikmatrix_chat) with your annual subscription details.
+**Need the unlock code?** Contact our support team via [Telegram](https://t.me/tikmatrix_agent_bot) with your annual subscription details.
