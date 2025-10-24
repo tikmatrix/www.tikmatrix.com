@@ -10,7 +10,7 @@ tags: [Маркетинг TikTok, Отпечаток устройства, Эм�
 
 <!-- truncate -->
 ---
-![Реальный Android vs эмуляторы — сигналы TikTok](/img/blog/tiktok-real-android.webp)
+![Реальный Android vs эмуляторы — сигналы TikTok](/img/blog/tikmatrix-real-android.webp)
 
 ## 🧠 1. Какие сигналы видит TikTok
 

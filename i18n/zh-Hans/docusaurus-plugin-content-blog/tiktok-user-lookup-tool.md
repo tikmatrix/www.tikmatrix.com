@@ -1,6 +1,6 @@
 ---
 slug: tiktok-user-lookup-tool-zh
-title: 新上线：免费 TikTok 用户查询工具（可显示国家）— 无需登录
+title: 新上线 免费 TikTok 用户查询工具（可显示国家）— 无需登录
 authors: tikMatrix
 tags: [产品更新, TikTok 工具, 数据分析, TikMatrix]
 ---
@@ -16,7 +16,7 @@ tags: [产品更新, TikTok 工具, 数据分析, TikMatrix]
 
 一个轻量、高速的 TikTok 公开资料查看器，适合选品调研、质检与竞品分析。
 
-- 访问地址：**<https://user.tikmatrix.com/>**
+- 访问地址：**[https://user.tikmatrix.com/](https://user.tikmatrix.com/)**
 - 100% 免费，无需登录
 - 支持电脑与手机端
 
@@ -38,7 +38,7 @@ tags: [产品更新, TikTok 工具, 数据分析, TikMatrix]
 
 ## ⚡ 3. 使用方法（三步）
 
-1）打开 **<https://user.tikmatrix.com/>**  
+1）打开 **[https://user.tikmatrix.com/](https://user.tikmatrix.com/)**  
 2）输入 TikTok **用户名**（如 `charlidamelio`）  
 3）点击 **Search**，即可即时显示结果
 
@@ -75,8 +75,8 @@ tags: [产品更新, TikTok 工具, 数据分析, TikMatrix]
 
 立即试用，并欢迎反馈你的建议——你的需求将直接影响我们的迭代方向。
 
-👉 **免费使用：** <https://user.tikmatrix.com/>  
-👉 **了解 TikMatrix 自动化：** <https://www.tikmatrix.com>
+👉 **免费使用：** [https://user.tikmatrix.com/](https://user.tikmatrix.com/)  
+👉 **了解 TikMatrix 自动化：** [https://www.tikmatrix.com](https://www.tikmatrix.com)
 
 ---
 

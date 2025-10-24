@@ -1,6 +1,6 @@
 ---
 slug: tiktok-user-lookup-tool
-title: New: Free TikTok User Lookup (Shows Country) — No Login Needed
+title: New Free TikTok User Lookup (Shows Country) — No Login Needed
 authors: tikMatrix
 tags: [Product Update, TikTok Tools, Analytics, TikMatrix]
 ---
@@ -16,7 +16,7 @@ tags: [Product Update, TikTok Tools, Analytics, TikMatrix]
 
 A lightweight, high-speed viewer for public TikTok profile data — perfect for research, QA, and competitive checks.
 
-- URL: **<https://user.tikmatrix.com/>**
+- URL: **[https://user.tikmatrix.com/](https://user.tikmatrix.com/)**
 - 100% free, no sign-in
 - Works on desktop & mobile
 
@@ -38,7 +38,7 @@ A lightweight, high-speed viewer for public TikTok profile data — perfect for 
 
 ## ⚡ 3. How to Use (3 Steps)
 
-1) Open **<https://user.tikmatrix.com/>**  
+1) Open **[https://user.tikmatrix.com/](https://user.tikmatrix.com/)**  
 2) Enter a TikTok **username** (e.g., `charlidamelio`)  
 3) Click **Search** → results render instantly
 
@@ -75,8 +75,8 @@ A lightweight, high-speed viewer for public TikTok profile data — perfect for 
 
 Try it now and tell us what you think — your feedback shapes the roadmap.
 
-👉 **Use it free:** <https://user.tikmatrix.com/>  
-👉 **Explore TikMatrix automation:** <https://www.tikmatrix.com>
+👉 **Use it free:** [https://user.tikmatrix.com/](https://user.tikmatrix.com/)  
+👉 **Explore TikMatrix automation:** [https://www.tikmatrix.com](https://www.tikmatrix.com)
 
 ---
 

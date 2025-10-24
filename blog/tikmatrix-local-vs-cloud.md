@@ -114,7 +114,7 @@ We optimize for **long-term asset building**, not short bursts.
 | Metric                         | Cloud-Like Relay | TikMatrix Local |
 | ------------------------------ | ---------------- | --------------- |
 | Gesture roundtrip              | 180–350 ms       | **30–60 ms**    |
-| 2-hour session drop rate       | 8–12%            | **<2%**         |
+| 2-hour session drop rate       | 8–12%            | **&lt;2%**         |
 | Bulk post success (20 devices) | 86–90%           | **96–99%**      |
 
 *Indicative only; real-world varies by proxy quality, USB power, and device condition.*

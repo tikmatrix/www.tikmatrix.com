@@ -10,7 +10,7 @@ tags: [TikTok 营销, 设备指纹, 模拟器 vs 真机, 自动化, TikMatrix]
 
 <!-- truncate -->
 ---
-![真实 Android vs 模拟器 — TikTok 信号](/img/blog/tiktok-real-android.webp)
+![真实 Android vs 模拟器 — TikTok 信号](/img/blog/tikmatrix-real-android.webp)
 
 ## 🧠 1. TikTok 关注哪些设备信号
 
