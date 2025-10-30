@@ -52,7 +52,7 @@ export default function FrequentlyAsked() {
                                     <Translate>Discord</Translate>
                                 </h4>
                                 <p>
-                                    <a href="https://discord.gg/TMksNwyN" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://discord.gg/mSZ5b8tDfn" target="_blank" rel="noopener noreferrer">
                                         <Translate>Join Server</Translate>
                                     </a>
                                 </p>
