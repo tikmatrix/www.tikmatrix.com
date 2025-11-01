@@ -1574,5 +1574,53 @@
     },
     "theme.footer.link.label.View All Advertising": {
         "message": "Посмотреть Все Рекламные Инструменты"
+    },
+    "pricing.starter.concurrent_tasks": {
+        "message": "До 5 одновременных задач автоматизации",
+        "description": "Функция начального плана"
+    },
+    "pricing.pro.concurrent_tasks": {
+        "message": "До 20 одновременных задач автоматизации",
+        "description": "Функция профессионального плана"
+    },
+    "pricing.team.concurrent_tasks": {
+        "message": "До 50 одновременных задач автоматизации",
+        "description": "Функция командного плана"
+    },
+    "pricing.business.concurrent_tasks": {
+        "message": "До 100 одновременных задач автоматизации",
+        "description": "Функция бизнес плана"
+    },
+    "pricing.unlimited_devices": {
+        "message": "Неограниченные подключения устройств",
+        "description": "Текст о неограниченных устройствах"
+    },
+    "pricing.ticket_support": {
+        "message": "Выделенная поддержка через тикеты",
+        "description": "Текст поддержки через тикеты"
+    },
+    "pricing.free.name": {
+        "message": "Бесплатно",
+        "description": "Название бесплатного плана"
+    },
+    "pricing.free.description": {
+        "message": "Бесплатные пользователи могут подключать неограниченное количество устройств и пользоваться всеми базовыми функциями, кроме автоматизации",
+        "description": "Описание бесплатного плана"
+    },
+    "pricing.free.all_free_features": {
+        "message": "Все базовые функции (без автоматизации)",
+        "description": "Базовые функции для бесплатного плана"
+    },
+    "pricing.free.automation_disabled": {
+        "message": "Автоматические задачи отключены",
+        "description": "Текст про отключенную автоматизацию"
+    },
+    "pricing.free.community_support": {
+        "message": "Поддержка сообщества",
+        "description": "Поддержка для бесплатного плана"
+    },
+    "pricing.free_label": {
+        "message": "Бесплатно",
+        "description": "Free label"
     }
 }

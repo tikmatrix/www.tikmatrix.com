@@ -4,6 +4,43 @@ import './pricing.css';
 
 const plans = [
     {
+        id: 'free',
+        name: translate({
+            id: 'pricing.free.name',
+            message: 'Free',
+            description: 'Free plan name'
+        }),
+        description: translate({
+            id: 'pricing.free.description',
+            message: 'Free users can connect unlimited devices and use all basic features except automation tasks',
+            description: 'Free plan description'
+        }),
+        price: 0,
+        device_count: 0,
+        includes: [
+            translate({
+                id: 'pricing.unlimited_devices',
+                message: 'Unlimited device connections',
+                description: 'Unlimited device connections text'
+            }),
+            translate({
+                id: 'pricing.free.all_free_features',
+                message: 'All basic features (automation excluded)',
+                description: 'Free plan basic features'
+            }),
+            translate({
+                id: 'pricing.free.automation_disabled',
+                message: 'Automation tasks disabled',
+                description: 'Automation disabled text'
+            }),
+            translate({
+                id: 'pricing.free.community_support',
+                message: 'Community support',
+                description: 'Community support text'
+            })
+        ]
+    },
+    {
         id: 'starter',
         name: translate({
             id: 'pricing.starter.name',
@@ -19,9 +56,14 @@ const plans = [
         device_count: 5,
         includes: [
             translate({
-                id: 'pricing.starter.manage_phones',
-                message: 'Manage up to 5 phones',
-                description: 'Starter plan feature'
+                id: 'pricing.starter.concurrent_tasks',
+                message: 'Up to 5 concurrent automation tasks',
+                description: 'Starter plan concurrent tasks'
+            }),
+            translate({
+                id: 'pricing.unlimited_devices',
+                message: 'Unlimited device connections',
+                description: 'Unlimited device connections text'
             }),
             translate({
                 id: 'pricing.all_features',
@@ -29,9 +71,9 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
-                id: 'pricing.dedicated_support',
-                message: 'Dedicated support & Telegram 1:1',
-                description: 'Dedicated support text'
+                id: 'pricing.ticket_support',
+                message: 'Dedicated ticket support',
+                description: 'Dedicated ticket support text'
             })
         ]
     },
@@ -51,9 +93,14 @@ const plans = [
         device_count: 20,
         includes: [
             translate({
-                id: 'pricing.pro.manage_phones',
-                message: 'Manage up to 20 phones',
-                description: 'Pro plan feature'
+                id: 'pricing.pro.concurrent_tasks',
+                message: 'Up to 20 concurrent automation tasks',
+                description: 'Pro plan concurrent tasks'
+            }),
+            translate({
+                id: 'pricing.unlimited_devices',
+                message: 'Unlimited device connections',
+                description: 'Unlimited device connections text'
             }),
             translate({
                 id: 'pricing.all_features',
@@ -61,9 +108,9 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
-                id: 'pricing.dedicated_support',
-                message: 'Dedicated support & Telegram 1:1',
-                description: 'Dedicated support text'
+                id: 'pricing.ticket_support',
+                message: 'Dedicated ticket support',
+                description: 'Dedicated ticket support text'
             })
         ]
     },
@@ -83,9 +130,14 @@ const plans = [
         device_count: 50,
         includes: [
             translate({
-                id: 'pricing.team.manage_phones',
-                message: 'Manage up to 50 phones',
-                description: 'Team plan feature'
+                id: 'pricing.team.concurrent_tasks',
+                message: 'Up to 50 concurrent automation tasks',
+                description: 'Team plan concurrent tasks'
+            }),
+            translate({
+                id: 'pricing.unlimited_devices',
+                message: 'Unlimited device connections',
+                description: 'Unlimited device connections text'
             }),
             translate({
                 id: 'pricing.all_features',
@@ -93,9 +145,9 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
-                id: 'pricing.dedicated_support',
-                message: 'Dedicated support & Telegram 1:1',
-                description: 'Dedicated support text'
+                id: 'pricing.ticket_support',
+                message: 'Dedicated ticket support',
+                description: 'Dedicated ticket support text'
             })
         ]
     },
@@ -115,9 +167,14 @@ const plans = [
         device_count: 100,
         includes: [
             translate({
-                id: 'pricing.business.manage_phones',
-                message: 'Manage up to 100 phones',
-                description: 'Business plan feature'
+                id: 'pricing.business.concurrent_tasks',
+                message: 'Up to 100 concurrent automation tasks',
+                description: 'Business plan concurrent tasks'
+            }),
+            translate({
+                id: 'pricing.unlimited_devices',
+                message: 'Unlimited device connections',
+                description: 'Unlimited device connections text'
             }),
             translate({
                 id: 'pricing.all_features',
@@ -125,9 +182,9 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
-                id: 'pricing.dedicated_support',
-                message: 'Dedicated support & Telegram 1:1',
-                description: 'Dedicated support text'
+                id: 'pricing.ticket_support',
+                message: 'Dedicated ticket support',
+                description: 'Dedicated ticket support text'
             })
         ]
     }
@@ -159,13 +216,19 @@ export default function PricingPage() {
                             <h3>{plan.name}</h3>
                             <div className="plan-desc">{plan.description}</div>
                             <h4>
-                                ${plan.price} <span>
-                                    <Translate
-                                        id="pricing.per_month_pc"
-                                        description="Per month per PC text">
-                                        Per Month / PC
-                                    </Translate>
-                                </span>
+                                {plan.price === 0 ? (
+                                    <Translate id="pricing.free_label" description="Free label">Free</Translate>
+                                ) : (
+                                    <>
+                                        ${plan.price} <span>
+                                            <Translate
+                                                id="pricing.per_month_pc"
+                                                description="Per month per PC text">
+                                                Per Month / PC
+                                            </Translate>
+                                        </span>
+                                    </>
+                                )}
                             </h4>
                             <ul>
                                 {plan.includes.map((item, i) => (

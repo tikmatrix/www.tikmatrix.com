@@ -973,8 +973,16 @@
     "description": "入门版计划描述"
   },
   "pricing.starter.manage_phones": {
-    "message": "管理多达5部手机",
+    "message": "最多5个并发自动化任务",
     "description": "入门版计划功能"
+  },
+  "pricing.starter.concurrent_tasks": {
+    "message": "最多5个并发自动化任务",
+    "description": "入门版并发任务数"
+  },
+  "pricing.unlimited_devices": {
+    "message": "无限设备连接",
+    "description": "无限设备连接文本"
   },
   "pricing.pro.name": {
     "message": "专业版",
@@ -985,8 +993,12 @@
     "description": "专业版计划描述"
   },
   "pricing.pro.manage_phones": {
-    "message": "管理多达20部手机",
+    "message": "最多20个并发自动化任务",
     "description": "专业版计划功能"
+  },
+  "pricing.pro.concurrent_tasks": {
+    "message": "最多20个并发自动化任务",
+    "description": "专业版并发任务数"
   },
   "pricing.team.name": {
     "message": "团队版",
@@ -997,8 +1009,12 @@
     "description": "团队版计划描述"
   },
   "pricing.team.manage_phones": {
-    "message": "管理多达50部手机",
+    "message": "最多50个并发自动化任务",
     "description": "团队版计划功能"
+  },
+  "pricing.team.concurrent_tasks": {
+    "message": "最多50个并发自动化任务",
+    "description": "团队版并发任务数"
   },
   "pricing.business.name": {
     "message": "商业版",
@@ -1009,16 +1025,24 @@
     "description": "商业版计划描述"
   },
   "pricing.business.manage_phones": {
-    "message": "管理多达100部手机",
+    "message": "最多100个并发自动化任务",
     "description": "商业版计划功能"
+  },
+  "pricing.business.concurrent_tasks": {
+    "message": "最多100个并发自动化任务",
+    "description": "商业版并发任务数"
   },
   "pricing.all_features": {
     "message": "包含所有功能",
     "description": "包含所有功能文本"
   },
   "pricing.dedicated_support": {
-    "message": "专属支持和Telegram一对一",
+    "message": "专属工单支持",
     "description": "专属支持文本"
+  },
+  "pricing.ticket_support": {
+    "message": "专属工单支持",
+    "description": "专属工单支持文本"
   },
   "pricing.per_month_pc": {
     "message": "每月/每台电脑",
@@ -1027,6 +1051,30 @@
   "pricing.get_started": {
     "message": "开始使用",
     "description": "开始使用按钮文本"
+  },
+  "pricing.free.name": {
+    "message": "免费",
+    "description": "免费计划名称"
+  },
+  "pricing.free.description": {
+    "message": "免费用户可以连接无限设备，但无法执行自动化任务",
+    "description": "免费计划描述"
+  },
+  "pricing.free.all_free_features": {
+    "message": "所有基础功能（不含自动化任务）",
+    "description": "免费计划基础功能描述"
+  },
+  "pricing.free.automation_disabled": {
+    "message": "自动化任务不可用",
+    "description": "免费计划自动化不可用文本"
+  },
+  "pricing.free.community_support": {
+    "message": "社区支持",
+    "description": "免费计划支持方式"
+  },
+  "pricing.free_label": {
+    "message": "免费",
+    "description": "Free label"
   },
   "testimonials.title": {
     "message": "真实用户评价",

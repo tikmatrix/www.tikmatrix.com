@@ -147,6 +147,36 @@
     }
 }
 
+/* Desktop: force 5 cards per row when viewport is wide enough */
+@media (min-width: 1200px) {
+    .pricing .row {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    /* Calculate base width for 5 columns accounting for 4 gaps of 30px */
+    .pricing .box {
+        flex: 0 0 calc((100% - 120px) / 5);
+        max-width: none;
+        min-width: 0;
+        /* allow flex-basis to control size */
+    }
+}
+
+/* If viewport is between tablet and desktop, allow horizontal scroll to avoid squishing */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pricing .row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .pricing .box {
+        flex: 0 0 320px;
+        max-width: 320px;
+    }
+}
+
 .feature-details {
     font-size: 0.85em;
     color: #666;
