@@ -151,7 +151,7 @@ export default function HomepageFeatures() {
                 <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1400">
                   <i className="bx bx-rocket"></i>
                   <h4>
-                    <Translate>Super boost</Translate>
+                    <Translate>Super Marketing</Translate>
                   </h4>
                   <p>
                     <Translate>Comprehensive automation combining multiple engagement strategies with AI-generated comments</Translate>
