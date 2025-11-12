@@ -18,81 +18,99 @@ Discover **TikMatrix in less than 5 minutes**.
 - **Automatic recognition** of the TikTok account logged in on the phone.
 - **Auto account warming**: Search keywords, view videos, like videos, follow users, comment on videos, and favorite videos.
 - **Auto posting**: Post videos or images (supports sorting and count) with text, hashtags, music, and product links.
-- **Auto delete** posts by view count.
-- **Mass boosting (User)**: Follow/unfollow users in bulk.
-- **Mass boosting (Post)**: Like, comment, favorite, share, and follow posts in bulk.
-- **Mass boosting (Live)**: Like and comment on live streams in bulk.
-- **Mass direct messaging**: Send bulk messages to users.
-- **Scrape TikTok** user followers.
-- **Mass follow back**: Follow all followers and send a hello direct message.
-- **Minute-level task scheduling**: Automate tasks with minute-level precision.
-- **Import/export accounts**.
-- **Custom functionality**: Add any feature on request.
-- **Multilingual support**: TikMatrix supports EN/RU/CN. *Note: The TikTok app on the phone must be in English for all features to work properly.*
-- **Unified device dashboard**: All connected phones are visible by default, so you can review every device at a glance.
-- **Flexible licensing**: License limits only affect concurrent script execution—connect as many phones as your hardware supports, but only the licensed number can run automation scripts simultaneously.
-- **Generous free tier**: Free users can access multi-device screen mirroring (Windows, Android, and emulator devices), batch control, and keyboard input to explore TikMatrix before buying.
+---
+sidebar_position: 1
+---
+
+# Tutorial Intro
+
+Discover **TikMatrix** and **IgMatrix** in less than 5 minutes and learn core features and usage.
+
+## Software Introduction
+
+**TikMatrix** is a PC desktop application that automates TikTok tasks on Android devices.  
+**IgMatrix** is the corresponding tool for automating Instagram tasks on Android devices.
+
+## Features
+
+- **Multi-account switching**: Manage multiple accounts per device and switch automatically during tasks.
+- **Clone app support**: Support for cloned TikTok/Instagram apps with custom package names so different accounts can use different clones.
+- ~~**Auto registration**~~ **[DISCONTINUED]**
+- **Auto login**: Instagram supports 2FA automated login; TikTok may still require manual intervention in some verification flows (captcha, email verification).
+- **Auto profile filling**: Set avatar, nickname, bio, and username automatically.
+- **Automatic account recognition**: Detect and import accounts already logged in on the phone.
+- **Account warming / growth**: Search keywords, watch videos, like, follow, comment and favorite to warm accounts.
+- **Auto posting**: Publish videos or images (supports ordering and batch counts) with title, description, hashtags, music and product links.
+- **Auto delete**: Remove underperforming posts by view-count rules.
+- **Super marketing**: Simulate human-like browsing paths (visit profiles, browse posts, random follow/like/comment/favorite/share/DM) and optionally use OpenAI or compatible APIs to generate personalized DMs/comments.
+- **Batch boosting (Live)**: Like and comment on live streams in bulk.
+- **User scraping**: Collect users by keyword, followers or following lists.
+- **Mass follow-back & welcome DMs**: Follow followers in bulk and send welcome messages.
+- **Minute-level task scheduling**: Support retry, interval execution and max retry settings.
+- **Multi-device parallel**: One PC can connect and manage many Android devices running tasks in parallel.
+- **Screen mirroring**: Mirror multiple device screens to Windows / macOS and control them with mouse and keyboard.
+- **Import / Export accounts**: Excel-friendly bulk import/export.
+- **Multilingual support**: English, Russian and Chinese supported. Note: some features may require the phone app language to be English for best compatibility.
+- **Support & tickets**: Provide human ticket support for issues.
 
 ## Pricing
 
-TikMatrix offers flexible pricing plans for every need:
+Basic features are **free** (automation scripts not included). Licenses are per-PC and concurrency can be expanded as needed.
 
-- **Starter**: $29/month/PC — Manage up to 5 phones (40 TikTok accounts), all features included, dedicated support.
-- **Pro**: $59/month/PC — Manage up to 20 phones (160 TikTok accounts), all features included, dedicated support.
-- **Team**: $99/month/PC — Manage up to 50 phones (400 TikTok accounts), all features included, dedicated support.
-- **Business**: $149/month/PC — Manage up to 100 phones (800 TikTok accounts), all features included, dedicated support.
+- **Starter** — **$29 / month / PC**
+  Concurrent **5 phones**; unlock all features; includes human ticket support.
 
-All plans include unlimited feature access and 1:1 Telegram support.
+- **Pro** — **$59 / month / PC**
+  Concurrent **20 phones**; unlock all features; includes human ticket support.
 
-- Annual billing receives a 30% discount.
-- Payment methods: Card, Credit Card, USDT (TRC20/BEP20).
-- One license code binds to one computer, but you can replace the computer for free.
-- The number of phones you can connect may be limited by your computer's hardware (e.g., a standard motherboard can connect to around 40 USB devices).
+- **Team** — **$99 / month / PC**
+  Concurrent **50 phones**; unlock all features; includes human ticket support.
 
-**Plan Upgrade Rules**: The system automatically calculates the price difference when upgrading your plan, regardless of whether you paid with Stripe credit card or cryptocurrency. The upgrade price will be the new plan price minus the remaining value of your current plan.
+- **Business** — **$149 / month / PC**
+  Concurrent **100 phones**; unlock all features; includes human ticket support.
 
-**Need to switch computers?** Check out our [License Migration Guide](tutorial-basics/license-migration.md) to learn how to transfer your license to a new computer.
+> Note: “concurrent” refers to how many devices can run automation scripts at the same time on one PC. Basic device-management and mirroring remain available in the free tier; automation script concurrency depends on your plan.
 
-We don't offer free trials, but we can provide a free feature demonstration. Please contact our support team.
+**Payment details**:
 
-## What You'll Need
+- Annual billing gets a 30% discount.  
+- Payment methods: credit card, Alipay, cryptocurrency (USDT/TRC20/BEP20).  
+- Each license binds to one computer; free computer replacement is supported.  
+- Maximum connected phones may be limited by hardware (a typical motherboard can connect ~40 USB devices).
 
-### Android Device
+Plan upgrades are charged pro-rata: the system will calculate the difference between the new plan price and the remaining value of the current plan.
+
+If you need to move a license to a different computer, see our [License Migration Guide](tutorial-basics/license-migration.md).
+
+## What you need
+
+### Android devices
 
 You can use any Android device to run TikMatrix, including:
 
 - **Real Android devices**
-- **[Motherboard Android Devices](http://www.niaozun.shop?cid=934ec2fe)**
-- **[Cloud phones](https://www.geelark.cn?invite_code=XHY6a8)**
+- **Motherboard Android devices** (hardware providers)  
+- **Cloud phones / virtual phones**
 - **Emulators**
 - **Virtual machines**
 
-> Android devices require at least API 21 (Android 5.0) and **do not require root access**.
->
-> Make sure USB debugging is enabled on your device(s).
-> On some devices (e.g., Xiaomi), you may also need to enable "USB debugging (Security Settings)" to control the device using a keyboard and mouse.
+Android devices require at least API 21 (Android 5.0) and do not require root. Please enable USB debugging (Developer Options). On some models (e.g., Xiaomi) you may need to enable “USB debugging (Security Settings)” to allow keyboard/mouse control.
 
 ### Computer
 
-#### Windows: Windows 7 or later
+#### Windows: Windows 10 or later
 
-> **Recommended configuration for supporting 100+ phones:**
->
-> - Motherboard: X79 motherboard
-> - Graphics Card: GTX 1050 4G or higher
-> - RAM: 16GB or more
-> - System: Windows 10 x64 Pro or above
-
-#### Mac: macOS 10.15 or later
+#### Mac: macOS 15.0 or later (Apple Silicon & Intel supported)
 
 ## Installation
 
-1. Download the latest installer from the [Download](https://tikmatrix.com/Download) page.
+1. Download the latest installer from the [Download](https://tikmatrix.com/Download) or [IgMatrix Download](https://igmatrix.com/Download-IgMatrix) page.
 2. Run the installer.
-3. Wait for the installation to complete.
-4. Open the **TikMatrix** app on your computer.
-   - For Mac users: After installation, run the following command in Terminal to allow the app to run:
+3. Wait for installation to finish.
+4. Open the **TikMatrix** or **IgMatrix** app on your computer.
 
-     ```bash
-     xattr -cr /Applications/TikMatrix.app
-     ```
+For Mac users after installation, you may run:
+
+```bash
+xattr -cr /Applications/TikMatrix.app
+```
