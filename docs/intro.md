@@ -30,7 +30,7 @@ Discover **TikMatrix** and **IgMatrix** in less than 5 minutes and learn core fe
 - **Multi-device parallel**: One PC can connect and manage many Android devices running tasks in parallel.
 - **Screen mirroring**: Mirror multiple device screens to Windows / macOS and control them with mouse and keyboard.
 - **Import / Export accounts**: Excel-friendly bulk import/export.
-- **Multilingual support**: English, Russian and Chinese supported. Note: some features may require the phone app language to be English for best compatibility.
+- **Multilingual support**: The software supports English, Russian, and Chinese. Note: Some features require the TikTok/Instagram app on your phone to be set to English for optimal compatibility.
 - **Support & tickets**: Provide human ticket support for issues.
 
 ## Pricing
