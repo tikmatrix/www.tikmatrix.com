@@ -77,7 +77,8 @@ async function processDocusaurus() {
     const file = path.join(root, 'docusaurus.config.js');
     try {
         let content = await fs.readFile(file, 'utf8');
-        const updated = replaceAll(content);
+        // Only replace the specific logo identifier in the docusaurus config
+        const updated = content.replace(/tikmatrix_logo/g, 'igmatrix_logo');
         if (updated !== content) {
             await fs.writeFile(file, updated, 'utf8');
             console.log('[updated]', path.relative(root, file));

@@ -81,7 +81,7 @@ const config = {
         title: '',
         logo: {
           alt: 'TikMatrix Logo',
-          src: '//r2.ytmatrix.com/tikmatrix_logo.png',
+          src: '//r2.tikmatrix.com/tikmatrix_logo.png',
         },
         items: [
           {
@@ -185,6 +185,14 @@ const config = {
           {
             title: 'More',
             items: [
+              {
+                label: 'TikMatrix',
+                to: '//tikmatrix.com',
+              },
+              {
+                label: 'IgMatrix',
+                to: '//igmatrix.com',
+              },
               {
                 label: 'About Us',
                 to: '/about-us',
