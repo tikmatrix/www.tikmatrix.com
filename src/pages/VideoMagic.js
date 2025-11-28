@@ -79,13 +79,13 @@ export default function VideoMagic() {
         <meta name="keywords" content="video magic, video generation, video editing, subtitle translation, unique videos, social media videos" />
         <meta property="og:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
         <meta property="og:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
-        <meta property="og:image" content="https://tikmatrix.com/img/video-magic-startup1.webp" />
+        <meta property="og:image" content="https://tikmatrix.com/img/logo.webp" />
         <meta property="og:url" content="https://tikmatrix.com/videomagic" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="VideoMagic - Software for Batch Generating Unique Videos" />
         <meta name="twitter:description" content="Video Magic is a Software for Batch Generating Unique Videos" />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/video-magic-startup1.webp" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/logo.webp" />
         <link rel="canonical" href="https://tikmatrix.com/videomagic" />
       </Head>
       <VideoMagicHeader />

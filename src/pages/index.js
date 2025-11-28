@@ -80,13 +80,13 @@ export default function Home() {
         <meta name="keywords" content="TikMatrix, TikTok Phone Farm, TikTok Marketing, TikTok Automation, Social Media Growth, TikTok Management, Android Phone Farm, Windows and Mac Support" />
         <meta property="og:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta property="og:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta property="og:image" content="https://tikmatrix.com/img/startup1.webp" />
+        <meta property="og:image" content="https://tikmatrix.com/img/logo.webp" />
         <meta property="og:url" content="https://tikmatrix.com" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac" />
         <meta name="twitter:description" content="Professional TikTok account management and marketing tool designed for Android phone farms. Automate posting, following, commenting with advanced batch control and maintain zero suspension rate." />
-        <meta name="twitter:image" content="https://tikmatrix.com/img/startup1.webp" />
+        <meta name="twitter:image" content="https://tikmatrix.com/img/logo.webp" />
         <link rel="canonical" href="https://tikmatrix.com" />
       </Head>
       <HomepageHeader
