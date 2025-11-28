@@ -43,7 +43,6 @@ export default function Home() {
     "description": translate({ message: 'Professional TikTok account management and marketing tool designed for Android phone farms on Windows and Mac. Automate posting, following, and grow your TikTok presence with zero account suspension rate.' }),
     "featureList": [
       translate({ message: 'Phone screen mirroring to a computer' }),
-      translate({ message: 'Automatic registration' }),
       translate({ message: 'Automatic login' }),
       translate({ message: 'Automatic account nurturing' }),
       translate({ message: 'Automatic posting' }),

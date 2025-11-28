@@ -1,0 +1,14 @@
+{
+    "pricing.toggle.monthly": {
+        "message": "Monthly"
+    },
+    "pricing.toggle.yearly": {
+        "message": "Yearly (Save 30%)"
+    },
+    "pricing.cta.free": {
+        "message": "Start for free"
+    },
+    "pricing.cta.pay": {
+        "message": "Subscribe"
+    }
+}

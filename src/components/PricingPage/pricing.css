@@ -20,6 +20,29 @@
     color: #919191;
 }
 
+.billingToggle {
+    display: inline-flex;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 6px;
+    margin-top: 16px;
+}
+
+.toggleBtn {
+    border: none;
+    background: transparent;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #374151;
+    font-weight: 600;
+}
+
+.toggleBtn.active {
+    background: linear-gradient(90deg, #1a73e8, #38a169);
+    color: #fff;
+}
+
 .pricing .row {
     display: flex;
     justify-content: center;
@@ -49,6 +72,11 @@
     color: #fff;
 }
 
+.pricing .box.free {
+    border: 2px solid rgba(13, 110, 253, 0.08);
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+}
+
 .pricing h3 {
     font-size: 22px;
     font-weight: 600;
@@ -67,17 +95,20 @@
     font-weight: 700;
     margin-bottom: 25px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
 }
 
-.pricing h4 span {
-    font-size: 16px;
-    font-weight: 400;
+.priceBig {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.priceNote {
+    font-size: 14px;
     color: #919191;
-    display: inline;
-    margin-top: 0;
 }
 
 .pricing ul {
@@ -131,6 +162,76 @@
 .pricing .box.featured .get-started-btn:hover {
     background: #3b4ef8;
     color: #fff;
+}
+
+/* Badge for featured plan */
+.pricing .box .badge {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffb86b, #ff6b6b);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    transform: translateY(-50%);
+    margin-top: -20px;
+}
+
+/* price animation */
+.priceBig {
+    display: inline-block;
+    transition: transform .28s ease, opacity .28s ease;
+    animation: priceIn .32s ease;
+}
+
+@keyframes priceIn {
+    from {
+        transform: translateY(8px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+/* Compare table */
+.compareWrapper {
+    margin-top: 28px;
+    text-align: center
+}
+
+.compareToggle {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.compareTable {
+    margin-top: 16px;
+    overflow: auto;
+}
+
+.compareTable table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px
+}
+
+.compareTable th,
+.compareTable td {
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: center
+}
+
+.compareTable thead th {
+    background: #fafafa;
+    font-weight: 700
 }
 
 .pricing .box h4 {

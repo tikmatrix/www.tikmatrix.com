@@ -31,14 +31,6 @@ export default function HomepageFeatures() {
                   <p>
                     <Translate>Supports 100+ phones mirroring to a computer, with synchronized operation</Translate>
                   </p>
-                </div>                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="100" style={{ opacity: 0.5 }}>
-                  <i className="bx bx-registered"></i>
-                  <h4>
-                    <Translate>Automatic registration</Translate> <span style={{ color: '#ff4444', fontSize: '12px', fontWeight: 'bold' }}>[DISCONTINUED]</span>
-                  </h4>
-                  <p>
-                    <strike><Translate>Create new TikTok accounts with email registration and password setup</Translate></strike>
-                  </p>
                 </div>
                 <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i className="bx bx-log-in"></i>
@@ -296,18 +288,7 @@ export default function HomepageFeatures() {
                     <Translate>Supports work profile enterprise space for professional use</Translate>
                   </p>
                 </div>
-                <div className="col col--3 icon-box" data-aos="fade-up" data-aos-delay="1200">
-                  <i className="bx bx-group"></i>
-                  <h4>
-                    <Translate>24/7 Technical Support</Translate>
-                  </h4>
-                  <p>
-                    <Translate>Strong technical support team with open community ecosystem</Translate>:&nbsp;
-                    <a href="https://t.me/tikmatrix_agent_bot" target="_blank" rel="noopener noreferrer">
-                      <Translate>24h AI Assistant</Translate>
-                    </a>
-                  </p>
-                </div>
+
               </div>
             </div>
           </div>

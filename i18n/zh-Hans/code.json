@@ -77,6 +77,42 @@
   "homepage.vs.cta.button": {
     "message": "立即体验 TikMatrix →"
   },
+  "pricing.toggle.monthly": {
+    "message": "月付"
+  },
+  "pricing.toggle.yearly": {
+    "message": "年付 (节省 30%)"
+  },
+  "pricing.per_month": {
+    "message": "每月"
+  },
+  "pricing.per_year": {
+    "message": "每年 (节省 30%)"
+  },
+  "pricing.cta.free": {
+    "message": "立即使用"
+  },
+  "pricing.cta.pay": {
+    "message": "立即订阅"
+  },
+  "pricing.badge.popular": {
+    "message": "最受欢迎"
+  },
+  "pricing.compare.show": {
+    "message": "查看功能对比"
+  },
+  "pricing.compare.hide": {
+    "message": "隐藏功能对比"
+  },
+  "pricing.compare.devices": {
+    "message": "设备支持"
+  },
+  "pricing.compare.automation": {
+    "message": "自动化任务"
+  },
+  "pricing.unlimited_devices_short": {
+    "message": "无限"
+  },
   "Download for Windows": {
     "message": "Windows 下载"
   },
@@ -223,9 +259,6 @@
   },
   "Account Safe": {
     "message": "账号安全"
-  },
-  "Automatic registration": {
-    "message": "自动注册"
   },
   "Automatic login": {
     "message": "自动登录"
@@ -1598,9 +1631,6 @@
   },
   "Supports work profile enterprise space for professional use": {
     "message": "支持work profile企业空间"
-  },
-  "24/7 Technical Support": {
-    "message": "24/7技术支持"
   },
   "Strong technical support team with open community ecosystem": {
     "message": "强大的技术支持团队，开放的社区生态"

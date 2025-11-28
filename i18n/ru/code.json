@@ -77,6 +77,42 @@
     "homepage.vs.cta.button": {
         "message": "Попробовать TikMatrix →"
     },
+    "pricing.toggle.monthly": {
+        "message": "Ежемесячно"
+    },
+    "pricing.toggle.yearly": {
+        "message": "Ежегодно (Экономия 30%)"
+    },
+    "pricing.per_month": {
+        "message": "В месяц"
+    },
+    "pricing.per_year": {
+        "message": "В год (Экономия 30%)"
+    },
+    "pricing.cta.free": {
+        "message": "Начать бесплатно"
+    },
+    "pricing.cta.pay": {
+        "message": "Подписаться"
+    },
+    "pricing.badge.popular": {
+        "message": "Популярно"
+    },
+    "pricing.compare.show": {
+        "message": "Сравнить функции"
+    },
+    "pricing.compare.hide": {
+        "message": "Скрыть сравнение"
+    },
+    "pricing.compare.devices": {
+        "message": "Поддержка устройств"
+    },
+    "pricing.compare.automation": {
+        "message": "Автоматизация задач"
+    },
+    "pricing.unlimited_devices_short": {
+        "message": "Безлимит"
+    },
     "Download for Windows": {
         "message": "Скачать для Windows"
     },
@@ -109,9 +145,6 @@
     },
     "Account Safe": {
         "message": "Безопасность аккаунта"
-    },
-    "Automatic registration": {
-        "message": "Автоматическая регистрация"
     },
     "Automatic login": {
         "message": "Автоматический вход"
@@ -1436,9 +1469,6 @@
     },
     "Supports work profile enterprise space for professional use": {
         "message": "Поддерживает корпоративное пространство рабочего профиля для профессионального использования"
-    },
-    "24/7 Technical Support": {
-        "message": "Техническая поддержка 24/7"
     },
     "Strong technical support team with open community ecosystem": {
         "message": "Сильная команда технической поддержки с открытой экосистемой сообщества"
