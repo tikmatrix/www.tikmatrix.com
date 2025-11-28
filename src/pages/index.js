@@ -92,7 +92,7 @@ export default function Home() {
       <HomepageHeader
         title={translate({ id: 'homepage.header.title', message: 'TikTok Automation starts here', description: 'Homepage H1 in English' })}
         subtitle={translate({ id: 'homepage.header.subtitle', message: 'Run devices at scale, automate tasks, schedule posts, and smartly nurture accounts — TikMatrix makes your TikTok operations 100% automated.', description: 'Homepage subtitle in English' })}
-        primaryCta={{ text: translate({ id: 'homepage.header.cta.download', message: 'Download Now', description: 'Primary CTA in English' }), to: '/Download?software=TikMatrix' }}
+        primaryCta={{ text: translate({ id: 'homepage.header.cta.download', message: 'Download Now', description: 'Primary CTA in English' }), to: '/Download-TikMatrix' }}
         secondaryCta={{ text: translate({ id: 'homepage.header.cta.features', message: 'See features →', description: 'Secondary CTA in English' }), to: '#features' }}
         rightVideo="/img/hero.mp4"
         rightPoster="/img/hero.png"
