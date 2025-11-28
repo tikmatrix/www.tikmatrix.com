@@ -11,6 +11,8 @@ sidebar_position: 1
 **TikMatrix** 是一款在安卓设备上自动执行 TikTok 任务的 PC 桌面软件。  
 **IgMatrix** 是一款在安卓设备上自动执行 Instagram 任务的 PC 桌面软件。
 
+**注意：** **TikMatrix** 和 **IgMatrix** 是两个独立的软件，不能在同一台电脑上同时运行。
+
 ## 功能特性
 
 - **多账户切换**：同一设备可登录多个 TikTok/Instagram 账号并自动切换执行任务。

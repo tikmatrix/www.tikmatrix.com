@@ -11,6 +11,8 @@ Discover **TikMatrix** and **IgMatrix** in less than 5 minutes and learn core fe
 **TikMatrix** is a PC desktop application that automates TikTok tasks on Android devices.  
 **IgMatrix** is the corresponding tool for automating Instagram tasks on Android devices.
 
+**Note:** **TikMatrix** and **IgMatrix** are separate applications and cannot run simultaneously on the same computer.
+
 ## Features
 
 - **Multi-account switching**: Manage multiple accounts per device and switch automatically during tasks.
