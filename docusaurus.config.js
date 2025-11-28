@@ -120,11 +120,11 @@ const config = {
             position: 'right',
             label: 'IgMatrix',
           },
-          {
-            href: '/VideoMagic',
-            position: 'right',
-            label: 'VideoMagic',
-          },
+          // {
+          //   href: '/VideoMagic',
+          //   position: 'right',
+          //   label: 'VideoMagic',
+          // },
           {
             href: 'https://ai.tikmatrix.com',
             position: 'right',
