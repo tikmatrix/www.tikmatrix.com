@@ -73,10 +73,29 @@ async function processI18n() {
     }
 }
 
+async function processDocusaurus() {
+    const file = path.join(root, 'docusaurus.config.js');
+    try {
+        let content = await fs.readFile(file, 'utf8');
+        const updated = replaceAll(content);
+        if (updated !== content) {
+            await fs.writeFile(file, updated, 'utf8');
+            console.log('[updated]', path.relative(root, file));
+        }
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            console.warn('No docusaurus.config.js found, skipping docusaurus config processing.');
+            return;
+        }
+        throw err;
+    }
+}
+
 async function main() {
     console.log('Brand replace start: TikMatrix -> IgMatrix, TikTok -> Instagram');
     await processSrc();
     await processI18n();
+    await processDocusaurus();
     console.log('Brand replace completed.');
 }
 

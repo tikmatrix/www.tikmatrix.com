@@ -81,7 +81,7 @@ const config = {
         title: '',
         logo: {
           alt: 'TikMatrix Logo',
-          src: '//r2.tikmatrix.com/logo.png?v=2',//720x480
+          src: '//r2.ytmatrix.com/tikmatrix_logo.png',
         },
         items: [
           {
@@ -196,7 +196,7 @@ const config = {
               {
                 label: 'Terms of Service',
                 to: '/terms-of-service',
-              },
+              }
             ],
           }, {
             title: 'Advertising',
