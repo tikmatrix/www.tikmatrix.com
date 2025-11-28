@@ -115,11 +115,11 @@ const config = {
             position: 'left',
             label: 'Advertising',
           },
-          {
-            href: '/IgMatrix',
-            position: 'right',
-            label: 'IgMatrix',
-          },
+          // {
+          //   href: '/IgMatrix',
+          //   position: 'right',
+          //   label: 'IgMatrix',
+          // },
           // {
           //   href: '/VideoMagic',
           //   position: 'right',

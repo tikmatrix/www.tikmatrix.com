@@ -26,6 +26,11 @@ jobs:
           echo "📦 Installing dependencies..."
           npm ci
 
+      - name: Prepare brand switch for IgMatrix
+        run: |
+          echo "🔁 Replacing brand names for IgMatrix deployment..."
+          node ./scripts/replace-brand.js
+
       - name: Build project
         run: |
           echo "🏗️ Building project..."

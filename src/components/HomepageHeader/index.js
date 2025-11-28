@@ -10,23 +10,23 @@ import ImageSlider from '../ImageSlider';
 export default function HomepageHeader({
     title = null,
     subtitle = null,
-    primaryCta = { text: null, to: '/Download' },
+    primaryCta = { text: null, to: '/Download-TikMatrix' },
     secondaryCta = { text: null, to: 'docs/intro' },
     rightVideo = null,
-    rightPoster = '/img/startup1.webp',
+    rightPoster = '/img/hero.png',
 }) {
     const { siteConfig } = useDocusaurusContext();
 
     // fall back to existing defaults if props not provided
     const H1 = title || translate({
         id: 'homepage.header.defaultTitle',
-        message: 'Professional TikTok Account Management & Marketing Tool for Windows & Mac',
+        message: 'Professional Instagram Account Management & Marketing Tool for Windows & Mac',
         description: 'Default header title (English)'
     });
 
     const H2 = subtitle || translate({
         id: 'homepage.header.defaultSubtitle',
-        message: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation',
+        message: 'Streamline your Android Instagram phone farm with advanced batch control and marketing automation',
         description: 'Default header subtitle (English)'
     });
 
@@ -42,7 +42,7 @@ export default function HomepageHeader({
                     </p>
                     <div className="heroCtas">
                         <Link to={primaryCta.to} className="button button--primary" target={primaryCta.target || '_self'}>
-                            {primaryCta.text || translate({ id: 'homepage.header.cta.primary', message: 'Download TikMatrix', description: 'Primary CTA' })}
+                            {primaryCta.text || translate({ id: 'homepage.header.cta.primary', message: 'Download IgMatrix', description: 'Primary CTA' })}
                         </Link>
 
                         <Link to={secondaryCta.to} className="button button--secondary">
