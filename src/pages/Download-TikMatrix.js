@@ -7,8 +7,8 @@ import './Download.css';
 
 export default function Download() {
   const [downloadUrls, setDownloadUrls] = useState({
-    windows: 'https://api.tikmatrix.com/front-api/download-windows',
-    mac: 'https://api.tikmatrix.com/front-api/download-mac'
+    windows: 'https://api.ytmatrix.com/front-api/download-windows',
+    mac: 'https://api.ytmatrix.com/front-api/download-mac'
   });
 
   useEffect(() => {
@@ -18,8 +18,8 @@ export default function Download() {
 
     if (distributor) {
       setDownloadUrls({
-        windows: `https://api.tikmatrix.com/front-api/download-windows?distributor=${distributor}`,
-        mac: `https://api.tikmatrix.com/front-api/download-mac?distributor=${distributor}`
+        windows: `https://api.ytmatrix.com/front-api/download-windows?distributor=${distributor}`,
+        mac: `https://api.ytmatrix.com/front-api/download-mac?distributor=${distributor}`
       });
     }
   }, []);

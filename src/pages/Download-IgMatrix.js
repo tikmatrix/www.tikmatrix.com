@@ -7,8 +7,8 @@ import './Download.css';
 
 export default function Download() {
   const [downloadUrls, setDownloadUrls] = useState({
-    windows: 'https://api.tikmatrix.com/front-api/download-windows?app=igmatrix',
-    mac: 'https://api.tikmatrix.com/front-api/download-mac?app=igmatrix'
+    windows: 'https://api.ytmatrix.com/front-api/download-windows?app=igmatrix',
+    mac: 'https://api.ytmatrix.com/front-api/download-mac?app=igmatrix'
   });
 
   useEffect(() => {
@@ -18,8 +18,8 @@ export default function Download() {
 
     if (distributor) {
       setDownloadUrls({
-        windows: `https://api.tikmatrix.com/front-api/download-windows?app=igmatrix&distributor=${distributor}`,
-        mac: `https://api.tikmatrix.com/front-api/download-mac?app=igmatrix&distributor=${distributor}`
+        windows: `https://api.ytmatrix.com/front-api/download-windows?app=igmatrix&distributor=${distributor}`,
+        mac: `https://api.ytmatrix.com/front-api/download-mac?app=igmatrix&distributor=${distributor}`
       });
     }
   }, []);
