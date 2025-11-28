@@ -92,7 +92,7 @@ const config = {
           },
 
           {
-            to: '/Download',
+            to: '/Download-TikMatrix',
             position: 'left',
             label: 'Download',
           },

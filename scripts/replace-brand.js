@@ -77,8 +77,10 @@ async function processDocusaurus() {
     const file = path.join(root, 'docusaurus.config.js');
     try {
         let content = await fs.readFile(file, 'utf8');
-        // Only replace the specific logo identifier in the docusaurus config
-        const updated = content.replace(/tikmatrix_logo/g, 'igmatrix_logo');
+        // Only replace specific identifiers in the docusaurus config
+        let updated = content.replace(/tikmatrix_logo/g, 'igmatrix_logo');
+        // Also replace the download button/label text
+        updated = updated.replace(/Download-TikMatrix/g, 'Download-IgMatrix');
         if (updated !== content) {
             await fs.writeFile(file, updated, 'utf8');
             console.log('[updated]', path.relative(root, file));
