@@ -26,6 +26,57 @@
     "homepage.header.cta.secondary": {
         "message": "Руководство"
     },
+    "homepage.vs.title": {
+        "message": "Почему TikMatrix?"
+    },
+    "homepage.vs.subtitle": {
+        "message": "Профессиональное решение, созданное для автоматизации TikTok"
+    },
+    "homepage.vs.card.realDevices.title": {
+        "message": "Реальные устройства"
+    },
+    "homepage.vs.card.realDevices.desc": {
+        "message": "Каждая задача выполняется на реальных устройствах для обеспечения поведения, схожего с действиями человека."
+    },
+    "homepage.vs.card.automation.title": {
+        "message": "Профессиональная автоматизация TikTok"
+    },
+    "homepage.vs.card.automation.desc": {
+        "message": "Пакетные операции, сценарные потоки и планирование публикаций — покрывает все бизнес-требования TikTok."
+    },
+    "homepage.vs.card.lowRisk.title": {
+        "message": "Низкий риск"
+    },
+    "homepage.vs.card.lowRisk.desc": {
+        "message": "Эмулирует реальные взаимодействия, снижая риск блокировок и защищая аккаунты."
+    },
+    "homepage.vs.card.plug.title": {
+        "message": "Готово к использованию"
+    },
+    "homepage.vs.card.plug.desc": {
+        "message": "Работает из коробки — не требует сложной настройки."
+    },
+    "homepage.vs.card.nodev.title": {
+        "message": "Без разработки"
+    },
+    "homepage.vs.card.nodev.desc": {
+        "message": "Мощные встроенные функции и визуальные конструкторы позволяют создавать сложные задачи без кода."
+    },
+    "homepage.vs.card.analytics.title": {
+        "message": "Визуальная аналитика"
+    },
+    "homepage.vs.card.analytics.desc": {
+        "message": "Мониторинг статуса задач и показателей аккаунта в реальном времени."
+    },
+    "homepage.vs.card.cta": {
+        "message": "Подробнее"
+    },
+    "homepage.vs.cta.text": {
+        "message": "Хотите повысить эффективность автоматизации TikTok?"
+    },
+    "homepage.vs.cta.button": {
+        "message": "Попробовать TikMatrix →"
+    },
     "Download for Windows": {
         "message": "Скачать для Windows"
     },

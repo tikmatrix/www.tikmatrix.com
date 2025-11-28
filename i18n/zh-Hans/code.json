@@ -26,6 +26,57 @@
   "homepage.header.cta.secondary": {
     "message": "教程"
   },
+  "homepage.vs.title": {
+    "message": "Why TikMatrix?"
+  },
+  "homepage.vs.subtitle": {
+    "message": "专为 TikTok 自动化设计的专业解决方案"
+  },
+  "homepage.vs.card.realDevices.title": {
+    "message": "真实手机操作"
+  },
+  "homepage.vs.card.realDevices.desc": {
+    "message": "每个任务在真实设备上执行，保证行为和效果与人工操作一致"
+  },
+  "homepage.vs.card.automation.title": {
+    "message": "专业 TikTok 自动化"
+  },
+  "homepage.vs.card.automation.desc": {
+    "message": "支持批量操作、脚本流程、定时发布，全流程覆盖 TikTok 业务需求"
+  },
+  "homepage.vs.card.lowRisk.title": {
+    "message": "低风险"
+  },
+  "homepage.vs.card.lowRisk.desc": {
+    "message": "模拟真实操作，减少封号风险，保障账号安全"
+  },
+  "homepage.vs.card.plug.title": {
+    "message": "开箱即用"
+  },
+  "homepage.vs.card.plug.desc": {
+    "message": "无需开发配置，快速上手，即刻运行"
+  },
+  "homepage.vs.card.nodev.title": {
+    "message": "无需开发"
+  },
+  "homepage.vs.card.nodev.desc": {
+    "message": "内置功能强大，拖拽/可视化操作即可完成复杂任务"
+  },
+  "homepage.vs.card.analytics.title": {
+    "message": "可视化数据"
+  },
+  "homepage.vs.card.analytics.desc": {
+    "message": "实时监控任务状态和账号表现，轻松掌握运营效果"
+  },
+  "homepage.vs.card.cta": {
+    "message": "了解更多"
+  },
+  "homepage.vs.cta.text": {
+    "message": "想提升 TikTok 自动化效率？"
+  },
+  "homepage.vs.cta.button": {
+    "message": "立即体验 TikMatrix →"
+  },
   "Download for Windows": {
     "message": "Windows 下载"
   },

@@ -53,38 +53,136 @@
     font-size: 1.4rem;
 }
 
-.cross {
-    color: #e53e3e;
-    font-size: 1.4rem;
+/* VS section styles */
+.vsSection {
+    padding: 56px 0;
+    background: linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%);
 }
 
-/* 表头样式 */
-.featuresRow>.featuresCol:nth-child(-n+4) {
-    background: #2c3e50;
-    color: white;
+.vsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.vsHeader {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.vsHeader h2 {
+    font-size: 28px;
+    margin: 0 0 8px 0;
+}
+
+.vsSubtitle {
+    color: #6b7280;
+    margin: 0 0 28px 0;
+}
+
+.vsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+.vsCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(14, 22, 33, 0.06);
+    transition: transform 0.28s cubic-bezier(.2, .9, .2, 1), box-shadow 0.28s;
+    display: flex;
+    flex-direction: column;
+}
+
+.vsCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(14, 22, 33, 0.12);
+}
+
+.vsIcon {
+    font-size: 36px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(10, 132, 255, 0.08), rgba(10, 132, 255, 0.03));
+    margin-bottom: 12px;
+}
+
+.vsCardTitle {
+    font-size: 16px;
+    color: #111827;
+    margin: 6px 0 8px 0;
+}
+
+.vsCardDesc {
+    color: #6b7280;
+    font-size: 14px;
+    flex: 1 1 auto;
+}
+
+.vsCardFooter {
+    margin-top: 12px;
+}
+
+.vsLearnMore {
+    font-size: 13px;
+    color: #0ea5ff;
+    text-decoration: none;
+}
+
+.vsCtaBar {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 22, 33, 0.03);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.vsCtaText {
+    color: #111827;
     font-weight: 600;
-    font-size: 1.2rem;
-    padding: 1.5rem;
 }
 
-/* 悬停效果 */
-.featuresCol:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.vsCtaButton {
+    background: linear-gradient(90deg, #1a73e8, #38a169);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .featuresCol {
-        width: 50%;
+@media (max-width: 992px) {
+    .vsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .vsGrid {
+        grid-template-columns: 1fr;
     }
 
-    .featuresRow>.featuresCol:nth-child(4n+2),
-    .featuresRow>.featuresCol:nth-child(4n+3),
-    .featuresRow>.featuresCol:nth-child(4n+4) {
-        background-color: #fff;
-        color: inherit;
+    .vsHeader h2 {
+        font-size: 22px;
     }
+
+    .vsCtaBar {
+        flex-direction: column;
+    }
+}
+
+.featuresRow>.featuresCol:nth-child(4n+4) {
+    background-color: #fff;
+    color: inherit;
 }
 
 @media (max-width: 480px) {
