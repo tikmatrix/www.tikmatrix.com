@@ -2,6 +2,30 @@
     "TikMatrix is a TikTok group control operation tool": {
         "message": "TikMatrix - это инструмент групповых операций для TikTok"
     },
+    "homepage.header.title": {
+        "message": "Автоматизация TikTok начинается здесь"
+    },
+    "homepage.header.subtitle": {
+        "message": "Управляйте устройствами масштабно, автоматизируйте задачи, планируйте посты и интеллектуально ведите аккаунты — TikMatrix делает вашу работу в TikTok полностью автоматической."
+    },
+    "homepage.header.cta.download": {
+        "message": "Скачать"
+    },
+    "homepage.header.cta.features": {
+        "message": "Посмотреть функции →"
+    },
+    "homepage.header.defaultTitle": {
+        "message": "Профессиональный инструмент управления и маркетинга аккаунтов TikTok для Windows и Mac"
+    },
+    "homepage.header.defaultSubtitle": {
+        "message": "Оптимизируйте вашу Android TikTok ферму с помощью продвинутого пакетного управления и маркетинговой автоматизации."
+    },
+    "homepage.header.cta.primary": {
+        "message": "Скачать TikMatrix"
+    },
+    "homepage.header.cta.secondary": {
+        "message": "Руководство"
+    },
     "Download for Windows": {
         "message": "Скачать для Windows"
     },

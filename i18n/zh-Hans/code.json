@@ -2,6 +2,30 @@
   "TikMatrix is a TikTok group control operation tool": {
     "message": "TikMatrix是一款Tiktok群控运营工具"
   },
+  "homepage.header.title": {
+    "message": "TikTok 自动化，从这里开始"
+  },
+  "homepage.header.subtitle": {
+    "message": "批量运行设备、自动化执行任务、定时发布、智能养号—— TikMatrix 让你的 TikTok 运营 100% 自动化。"
+  },
+  "homepage.header.cta.download": {
+    "message": "立即下载"
+  },
+  "homepage.header.cta.features": {
+    "message": "查看功能 →"
+  },
+  "homepage.header.defaultTitle": {
+    "message": "面向 Windows 与 Mac 的专业 TikTok 账号管理与营销工具"
+  },
+  "homepage.header.defaultSubtitle": {
+    "message": "使用先进的批量控制和营销自动化优化您的 Android TikTok 手机农场。"
+  },
+  "homepage.header.cta.primary": {
+    "message": "下载 TikMatrix"
+  },
+  "homepage.header.cta.secondary": {
+    "message": "教程"
+  },
   "Download for Windows": {
     "message": "Windows 下载"
   },

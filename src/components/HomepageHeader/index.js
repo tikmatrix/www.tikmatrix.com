@@ -7,42 +7,58 @@ import Translate, { translate } from '@docusaurus/Translate';
 import ImageSlider from '../ImageSlider';
 
 
-export default function HomepageHeader() {
+export default function HomepageHeader({
+    title = null,
+    subtitle = null,
+    primaryCta = { text: null, to: '/Download' },
+    secondaryCta = { text: null, to: 'docs/intro' },
+    rightVideo = null,
+    rightPoster = '/img/startup1.webp',
+}) {
     const { siteConfig } = useDocusaurusContext();
+
+    // fall back to existing defaults if props not provided
+    const H1 = title || translate({
+        id: 'homepage.header.defaultTitle',
+        message: 'Professional TikTok Account Management & Marketing Tool for Windows & Mac',
+        description: 'Default header title (English)'
+    });
+
+    const H2 = subtitle || translate({
+        id: 'homepage.header.defaultSubtitle',
+        message: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation',
+        description: 'Default header subtitle (English)'
+    });
 
     return (
         <header id="start" className='hero shadow--lw' >
             <div className="row header-row">
                 <div className='col col--6 header-content'>
                     <Heading as="h1" className="hero__title">
-                        <Translate>
-                            Professional TikTok Account Management & Marketing Tool for Windows & Mac
-                        </Translate>
+                        {H1}
                     </Heading>
-                    <p className="hero__subtitle">
-                        <Translate>
-                            Streamline your Android TikTok phone farm with advanced batch control and marketing automation
-                        </Translate>
+                    <p className="heroSubtitle">
+                        {H2}
                     </p>
-                    <div className="header-buttons">
-                        <Link to="/Download" className="download-btn">
-                            <i className="bx bx-download"></i>
-                            <Translate>
-                                Download TikMatrix
-                            </Translate>
+                    <div className="heroCtas">
+                        <Link to={primaryCta.to} className="button button--primary" target={primaryCta.target || '_self'}>
+                            {primaryCta.text || translate({ id: 'homepage.header.cta.primary', message: 'Download TikMatrix', description: 'Primary CTA' })}
                         </Link>
 
-                        <Link to="docs/intro" className="link-btn">
-                            <i className="bx bx-book"></i>
-                            <Translate>
-                                Tutorial
-                            </Translate>
+                        <Link to={secondaryCta.to} className="button button--secondary">
+                            {secondaryCta.text || translate({ id: 'homepage.header.cta.secondary', message: 'Tutorial', description: 'Secondary CTA' })}
                         </Link>
-
                     </div>
                 </div>
-                <div className="col col--6 image-slider">
-                    <ImageSlider />
+                <div className="col col--6 heroRight" data-aos="zoom-in">
+                    {rightVideo ? (
+                        <video className="heroVideo" autoPlay muted loop playsInline preload="auto" poster={rightPoster}>
+                            <source src={rightVideo} type="video/mp4" />
+                            您的浏览器不支持视频播放。
+                        </video>
+                    ) : (
+                        <ImageSlider />
+                    )}
                 </div>
             </div>
         </header>
