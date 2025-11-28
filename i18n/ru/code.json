@@ -2,6 +2,165 @@
     "TikMatrix is a TikTok group control operation tool": {
         "message": "TikMatrix - это инструмент групповых операций для TikTok"
     },
+    "tech.title": {
+        "message": "Технические преимущества"
+    },
+    "tech.subtitle": {
+        "message": "Архитектура защиты от обнаружения, построенная на принципах автоматизации реальных устройств"
+    },
+    "tech.points.heading": {
+        "message": "Основная техническая реализация"
+    },
+    "tech.point.realTouch.title": {
+        "message": "Реальные сенсорные события"
+    },
+    "tech.point.realTouch.desc": {
+        "message": "Внедрение подлинных сенсорных событий на уровне ввода Android, неотличимых от человеческого взаимодействия."
+    },
+    "tech.point.realTouch.b1": {
+        "message": "Генерация сигналов касания аппаратного уровня"
+    },
+    "tech.point.realTouch.b2": {
+        "message": "Рандомизация давления и скорости"
+    },
+    "tech.point.realTouch.b3": {
+        "message": "Симуляция дуговой траектории"
+    },
+    "tech.point.zeroApi.title": {
+        "message": "Автоматизация без API"
+    },
+    "tech.point.zeroApi.desc": {
+        "message": "Никаких вызовов API TikTok, никакого перехвата сети. Все операции выполняются на уровне UI."
+    },
+    "tech.point.zeroApi.b1": {
+        "message": "Без раскрытия токенов API"
+    },
+    "tech.point.zeroApi.b2": {
+        "message": "Без подделки подписей запросов"
+    },
+    "tech.point.zeroApi.b3": {
+        "message": "Невосприимчивость к ограничениям API"
+    },
+    "tech.point.humanBehavior.title": {
+        "message": "Модель человеческого поведения"
+    },
+    "tech.point.humanBehavior.desc": {
+        "message": "Паттерны поведения основаны на данных реальных пользователей, избегая обнаруживаемых признаков автоматизации."
+    },
+    "tech.point.humanBehavior.b1": {
+        "message": "Рандомизированные временные интервалы"
+    },
+    "tech.point.humanBehavior.b2": {
+        "message": "Естественные кривые скорости прокрутки"
+    },
+    "tech.point.humanBehavior.b3": {
+        "message": "Моделирование продолжительности сессий"
+    },
+    "tech.point.localExec.title": {
+        "message": "Локальная песочница выполнения"
+    },
+    "tech.point.localExec.desc": {
+        "message": "Скрипты выполняются на вашем локальном компьютере через ADB — без облачных прокси, без сторонних серверов."
+    },
+    "tech.point.localExec.b1": {
+        "message": "Без зависимостей удалённого выполнения"
+    },
+    "tech.point.localExec.b2": {
+        "message": "Полная конфиденциальность данных"
+    },
+    "tech.point.localExec.b3": {
+        "message": "Опция изолированного развёртывания"
+    },
+    "tech.point.fingerprint.title": {
+        "message": "Изоляция отпечатков устройств"
+    },
+    "tech.point.fingerprint.desc": {
+        "message": "Каждое устройство сохраняет уникальные аппаратные и программные отпечатки, без перекрёстного загрязнения."
+    },
+    "tech.point.fingerprint.b1": {
+        "message": "Уникальный IMEI / Android ID для каждого устройства"
+    },
+    "tech.point.fingerprint.b2": {
+        "message": "Изолированный IP через назначение прокси"
+    },
+    "tech.point.fingerprint.b3": {
+        "message": "Без общих cookies или токенов"
+    },
+    "tech.point.passiveCapture.title": {
+        "message": "Пассивный режим захвата"
+    },
+    "tech.point.passiveCapture.desc": {
+        "message": "Данные экрана извлекаются через OCR и компьютерное зрение — без хуков в приложении или инъекций в память."
+    },
+    "tech.point.passiveCapture.b1": {
+        "message": "Нулевая инъекция кода в TikTok"
+    },
+    "tech.point.passiveCapture.b2": {
+        "message": "Захват экрана только для чтения"
+    },
+    "tech.point.passiveCapture.b3": {
+        "message": "Совместимость с любой версией приложения"
+    },
+    "tech.security.heading": {
+        "message": "Оценка уровня безопасности"
+    },
+    "tech.security.zeroApi": {
+        "message": "Работа без API"
+    },
+    "tech.security.noHook": {
+        "message": "Без инъекций / Без хуков"
+    },
+    "tech.security.realDevice": {
+        "message": "Среда реального устройства"
+    },
+    "tech.security.humanModel": {
+        "message": "Модель человеческого поведения"
+    },
+    "tech.security.noiseCurve": {
+        "message": "Кривая поведенческого шума"
+    },
+    "tech.security.proxyIsolation": {
+        "message": "Опциональная изоляция прокси"
+    },
+    "tech.security.legendA": {
+        "message": "Отлично"
+    },
+    "tech.security.legendB": {
+        "message": "Хорошо"
+    },
+    "tech.security.legendC": {
+        "message": "Опционально"
+    },
+    "tech.diagram.user": {
+        "message": "Пользователь"
+    },
+    "tech.diagram.engine": {
+        "message": "Движок TikMatrix"
+    },
+    "tech.diagram.devices": {
+        "message": "Реальные Android-устройства"
+    },
+    "tech.diagram.tiktok": {
+        "message": "Приложение TikTok"
+    },
+    "tech.diagram.localExecution": {
+        "message": "Локальное выполнение"
+    },
+    "tech.diagram.realTouch": {
+        "message": "Реальная передача касаний"
+    },
+    "tech.diagram.noApi": {
+        "message": "Без вызовов API"
+    },
+    "tech.diagram.fingerprintIsolation": {
+        "message": "Изоляция отпечатков устройств"
+    },
+    "tech.diagram.noMemoryInjection": {
+        "message": "Без инъекций в память"
+    },
+    "tech.diagram.zeroCloud": {
+        "message": "Отсутствие облачных зависимостей"
+    },
     "homepage.header.title": {
         "message": "Автоматизация TikTok начинается здесь"
     },

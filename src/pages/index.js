@@ -2,6 +2,7 @@ import Layout from '@theme/Layout';
 import HomepageHeader from '@site/src/components/HomepageHeader';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import HomepageVS from '@site/src/components/HomepageVS';
+import TechnicalAdvantages from '@site/src/components/TechnicalAdvantages';
 import PricingPage from '@site/src/components/PricingPage';
 import FrequentlyAsked from '@site/src/components/FrequentlyAsked';
 import ContactPage from '@site/src/components/ContactPage';
@@ -99,6 +100,7 @@ export default function Home() {
       <main>
         <HomepageVS />
         <HomepageFeatures />
+        <TechnicalAdvantages />
         <PricingPage />
         {/* <FrequentlyAsked /> */}
         <ContactPage />

@@ -2,6 +2,165 @@
   "TikMatrix is a TikTok group control operation tool": {
     "message": "TikMatrix是一款Tiktok群控运营工具"
   },
+  "tech.title": {
+    "message": "技术优势"
+  },
+  "tech.subtitle": {
+    "message": "基于真实设备自动化原理构建的反检测架构"
+  },
+  "tech.points.heading": {
+    "message": "核心技术实现"
+  },
+  "tech.point.realTouch.title": {
+    "message": "真实触控注入"
+  },
+  "tech.point.realTouch.desc": {
+    "message": "在 Android 输入层注入真实触控事件，与人类交互行为无法区分。"
+  },
+  "tech.point.realTouch.b1": {
+    "message": "硬件级触控信号生成"
+  },
+  "tech.point.realTouch.b2": {
+    "message": "压力和速度随机化"
+  },
+  "tech.point.realTouch.b3": {
+    "message": "弧形轨迹模拟"
+  },
+  "tech.point.zeroApi.title": {
+    "message": "零 API 自动化"
+  },
+  "tech.point.zeroApi.desc": {
+    "message": "不调用 TikTok API，不拦截网络请求。所有操作都在 UI 层完成。"
+  },
+  "tech.point.zeroApi.b1": {
+    "message": "无 API 令牌暴露"
+  },
+  "tech.point.zeroApi.b2": {
+    "message": "无请求签名伪造"
+  },
+  "tech.point.zeroApi.b3": {
+    "message": "不受 API 速率限制影响"
+  },
+  "tech.point.humanBehavior.title": {
+    "message": "仿人行为模型"
+  },
+  "tech.point.humanBehavior.desc": {
+    "message": "行为模式源自真实用户数据，避免可检测的自动化特征。"
+  },
+  "tech.point.humanBehavior.b1": {
+    "message": "随机化时间间隔"
+  },
+  "tech.point.humanBehavior.b2": {
+    "message": "自然滚动速度曲线"
+  },
+  "tech.point.humanBehavior.b3": {
+    "message": "会话时长建模"
+  },
+  "tech.point.localExec.title": {
+    "message": "本地执行沙箱"
+  },
+  "tech.point.localExec.desc": {
+    "message": "脚本通过 ADB 在本地机器上执行——无云端中继，无第三方服务器。"
+  },
+  "tech.point.localExec.b1": {
+    "message": "无远程执行依赖"
+  },
+  "tech.point.localExec.b2": {
+    "message": "完全数据隐私"
+  },
+  "tech.point.localExec.b3": {
+    "message": "可选离线部署"
+  },
+  "tech.point.fingerprint.title": {
+    "message": "设备指纹隔离"
+  },
+  "tech.point.fingerprint.desc": {
+    "message": "每台设备保持唯一的硬件和软件指纹，无交叉污染。"
+  },
+  "tech.point.fingerprint.b1": {
+    "message": "每台设备唯一 IMEI / Android ID"
+  },
+  "tech.point.fingerprint.b2": {
+    "message": "通过代理分配隔离 IP"
+  },
+  "tech.point.fingerprint.b3": {
+    "message": "无共享 Cookie 或令牌"
+  },
+  "tech.point.passiveCapture.title": {
+    "message": "被动捕获模式"
+  },
+  "tech.point.passiveCapture.desc": {
+    "message": "通过 OCR 和计算机视觉提取屏幕数据——无应用内 Hook 或内存注入。"
+  },
+  "tech.point.passiveCapture.b1": {
+    "message": "零代码注入 TikTok"
+  },
+  "tech.point.passiveCapture.b2": {
+    "message": "只读屏幕捕获"
+  },
+  "tech.point.passiveCapture.b3": {
+    "message": "兼容任何应用版本"
+  },
+  "tech.security.heading": {
+    "message": "安全等级评估"
+  },
+  "tech.security.zeroApi": {
+    "message": "零 API 操作"
+  },
+  "tech.security.noHook": {
+    "message": "无注入 / 无 Hook"
+  },
+  "tech.security.realDevice": {
+    "message": "真实设备环境"
+  },
+  "tech.security.humanModel": {
+    "message": "仿人行为模型"
+  },
+  "tech.security.noiseCurve": {
+    "message": "行为噪声曲线"
+  },
+  "tech.security.proxyIsolation": {
+    "message": "可选代理隔离"
+  },
+  "tech.security.legendA": {
+    "message": "优秀"
+  },
+  "tech.security.legendB": {
+    "message": "良好"
+  },
+  "tech.security.legendC": {
+    "message": "可选"
+  },
+  "tech.diagram.user": {
+    "message": "用户"
+  },
+  "tech.diagram.engine": {
+    "message": "TikMatrix 引擎"
+  },
+  "tech.diagram.devices": {
+    "message": "真实 Android 设备"
+  },
+  "tech.diagram.tiktok": {
+    "message": "TikTok 应用"
+  },
+  "tech.diagram.localExecution": {
+    "message": "本地执行"
+  },
+  "tech.diagram.realTouch": {
+    "message": "真实触控注入"
+  },
+  "tech.diagram.noApi": {
+    "message": "不调用 API"
+  },
+  "tech.diagram.fingerprintIsolation": {
+    "message": "设备指纹隔离"
+  },
+  "tech.diagram.noMemoryInjection": {
+    "message": "无内存注入"
+  },
+  "tech.diagram.zeroCloud": {
+    "message": "零云依赖"
+  },
   "homepage.header.title": {
     "message": "TikTok 自动化，从这里开始"
   },
@@ -27,7 +186,7 @@
     "message": "教程"
   },
   "homepage.vs.title": {
-    "message": "Why TikMatrix?"
+    "message": "为什么选择 TikMatrix?"
   },
   "homepage.vs.subtitle": {
     "message": "专为 TikTok 自动化设计的专业解决方案"
