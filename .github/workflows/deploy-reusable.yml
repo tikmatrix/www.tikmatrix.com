@@ -1,0 +1,79 @@
+# Reusable deploy workflow for www.tikmatrix.com ecosystem
+name: Deploy (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: "Name of the build artifact to deploy"
+        required: true
+        type: string
+      target-dir:
+        description: "Target directory on server (e.g., /root/www.tikmatrix.com)"
+        required: true
+        type: string
+    secrets:
+      SERVER_HOST:
+        required: true
+      SERVER_USER:
+        required: true
+      PASSWORD:
+        required: true
+      SERVER_PORT:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ inputs.artifact-name }}
+
+      - name: Upload build artifact to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          source: "build-${{ inputs.artifact-name }}.tar.gz"
+          target: "/tmp/"
+
+      - name: Extract and activate deployment on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          script: |
+            set -e
+
+            SRC_ARCH="build-${{ inputs.artifact-name }}.tar.gz"
+            TARGET_DIR="${{ inputs.target-dir }}"
+
+            echo "🚀 Deploying $SRC_ARCH -> $TARGET_DIR"
+
+            TMP_DIR="/tmp/build_new_$(basename $TARGET_DIR)"
+            rm -rf "$TMP_DIR"
+            mkdir -p "$TMP_DIR"
+
+            echo "📦 Extracting /tmp/$SRC_ARCH to $TMP_DIR"
+            tar -xzf "/tmp/$SRC_ARCH" -C "$TMP_DIR"
+
+            echo "🗑️ Removing old build at $TARGET_DIR/build"
+            rm -rf "$TARGET_DIR/build"
+
+            echo "🚚 Moving new build into place"
+            mv "$TMP_DIR" "$TARGET_DIR/build"
+
+            echo "🧹 Cleaning up /tmp/$SRC_ARCH"
+            rm -f "/tmp/$SRC_ARCH"
+
+            echo "🔐 Setting permissions for $TARGET_DIR/build"
+            chmod -R 755 "$TARGET_DIR/build"
+
+            echo "✅ Deployment to $TARGET_DIR completed successfully!"

@@ -1,0 +1,29 @@
+# Deploy TikZenX (TikZenX branch)
+name: Deploy TikZenX
+run-name: ${{ github.actor }} is deploying TikZenX 🚀
+
+on:
+  push:
+    branches:
+      - TikZenX
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-reusable.yml
+    with:
+      artifact-name: TikZenX
+      run-brand-replace: false
+      ref: TikZenX
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      artifact-name: TikZenX
+      target-dir: /root/www.tikzenx.com
+    secrets:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}

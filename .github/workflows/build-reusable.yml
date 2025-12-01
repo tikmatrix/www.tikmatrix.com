@@ -1,0 +1,71 @@
+# Reusable build workflow for www.tikmatrix.com ecosystem
+name: Build (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: "Name for the build artifact"
+        required: true
+        type: string
+      run-brand-replace:
+        description: "Whether to run brand replacement script before build"
+        required: false
+        type: boolean
+        default: false
+      ref:
+        description: "Git ref (branch/tag) to checkout"
+        required: false
+        type: string
+        default: ""
+    outputs:
+      artifact-name:
+        description: "Name of the uploaded artifact"
+        value: ${{ inputs.artifact-name }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          echo "📦 Installing dependencies..."
+          npm ci
+
+      - name: Run brand replacement script
+        if: ${{ inputs.run-brand-replace }}
+        run: |
+          echo "🔁 Running brand replacement script..."
+          node ./scripts/replace-brand.js
+
+      - name: Build project
+        run: |
+          echo "🏗️ Building project..."
+          npm run build --verbose
+
+      - name: Create deployment archive
+        run: |
+          echo "📦 Creating deployment archive..."
+          cd build
+          tar -czf ../build-${{ inputs.artifact-name }}.tar.gz .
+          cd ..
+          ls -lh build-${{ inputs.artifact-name }}.tar.gz
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ inputs.artifact-name }}
+          path: build-${{ inputs.artifact-name }}.tar.gz
+          retention-days: 7

@@ -1,0 +1,40 @@
+# Deploy TikMatrix & YTMatrix (main branch)
+name: Deploy TikMatrix & YTMatrix
+run-name: ${{ github.actor }} is deploying TikMatrix & YTMatrix 🚀
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-reusable.yml
+    with:
+      artifact-name: tikmatrix
+      run-brand-replace: false
+
+  deploy-tikmatrix:
+    needs: build
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      artifact-name: tikmatrix
+      target-dir: /root/www.tikmatrix.com
+    secrets:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}
+
+  deploy-ytmatrix:
+    needs: build
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      artifact-name: tikmatrix
+      target-dir: /root/www.ytmatrix.com
+    secrets:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}
