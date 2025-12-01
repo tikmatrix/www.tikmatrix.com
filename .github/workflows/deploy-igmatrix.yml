@@ -1,0 +1,28 @@
+# Deploy IgMatrix (main branch with brand replacement)
+name: Deploy IgMatrix
+run-name: ${{ github.actor }} is deploying IgMatrix 🚀
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-reusable.yml
+    with:
+      artifact-name: igmatrix
+      run-brand-replace: true
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      artifact-name: igmatrix
+      target-dir: /root/www.igmatrix.com
+    secrets:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}
