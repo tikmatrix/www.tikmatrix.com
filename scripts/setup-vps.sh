@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# TikMatrix VPS Setup Script v1.0   
+# TikMatrix VPS Setup Script v1.1   
 # One-click setup for www.tikmatrix.com ecosystem on Ubuntu 22.04 LTS
 # =============================================================================
 
@@ -20,6 +20,7 @@ ENABLE_SSL="n"
 AWS_KEY_ID=""
 AWS_SECRET=""
 GITHUB_PUBKEY=""
+SETUP_MODE="full"  # full or add-site
 
 # Predefined site configurations
 declare -A SITE_CONFIGS
@@ -106,6 +107,29 @@ interactive_config() {
     echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
     echo ""
     
+    # Check if this is first run or adding a site
+    if [[ -f /etc/nginx/nginx.conf ]] && id "$DEPLOY_USER" &>/dev/null; then
+        echo -e "${YELLOW}Detected existing TikMatrix installation.${NC}"
+        echo ""
+        echo "  1) Full setup (reinstall everything)"
+        echo "  2) Add new site only (recommended)"
+        echo ""
+        read -p "Enter choice [1-2, default: 2]: " mode_choice
+        mode_choice="${mode_choice:-2}"
+        
+        if [[ "$mode_choice" == "1" ]]; then
+            SETUP_MODE="full"
+            log_info "Running full setup mode..."
+        else
+            SETUP_MODE="add-site"
+            log_info "Running add-site mode (only configuring new site)..."
+        fi
+        echo ""
+    else
+        SETUP_MODE="full"
+        log_info "First time setup detected, running full installation..."
+    fi
+    
     # Site selection
     echo -e "${YELLOW}Select site to deploy:${NC}"
     echo "  1) tikmatrix.com (TikMatrix)"
@@ -157,9 +181,27 @@ interactive_config() {
     log_info "Web root: $WEB_ROOT"
     echo ""
     
-    # SSH Port
-    read -p "SSH port [default: 22]: " input_port
-    SSH_PORT="${input_port:-22}"
+    # Check if site already exists
+    if [[ -f "$NGINX_CONF" ]]; then
+        echo -e "${YELLOW}⚠️  Warning: Site $DOMAIN already configured!${NC}"
+        echo "  Nginx config: $NGINX_CONF"
+        read -p "Overwrite existing configuration? (y/n) [default: n]: " overwrite
+        if [[ ! "$overwrite" =~ ^[Yy]$ ]]; then
+            log_info "Setup cancelled. Site already exists."
+            exit 0
+        fi
+    fi
+    
+    # SSH Port (only for full setup)
+    if [[ "$SETUP_MODE" == "full" ]]; then
+        read -p "SSH port [default: 22]: " input_port
+        SSH_PORT="${input_port:-22}"
+    else
+        # Get current SSH port from UFW or default
+        SSH_PORT=$(ufw status | grep -oP '^\d+(?=/tcp.*ALLOW)' | head -1)
+        SSH_PORT="${SSH_PORT:-22}"
+        log_info "Using existing SSH port: $SSH_PORT"
+    fi
     
     # GitHub Deploy Key
     echo ""
@@ -204,6 +246,7 @@ interactive_config() {
     echo "  Web Root:        $WEB_ROOT"
     echo "  Deploy User:     $DEPLOY_USER"
     echo "  SSH Port:        $SSH_PORT"
+    echo "  Setup Mode:      $SETUP_MODE"
     echo "  SSL Setup:       $ENABLE_SSL"
     if [[ -n "$GITHUB_PUBKEY" ]]; then
         echo "  GitHub Key:      Provided"
@@ -730,6 +773,8 @@ print_summary() {
     echo -e "${GREEN}              TikMatrix VPS Setup Complete!                    ${NC}"
     echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
     echo ""
+    echo -e "${YELLOW}Setup Mode: ${NC}$SETUP_MODE"
+    echo ""
     echo -e "${YELLOW}Configuration Summary:${NC}"
     echo "  Domain:          $DOMAIN"
     echo "  Web Root:        $WEB_ROOT"
@@ -760,8 +805,20 @@ print_summary() {
     echo "  Check Firewall:   ufw status"
     echo "  Check Fail2Ban:   fail2ban-client status"
     echo ""
-    echo -e "${YELLOW}Deploy Script:${NC}"
-    echo "  /home/$DEPLOY_USER/deploy.sh <archive> <target_dir>"
+    if [[ "$SETUP_MODE" == "full" ]]; then
+        echo -e "${YELLOW}Deploy Script:${NC}"
+        echo "  /home/$DEPLOY_USER/deploy.sh <archive> <target_dir>"
+        echo ""
+    fi
+    echo -e "${YELLOW}All Configured Sites:${NC}"
+    for conf in /etc/nginx/conf.d/www.*.conf; do
+        if [[ -f "$conf" ]]; then
+            site_domain=$(basename "$conf" .conf | sed 's/^www\.//')
+            echo "  - $site_domain"
+        fi
+    done
+    echo ""
+    echo -e "${YELLOW}To add another site, run this script again and choose 'Add new site only'${NC}"
     echo ""
     echo "  Setup log: $LOG_FILE"
     echo ""
@@ -785,18 +842,36 @@ main() {
     # Interactive configuration
     interactive_config
     
-    log_info "Starting TikMatrix VPS setup..."
+    log_info "Starting TikMatrix VPS setup (mode: $SETUP_MODE)..."
     
-    # Execute setup steps
-    setup_system
-    setup_deploy_user
-    setup_firewall
-    setup_fail2ban
-    setup_nginx
-    setup_optimization
-    setup_security
-    setup_ssl
-    setup_deploy_script
+    if [[ "$SETUP_MODE" == "full" ]]; then
+        # Full setup - execute all steps
+        setup_system
+        setup_deploy_user
+        setup_firewall
+        setup_fail2ban
+        setup_nginx
+        setup_optimization
+        setup_security
+        setup_ssl
+        setup_deploy_script
+    else
+        # Add-site mode - only configure nginx and SSL for new site
+        log_info "Adding new site: $DOMAIN"
+        
+        # Update deploy user SSH key if provided
+        if [[ -n "$GITHUB_PUBKEY" ]]; then
+            if ! grep -qF "$GITHUB_PUBKEY" /home/$DEPLOY_USER/.ssh/authorized_keys 2>/dev/null; then
+                echo "$GITHUB_PUBKEY" >> /home/$DEPLOY_USER/.ssh/authorized_keys
+                log_success "GitHub deploy key added to authorized_keys"
+            else
+                log_warning "GitHub deploy key already exists in authorized_keys"
+            fi
+        fi
+        
+        setup_nginx
+        setup_ssl
+    fi
     
     # Final nginx restart
     systemctl restart nginx
