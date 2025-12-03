@@ -1,638 +1,1273 @@
-#!/bin/bash#!/bin/bash
-
-# =============================================================================# =============================================================================
-
-# TikMatrix VPS Setup Script v3.0# TikMatrix VPS Setup Script
-
-# Supports: Initial setup / Add new site / Manage existing sites# One-click setup for www.tikmatrix.com ecosystem on Ubuntu 22.04 LTS
-
-# =============================================================================# =============================================================================
-
-
-
-set -e  # Exit on errorset -e  # Exit on error
-
-
-
-# =============================================================================# =============================================================================
-
-# Configuration Variables# Configuration Variables (Will be set interactively)
-
-# =============================================================================# =============================================================================
-
-DOMAIN=""DOMAIN=""
-
-WWW_DOMAIN=""WWW_DOMAIN=""
-
-WEB_ROOT=""WEB_ROOT=""
-
-NGINX_CONF=""NGINX_CONF=""
-
-DEPLOY_USER="deploy"DEPLOY_USER="deploy"
-
-LOG_FILE="/var/log/tikmatrix-setup.log"LOG_FILE="/var/log/tikmatrix-setup.log"
-
-SSH_PORT="22"SSH_PORT="22"
-
-ENABLE_SSL="n"ENABLE_SSL="n"
-
-AWS_KEY_ID=""AWS_KEY_ID=""
-
-AWS_SECRET=""AWS_SECRET=""
-
-GITHUB_PUBKEY=""GITHUB_PUBKEY=""
-
-SCRIPT_MODE=""  # init / add-site / manage
-
-# Predefined site configurations
-
-# State file to track setup statusdeclare -A SITE_CONFIGS
-
-STATE_FILE="/etc/tikmatrix/.setup-state"SITE_CONFIGS["tikmatrix"]="tikmatrix.com"
-
-STATE_DIR="/etc/tikmatrix"SITE_CONFIGS["igmatrix"]="igmatrix.com"
-
-SITE_CONFIGS["ytmatrix"]="ytmatrix.com"
-
-# Colors for outputSITE_CONFIGS["tikzenx"]="tikzenx.com"
-
-RED='\033[0;31m'
-
-GREEN='\033[0;32m'# Colors for output
-
-YELLOW='\033[1;33m'RED='\033[0;31m'
-
-BLUE='\033[0;34m'GREEN='\033[0;32m'
-
-CYAN='\033[0;36m'YELLOW='\033[1;33m'
-
-NC='\033[0m' # No ColorBLUE='\033[0;34m'
-
-CYAN='\033[0;36m'
-
-# =============================================================================NC='\033[0m' # No Color
-
-# Helper Functions
-
-# =============================================================================# =============================================================================
-
-log_info() {# Helper Functions
-
-    echo -e "${BLUE}[INFO]${NC} $1"# =============================================================================
-
-    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_info() {
-
-}    echo -e "${BLUE}[INFO]${NC} $1"
-
-    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
-
-log_success() {}
-
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-
-    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_success() {
-
-}    echo -e "${GREEN}[SUCCESS]${NC} $1"
-
-    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
-
-log_warning() {}
-
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-
-    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_warning() {
-
-}    echo -e "${YELLOW}[WARNING]${NC} $1"
-
-    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
-
-log_error() {}
-
-    echo -e "${RED}[ERROR]${NC} $1"
-
-    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_error() {
-
-}    echo -e "${RED}[ERROR]${NC} $1"
-
-    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
-
-print_banner() {}
-
-    echo -e "${CYAN}"
-
-    echo "╔═══════════════════════════════════════════════════════════════╗"print_banner() {
-
-    echo "║                                                               ║"    echo -e "${CYAN}"
-
-    echo "║              TikMatrix VPS Setup Script v3.0                  ║"    echo "╔═══════════════════════════════════════════════════════════════╗"
-
-    echo "║                                                               ║"    echo "║                                                               ║"
-
-    echo "║  Supports: Initial setup / Add sites / Manage sites          ║"    echo "║              TikMatrix VPS Setup Script v2.0                  ║"
-
-    echo "║                                                               ║"    echo "║                                                               ║"
-
-    echo "╚═══════════════════════════════════════════════════════════════╝"    echo "║  Automated setup for TikMatrix ecosystem websites             ║"
-
-    echo -e "${NC}"    echo "║                                                               ║"
-
-}    echo "╚═══════════════════════════════════════════════════════════════╝"
-
-    echo -e "${NC}"
-
-check_root() {}
-
-    if [[ $EUID -ne 0 ]]; then
-
-        log_error "This script must be run as root. Use: sudo $0"check_root() {
-
-        exit 1    if [[ $EUID -ne 0 ]]; then
-
-    fi        log_error "This script must be run as root. Use: sudo $0"
-
-}        exit 1
-
-    fi
-
-check_os() {}
-
-    if [[ ! -f /etc/os-release ]]; then
-
-        log_error "Cannot detect OS. /etc/os-release not found."check_os() {
-
-        exit 1    if [[ ! -f /etc/os-release ]]; then
-
-    fi        log_error "Cannot detect OS. /etc/os-release not found."
-
-            exit 1
-
-    source /etc/os-release    fi
-
-    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then    
-
-        log_warning "This script is designed for Ubuntu/Debian. Current OS: $ID"    source /etc/os-release
-
-        read -p "Continue anyway? (y/n): " -n 1 -r    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then
-
-        echo        log_warning "This script is designed for Ubuntu/Debian. Current OS: $ID"
-
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then        read -p "Continue anyway? (y/n): " -n 1 -r
-
-            exit 1        echo
-
-        fi        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-
-    fi            exit 1
-
-    log_info "Detected OS: $PRETTY_NAME"        fi
-
-}    fi
-
-    log_info "Detected OS: $PRETTY_NAME"
-
-# Check if initial setup has been done}
-
-is_initialized() {
-
-    [[ -f "$STATE_FILE" ]] && grep -q "initialized=true" "$STATE_FILE"# =============================================================================
-
-}# Interactive Configuration
+#!/usr/bin/env bash#!/bin/bash#!/bin/bash
 
 # =============================================================================
 
-# Save stateinteractive_config() {
+# TikMatrix VPS Setup Script v3.0# =============================================================================# =============================================================================
 
-save_state() {    echo ""
+# Supports: Initial setup / Add new site / Manage existing sites
 
-    mkdir -p "$STATE_DIR"    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
+# =============================================================================# TikMatrix VPS Setup Script v3.0# TikMatrix VPS Setup Script
 
-    cat > "$STATE_FILE" << EOF    echo -e "${CYAN}                    Configuration Setup                         ${NC}"
 
-initialized=true    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
 
-deploy_user=$DEPLOY_USER    echo ""
+set -e# Supports: Initial setup / Add new site / Manage existing sites# One-click setup for www.tikmatrix.com ecosystem on Ubuntu 22.04 LTS
 
-ssh_port=$SSH_PORT    
 
-setup_date=$(date '+%Y-%m-%d %H:%M:%S')    # Site selection
 
-EOF    echo -e "${YELLOW}Select site to deploy:${NC}"
+# =============================================================================# =============================================================================# =============================================================================
 
-    chmod 600 "$STATE_FILE"    echo "  1) tikmatrix.com (TikMatrix)"
+# Configuration Variables
 
-}    echo "  2) igmatrix.com (IgMatrix)"
+# =============================================================================
 
-    echo "  3) ytmatrix.com (YTMatrix)"
+DOMAIN=""
 
-# Load state    echo "  4) tikzenx.com (TikZenX)"
+WWW_DOMAIN=""set -e  # Exit on errorset -e  # Exit on error
 
-load_state() {    echo "  5) Custom domain"
+WEB_ROOT=""
 
-    if [[ -f "$STATE_FILE" ]]; then    echo ""
+NGINX_CONF=""
 
-        source "$STATE_FILE"    
+DEPLOY_USER="deploy"
 
-        DEPLOY_USER="${deploy_user:-deploy}"    while true; do
+LOG_FILE="/var/log/tikmatrix-setup.log"# =============================================================================# =============================================================================
 
-        SSH_PORT="${ssh_port:-22}"        read -p "Enter choice [1-5]: " site_choice
+SSH_PORT="22"
 
-    fi        case $site_choice in
+ENABLE_SSL="n"# Configuration Variables# Configuration Variables (Will be set interactively)
 
-}            1)
+AWS_KEY_ID=""
 
-                DOMAIN="tikmatrix.com"
+AWS_SECRET=""# =============================================================================# =============================================================================
 
-# List configured sites                break
+GITHUB_PUBKEY=""
 
-list_sites() {                ;;
+SCRIPT_MODE=""DOMAIN=""DOMAIN=""
 
-    echo ""            2)
+FIRST_SITE_DOMAIN=""
 
-    echo -e "${CYAN}Configured Sites:${NC}"                DOMAIN="igmatrix.com"
+WWW_DOMAIN=""WWW_DOMAIN=""
 
-    echo "─────────────────────────────────────────────────────"                break
+STATE_FILE="/etc/tikmatrix/.setup-state"
 
-                    ;;
+STATE_DIR="/etc/tikmatrix"WEB_ROOT=""WEB_ROOT=""
 
-    local sites_found=false            3)
 
-    for conf in /etc/nginx/conf.d/www.*.conf; do                DOMAIN="ytmatrix.com"
 
-        if [[ -f "$conf" ]]; then                break
+RED='\033[0;31m'NGINX_CONF=""NGINX_CONF=""
 
-            sites_found=true                ;;
+GREEN='\033[0;32m'
 
-            local domain=$(basename "$conf" .conf | sed 's/^www\.//')            4)
+YELLOW='\033[1;33m'DEPLOY_USER="deploy"DEPLOY_USER="deploy"
 
-            local web_root="/var/www.$domain"                DOMAIN="tikzenx.com"
+BLUE='\033[0;34m'
 
-            local ssl_status="HTTP"                break
+CYAN='\033[0;36m'LOG_FILE="/var/log/tikmatrix-setup.log"LOG_FILE="/var/log/tikmatrix-setup.log"
 
-                            ;;
+NC='\033[0m'
 
-            # Check if SSL is configured            5)
+SSH_PORT="22"SSH_PORT="22"
 
-            if grep -q "listen 443 ssl" "$conf" 2>/dev/null; then                read -p "Enter your domain (e.g., example.com): " DOMAIN
+# =============================================================================
 
-                ssl_status="HTTPS ✓"                if [[ -z "$DOMAIN" ]]; then
+# Helper FunctionsENABLE_SSL="n"ENABLE_SSL="n"
 
-            fi                    log_error "Domain cannot be empty"
+# =============================================================================
 
-                                continue
+log_info() {AWS_KEY_ID=""AWS_KEY_ID=""
 
-            # Check if directory exists and has content                fi
+    echo -e "${BLUE}[INFO]${NC} $1"
 
-            local status="Empty"                break
+    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"AWS_SECRET=""AWS_SECRET=""
 
-            if [[ -d "$web_root" && "$(ls -A $web_root 2>/dev/null)" ]]; then                ;;
+}
 
-                status="Active"            *)
+GITHUB_PUBKEY=""GITHUB_PUBKEY=""
 
-            fi                echo "Invalid choice. Please enter 1-5."
+log_success() {
 
-                            ;;
+    echo -e "${GREEN}[SUCCESS]${NC} $1"SCRIPT_MODE=""  # init / add-site / manage
 
-            printf "  %-25s %-10s %-15s %s\n" "$domain" "$ssl_status" "$status" "$web_root"        esac
+    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
 
-        fi    done
+}# Predefined site configurations
 
-    done    
 
-        WWW_DOMAIN="www.$DOMAIN"
 
-    if [[ "$sites_found" == false ]]; then    WEB_ROOT="/var/www.$DOMAIN"
+log_warning() {# State file to track setup statusdeclare -A SITE_CONFIGS
 
-        echo "  No sites configured yet."    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"
+    echo -e "${YELLOW}[WARNING]${NC} $1"
 
-    fi    
+    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"STATE_FILE="/etc/tikmatrix/.setup-state"SITE_CONFIGS["tikmatrix"]="tikmatrix.com"
 
-    echo "─────────────────────────────────────────────────────"    echo ""
+}
 
-    echo ""    log_info "Domain: $DOMAIN"
+STATE_DIR="/etc/tikmatrix"SITE_CONFIGS["igmatrix"]="igmatrix.com"
 
-}    log_info "Web root: $WEB_ROOT"
+log_error() {
 
-    echo ""
+    echo -e "${RED}[ERROR]${NC} $1"SITE_CONFIGS["ytmatrix"]="ytmatrix.com"
 
-# =============================================================================    
+    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
 
-# Mode Selection    # SSH Port
+}# Colors for outputSITE_CONFIGS["tikzenx"]="tikzenx.com"
 
-# =============================================================================    read -p "SSH port [default: 22]: " input_port
 
-select_mode() {    SSH_PORT="${input_port:-22}"
 
-    echo ""    
+print_banner() {RED='\033[0;31m'
 
-    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"    # GitHub Deploy Key
+    echo -e "${CYAN}"
 
-    echo -e "${CYAN}                      Select Operation                          ${NC}"    echo ""
+    echo "============================================================="GREEN='\033[0;32m'# Colors for output
 
-    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"    echo -e "${YELLOW}GitHub Actions SSH Public Key:${NC}"
+    echo "           TikMatrix VPS Setup Script v3.0                   "
 
-    echo ""    echo "  This is used for automated deployments from GitHub Actions."
+    echo "  Supports: Initial setup / Add sites / Manage sites         "YELLOW='\033[1;33m'RED='\033[0;31m'
 
-        echo "  You can generate one with: ssh-keygen -t ed25519 -C 'github-actions'"
+    echo "============================================================="
 
-    if is_initialized; then    echo "  Paste the PUBLIC key (starts with 'ssh-ed25519' or 'ssh-rsa')."
+    echo -e "${NC}"BLUE='\033[0;34m'GREEN='\033[0;32m'
 
-        load_state    echo "  Leave empty to skip (you can add it later)."
+}
 
-        echo -e "${GREEN}✓ Server is already initialized${NC}"    echo ""
+CYAN='\033[0;36m'YELLOW='\033[1;33m'
 
-        echo "  Deploy user: $DEPLOY_USER"    read -p "GitHub deploy public key: " GITHUB_PUBKEY
+check_root() {
 
-        echo "  SSH port: $SSH_PORT"    
+    if [[ $EUID -ne 0 ]]; thenNC='\033[0m' # No ColorBLUE='\033[0;34m'
 
-        list_sites    # SSL Configuration
+        log_error "This script must be run as root. Use: sudo $0"
 
-            echo ""
-
-        echo "What would you like to do?"    echo -e "${YELLOW}SSL Certificate Configuration:${NC}"
-
-        echo "  1) Add a new site"    read -p "Setup SSL certificate now? (y/n) [default: n]: " ENABLE_SSL
-
-        echo "  2) Setup SSL for existing site"    ENABLE_SSL="${ENABLE_SSL:-n}"
-
-        echo "  3) Add GitHub deploy key"    
-
-        echo "  4) Show server info"    if [[ "$ENABLE_SSL" =~ ^[Yy]$ ]]; then
-
-        echo "  5) Re-run full initialization (will skip existing components)"        echo ""
-
-        echo "  6) Exit"        echo "SSL validation method:"
-
-        echo ""        echo "  1) HTTP validation (requires DNS already pointing to this server)"
-
-                echo "  2) Route 53 DNS validation (requires AWS credentials)"
-
-        while true; do        echo ""
-
-            read -p "Enter choice [1-6]: " mode_choice        read -p "Enter choice [1-2]: " ssl_method
-
-            case $mode_choice in        
-
-                1) SCRIPT_MODE="add-site"; break ;;        if [[ "$ssl_method" == "2" ]]; then
-
-                2) SCRIPT_MODE="setup-ssl"; break ;;            echo ""
-
-                3) SCRIPT_MODE="add-key"; break ;;            read -p "AWS Access Key ID: " AWS_KEY_ID
-
-                4) SCRIPT_MODE="show-info"; break ;;            read -s -p "AWS Secret Access Key: " AWS_SECRET
-
-                5) SCRIPT_MODE="init"; break ;;            echo ""
-
-                6) exit 0 ;;        fi
-
-                *) echo "Invalid choice. Please enter 1-6." ;;    fi
-
-            esac    
-
-        done    # Confirmation
-
-    else    echo ""
-
-        echo "This appears to be a fresh server. Running initial setup..."    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
-
-        echo ""    echo -e "${CYAN}                    Configuration Summary                       ${NC}"
-
-        SCRIPT_MODE="init"    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
-
-    fi    echo ""
-
-}    echo "  Domain:          $DOMAIN"
-
-    echo "  WWW Domain:      $WWW_DOMAIN"
-
-# =============================================================================    echo "  Web Root:        $WEB_ROOT"
-
-# Site Selection (for adding new site)    echo "  Deploy User:     $DEPLOY_USER"
-
-# =============================================================================    echo "  SSH Port:        $SSH_PORT"
-
-select_site() {    echo "  SSL Setup:       $ENABLE_SSL"
-
-    echo ""    if [[ -n "$GITHUB_PUBKEY" ]]; then
-
-    echo -e "${YELLOW}Select site to add:${NC}"        echo "  GitHub Key:      Provided"
-
-    echo "  1) tikmatrix.com"    else
-
-    echo "  2) igmatrix.com"        echo "  GitHub Key:      Not provided (add later)"
-
-    echo "  3) ytmatrix.com"    fi
-
-    echo "  4) tikzenx.com"    echo ""
-
-    echo "  5) Custom domain"    
-
-    echo ""    read -p "Proceed with these settings? (y/n): " confirm
-
-        if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
-
-    while true; do        log_info "Setup cancelled by user."
-
-        read -p "Enter choice [1-5]: " site_choice        exit 0
-
-        case $site_choice in    fi
-
-            1) DOMAIN="tikmatrix.com"; break ;;}
-
-            2) DOMAIN="igmatrix.com"; break ;;
-
-            3) DOMAIN="ytmatrix.com"; break ;;# =============================================================================
-
-            4) DOMAIN="tikzenx.com"; break ;;# System Update & Basic Setup
-
-            5)# =============================================================================
-
-                read -p "Enter your domain (e.g., example.com): " DOMAINsetup_system() {
-
-                if [[ -z "$DOMAIN" ]]; then    log_info "Updating system packages..."
-
-                    log_error "Domain cannot be empty"    apt update && apt upgrade -y
-
-                    continue    
-
-                fi    log_info "Installing essential packages..."
-
-                break    apt install -y \
-
-                ;;        curl \
-
-            *) echo "Invalid choice. Please enter 1-5." ;;        wget \
-
-        esac        git \
-
-    done        vim \
-
-            htop \
-
-    WWW_DOMAIN="www.$DOMAIN"        unzip \
-
-    WEB_ROOT="/var/www.$DOMAIN"        software-properties-common \
-
-    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"        ca-certificates \
-
-            gnupg \
-
-    # Check if site already exists        lsb-release \
-
-    if [[ -f "$NGINX_CONF" ]]; then        ufw \
-
-        log_warning "Site $DOMAIN already exists!"        fail2ban \
-
-        read -p "Overwrite configuration? (y/n): " -n 1 -r        acl \
-
-        echo        rsync
-
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then    
-
-            return 1    log_success "System packages updated and essentials installed."
-
-        fi}
+        exit 1CYAN='\033[0;36m'
 
     fi
 
-    # =============================================================================
+}# =============================================================================NC='\033[0m' # No Color
 
-    echo ""# Firewall Configuration
 
-    log_info "Domain: $DOMAIN"# =============================================================================
 
-    log_info "Web root: $WEB_ROOT"setup_firewall() {
+check_os() {# Helper Functions
 
-    return 0    log_info "Configuring UFW firewall..."
+    if [[ ! -f /etc/os-release ]]; then
 
-}    
+        log_error "Cannot detect OS."# =============================================================================# =============================================================================
 
-    # Reset UFW to default
+        exit 1
 
-# =============================================================================    ufw --force reset
+    filog_info() {# Helper Functions
 
-# Initial Setup - System    
+    source /etc/os-release
 
-# =============================================================================    # Default policies
+    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then    echo -e "${BLUE}[INFO]${NC} $1"# =============================================================================
 
-setup_system() {    ufw default deny incoming
+        log_warning "This script is designed for Ubuntu/Debian. Current OS: $ID"
 
-    log_info "Updating system packages..."    ufw default allow outgoing
+        read -p "Continue anyway? (y/n): " -r    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_info() {
 
-    apt update && apt upgrade -y    
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 
-        # Allow SSH
+            exit 1}    echo -e "${BLUE}[INFO]${NC} $1"
 
-    log_info "Installing essential packages..."    ufw allow $SSH_PORT/tcp
+        fi
 
-    apt install -y \    
+    fi    echo "[INFO] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
 
-        curl \    # Allow HTTP and HTTPS
+    log_info "Detected OS: $PRETTY_NAME"
 
-        wget \    ufw allow 80/tcp
+}log_success() {}
 
-        git \    ufw allow 443/tcp
 
-        vim \    
 
-        htop \    # Enable UFW
+is_initialized() {    echo -e "${GREEN}[SUCCESS]${NC} $1"
 
-        unzip \    ufw --force enable
+    [[ -f "$STATE_FILE" ]] && grep -q "initialized=true" "$STATE_FILE"
 
-        software-properties-common \    
+}    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_success() {
 
-        ca-certificates \    log_success "Firewall configured and enabled."
 
-        gnupg \}
 
-        lsb-release \
+save_state() {}    echo -e "${GREEN}[SUCCESS]${NC} $1"
 
-        ufw \# =============================================================================
+    mkdir -p "$STATE_DIR"
 
-        fail2ban \# Fail2Ban Configuration
+    cat > "$STATE_FILE" << EOF    echo "[SUCCESS] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
 
-        acl \# =============================================================================
+initialized=true
 
-        rsync \setup_fail2ban() {
+deploy_user=$DEPLOY_USERlog_warning() {}
 
-        jq    log_info "Configuring Fail2Ban..."
+ssh_port=$SSH_PORT
 
-        
+setup_date=$(date '+%Y-%m-%d %H:%M:%S')    echo -e "${YELLOW}[WARNING]${NC} $1"
 
-    log_success "System packages updated and essentials installed."    cat > /etc/fail2ban/jail.local << EOF
+EOF
 
-}[DEFAULT]
+    chmod 600 "$STATE_FILE"    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_warning() {
 
-bantime = 3600
+}
 
-# =============================================================================findtime = 600
+}    echo -e "${YELLOW}[WARNING]${NC} $1"
 
-# Firewall Configurationmaxretry = 5
+load_state() {
 
-# =============================================================================backend = systemd
+    if [[ -f "$STATE_FILE" ]]; then    echo "[WARNING] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
+
+        source "$STATE_FILE"
+
+        DEPLOY_USER="${deploy_user:-deploy}"log_error() {}
+
+        SSH_PORT="${ssh_port:-22}"
+
+    fi    echo -e "${RED}[ERROR]${NC} $1"
+
+}
+
+    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"log_error() {
+
+list_sites() {
+
+    echo ""}    echo -e "${RED}[ERROR]${NC} $1"
+
+    echo -e "${CYAN}Configured Sites:${NC}"
+
+    echo "-------------------------------------------------------------"    echo "[ERROR] $(date '+%Y-%m-%d %H:%M:%S') $1" >> "$LOG_FILE"
+
+    local sites_found=false
+
+    for conf in /etc/nginx/conf.d/www.*.conf; doprint_banner() {}
+
+        if [[ -f "$conf" ]]; then
+
+            sites_found=true    echo -e "${CYAN}"
+
+            local domain
+
+            domain=$(basename "$conf" .conf | sed 's/^www\.//')    echo "╔═══════════════════════════════════════════════════════════════╗"print_banner() {
+
+            local web_root="/var/www.$domain"
+
+            local ssl_status="HTTP"    echo "║                                                               ║"    echo -e "${CYAN}"
+
+            if grep -q "listen 443 ssl" "$conf" 2>/dev/null; then
+
+                ssl_status="HTTPS"    echo "║              TikMatrix VPS Setup Script v3.0                  ║"    echo "╔═══════════════════════════════════════════════════════════════╗"
+
+            fi
+
+            local status="Empty"    echo "║                                                               ║"    echo "║                                                               ║"
+
+            if [[ -d "$web_root" && "$(ls -A "$web_root" 2>/dev/null)" ]]; then
+
+                status="Active"    echo "║  Supports: Initial setup / Add sites / Manage sites          ║"    echo "║              TikMatrix VPS Setup Script v2.0                  ║"
+
+            fi
+
+            printf "  %-25s %-10s %-10s %s\n" "$domain" "$ssl_status" "$status" "$web_root"    echo "║                                                               ║"    echo "║                                                               ║"
+
+        fi
+
+    done    echo "╚═══════════════════════════════════════════════════════════════╝"    echo "║  Automated setup for TikMatrix ecosystem websites             ║"
+
+    if [[ "$sites_found" == false ]]; then
+
+        echo "  No sites configured yet."    echo -e "${NC}"    echo "║                                                               ║"
+
+    fi
+
+    echo "-------------------------------------------------------------"}    echo "╚═══════════════════════════════════════════════════════════════╝"
+
+    echo ""
+
+}    echo -e "${NC}"
+
+
+
+# =============================================================================check_root() {}
+
+# Mode Selection
+
+# =============================================================================    if [[ $EUID -ne 0 ]]; then
+
+select_mode() {
+
+    echo ""        log_error "This script must be run as root. Use: sudo $0"check_root() {
+
+    echo -e "${CYAN}=============================================================${NC}"
+
+    echo -e "${CYAN}                    Select Operation                          ${NC}"        exit 1    if [[ $EUID -ne 0 ]]; then
+
+    echo -e "${CYAN}=============================================================${NC}"
+
+    echo ""    fi        log_error "This script must be run as root. Use: sudo $0"
+
+    
+
+    if is_initialized; then}        exit 1
+
+        load_state
+
+        echo -e "${GREEN}Server is already initialized${NC}"    fi
+
+        echo "  Deploy user: $DEPLOY_USER"
+
+        echo "  SSH port: $SSH_PORT"check_os() {}
+
+        list_sites
+
+        echo "What would you like to do?"    if [[ ! -f /etc/os-release ]]; then
+
+        echo "  1) Add a new site"
+
+        echo "  2) Setup SSL for existing site"        log_error "Cannot detect OS. /etc/os-release not found."check_os() {
+
+        echo "  3) Add GitHub deploy key"
+
+        echo "  4) Show server info"        exit 1    if [[ ! -f /etc/os-release ]]; then
+
+        echo "  5) Re-run full initialization"
+
+        echo "  6) Exit"    fi        log_error "Cannot detect OS. /etc/os-release not found."
+
+        echo ""
+
+        while true; do            exit 1
+
+            read -p "Enter choice [1-6]: " mode_choice
+
+            case $mode_choice in    source /etc/os-release    fi
+
+                1) SCRIPT_MODE="add-site"; break ;;
+
+                2) SCRIPT_MODE="setup-ssl"; break ;;    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then    
+
+                3) SCRIPT_MODE="add-key"; break ;;
+
+                4) SCRIPT_MODE="show-info"; break ;;        log_warning "This script is designed for Ubuntu/Debian. Current OS: $ID"    source /etc/os-release
+
+                5) SCRIPT_MODE="init"; break ;;
+
+                6) exit 0 ;;        read -p "Continue anyway? (y/n): " -n 1 -r    if [[ "$ID" != "ubuntu" && "$ID" != "debian" ]]; then
+
+                *) echo "Invalid choice." ;;
+
+            esac        echo        log_warning "This script is designed for Ubuntu/Debian. Current OS: $ID"
+
+        done
+
+    else        if [[ ! $REPLY =~ ^[Yy]$ ]]; then        read -p "Continue anyway? (y/n): " -n 1 -r
+
+        echo "Fresh server detected. Running initial setup..."
+
+        SCRIPT_MODE="init"            exit 1        echo
+
+    fi
+
+}        fi        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+
+
+
+# =============================================================================    fi            exit 1
+
+# Site Selection
+
+# =============================================================================    log_info "Detected OS: $PRETTY_NAME"        fi
+
+select_site() {
+
+    echo ""}    fi
+
+    echo -e "${YELLOW}Select site to add:${NC}"
+
+    echo "  1) tikmatrix.com"    log_info "Detected OS: $PRETTY_NAME"
+
+    echo "  2) igmatrix.com"
+
+    echo "  3) ytmatrix.com"# Check if initial setup has been done}
+
+    echo "  4) tikzenx.com"
+
+    echo "  5) Custom domain"is_initialized() {
+
+    echo ""
+
+    while true; do    [[ -f "$STATE_FILE" ]] && grep -q "initialized=true" "$STATE_FILE"# =============================================================================
+
+        read -p "Enter choice [1-5]: " site_choice
+
+        case $site_choice in}# Interactive Configuration
+
+            1) DOMAIN="tikmatrix.com"; break ;;
+
+            2) DOMAIN="igmatrix.com"; break ;;# =============================================================================
+
+            3) DOMAIN="ytmatrix.com"; break ;;
+
+            4) DOMAIN="tikzenx.com"; break ;;# Save stateinteractive_config() {
+
+            5)
+
+                read -p "Enter domain (e.g., example.com): " DOMAINsave_state() {    echo ""
+
+                if [[ -z "$DOMAIN" ]]; then
+
+                    log_error "Domain cannot be empty"    mkdir -p "$STATE_DIR"    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
+
+                    continue
+
+                fi    cat > "$STATE_FILE" << EOF    echo -e "${CYAN}                    Configuration Setup                         ${NC}"
+
+                break
+
+                ;;initialized=true    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
+
+            *) echo "Invalid choice." ;;
+
+        esacdeploy_user=$DEPLOY_USER    echo ""
+
+    done
+
+    WWW_DOMAIN="www.$DOMAIN"ssh_port=$SSH_PORT    
+
+    WEB_ROOT="/var/www.$DOMAIN"
+
+    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"setup_date=$(date '+%Y-%m-%d %H:%M:%S')    # Site selection
+
+    if [[ -f "$NGINX_CONF" ]]; then
+
+        log_warning "Site $DOMAIN already exists!"EOF    echo -e "${YELLOW}Select site to deploy:${NC}"
+
+        read -p "Overwrite? (y/n): " -r
+
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then    chmod 600 "$STATE_FILE"    echo "  1) tikmatrix.com (TikMatrix)"
+
+            return 1
+
+        fi}    echo "  2) igmatrix.com (IgMatrix)"
+
+    fi
+
+    log_info "Domain: $DOMAIN"    echo "  3) ytmatrix.com (YTMatrix)"
+
+    log_info "Web root: $WEB_ROOT"
+
+    return 0# Load state    echo "  4) tikzenx.com (TikZenX)"
+
+}
+
+load_state() {    echo "  5) Custom domain"
+
+# =============================================================================
+
+# Setup Functions    if [[ -f "$STATE_FILE" ]]; then    echo ""
+
+# =============================================================================
+
+setup_system() {        source "$STATE_FILE"    
+
+    log_info "Updating system..."
+
+    apt-get update && apt-get upgrade -y        DEPLOY_USER="${deploy_user:-deploy}"    while true; do
+
+    log_info "Installing packages..."
+
+    apt-get install -y curl wget git vim htop unzip software-properties-common \        SSH_PORT="${ssh_port:-22}"        read -p "Enter choice [1-5]: " site_choice
+
+        ca-certificates gnupg lsb-release ufw fail2ban acl rsync jq
+
+    log_success "System updated."    fi        case $site_choice in
+
+}
+
+}            1)
 
 setup_firewall() {
 
-    log_info "Configuring UFW firewall..."[sshd]
+    log_info "Configuring firewall..."                DOMAIN="tikmatrix.com"
 
-    enabled = true
+    if ufw status | grep -q "Status: active"; then
 
-    # Check if UFW is already configuredport = $SSH_PORT
+        ufw allow "$SSH_PORT/tcp" 2>/dev/null || true# List configured sites                break
 
-    if ufw status | grep -q "Status: active"; thenfilter = sshd
+        ufw allow 80/tcp 2>/dev/null || true
 
-        log_info "UFW is already active, ensuring ports are open..."logpath = /var/log/auth.log
+        ufw allow 443/tcp 2>/dev/null || truelist_sites() {                ;;
 
-        ufw allow $SSH_PORT/tcp 2>/dev/null || truemaxretry = 3
+    else
 
-        ufw allow 80/tcp 2>/dev/null || truebantime = 86400
+        ufw --force reset    echo ""            2)
 
-        ufw allow 443/tcp 2>/dev/null || true
+        ufw default deny incoming
 
-    else[nginx-http-auth]
+        ufw default allow outgoing    echo -e "${CYAN}Configured Sites:${NC}"                DOMAIN="igmatrix.com"
 
-        ufw --force resetenabled = true
+        ufw allow "$SSH_PORT/tcp"
 
-        ufw default deny incomingfilter = nginx-http-auth
-
-        ufw default allow outgoingport = http,https
-
-        ufw allow $SSH_PORT/tcplogpath = /var/log/nginx/error.log
-
-        ufw allow 80/tcpmaxretry = 3
+        ufw allow 80/tcp    echo "─────────────────────────────────────────────────────"                break
 
         ufw allow 443/tcp
 
-        ufw --force enable[nginx-limit-req]
+        ufw --force enable                    ;;
 
-    fienabled = true
+    fi
 
-    filter = nginx-limit-req
+    log_success "Firewall configured."    local sites_found=false            3)
 
-    log_success "Firewall configured."port = http,https
+}
 
-}logpath = /var/log/nginx/error.log
+    for conf in /etc/nginx/conf.d/www.*.conf; do                DOMAIN="ytmatrix.com"
+
+setup_fail2ban() {
+
+    log_info "Configuring Fail2Ban..."        if [[ -f "$conf" ]]; then                break
+
+    cat > /etc/fail2ban/jail.local << EOF
+
+[DEFAULT]            sites_found=true                ;;
+
+bantime = 3600
+
+findtime = 600            local domain=$(basename "$conf" .conf | sed 's/^www\.//')            4)
+
+maxretry = 5
+
+backend = systemd            local web_root="/var/www.$domain"                DOMAIN="tikzenx.com"
+
+
+
+[sshd]            local ssl_status="HTTP"                break
+
+enabled = true
+
+port = $SSH_PORT                            ;;
+
+filter = sshd
+
+logpath = /var/log/auth.log            # Check if SSL is configured            5)
+
+maxretry = 3
+
+bantime = 86400            if grep -q "listen 443 ssl" "$conf" 2>/dev/null; then                read -p "Enter your domain (e.g., example.com): " DOMAIN
+
+
+
+[nginx-http-auth]                ssl_status="HTTPS ✓"                if [[ -z "$DOMAIN" ]]; then
+
+enabled = true
+
+filter = nginx-http-auth            fi                    log_error "Domain cannot be empty"
+
+port = http,https
+
+logpath = /var/log/nginx/error.log                                continue
+
+maxretry = 3
+
+EOF            # Check if directory exists and has content                fi
+
+    systemctl enable fail2ban
+
+    systemctl restart fail2ban            local status="Empty"                break
+
+    log_success "Fail2Ban configured."
+
+}            if [[ -d "$web_root" && "$(ls -A $web_root 2>/dev/null)" ]]; then                ;;
+
+
+
+setup_deploy_user() {                status="Active"            *)
+
+    log_info "Setting up deploy user..."
+
+    if ! id "$DEPLOY_USER" &>/dev/null; then            fi                echo "Invalid choice. Please enter 1-5."
+
+        useradd -m -s /bin/bash "$DEPLOY_USER"
+
+        log_info "Created user: $DEPLOY_USER"                            ;;
+
+    fi
+
+    usermod -aG www-data "$DEPLOY_USER"            printf "  %-25s %-10s %-15s %s\n" "$domain" "$ssl_status" "$status" "$web_root"        esac
+
+    mkdir -p "/home/$DEPLOY_USER/.ssh"
+
+    chmod 700 "/home/$DEPLOY_USER/.ssh"        fi    done
+
+    touch "/home/$DEPLOY_USER/.ssh/authorized_keys"
+
+    chmod 600 "/home/$DEPLOY_USER/.ssh/authorized_keys"    done    
+
+    chown -R "$DEPLOY_USER:$DEPLOY_USER" "/home/$DEPLOY_USER/.ssh"
+
+    cat > /etc/sudoers.d/deploy << EOF        WWW_DOMAIN="www.$DOMAIN"
+
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
+
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx    if [[ "$sites_found" == false ]]; then    WEB_ROOT="/var/www.$DOMAIN"
+
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chown -R www-data\:www-data /var/www.*
+
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chmod -R 755 /var/www.*        echo "  No sites configured yet."    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"
+
+EOF
+
+    chmod 440 /etc/sudoers.d/deploy    fi    
+
+    log_success "Deploy user configured."
+
+}    echo "─────────────────────────────────────────────────────"    echo ""
+
+
+
+add_github_key() {    echo ""    log_info "Domain: $DOMAIN"
+
+    echo ""
+
+    echo -e "${YELLOW}GitHub Actions SSH Public Key:${NC}"}    log_info "Web root: $WEB_ROOT"
+
+    echo "  Paste public key (ssh-ed25519 or ssh-rsa)."
+
+    echo "  Leave empty to skip."    echo ""
+
+    echo ""
+
+    read -p "Public key: " GITHUB_PUBKEY# =============================================================================    
+
+    if [[ -n "$GITHUB_PUBKEY" ]]; then
+
+        if ! grep -qF "$GITHUB_PUBKEY" "/home/$DEPLOY_USER/.ssh/authorized_keys" 2>/dev/null; then# Mode Selection    # SSH Port
+
+            echo "$GITHUB_PUBKEY" >> "/home/$DEPLOY_USER/.ssh/authorized_keys"
+
+            chown "$DEPLOY_USER:$DEPLOY_USER" "/home/$DEPLOY_USER/.ssh/authorized_keys"# =============================================================================    read -p "SSH port [default: 22]: " input_port
+
+            log_success "GitHub key added."
+
+        elseselect_mode() {    SSH_PORT="${input_port:-22}"
+
+            log_warning "Key already exists."
+
+        fi    echo ""    
+
+    else
+
+        log_info "Skipped."    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"    # GitHub Deploy Key
+
+    fi
+
+}    echo -e "${CYAN}                      Select Operation                          ${NC}"    echo ""
+
+
+
+setup_nginx_base() {    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"    echo -e "${YELLOW}GitHub Actions SSH Public Key:${NC}"
+
+    if command -v nginx &>/dev/null; then
+
+        log_info "Nginx already installed."    echo ""    echo "  This is used for automated deployments from GitHub Actions."
+
+    else
+
+        log_info "Installing Nginx..."        echo "  You can generate one with: ssh-keygen -t ed25519 -C 'github-actions'"
+
+        apt-get install -y nginx
+
+    fi    if is_initialized; then    echo "  Paste the PUBLIC key (starts with 'ssh-ed25519' or 'ssh-rsa')."
+
+    if ! grep -q "server_tokens off" /etc/nginx/nginx.conf; then
+
+        sed -i '/http {/a\    server_tokens off;' /etc/nginx/nginx.conf        load_state    echo "  Leave empty to skip (you can add it later)."
+
+    fi
+
+    rm -f /etc/nginx/sites-enabled/default 2>/dev/null || true        echo -e "${GREEN}✓ Server is already initialized${NC}"    echo ""
+
+    systemctl enable nginx
+
+    systemctl start nginx        echo "  Deploy user: $DEPLOY_USER"    read -p "GitHub deploy public key: " GITHUB_PUBKEY
+
+    log_success "Nginx ready."
+
+}        echo "  SSH port: $SSH_PORT"    
+
+
+
+add_site_nginx() {        list_sites    # SSL Configuration
+
+    log_info "Configuring Nginx for $DOMAIN..."
+
+    mkdir -p "$WEB_ROOT"            echo ""
+
+    cat > "$WEB_ROOT/index.html" << EOF
+
+<!DOCTYPE html>        echo "What would you like to do?"    echo -e "${YELLOW}SSL Certificate Configuration:${NC}"
+
+<html lang="en">
+
+<head>        echo "  1) Add a new site"    read -p "Setup SSL certificate now? (y/n) [default: n]: " ENABLE_SSL
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        echo "  2) Setup SSL for existing site"    ENABLE_SSL="${ENABLE_SSL:-n}"
+
+    <title>$DOMAIN - Coming Soon</title>
+
+    <style>        echo "  3) Add GitHub deploy key"    
+
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+
+        .container { text-align: center; }        echo "  4) Show server info"    if [[ "$ENABLE_SSL" =~ ^[Yy]$ ]]; then
+
+        h1 { font-size: 3rem; }
+
+        p { font-size: 1.2rem; opacity: 0.9; }        echo "  5) Re-run full initialization (will skip existing components)"        echo ""
+
+    </style>
+
+</head>        echo "  6) Exit"        echo "SSL validation method:"
+
+<body>
+
+    <div class="container">        echo ""        echo "  1) HTTP validation (requires DNS already pointing to this server)"
+
+        <h1>$DOMAIN</h1>
+
+        <p>Coming soon!</p>                echo "  2) Route 53 DNS validation (requires AWS credentials)"
+
+    </div>
+
+</body>        while true; do        echo ""
+
+</html>
+
+EOF            read -p "Enter choice [1-6]: " mode_choice        read -p "Enter choice [1-2]: " ssl_method
+
+    chown -R "$DEPLOY_USER:www-data" "$WEB_ROOT"
+
+    chmod -R 755 "$WEB_ROOT"            case $mode_choice in        
+
+    setfacl -R -m "u:$DEPLOY_USER:rwx" "$WEB_ROOT" 2>/dev/null || true
+
+    setfacl -R -d -m "u:$DEPLOY_USER:rwx" "$WEB_ROOT" 2>/dev/null || true                1) SCRIPT_MODE="add-site"; break ;;        if [[ "$ssl_method" == "2" ]]; then
+
+    local ZONE_NAME="${DOMAIN//./_}_limit"
+
+    cat > "$NGINX_CONF" << EOF                2) SCRIPT_MODE="setup-ssl"; break ;;            echo ""
+
+limit_req_zone \$binary_remote_addr zone=${ZONE_NAME}:10m rate=10r/s;
+
+                3) SCRIPT_MODE="add-key"; break ;;            read -p "AWS Access Key ID: " AWS_KEY_ID
+
+server {
+
+    listen 80;                4) SCRIPT_MODE="show-info"; break ;;            read -s -p "AWS Secret Access Key: " AWS_SECRET
+
+    listen [::]:80;
+
+    server_name $DOMAIN $WWW_DOMAIN;                5) SCRIPT_MODE="init"; break ;;            echo ""
+
+
+
+    root $WEB_ROOT;                6) exit 0 ;;        fi
+
+    index index.html;
+
+                *) echo "Invalid choice. Please enter 1-6." ;;    fi
+
+    access_log /var/log/nginx/${DOMAIN}.access.log;
+
+    error_log /var/log/nginx/${DOMAIN}.error.log warn;            esac    
+
+
+
+    sendfile on;        done    # Confirmation
+
+    tcp_nopush on;
+
+    tcp_nodelay on;    else    echo ""
+
+    keepalive_timeout 65;
+
+        echo "This appears to be a fresh server. Running initial setup..."    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
+
+    include /etc/nginx/mime.types;
+
+    default_type application/octet-stream;        echo ""    echo -e "${CYAN}                    Configuration Summary                       ${NC}"
+
+
+
+    location ~ /\.(?!well-known) { deny all; }        SCRIPT_MODE="init"    echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
+
+    location ~* \.(php|asp|aspx|jsp|cgi)$ { deny all; }
+
+    fi    echo ""
+
+    location / {
+
+        limit_req zone=${ZONE_NAME} burst=20 nodelay;}    echo "  Domain:          $DOMAIN"
+
+        try_files \$uri \$uri/ /index.html;
+
+        add_header Cache-Control "no-cache";    echo "  WWW Domain:      $WWW_DOMAIN"
+
+        add_header X-Content-Type-Options nosniff always;
+
+        add_header X-Frame-Options SAMEORIGIN always;# =============================================================================    echo "  Web Root:        $WEB_ROOT"
+
+    }
+
+# Site Selection (for adding new site)    echo "  Deploy User:     $DEPLOY_USER"
+
+    location ~* \.(css|js|json|svg|png|jpe?g|gif|ico|webp|woff2?)$ {
+
+        expires 365d;# =============================================================================    echo "  SSH Port:        $SSH_PORT"
+
+        add_header Cache-Control "public, immutable";
+
+    }select_site() {    echo "  SSL Setup:       $ENABLE_SSL"
+
+
+
+    gzip on;    echo ""    if [[ -n "$GITHUB_PUBKEY" ]]; then
+
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml;
+
+}    echo -e "${YELLOW}Select site to add:${NC}"        echo "  GitHub Key:      Provided"
+
+EOF
+
+    nginx -t    echo "  1) tikmatrix.com"    else
+
+    systemctl reload nginx
+
+    log_success "Site $DOMAIN added."    echo "  2) igmatrix.com"        echo "  GitHub Key:      Not provided (add later)"
+
+}
+
+    echo "  3) ytmatrix.com"    fi
+
+setup_site_ssl() {
+
+    if ! command -v certbot &>/dev/null; then    echo "  4) tikzenx.com"    echo ""
+
+        log_info "Installing Certbot..."
+
+        apt-get install -y certbot python3-certbot-nginx python3-certbot-dns-route53    echo "  5) Custom domain"    
+
+    fi
+
+    echo ""    echo ""    read -p "Proceed with these settings? (y/n): " confirm
+
+    echo -e "${YELLOW}SSL for $DOMAIN${NC}"
+
+    echo "  1) HTTP validation (DNS must point here)"        if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+
+    echo "  2) Route 53 DNS validation"
+
+    echo "  3) Skip"    while true; do        log_info "Setup cancelled by user."
+
+    echo ""
+
+    read -p "Choice [1-3]: " ssl_choice        read -p "Enter choice [1-5]: " site_choice        exit 0
+
+    case $ssl_choice in
+
+        1)        case $site_choice in    fi
+
+            certbot --nginx -d "$DOMAIN" -d "$WWW_DOMAIN" --agree-tos --no-eff-email --non-interactive --email "admin@$DOMAIN" || log_warning "SSL failed."
+
+            ;;            1) DOMAIN="tikmatrix.com"; break ;;}
+
+        2)
+
+            read -p "AWS Access Key ID: " AWS_KEY_ID            2) DOMAIN="igmatrix.com"; break ;;
+
+            read -s -p "AWS Secret: " AWS_SECRET
+
+            echo ""            3) DOMAIN="ytmatrix.com"; break ;;# =============================================================================
+
+            if [[ -n "$AWS_KEY_ID" && -n "$AWS_SECRET" ]]; then
+
+                export AWS_ACCESS_KEY_ID="$AWS_KEY_ID"            4) DOMAIN="tikzenx.com"; break ;;# System Update & Basic Setup
+
+                export AWS_SECRET_ACCESS_KEY="$AWS_SECRET"
+
+                certbot -i nginx -d "$DOMAIN" -d "$WWW_DOMAIN" --dns-route53 --agree-tos --no-eff-email --non-interactive --email "admin@$DOMAIN" || log_warning "SSL failed."            5)# =============================================================================
+
+            fi
+
+            ;;                read -p "Enter your domain (e.g., example.com): " DOMAINsetup_system() {
+
+        3) log_info "SSL skipped." ;;
+
+    esac                if [[ -z "$DOMAIN" ]]; then    log_info "Updating system packages..."
+
+    (crontab -l 2>/dev/null | grep -v certbot; echo "0 3 * * * /usr/bin/certbot renew --quiet --post-hook 'systemctl reload nginx'") | sort -u | crontab -
+
+}                    log_error "Domain cannot be empty"    apt update && apt upgrade -y
+
+
+
+setup_security() {                    continue    
+
+    log_info "Security hardening..."
+
+    if ! grep -q "# TikMatrix Security" /etc/sysctl.conf; then                fi    log_info "Installing essential packages..."
+
+        cat >> /etc/sysctl.conf << 'EOF'
+
+                break    apt install -y \
+
+# TikMatrix Security
+
+net.ipv4.conf.default.rp_filter=1                ;;        curl \
+
+net.ipv4.conf.all.rp_filter=1
+
+net.ipv4.tcp_syncookies=1            *) echo "Invalid choice. Please enter 1-5." ;;        wget \
+
+EOF
+
+        sysctl -p 2>/dev/null || true        esac        git \
+
+    fi
+
+    log_success "Security applied."    done        vim \
+
+}
+
+            htop \
+
+setup_optimization() {
+
+    log_info "Optimizations..."    WWW_DOMAIN="www.$DOMAIN"        unzip \
+
+    local CORES
+
+    CORES=$(nproc)    WEB_ROOT="/var/www.$DOMAIN"        software-properties-common \
+
+    sed -i "s/worker_processes auto;/worker_processes $CORES;/" /etc/nginx/nginx.conf 2>/dev/null || true
+
+    log_success "Optimizations applied."    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"        ca-certificates \
+
+}
+
+            gnupg \
+
+setup_deploy_script() {
+
+    log_info "Creating deploy script..."    # Check if site already exists        lsb-release \
+
+    cat > "/home/$DEPLOY_USER/deploy.sh" << 'EOF'
+
+#!/bin/bash    if [[ -f "$NGINX_CONF" ]]; then        ufw \
+
+set -e
+
+ARCHIVE="$1"        log_warning "Site $DOMAIN already exists!"        fail2ban \
+
+TARGET="$2"
+
+[[ -z "$ARCHIVE" || -z "$TARGET" ]] && { echo "Usage: $0 <archive> <target>"; exit 1; }        read -p "Overwrite configuration? (y/n): " -n 1 -r        acl \
+
+[[ ! -f "$ARCHIVE" ]] && { echo "Archive not found"; exit 1; }
+
+mkdir -p "$TARGET" /var/backups/www        echo        rsync
+
+if [[ -d "$TARGET" && "$(ls -A "$TARGET" 2>/dev/null)" ]]; then
+
+    tar -czf "/var/backups/www/$(basename "$TARGET")-$(date +%Y%m%d_%H%M%S).tar.gz" -C "$TARGET" . 2>/dev/null || true        if [[ ! $REPLY =~ ^[Yy]$ ]]; then    
+
+    ls -t "/var/backups/www/$(basename "$TARGET")-"* 2>/dev/null | tail -n +4 | xargs -r rm -f
+
+fi            return 1    log_success "System packages updated and essentials installed."
+
+rm -rf "$TARGET"/*
+
+tar -xzf "$ARCHIVE" -C "$TARGET"        fi}
+
+sudo chown -R www-data:www-data "$TARGET"
+
+sudo chmod -R 755 "$TARGET"    fi
+
+rm -f "$ARCHIVE"
+
+echo "Done!"    # =============================================================================
+
+EOF
+
+    chmod +x "/home/$DEPLOY_USER/deploy.sh"    echo ""# Firewall Configuration
+
+    chown "$DEPLOY_USER:$DEPLOY_USER" "/home/$DEPLOY_USER/deploy.sh"
+
+    mkdir -p /var/backups/www    log_info "Domain: $DOMAIN"# =============================================================================
+
+    chown "$DEPLOY_USER:$DEPLOY_USER" /var/backups/www
+
+    log_success "Deploy script created."    log_info "Web root: $WEB_ROOT"setup_firewall() {
+
+}
+
+    return 0    log_info "Configuring UFW firewall..."
+
+show_server_info() {
+
+    local SERVER_IP}    
+
+    SERVER_IP=$(curl -s --connect-timeout 5 ifconfig.me 2>/dev/null || echo 'N/A')
+
+    echo ""    # Reset UFW to default
+
+    echo -e "${CYAN}=============================================================${NC}"
+
+    echo -e "${GREEN}                Server Information                           ${NC}"# =============================================================================    ufw --force reset
+
+    echo -e "${CYAN}=============================================================${NC}"
+
+    echo ""# Initial Setup - System    
+
+    echo "  IP: $SERVER_IP"
+
+    echo "  User: $DEPLOY_USER"# =============================================================================    # Default policies
+
+    echo "  SSH Port: $SSH_PORT"
+
+    list_sitessetup_system() {    ufw default deny incoming
+
+    echo -e "${YELLOW}GitHub Secret:${NC}"
+
+    echo "  SSH_PRIVATE_KEY = (your private key)"    log_info "Updating system packages..."    ufw default allow outgoing
+
+    echo ""
+
+    echo -e "${YELLOW}deploy-config.json:${NC}"    apt update && apt upgrade -y    
+
+    echo "  { \"id\": \"server\", \"host\": \"$SERVER_IP\", \"port\": $SSH_PORT, \"user\": \"$DEPLOY_USER\" }"
+
+    echo ""        # Allow SSH
+
+}
+
+    log_info "Installing essential packages..."    ufw allow $SSH_PORT/tcp
+
+# =============================================================================
+
+# Interactive Init Config    apt install -y \    
+
+# =============================================================================
+
+interactive_init_config() {        curl \    # Allow HTTP and HTTPS
+
+    echo ""
+
+    echo -e "${CYAN}Initial Configuration${NC}"        wget \    ufw allow 80/tcp
+
+    echo ""
+
+    read -p "SSH port [22]: " input_port        git \    ufw allow 443/tcp
+
+    SSH_PORT="${input_port:-22}"
+
+    add_github_key        vim \    
+
+    echo ""
+
+    read -p "Add first site now? (y/n) [y]: " add_first        htop \    # Enable UFW
+
+    add_first="${add_first:-y}"
+
+    if [[ "$add_first" =~ ^[Yy]$ ]]; then        unzip \    ufw --force enable
+
+        if select_site; then
+
+            FIRST_SITE_DOMAIN="$DOMAIN"        software-properties-common \    
+
+        fi
+
+    fi        ca-certificates \    log_success "Firewall configured and enabled."
+
+    echo ""
+
+    echo "Summary:"        gnupg \}
+
+    echo "  User: $DEPLOY_USER"
+
+    echo "  SSH Port: $SSH_PORT"        lsb-release \
+
+    [[ -n "$FIRST_SITE_DOMAIN" ]] && echo "  First Site: $FIRST_SITE_DOMAIN"
+
+    echo ""        ufw \# =============================================================================
+
+    read -p "Proceed? (y/n): " confirm
+
+    [[ ! "$confirm" =~ ^[Yy]$ ]] && exit 0        fail2ban \# Fail2Ban Configuration
+
+}
+
+        acl \# =============================================================================
+
+# =============================================================================
+
+# Run Functions        rsync \setup_fail2ban() {
+
+# =============================================================================
+
+run_init() {        jq    log_info "Configuring Fail2Ban..."
+
+    interactive_init_config
+
+    setup_system        
+
+    setup_deploy_user
+
+    setup_firewall    log_success "System packages updated and essentials installed."    cat > /etc/fail2ban/jail.local << EOF
+
+    setup_fail2ban
+
+    setup_nginx_base}[DEFAULT]
+
+    setup_optimization
+
+    setup_securitybantime = 3600
+
+    setup_deploy_script
+
+    if [[ -n "$FIRST_SITE_DOMAIN" ]]; then# =============================================================================findtime = 600
+
+        DOMAIN="$FIRST_SITE_DOMAIN"
+
+        WWW_DOMAIN="www.$DOMAIN"# Firewall Configurationmaxretry = 5
+
+        WEB_ROOT="/var/www.$DOMAIN"
+
+        NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"# =============================================================================backend = systemd
+
+        add_site_nginx
+
+        read -p "Setup SSL for $DOMAIN? (y/n) [n]: " ssl_nowsetup_firewall() {
+
+        [[ "$ssl_now" =~ ^[Yy]$ ]] && setup_site_ssl
+
+    fi    log_info "Configuring UFW firewall..."[sshd]
+
+    save_state
+
+    systemctl restart nginx    enabled = true
+
+    show_server_info
+
+}    # Check if UFW is already configuredport = $SSH_PORT
+
+
+
+run_add_site() {    if ufw status | grep -q "Status: active"; thenfilter = sshd
+
+    if select_site; then
+
+        add_site_nginx        log_info "UFW is already active, ensuring ports are open..."logpath = /var/log/auth.log
+
+        read -p "Setup SSL for $DOMAIN? (y/n) [n]: " ssl_now
+
+        [[ "$ssl_now" =~ ^[Yy]$ ]] && setup_site_ssl        ufw allow $SSH_PORT/tcp 2>/dev/null || truemaxretry = 3
+
+        log_success "Site $DOMAIN added!"
+
+    fi        ufw allow 80/tcp 2>/dev/null || truebantime = 86400
+
+}
+
+        ufw allow 443/tcp 2>/dev/null || true
+
+run_setup_ssl() {
+
+    echo ""    else[nginx-http-auth]
+
+    echo -e "${YELLOW}Select site for SSL:${NC}"
+
+    local sites=()        ufw --force resetenabled = true
+
+    local i=1
+
+    for conf in /etc/nginx/conf.d/www.*.conf; do        ufw default deny incomingfilter = nginx-http-auth
+
+        if [[ -f "$conf" ]]; then
+
+            local domain        ufw default allow outgoingport = http,https
+
+            domain=$(basename "$conf" .conf | sed 's/^www\.//')
+
+            sites+=("$domain")        ufw allow $SSH_PORT/tcplogpath = /var/log/nginx/error.log
+
+            echo "  $i) $domain"
+
+            ((i++))        ufw allow 80/tcpmaxretry = 3
+
+        fi
+
+    done        ufw allow 443/tcp
+
+    [[ ${#sites[@]} -eq 0 ]] && { log_error "No sites found."; return; }
+
+    echo ""        ufw --force enable[nginx-limit-req]
+
+    read -p "Choice [1-$((i-1))]: " site_num
+
+    if [[ "$site_num" -ge 1 && "$site_num" -lt "$i" ]]; then    fienabled = true
+
+        DOMAIN="${sites[$((site_num-1))]}"
+
+        WWW_DOMAIN="www.$DOMAIN"    filter = nginx-limit-req
+
+        WEB_ROOT="/var/www.$DOMAIN"
+
+        NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"    log_success "Firewall configured."port = http,https
+
+        setup_site_ssl
+
+    fi}logpath = /var/log/nginx/error.log
+
+}
 
 maxretry = 10
 
-# =============================================================================EOF
+# =============================================================================
 
-# Fail2Ban Configuration    
+# Main# =============================================================================EOF
 
-# =============================================================================    systemctl enable fail2ban
+# =============================================================================
 
-setup_fail2ban() {    systemctl restart fail2ban
+main() {# Fail2Ban Configuration    
 
-    log_info "Configuring Fail2Ban..."    
+    print_banner
 
-        log_success "Fail2Ban configured and started."
+    check_root# =============================================================================    systemctl enable fail2ban
 
-    cat > /etc/fail2ban/jail.local << EOF}
+    check_os
 
-[DEFAULT]
+    touch "$LOG_FILE" 2>/dev/null || truesetup_fail2ban() {    systemctl restart fail2ban
 
-bantime = 3600# =============================================================================
+    chmod 644 "$LOG_FILE" 2>/dev/null || true
 
-findtime = 600# Create Deploy User
+    select_mode    log_info "Configuring Fail2Ban..."    
+
+    case $SCRIPT_MODE in
+
+        init) run_init ;;        log_success "Fail2Ban configured and started."
+
+        add-site) run_add_site ;;
+
+        setup-ssl) run_setup_ssl ;;    cat > /etc/fail2ban/jail.local << EOF}
+
+        add-key) add_github_key ;;
+
+        show-info) show_server_info ;;[DEFAULT]
+
+    esac
+
+}bantime = 3600# =============================================================================
+
+
+
+main "$@"findtime = 600# Create Deploy User
+
 
 maxretry = 5# =============================================================================
 

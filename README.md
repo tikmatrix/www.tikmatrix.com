@@ -12,9 +12,9 @@ This website is built using [Docusaurus](https://docusaurus.io/), a modern stati
 For new VPS, run the interactive setup script to automatically configure everything:
 
 ```bash
-# Download and run the setup script
+# Download and run the setup script (with line ending fix)
 rm -f setup-vps.sh
-curl -fsSL https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/setup-vps.sh -o setup-vps.sh
+curl -fsSL https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/setup-vps.sh | tr -d '\r' > setup-vps.sh
 chmod +x setup-vps.sh
 sudo ./setup-vps.sh
 ```
