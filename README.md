@@ -13,6 +13,7 @@ For new VPS, run the interactive setup script to automatically configure everyth
 
 ```bash
 # Download and run the setup script
+rm -f setup-vps.sh
 curl -fsSL https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/setup-vps.sh -o setup-vps.sh
 chmod +x setup-vps.sh
 sudo ./setup-vps.sh
