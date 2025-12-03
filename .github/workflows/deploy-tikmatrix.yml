@@ -15,7 +15,7 @@ jobs:
       artifact-name: tikmatrix
       run-brand-replace: false
 
-  deploy-tikmatrix:
+  deploy-tikmatrix-1:
     needs: build
     uses: ./.github/workflows/deploy-reusable.yml
     with:
@@ -25,6 +25,17 @@ jobs:
       SERVER_HOST: ${{ secrets.SERVER_HOST }}
       SERVER_USER: ${{ secrets.SERVER_USER }}
       PASSWORD: ${{ secrets.PASSWORD }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}
+  deploy-tikmatrix-2:
+    needs: build
+    uses: ./.github/workflows/deploy-reusable.yml
+    with:
+      artifact-name: tikmatrix
+      target-dir: /root/www.tikmatrix.com
+    secrets:
+      SERVER_HOST: ${{ secrets.SERVER_HOST_2 }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      PASSWORD: ${{ secrets.PASSWORD_2 }}
       SERVER_PORT: ${{ secrets.SERVER_PORT }}
 
   deploy-ytmatrix:
