@@ -40,17 +40,15 @@ The interactive script will guide you through:
 
 ## GitHub Actions Configuration
 
-After running the setup script, configure these secrets in your GitHub repository:
+### 1. Add SSH Private Key Secret
 
-| Secret | Value | Description |
-|--------|-------|-------------|
-| `SERVER_HOST` | Your server IP | Primary server IP address |
-| `SERVER_HOST_2` | Second server IP | (Optional) Secondary server |
-| `SERVER_USER` | `deploy` | Deploy user created by script |
-| `SERVER_PORT` | `22` | SSH port (or custom port) |
-| `SSH_PRIVATE_KEY` | Private key content | Ed25519 private key |
+Only one secret is required in your GitHub repository:
 
-### Generate SSH Key Pair
+| Secret | Description |
+|--------|-------------|
+| `SSH_PRIVATE_KEY` | Ed25519 private key content |
+
+### 2. Generate SSH Key Pair
 
 ```bash
 # Generate key pair locally
@@ -62,6 +60,38 @@ cat github_deploy_key.pub
 # Display private key (add this as GitHub secret SSH_PRIVATE_KEY)
 cat github_deploy_key
 ```
+
+### 3. Configure Servers and Sites
+
+Edit `deploy-config.json` to manage your deployment targets:
+
+```json
+{
+  "servers": [
+    {
+      "id": "server-1",
+      "host": "your-server-ip-or-domain",
+      "port": 22,
+      "user": "deploy"
+    }
+  ],
+  "sites": [
+    {
+      "name": "tikmatrix",
+      "domain": "tikmatrix.com",
+      "branch": "main",
+      "brandReplace": false,
+      "deployTo": ["server-1"]
+    }
+  ]
+}
+```
+
+### Deployment Flow
+
+1. Push to `main` branch → Deploys tikmatrix, ytmatrix, igmatrix
+2. Push to `TikZenX` branch → Deploys tikzenx
+3. Manual trigger → Select specific site to deploy
 
 ### Deployment Directories
 

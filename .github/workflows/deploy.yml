@@ -1,0 +1,210 @@
+# Unified Deploy Workflow
+# Reads deploy-config.json and deploys to all configured servers
+name: Deploy Sites
+run-name: ${{ github.actor }} is deploying 🚀
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: "Site to deploy (leave empty for auto-detect based on branch)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - tikmatrix
+          - ytmatrix
+          - igmatrix
+          - tikzenx
+
+jobs:
+  # Read config and determine what to deploy
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      build-matrix: ${{ steps.set-matrix.outputs.build-matrix }}
+      deploy-matrix: ${{ steps.set-matrix.outputs.deploy-matrix }}
+      has-deployments: ${{ steps.set-matrix.outputs.has-deployments }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Determine deployment matrix
+        id: set-matrix
+        run: |
+          CONFIG=$(cat deploy-config.json)
+          BRANCH="${{ github.ref_name }}"
+          SELECTED_SITE="${{ inputs.site }}"
+
+          echo "Branch: $BRANCH"
+          echo "Selected site: $SELECTED_SITE"
+
+          # Get sites to build (unique)
+          BUILD_SITES=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" '
+            .sites
+            | map(select(
+                ($selected == "" and .branch == $branch) or
+                ($selected != "" and .name == $selected)
+              ))
+            | map({
+                site: .name,
+                brandReplace: .brandReplace
+              })
+            | unique_by(.site)
+          ')
+
+          # Build deployment matrix
+          DEPLOYMENTS=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" '
+            .servers as $servers |
+            .sites
+            | map(select(
+                ($selected == "" and .branch == $branch) or
+                ($selected != "" and .name == $selected)
+              ))
+            | map(. as $site | 
+                .deployTo | map(. as $serverId | 
+                  ($servers | map(select(.id == $serverId)) | .[0]) as $server |
+                  {
+                    site: $site.name,
+                    domain: $site.domain,
+                    serverId: $serverId,
+                    host: $server.host,
+                    port: ($server.port | tostring),
+                    user: $server.user,
+                    targetDir: ("/var/www." + $site.domain)
+                  }
+                )
+              )
+            | flatten
+          ')
+
+          echo "Build sites: $BUILD_SITES"
+          echo "Deployments: $DEPLOYMENTS"
+
+          # Check if we have any deployments
+          DEPLOY_COUNT=$(echo "$DEPLOYMENTS" | jq 'length')
+          if [ "$DEPLOY_COUNT" -gt 0 ]; then
+            echo "has-deployments=true" >> $GITHUB_OUTPUT
+            echo "build-matrix={\"include\":$BUILD_SITES}" >> $GITHUB_OUTPUT
+            echo "deploy-matrix={\"include\":$DEPLOYMENTS}" >> $GITHUB_OUTPUT
+          else
+            echo "has-deployments=false" >> $GITHUB_OUTPUT
+            echo "No sites to deploy for branch: $BRANCH"
+          fi
+
+  # Build sites that need deployment
+  build:
+    needs: prepare
+    if: needs.prepare.outputs.has-deployments == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.prepare.outputs.build-matrix) }}
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run brand replacement script
+        if: matrix.brandReplace == true
+        run: node ./scripts/replace-brand.js
+
+      - name: Build project
+        run: npm run build --verbose
+
+      - name: Create deployment archive
+        run: |
+          cd build
+          tar -czf ../build-${{ matrix.site }}.tar.gz .
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.site }}
+          path: build-${{ matrix.site }}.tar.gz
+          retention-days: 7
+
+  # Deploy to all configured servers
+  deploy:
+    needs: [prepare, build]
+    if: needs.prepare.outputs.has-deployments == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.prepare.outputs.deploy-matrix) }}
+      fail-fast: false
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ matrix.site }}
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Deploy to ${{ matrix.serverId }} (${{ matrix.domain }})
+        env:
+          SITE: ${{ matrix.site }}
+          TARGET_DIR: ${{ matrix.targetDir }}
+        run: |
+          echo "🚀 Deploying ${{ matrix.site }} to ${{ matrix.host }}:${{ matrix.targetDir }}"
+
+          # Upload archive
+          scp -i ~/.ssh/deploy_key -P ${{ matrix.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "build-${{ matrix.site }}.tar.gz" \
+            "${{ matrix.user }}@${{ matrix.host }}:/tmp/"
+
+          # Deploy on server
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.user }}@${{ matrix.host }}" << DEPLOY_SCRIPT
+          set -e
+
+          ARCHIVE="/tmp/build-${SITE}.tar.gz"
+          TARGET="${TARGET_DIR}"
+          BACKUP_DIR="/var/backups/www"
+
+          echo "📦 Deploying to \$TARGET"
+
+          # Create directories
+          mkdir -p "\$TARGET"
+          mkdir -p "\$BACKUP_DIR"
+
+          # Backup current deployment
+          if [[ -d "\$TARGET" && "\$(ls -A \$TARGET 2>/dev/null)" ]]; then
+              BACKUP_NAME="\$(basename \$TARGET)-\$(date +%Y%m%d_%H%M%S).tar.gz"
+              echo "📦 Creating backup: \$BACKUP_NAME"
+              tar -czf "\$BACKUP_DIR/\$BACKUP_NAME" -C "\$TARGET" . 2>/dev/null || true
+              ls -t "\$BACKUP_DIR/\$(basename \$TARGET)-"* 2>/dev/null | tail -n +4 | xargs -r rm -f
+          fi
+
+          # Clear and extract
+          rm -rf "\$TARGET"/*
+          tar -xzf "\$ARCHIVE" -C "\$TARGET"
+
+          # Set permissions
+          sudo chown -R www-data:www-data "\$TARGET"
+          sudo chmod -R 755 "\$TARGET"
+
+          # Cleanup
+          rm -f "\$ARCHIVE"
+
+          echo "✅ Deployment completed!"
+          DEPLOY_SCRIPT
+
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
