@@ -20,9 +20,9 @@ jobs:
     uses: ./.github/workflows/deploy-reusable.yml
     with:
       artifact-name: igmatrix
-      target-dir: /root/www.igmatrix.com
+      target-dir: /var/www.igmatrix.com
     secrets:
       SERVER_HOST: ${{ secrets.SERVER_HOST }}
       SERVER_USER: ${{ secrets.SERVER_USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       SERVER_PORT: ${{ secrets.SERVER_PORT }}

@@ -20,22 +20,23 @@ jobs:
     uses: ./.github/workflows/deploy-reusable.yml
     with:
       artifact-name: tikmatrix
-      target-dir: /root/www.tikmatrix.com
+      target-dir: /var/www.tikmatrix.com
     secrets:
       SERVER_HOST: ${{ secrets.SERVER_HOST }}
       SERVER_USER: ${{ secrets.SERVER_USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       SERVER_PORT: ${{ secrets.SERVER_PORT }}
+
   deploy-tikmatrix-2:
     needs: build
     uses: ./.github/workflows/deploy-reusable.yml
     with:
       artifact-name: tikmatrix
-      target-dir: /root/www.tikmatrix.com
+      target-dir: /var/www.tikmatrix.com
     secrets:
       SERVER_HOST: ${{ secrets.SERVER_HOST_2 }}
       SERVER_USER: ${{ secrets.SERVER_USER }}
-      PASSWORD: ${{ secrets.PASSWORD_2 }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       SERVER_PORT: ${{ secrets.SERVER_PORT }}
 
   deploy-ytmatrix:
@@ -43,9 +44,9 @@ jobs:
     uses: ./.github/workflows/deploy-reusable.yml
     with:
       artifact-name: tikmatrix
-      target-dir: /root/www.ytmatrix.com
+      target-dir: /var/www.ytmatrix.com
     secrets:
       SERVER_HOST: ${{ secrets.SERVER_HOST }}
       SERVER_USER: ${{ secrets.SERVER_USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       SERVER_PORT: ${{ secrets.SERVER_PORT }}

@@ -9,7 +9,7 @@ on:
         required: true
         type: string
       target-dir:
-        description: "Target directory on server (e.g., /root/www.tikmatrix.com)"
+        description: "Target directory on server (e.g., /var/www.tikmatrix.com)"
         required: true
         type: string
     secrets:
@@ -17,7 +17,7 @@ on:
         required: true
       SERVER_USER:
         required: true
-      PASSWORD:
+      SSH_PRIVATE_KEY:
         required: true
       SERVER_PORT:
         required: true
@@ -32,48 +32,67 @@ jobs:
         with:
           name: build-${{ inputs.artifact-name }}
 
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.SERVER_PORT }} -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
+
       - name: Upload build artifact to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          source: "build-${{ inputs.artifact-name }}.tar.gz"
-          target: "/tmp/"
+        run: |
+          scp -i ~/.ssh/deploy_key -P ${{ secrets.SERVER_PORT }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "build-${{ inputs.artifact-name }}.tar.gz" \
+            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/tmp/"
 
       - name: Extract and activate deployment on server
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          script: |
-            set -e
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.SERVER_PORT }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}" << 'DEPLOY_SCRIPT'
+          set -e
 
-            SRC_ARCH="build-${{ inputs.artifact-name }}.tar.gz"
-            TARGET_DIR="${{ inputs.target-dir }}"
+          SRC_ARCH="build-${{ inputs.artifact-name }}.tar.gz"
+          TARGET_DIR="${{ inputs.target-dir }}"
+          BACKUP_DIR="/var/backups/www"
 
-            echo "🚀 Deploying $SRC_ARCH -> $TARGET_DIR"
+          echo "🚀 Deploying $SRC_ARCH -> $TARGET_DIR"
 
-            TMP_DIR="/tmp/build_new_$(basename $TARGET_DIR)"
-            rm -rf "$TMP_DIR"
-            mkdir -p "$TMP_DIR"
+          # Create directories
+          mkdir -p "$TARGET_DIR"
+          mkdir -p "$BACKUP_DIR"
 
-            echo "📦 Extracting /tmp/$SRC_ARCH to $TMP_DIR"
-            tar -xzf "/tmp/$SRC_ARCH" -C "$TMP_DIR"
+          # Backup current deployment
+          BACKUP_NAME="$(basename $TARGET_DIR)-$(date +%Y%m%d_%H%M%S).tar.gz"
+          if [[ -d "$TARGET_DIR" && "$(ls -A $TARGET_DIR 2>/dev/null)" ]]; then
+              echo "📦 Backing up current deployment..."
+              tar -czf "$BACKUP_DIR/$BACKUP_NAME" -C "$TARGET_DIR" . 2>/dev/null || true
+              # Keep only last 3 backups
+              ls -t "$BACKUP_DIR/$(basename $TARGET_DIR)-"* 2>/dev/null | tail -n +4 | xargs -r rm -f
+          fi
 
-            echo "🗑️ Removing old build at $TARGET_DIR/build"
-            rm -rf "$TARGET_DIR/build"
+          # Clear and extract
+          echo "�️ Clearing target directory..."
+          rm -rf "$TARGET_DIR"/*
 
-            echo "🚚 Moving new build into place"
-            mv "$TMP_DIR" "$TARGET_DIR/build"
+          echo "📦 Extracting new deployment..."
+          tar -xzf "/tmp/$SRC_ARCH" -C "$TARGET_DIR"
 
-            echo "🧹 Cleaning up /tmp/$SRC_ARCH"
-            rm -f "/tmp/$SRC_ARCH"
+          # Set permissions
+          echo "🔐 Setting permissions..."
+          sudo chown -R www-data:www-data "$TARGET_DIR"
+          sudo chmod -R 755 "$TARGET_DIR"
 
-            echo "🔐 Setting permissions for $TARGET_DIR/build"
-            chmod -R 755 "$TARGET_DIR/build"
+          # Cleanup
+          echo "🧹 Cleaning up..."
+          rm -f "/tmp/$SRC_ARCH"
 
-            echo "✅ Deployment to $TARGET_DIR completed successfully!"
+          echo "✅ Deployment to $TARGET_DIR completed successfully!"
+          DEPLOY_SCRIPT
+
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
