@@ -786,8 +786,9 @@ EOF
 
     cat >> "$NGINX_CONF" << EOF
         
-        # Proxy headers
-        proxy_set_header Host \$host;
+    # Proxy headers
+    # Use backend host as Host header to present requests as coming directly to the backend
+    proxy_set_header Host $BACKEND_HOST;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto \$scheme;
@@ -837,7 +838,8 @@ EOF
 
     cat >> "$NGINX_CONF" << EOF
         
-        proxy_set_header Host \$host;
+    # Use backend host as Host header for static asset proxying too
+    proxy_set_header Host $BACKEND_HOST;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto \$scheme;
