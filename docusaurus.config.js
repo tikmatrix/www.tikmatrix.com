@@ -125,11 +125,11 @@ const config = {
           //   position: 'right',
           //   label: 'VideoMagic',
           // },
-          {
-            href: 'https://ai.tikmatrix.com',
-            position: 'right',
-            label: 'AI Search',
-          },
+          // {
+          //   href: 'https://ai.tikmatrix.com',
+          //   position: 'right',
+          //   label: 'AI Search',
+          // },
           {
             type: 'localeDropdown',
             position: 'right',
