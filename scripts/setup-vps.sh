@@ -398,8 +398,8 @@ setup_deploy_user() {
 # Allow deploy user to manage web deployments
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chown -R www-data\:www-data /var/www.*
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chmod -R 755 /var/www.*
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chown -R deploy\:www-data /var/www.*
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chmod -R 775 /var/www.*
 EOF
     
     chmod 440 /etc/sudoers.d/deploy
@@ -672,10 +672,10 @@ rm -rf "$TARGET_DIR"/*
 echo "📦 Extracting new deployment..."
 tar -xzf "$ARCHIVE" -C "$TARGET_DIR"
 
-# Set permissions
+# Set permissions (deploy owns, www-data group can read)
 echo "🔐 Setting permissions..."
-sudo chown -R www-data:www-data "$TARGET_DIR"
-sudo chmod -R 755 "$TARGET_DIR"
+sudo chown -R $DEPLOY_USER:www-data "$TARGET_DIR"
+sudo chmod -R 775 "$TARGET_DIR"
 
 # Cleanup
 echo "🧹 Cleaning up..."
