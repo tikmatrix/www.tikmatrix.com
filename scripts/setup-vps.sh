@@ -728,6 +728,17 @@ setup_nginx_proxy() {
         SERVER_NAMES="$DOMAIN $WWW_DOMAIN"
     fi
     
+    # Extract backend host for SSL SNI (Server Name Indication)
+    local BACKEND_HOST
+    BACKEND_HOST=$(echo "$PROXY_PASS" | sed -E 's|^https?://([^/:]+).*|\1|')
+    
+    # Check if backend is HTTPS
+    local IS_HTTPS_BACKEND=false
+    if [[ "$PROXY_PASS" =~ ^https:// ]]; then
+        IS_HTTPS_BACKEND=true
+        log_info "HTTPS backend detected, enabling SSL SNI for: $BACKEND_HOST"
+    fi
+    
     # Create Nginx reverse proxy configuration
     cat > "$NGINX_CONF" << EOF
 # $DOMAIN Nginx Reverse Proxy Configuration
@@ -761,6 +772,19 @@ server {
         
         proxy_pass $PROXY_PASS;
         proxy_http_version 1.1;
+EOF
+
+    # Add SSL SNI configuration for HTTPS backends
+    if [[ "$IS_HTTPS_BACKEND" == "true" ]]; then
+        cat >> "$NGINX_CONF" << EOF
+        
+        # SSL SNI (Server Name Indication) for HTTPS backend
+        proxy_ssl_server_name on;
+        proxy_ssl_name $BACKEND_HOST;
+EOF
+    fi
+
+    cat >> "$NGINX_CONF" << EOF
         
         # Proxy headers
         proxy_set_header Host \$host;
@@ -799,6 +823,20 @@ server {
         
         proxy_pass $PROXY_PASS;
         proxy_http_version 1.1;
+EOF
+
+    # Add SSL SNI configuration for HTTPS backends (static assets)
+    if [[ "$IS_HTTPS_BACKEND" == "true" ]]; then
+        cat >> "$NGINX_CONF" << EOF
+        
+        # SSL SNI (Server Name Indication) for HTTPS backend
+        proxy_ssl_server_name on;
+        proxy_ssl_name $BACKEND_HOST;
+EOF
+    fi
+
+    cat >> "$NGINX_CONF" << EOF
+        
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
