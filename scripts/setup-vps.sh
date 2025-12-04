@@ -195,8 +195,8 @@ interactive_config() {
         WWW_DOMAIN=""
         log_info "Subdomain detected, skipping www domain"
     fi
-    WEB_ROOT="/var/www.$DOMAIN"
-    NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"
+    WEB_ROOT="/var/www/$DOMAIN"
+    NGINX_CONF="/etc/nginx/conf.d/$DOMAIN.conf"
     
     echo ""
     log_info "Domain: $DOMAIN"
