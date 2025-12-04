@@ -21,6 +21,8 @@ AWS_KEY_ID=""
 AWS_SECRET=""
 GITHUB_PUBKEY=""
 SETUP_MODE="full"  # full or add-site
+SITE_TYPE="static"  # static or proxy
+PROXY_PASS=""       # Backend URL for reverse proxy (e.g., http://127.0.0.1:3000)
 
 # Predefined site configurations
 declare -A SITE_CONFIGS
@@ -181,6 +183,53 @@ interactive_config() {
     log_info "Web root: $WEB_ROOT"
     echo ""
     
+    # Site type selection
+    echo -e "${YELLOW}Select site type:${NC}"
+    echo "  1) Static website (HTML/CSS/JS files)"
+    echo "  2) Reverse proxy (proxy to backend service)"
+    echo ""
+    
+    while true; do
+        read -p "Enter choice [1-2, default: 1]: " type_choice
+        type_choice="${type_choice:-1}"
+        case $type_choice in
+            1)
+                SITE_TYPE="static"
+                log_info "Site type: Static website"
+                break
+                ;;
+            2)
+                SITE_TYPE="proxy"
+                echo ""
+                echo -e "${YELLOW}Backend URL Configuration:${NC}"
+                echo "  Enter the backend service URL to proxy requests to."
+                echo "  Examples:"
+                echo "    - http://127.0.0.1:3000"
+                echo "    - http://localhost:8080"
+                echo "    - http://192.168.1.100:5000"
+                echo ""
+                while true; do
+                    read -p "Backend URL: " PROXY_PASS
+                    if [[ -z "$PROXY_PASS" ]]; then
+                        log_error "Backend URL cannot be empty for reverse proxy"
+                        continue
+                    fi
+                    if [[ ! "$PROXY_PASS" =~ ^https?:// ]]; then
+                        log_error "Backend URL must start with http:// or https://"
+                        continue
+                    fi
+                    break
+                done
+                log_info "Site type: Reverse proxy -> $PROXY_PASS"
+                break
+                ;;
+            *)
+                echo "Invalid choice. Please enter 1 or 2."
+                ;;
+        esac
+    done
+    echo ""
+    
     # Check if site already exists
     if [[ -f "$NGINX_CONF" ]]; then
         echo -e "${YELLOW}⚠️  Warning: Site $DOMAIN already configured!${NC}"
@@ -243,7 +292,12 @@ interactive_config() {
     echo ""
     echo "  Domain:          $DOMAIN"
     echo "  WWW Domain:      $WWW_DOMAIN"
-    echo "  Web Root:        $WEB_ROOT"
+    echo "  Site Type:       $SITE_TYPE"
+    if [[ "$SITE_TYPE" == "proxy" ]]; then
+        echo "  Backend URL:     $PROXY_PASS"
+    else
+        echo "  Web Root:        $WEB_ROOT"
+    fi
     echo "  Deploy User:     $DEPLOY_USER"
     echo "  SSH Port:        $SSH_PORT"
     echo "  Setup Mode:      $SETUP_MODE"
@@ -620,6 +674,137 @@ setup_ssl() {
 }
 
 # =============================================================================
+# Nginx Reverse Proxy Configuration
+# =============================================================================
+setup_nginx_proxy() {
+    log_info "Installing Nginx..."
+    apt install nginx -y
+    
+    log_info "Configuring Nginx reverse proxy for $DOMAIN -> $PROXY_PASS..."
+    
+    # Create Nginx reverse proxy configuration
+    cat > "$NGINX_CONF" << EOF
+# $DOMAIN Nginx Reverse Proxy Configuration
+# Rate limiting zone
+limit_req_zone \$binary_remote_addr zone=${DOMAIN//./_}_limit:10m rate=10r/s;
+
+# Upstream backend
+upstream ${DOMAIN//./_}_backend {
+    server ${PROXY_PASS#*://};
+    keepalive 64;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name $DOMAIN $WWW_DOMAIN;
+
+    access_log /var/log/nginx/${DOMAIN}.access.log;
+    error_log  /var/log/nginx/${DOMAIN}.error.log warn;
+
+    # Security - hide sensitive files
+    location ~ /\.(?!well-known) {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    # Main location with reverse proxy
+    location / {
+        limit_req zone=${DOMAIN//./_}_limit burst=20 nodelay;
+        
+        proxy_pass $PROXY_PASS;
+        proxy_http_version 1.1;
+        
+        # Proxy headers
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+        proxy_set_header X-Forwarded-Host \$host;
+        proxy_set_header X-Forwarded-Port \$server_port;
+        
+        # WebSocket support
+        proxy_set_header Upgrade \$http_upgrade;
+        proxy_set_header Connection "upgrade";
+        
+        # Timeout settings
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+        
+        # Buffer settings
+        proxy_buffering on;
+        proxy_buffer_size 4k;
+        proxy_buffers 8 4k;
+        proxy_busy_buffers_size 8k;
+        
+        # Security headers
+        add_header X-Content-Type-Options nosniff always;
+        add_header X-Frame-Options "SAMEORIGIN" always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
+    }
+
+    # Static assets with caching (if backend serves static files)
+    location ~* \.(?:css|js|json|map|xml|svg|png|jpe?g|gif|ico|webp|avif|ttf|woff2?|eot)\$ {
+        limit_req zone=${DOMAIN//./_}_limit burst=50 nodelay;
+        
+        proxy_pass $PROXY_PASS;
+        proxy_http_version 1.1;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+        
+        access_log off;
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+        add_header Pragma public;
+    }
+
+    # Health check endpoint (optional)
+    location /health {
+        access_log off;
+        return 200 "OK";
+        add_header Content-Type text/plain;
+    }
+
+    autoindex off;
+
+    # Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_comp_level 6;
+    gzip_min_length 256;
+    gzip_types
+        text/plain text/css text/xml text/javascript
+        application/json application/javascript application/x-javascript
+        application/xml application/xml+rss
+        application/vnd.ms-fontobject application/x-font-ttf
+        font/opentype image/svg+xml image/x-icon;
+}
+EOF
+    
+    # Remove default nginx site
+    rm -f /etc/nginx/sites-enabled/default 2>/dev/null || true
+    
+    # Hide nginx version globally
+    sed -i 's/# server_tokens off;/server_tokens off;/' /etc/nginx/nginx.conf 2>/dev/null || \
+    grep -q "server_tokens off" /etc/nginx/nginx.conf || \
+    sed -i '/http {/a\    server_tokens off;' /etc/nginx/nginx.conf
+    
+    # Test and start nginx
+    nginx -t
+    systemctl enable nginx
+    systemctl restart nginx
+    
+    log_success "Nginx reverse proxy installed and configured."
+}
+
+# =============================================================================
 # Create Deploy Script
 # =============================================================================
 setup_deploy_script() {
@@ -777,7 +962,12 @@ print_summary() {
     echo ""
     echo -e "${YELLOW}Configuration Summary:${NC}"
     echo "  Domain:          $DOMAIN"
-    echo "  Web Root:        $WEB_ROOT"
+    echo "  Site Type:       $SITE_TYPE"
+    if [[ "$SITE_TYPE" == "proxy" ]]; then
+        echo "  Backend URL:     $PROXY_PASS"
+    else
+        echo "  Web Root:        $WEB_ROOT"
+    fi
     echo "  Nginx Config:    $NGINX_CONF"
     echo "  Deploy User:     $DEPLOY_USER"
     echo "  SSH Port:        $SSH_PORT"
@@ -805,9 +995,16 @@ print_summary() {
     echo "  Check Firewall:   ufw status"
     echo "  Check Fail2Ban:   fail2ban-client status"
     echo ""
-    if [[ "$SETUP_MODE" == "full" ]]; then
+    if [[ "$SETUP_MODE" == "full" && "$SITE_TYPE" == "static" ]]; then
         echo -e "${YELLOW}Deploy Script:${NC}"
         echo "  /home/$DEPLOY_USER/deploy.sh <archive> <target_dir>"
+        echo ""
+    fi
+    
+    if [[ "$SITE_TYPE" == "proxy" ]]; then
+        echo -e "${YELLOW}Reverse Proxy Info:${NC}"
+        echo "  Backend URL:     $PROXY_PASS"
+        echo "  Make sure your backend service is running!"
         echo ""
     fi
     echo -e "${YELLOW}All Configured Sites:${NC}"
@@ -850,11 +1047,17 @@ main() {
         setup_deploy_user
         setup_firewall
         setup_fail2ban
-        setup_nginx
+        if [[ "$SITE_TYPE" == "proxy" ]]; then
+            setup_nginx_proxy
+        else
+            setup_nginx
+        fi
         setup_optimization
         setup_security
         setup_ssl
-        setup_deploy_script
+        if [[ "$SITE_TYPE" == "static" ]]; then
+            setup_deploy_script
+        fi
     else
         # Add-site mode - only configure nginx and SSL for new site
         log_info "Adding new site: $DOMAIN"
@@ -869,7 +1072,11 @@ main() {
             fi
         fi
         
-        setup_nginx
+        if [[ "$SITE_TYPE" == "proxy" ]]; then
+            setup_nginx_proxy
+        else
+            setup_nginx
+        fi
         setup_ssl
     fi
     
