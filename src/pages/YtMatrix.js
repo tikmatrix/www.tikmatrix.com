@@ -37,7 +37,7 @@ export default function VideoMagic() {
       translate({ message: 'Automatic commenting' }),
     ],
     "softwareVersion": "1.0.0",
-    "downloadUrl": "https://api.ytmatrix.com/front-api/download-ytmatrix",
+    "downloadUrl": "https://api.niostack.com/front-api/download-ytmatrix",
     "supportUrl": "https://t.me/tikmatrix_agent_bot",
     "aggregateRating": {
       "@type": "AggregateRating",
