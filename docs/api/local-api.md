@@ -42,6 +42,8 @@ All API responses follow this format:
 |------|-------------|
 | 0 | Success |
 | 40001 | Bad Request - Invalid parameters |
+| 40002 | Bad Request - Missing script_name |
+| 40003 | Bad Request - Script not supported via API |
 | 40301 | Forbidden - API access requires Pro+ plan |
 | 40401 | Not Found - Resource not found |
 | 50001 | Internal Server Error |
@@ -78,9 +80,10 @@ curl -X POST http://localhost:50809/api/v1/task \
   -H "Content-Type: application/json" \
   -d '{
     "serials": ["device_serial_1", "device_serial_2"],
-    "script_name": "follow",
+    "script_name": "post",
     "script_config": {
-      "target_username": "@example_user"
+      "content_type": 1,
+      "captions": "Check out my new video! #viral"
     },
     "enable_multi_account": false,
     "min_interval": 1,
@@ -96,20 +99,24 @@ curl http://localhost:50809/api/v1/task?status=0&page=1&page_size=20
 
 ## Available Scripts
 
+:::info Current Support
+Currently, the Local API only supports the `post` script. More scripts will be added in future versions.
+:::
+
 The `script_name` parameter accepts the following values:
 
-| Script Name | Description |
-|-------------|-------------|
-| `follow` | Follow a user |
-| `unfollow` | Unfollow a user |
-| `like` | Like posts |
-| `comment` | Comment on posts |
-| `message` | Send direct messages |
-| `post` | Publish content |
-| `account_warmup` | Warm up accounts |
-| `super_marketing` | Super marketing campaign |
-| `profile` | Update profile |
-| `scrape_user` | Scrape user data |
+| Script Name | Description | API Support |
+|-------------|-------------|-------------|
+| `post` | Publish content | ✅ Supported |
+| `follow` | Follow a user | 🔜 Coming Soon |
+| `unfollow` | Unfollow a user | 🔜 Coming Soon |
+| `like` | Like posts | 🔜 Coming Soon |
+| `comment` | Comment on posts | 🔜 Coming Soon |
+| `message` | Send direct messages | 🔜 Coming Soon |
+| `account_warmup` | Warm up accounts | 🔜 Coming Soon |
+| `super_marketing` | Super marketing campaign | 🔜 Coming Soon |
+| `profile` | Update profile | 🔜 Coming Soon |
+| `scrape_user` | Scrape user data | 🔜 Coming Soon |
 
 ## Task Status
 
