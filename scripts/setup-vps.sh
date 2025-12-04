@@ -99,6 +99,20 @@ check_os() {
     log_info "Detected OS: $PRETTY_NAME"
 }
 
+# Check if domain is a root domain (e.g., example.com vs sub.example.com)
+is_root_domain() {
+    local domain="$1"
+    # Count the number of dots in the domain
+    local dot_count=$(echo "$domain" | tr -cd '.' | wc -c)
+    # Root domain has exactly 1 dot (e.g., example.com)
+    # Subdomain has 2+ dots (e.g., sub.example.com, api.example.com)
+    if [[ $dot_count -eq 1 ]]; then
+        return 0  # true, is root domain
+    else
+        return 1  # false, is subdomain
+    fi
+}
+
 # =============================================================================
 # Interactive Configuration
 # =============================================================================
@@ -174,7 +188,13 @@ interactive_config() {
         esac
     done
     
-    WWW_DOMAIN="www.$DOMAIN"
+    # Only add www domain if the domain is a root domain (e.g., example.com)
+    if is_root_domain "$DOMAIN"; then
+        WWW_DOMAIN="www.$DOMAIN"
+    else
+        WWW_DOMAIN=""
+        log_info "Subdomain detected, skipping www domain"
+    fi
     WEB_ROOT="/var/www.$DOMAIN"
     NGINX_CONF="/etc/nginx/conf.d/www.$DOMAIN.conf"
     
@@ -291,7 +311,9 @@ interactive_config() {
     echo -e "${CYAN}═══════════════════════════════════════════════════════════════${NC}"
     echo ""
     echo "  Domain:          $DOMAIN"
-    echo "  WWW Domain:      $WWW_DOMAIN"
+    if [[ -n "$WWW_DOMAIN" ]]; then
+        echo "  WWW Domain:      $WWW_DOMAIN"
+    fi
     echo "  Site Type:       $SITE_TYPE"
     if [[ "$SITE_TYPE" == "proxy" ]]; then
         echo "  Backend URL:     $PROXY_PASS"
@@ -514,6 +536,12 @@ EOF
     setfacl -R -m u:$DEPLOY_USER:rwx "$WEB_ROOT" 2>/dev/null || true
     setfacl -R -d -m u:$DEPLOY_USER:rwx "$WEB_ROOT" 2>/dev/null || true
     
+    # Build server_name with optional www domain
+    local SERVER_NAMES="$DOMAIN"
+    if [[ -n "$WWW_DOMAIN" ]]; then
+        SERVER_NAMES="$DOMAIN $WWW_DOMAIN"
+    fi
+    
     # Create Nginx configuration
     cat > "$NGINX_CONF" << EOF
 # $DOMAIN Nginx Configuration
@@ -523,7 +551,7 @@ limit_req_zone \$binary_remote_addr zone=${DOMAIN//./_}_limit:10m rate=10r/s;
 server {
     listen 80;
     listen [::]:80;
-    server_name $DOMAIN $WWW_DOMAIN;
+    server_name $SERVER_NAMES;
 
     root $WEB_ROOT;
     index index.html;
@@ -624,6 +652,12 @@ setup_ssl() {
     log_info "Installing Certbot..."
     apt install certbot python3-certbot-nginx python3-certbot-dns-route53 -y
     
+    # Build domain args for certbot
+    local CERTBOT_DOMAINS="-d $DOMAIN"
+    if [[ -n "$WWW_DOMAIN" ]]; then
+        CERTBOT_DOMAINS="$CERTBOT_DOMAINS -d $WWW_DOMAIN"
+    fi
+    
     if [[ "$ENABLE_SSL" =~ ^[Yy]$ ]]; then
         log_info "Obtaining SSL certificate..."
         
@@ -633,8 +667,7 @@ setup_ssl() {
             export AWS_SECRET_ACCESS_KEY="$AWS_SECRET"
             
             certbot -i nginx \
-                -d "$DOMAIN" \
-                -d "$WWW_DOMAIN" \
+                $CERTBOT_DOMAINS \
                 --dns-route53 \
                 --agree-tos \
                 --no-eff-email \
@@ -645,8 +678,7 @@ setup_ssl() {
         else
             # HTTP validation
             certbot --nginx \
-                -d "$DOMAIN" \
-                -d "$WWW_DOMAIN" \
+                $CERTBOT_DOMAINS \
                 --agree-tos \
                 --no-eff-email \
                 --non-interactive \
@@ -658,12 +690,20 @@ setup_ssl() {
         log_info "SSL setup skipped. Run manually when ready:"
         echo ""
         echo "  Option 1 (HTTP validation - DNS must point here):"
-        echo "    sudo certbot --nginx -d $DOMAIN -d $WWW_DOMAIN --agree-tos --no-eff-email"
+        if [[ -n "$WWW_DOMAIN" ]]; then
+            echo "    sudo certbot --nginx -d $DOMAIN -d $WWW_DOMAIN --agree-tos --no-eff-email"
+        else
+            echo "    sudo certbot --nginx -d $DOMAIN --agree-tos --no-eff-email"
+        fi
         echo ""
         echo "  Option 2 (Route 53 DNS validation):"
         echo "    export AWS_ACCESS_KEY_ID='your_key_id'"
         echo "    export AWS_SECRET_ACCESS_KEY='your_secret'"
-        echo "    sudo certbot -i nginx -d $DOMAIN -d $WWW_DOMAIN --dns-route53 --agree-tos --no-eff-email"
+        if [[ -n "$WWW_DOMAIN" ]]; then
+            echo "    sudo certbot -i nginx -d $DOMAIN -d $WWW_DOMAIN --dns-route53 --agree-tos --no-eff-email"
+        else
+            echo "    sudo certbot -i nginx -d $DOMAIN --dns-route53 --agree-tos --no-eff-email"
+        fi
         echo ""
     fi
     
@@ -682,6 +722,12 @@ setup_nginx_proxy() {
     
     log_info "Configuring Nginx reverse proxy for $DOMAIN -> $PROXY_PASS..."
     
+    # Build server_name with optional www domain
+    local SERVER_NAMES="$DOMAIN"
+    if [[ -n "$WWW_DOMAIN" ]]; then
+        SERVER_NAMES="$DOMAIN $WWW_DOMAIN"
+    fi
+    
     # Create Nginx reverse proxy configuration
     cat > "$NGINX_CONF" << EOF
 # $DOMAIN Nginx Reverse Proxy Configuration
@@ -697,7 +743,7 @@ upstream ${DOMAIN//./_}_backend {
 server {
     listen 80;
     listen [::]:80;
-    server_name $DOMAIN $WWW_DOMAIN;
+    server_name $SERVER_NAMES;
 
     access_log /var/log/nginx/${DOMAIN}.access.log;
     error_log  /var/log/nginx/${DOMAIN}.error.log warn;
