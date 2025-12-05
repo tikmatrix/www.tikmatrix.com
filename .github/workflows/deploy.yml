@@ -195,9 +195,9 @@ jobs:
           rm -rf "\$TARGET"/*
           tar -xzf "\$ARCHIVE" -C "\$TARGET"
 
-          # Set permissions
-          sudo chown -R www-data:www-data "\$TARGET"
-          sudo chmod -R 755 "\$TARGET"
+          # Set permissions (deploy owns, www-data group can read)
+          sudo chown -R deploy:www-data "\$TARGET"
+          sudo chmod -R 775 "\$TARGET"
 
           # Cleanup
           rm -f "\$ARCHIVE"
