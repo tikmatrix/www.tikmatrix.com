@@ -584,9 +584,10 @@ server {
     }
 
     # Main location with rate limiting
+    # Docusaurus generates static HTML files, so we need to try .html extension
     location / {
         limit_req zone=${DOMAIN//./_}_limit burst=20 nodelay;
-        try_files \$uri \$uri/ /index.html;
+        try_files \$uri \$uri.html \$uri/ /index.html;
         
         add_header Cache-Control "no-cache, must-revalidate, max-age=0";
         add_header X-Content-Type-Options nosniff always;
