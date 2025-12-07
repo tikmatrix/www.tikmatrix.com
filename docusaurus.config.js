@@ -13,7 +13,7 @@ const config = {
   favicon: 'favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://tikmatrix.com/',
+  url: 'https://tikmatrix.niostack.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -81,7 +81,7 @@ const config = {
         title: '',
         logo: {
           alt: 'TikMatrix Logo',
-          src: 'https://tikmatrix.com/img/tikmatrix_logo.png',
+          src: 'https://tikmatrix.niostack.com/img/tikmatrix_logo.png',
         },
         items: [
           {
@@ -228,8 +228,8 @@ const config = {
         { name: 'author', content: 'TikMatrix' },
         { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
         { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
-        { property: 'og:image', content: 'https://tikmatrix.com/img/tikmatrix_logo.png' },
-        { property: 'og:url', content: 'https://tikmatrix.com/' },
+        { property: 'og:image', content: 'https://tikmatrix.niostack.com/img/tikmatrix_logo.png' },
+        { property: 'og:url', content: 'https://tikmatrix.niostack.com/' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@TikMatrix' },
@@ -246,7 +246,7 @@ const config = {
       tagName: 'link',
       attributes: {
         rel: 'canonical',
-        href: 'https://tikmatrix.com/',
+        href: 'https://tikmatrix.niostack.com/',
       },
     },
     {
@@ -269,7 +269,7 @@ const config = {
         'publisher': {
           '@type': 'Organization',
           'name': 'TikMatrix, LLC.',
-          'logo': 'https://tikmatrix.com/img/tikmatrix_logo.png'
+          'logo': 'https://tikmatrix.niostack.com/img/tikmatrix_logo.png'
         }
       }),
     },
