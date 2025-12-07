@@ -81,6 +81,8 @@ async function processDocusaurus() {
         let updated = content.replace(/tikmatrix_logo/g, 'igmatrix_logo');
         // Also replace the download button/label text
         updated = updated.replace(/Download-TikMatrix/g, 'Download-IgMatrix');
+        // Also replace https://tikmatrix.com URLs to https://igmatrix.com
+        updated = updated.replace(/https:\/\/tikmatrix\.com/g, 'https://igmatrix.com');
         if (updated !== content) {
             await fs.writeFile(file, updated, 'utf8');
             console.log('[updated]', path.relative(root, file));

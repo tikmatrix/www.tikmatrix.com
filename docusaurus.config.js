@@ -81,7 +81,7 @@ const config = {
         title: '',
         logo: {
           alt: 'TikMatrix Logo',
-          src: '//r2.tikmatrix.com/tikmatrix_logo.png',
+          src: 'https://tikmatrix.com/img/tikmatrix_logo.png',
         },
         items: [
           {
@@ -228,7 +228,7 @@ const config = {
         { name: 'author', content: 'TikMatrix' },
         { property: 'og:title', content: 'TikMatrix - Professional TikTok Account Management & Marketing Tool for Windows & Mac' },
         { property: 'og:description', content: 'Streamline your Android TikTok phone farm with advanced batch control and marketing automation. Manage accounts, automate posting, and maintain 0% suspension rate.' },
-        { property: 'og:image', content: 'https://tikmatrix.com/img/logo.png' },
+        { property: 'og:image', content: 'https://tikmatrix.com/img/tikmatrix_logo.png' },
         { property: 'og:url', content: 'https://tikmatrix.com/' },
         { property: 'og:type', content: 'website' },
         { name: 'twitter:card', content: 'summary_large_image' },
@@ -269,7 +269,7 @@ const config = {
         'publisher': {
           '@type': 'Organization',
           'name': 'TikMatrix, LLC.',
-          'logo': 'https://tikmatrix.com/img/logo.png'
+          'logo': 'https://tikmatrix.com/img/tikmatrix_logo.png'
         }
       }),
     },
