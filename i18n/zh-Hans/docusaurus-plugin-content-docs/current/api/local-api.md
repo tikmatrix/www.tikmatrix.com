@@ -85,9 +85,7 @@ curl -X POST http://localhost:50809/api/v1/task \
       "content_type": 1,
       "captions": "看看我的新视频！#热门"
     },
-    "enable_multi_account": false,
-    "min_interval": 1,
-    "max_interval": 5
+    "enable_multi_account": false
   }'
 ```
 
@@ -100,7 +98,7 @@ curl http://localhost:50809/api/v1/task?status=0&page=1&page_size=20
 ## 可用脚本
 
 :::info 当前支持
-目前，本地 API 仅支持 `post` 发布脚本。更多脚本将在未来版本中陆续添加。
+目前，本地 API 支持 `post`、`follow` 和 `unfollow` 脚本。更多脚本将在未来版本中陆续添加。
 :::
 
 `script_name` 参数可接受下列值：
@@ -108,8 +106,8 @@ curl http://localhost:50809/api/v1/task?status=0&page=1&page_size=20
 | 脚本名 | 描述 | API 支持 |
 |--------|------|----------|
 | `post` | 发布内容 | ✅ 已支持 |
-| `follow` | 关注用户 | 🔜 即将推出 |
-| `unfollow` | 取消关注 | 🔜 即将推出 |
+| `follow` | 关注用户 | ✅ 已支持 |
+| `unfollow` | 取消关注 | ✅ 已支持 |
 | `like` | 点赞 | 🔜 即将推出 |
 | `comment` | 评论 | 🔜 即将推出 |
 | `message` | 私信 | 🔜 即将推出 |

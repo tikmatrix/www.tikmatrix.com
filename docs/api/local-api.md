@@ -86,8 +86,7 @@ curl -X POST http://localhost:50809/api/v1/task \
       "captions": "Check out my new video! #viral"
     },
     "enable_multi_account": false,
-    "min_interval": 1,
-    "max_interval": 5
+    "start_time": "14:30"
   }'
 ```
 
@@ -99,17 +98,13 @@ curl http://localhost:50809/api/v1/task?status=0&page=1&page_size=20
 
 ## Available Scripts
 
-:::info Current Support
-Currently, the Local API only supports the `post` script. More scripts will be added in future versions.
-:::
-
 The `script_name` parameter accepts the following values:
 
 | Script Name | Description | API Support |
 |-------------|-------------|-------------|
 | `post` | Publish content | ✅ Supported |
-| `follow` | Follow a user | 🔜 Coming Soon |
-| `unfollow` | Unfollow a user | 🔜 Coming Soon |
+| `follow` | Follow users | ✅ Supported |
+| `unfollow` | Unfollow users | ✅ Supported |
 | `like` | Like posts | 🔜 Coming Soon |
 | `comment` | Comment on posts | 🔜 Coming Soon |
 | `message` | Send direct messages | 🔜 Coming Soon |
@@ -130,4 +125,7 @@ The `script_name` parameter accepts the following values:
 ## Next Steps
 
 - [Task Management API](./task-management) - Create, query, and manage tasks
+- [Post Script Configuration](./post-script) - Configure post script parameters
+- [Follow Script Configuration](./follow-script) - Configure follow script parameters
+- [Unfollow Script Configuration](./unfollow-script) - Configure unfollow script parameters
 - [API Examples](./examples) - Code examples in different languages
