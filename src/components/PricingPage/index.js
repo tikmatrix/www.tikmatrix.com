@@ -109,6 +109,11 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
+                id: 'pricing.local_api.support',
+                message: 'Local REST API access (Pro+)',
+                description: 'Local API support in plan includes'
+            }),
+            translate({
                 id: 'pricing.ticket_support',
                 message: 'Dedicated ticket support',
                 description: 'Dedicated ticket support text'
@@ -146,6 +151,11 @@ const plans = [
                 description: 'All features included text'
             }),
             translate({
+                id: 'pricing.local_api.support',
+                message: 'Local REST API access (Pro+)',
+                description: 'Local API support in plan includes'
+            }),
+            translate({
                 id: 'pricing.ticket_support',
                 message: 'Dedicated ticket support',
                 description: 'Dedicated ticket support text'
@@ -181,6 +191,11 @@ const plans = [
                 id: 'pricing.all_features',
                 message: 'All features included',
                 description: 'All features included text'
+            }),
+            translate({
+                id: 'pricing.local_api.support',
+                message: 'Local REST API access (Pro+)',
+                description: 'Local API support in plan includes'
             }),
             translate({
                 id: 'pricing.ticket_support',
@@ -311,6 +326,23 @@ export default function PricingPage() {
                             </table>
                         </div>
                     )}
+                </div>
+
+                {/* Local API short description section */}
+                <div className="localApiCard" data-aos="fade-up" data-aos-delay={250}>
+                    <h3>
+                        <Translate id="pricing.local_api.title" description="Local API title">Local API</Translate>
+                    </h3>
+                    <p>
+                        <Translate id="pricing.local_api.description" description="Local API short description">
+                            Pro, Team and Business users can use the local RESTful API to programmatically manage tasks and automate workflows. See the docs for details.
+                        </Translate>
+                    </p>
+                    <p>
+                        <a className="docsLink" href="/docs/api/local-api">
+                            {translate({ id: 'pricing.local_api.link_text', message: 'Read Local API docs' })}
+                        </a>
+                    </p>
                 </div>
             </div>
         </section>

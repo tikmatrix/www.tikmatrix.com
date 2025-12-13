@@ -248,6 +248,18 @@
   "pricing.per_year": {
     "message": "每年 (节省 30%)"
   },
+  "pricing.local_api.title": {
+    "message": "本地 API"
+  },
+  "pricing.local_api.description": {
+    "message": "Pro、Team 和 Business 用户可使用本地 RESTful API 来以编程方式管理任务和自动化工作流。详见文档。"
+  },
+  "pricing.local_api.link_text": {
+    "message": "查看本地 API 文档"
+  },
+  "pricing.local_api.support": {
+    "message": "本地 REST API 访问（Pro+）"
+  },
   "pricing.cta.free": {
     "message": "立即使用"
   },

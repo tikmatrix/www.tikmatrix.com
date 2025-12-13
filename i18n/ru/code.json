@@ -248,6 +248,18 @@
     "pricing.per_year": {
         "message": "В год (Экономия 30%)"
     },
+    "pricing.local_api.title": {
+        "message": "Локальное API"
+    },
+    "pricing.local_api.description": {
+        "message": "Пользователи Pro, Team и Business могут использовать локальный RESTful API для управления задачами и автоматизации рабочих процессов. Смотрите документацию."
+    },
+    "pricing.local_api.link_text": {
+        "message": "Читать документацию по локальному API"
+    },
+    "pricing.local_api.support": {
+        "message": "Доступ к локальному REST API (Pro+)"
+    },
     "pricing.cta.free": {
         "message": "Начать бесплатно"
     },
