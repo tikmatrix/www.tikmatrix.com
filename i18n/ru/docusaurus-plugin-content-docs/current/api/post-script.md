@@ -86,9 +86,7 @@ curl -X POST http://localhost:50809/api/v1/task \
       "upload_wait_time": 60,
       "add_sound": "-1"
     },
-    "enable_multi_account": false,
-    "min_interval": 5,
-    "max_interval": 15
+    "enable_multi_account": false
   }'
 ```
 
@@ -109,9 +107,7 @@ curl -X POST http://localhost:50809/api/v1/task \
         "C:/Videos/video1.mp4"
       ],
       "upload_wait_time": 60
-    },
-    "min_interval": 5,
-    "max_interval": 15
+    }
   }'
 ```
 
@@ -132,9 +128,7 @@ curl -X POST http://localhost:50809/api/v1/task \
       "material_path": "C:/Videos/instagram",
       "upload_wait_time": 45
     },
-    "enable_multi_account": true,
-    "min_interval": 10,
-    "max_interval": 30
+    "enable_multi_account": true
   }'
 ```
 

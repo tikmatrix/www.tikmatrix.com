@@ -27,8 +27,6 @@ The API supports two modes for creating tasks:
 | script_name | string | Yes | Name of the script to execute |
 | script_config | object | Yes | Configuration parameters for the script (see script-specific documentation) |
 | enable_multi_account | boolean | No | Enable multi-account mode (default: false). Only applicable in device-based mode. |
-| min_interval | integer | No | Minimum interval between tasks in minutes (default: 0) |
-| max_interval | integer | No | Maximum interval between tasks in minutes (default: 0) |
 | start_time | string | No | Scheduled start time in "HH:MM" format |
 
 ### Supported Scripts
@@ -36,6 +34,7 @@ The API supports two modes for creating tasks:
 | Script Name | Description | Documentation |
 |-------------|-------------|---------------|
 | post | Publish videos or images to TikTok/Instagram | [Post Script Configuration](./post-script.md) |
+| follow | Follow or unfollow users | [Follow Script Configuration](./follow-script.md) |
 
 ### Example
 
@@ -54,7 +53,7 @@ curl -X POST http://localhost:50809/api/v1/task \
   }'
 ```
 
-For detailed `script_config` parameters and more examples, see [Post Script Configuration](./post-script.md).
+For detailed `script_config` parameters and more examples, see [Post Script Configuration](./post-script.md) and [Follow Script Configuration](./follow-script.md).
 
 ### Response
 

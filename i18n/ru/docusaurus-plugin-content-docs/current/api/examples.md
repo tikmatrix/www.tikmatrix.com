@@ -25,9 +25,7 @@ def create_task(serials, script_name, script_config=None, multi_account=False):
         "serials": serials,
         "script_name": script_name,
         "script_config": script_config or {},
-        "enable_multi_account": multi_account,
-        "min_interval": 2,
-        "max_interval": 5
+        "enable_multi_account": multi_account
     }
     response = requests.post(
         f"{BASE_URL}/task",
@@ -81,9 +79,7 @@ curl -X POST http://localhost:50809/api/v1/task \
     "serials": ["device_serial_1"],
     "script_name": "follow",
     "script_config": {"target_username": "@tikmatrix"},
-    "enable_multi_account": false,
-    "min_interval": 2,
-    "max_interval": 5
+    "enable_multi_account": false
   }'
 ```
 

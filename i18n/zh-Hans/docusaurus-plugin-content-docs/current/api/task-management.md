@@ -27,8 +27,6 @@ API 支持两种模式创建任务：
 | script_name | string | 是 | 要执行的脚本名称 |
 | script_config | object | 是 | 脚本的配置参数（请参阅对应脚本文档） |
 | enable_multi_account | boolean | 否 | 是否启用多账号模式（默认：false）。仅在设备模式下生效。 |
-| min_interval | integer | 否 | 任务最小间隔时间（分钟，默认：0） |
-| max_interval | integer | 否 | 任务最大间隔时间（分钟，默认：0） |
 | start_time | string | 否 | 计划执行时间，格式为 "HH:MM" |
 
 ### 支持的脚本
