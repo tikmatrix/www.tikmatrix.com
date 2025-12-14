@@ -56,12 +56,10 @@
         {
             "name": "tikzenx",
             "domain": "tikzenx.com",
-            "branch": "main",
+            "branch": "TikZenX",
             "brandReplace": false,
             "deployTo": [
-                "server-us",
-                "server-dublin",
-                "server-sgp"
+                "server-us"
             ]
         }
     ]
