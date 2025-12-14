@@ -52,17 +52,6 @@
                 "server-dublin",
                 "server-sgp"
             ]
-        },
-        {
-            "name": "tikzenx",
-            "domain": "tikzenx.com",
-            "branch": "main",
-            "brandReplace": false,
-            "deployTo": [
-                "server-us",
-                "server-dublin",
-                "server-sgp"
-            ]
         }
     ]
 }
