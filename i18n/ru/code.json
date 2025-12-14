@@ -1815,18 +1815,6 @@
     "advertising.vps.uuuvps.description": {
         "message": "Высокопроизводительный VPS-хостинг с глобальными локациями"
     },
-    "advertising.vps.vultr.title": {
-        "message": "Vultr"
-    },
-    "advertising.vps.vultr.description": {
-        "message": "Облачная инфраструктура и VPS-хостинг по всему миру"
-    },
-    "advertising.proxy.ip2world.title": {
-        "message": "IP2World"
-    },
-    "advertising.proxy.ip2world.description": {
-        "message": "Профессиональные прокси IP-сервисы для глобального подключения"
-    },
     "advertising.proxy.bartproxies.title": {
         "message": "BartProxies"
     },
@@ -1838,12 +1826,6 @@
     },
     "advertising.proxy.proxycheap.description": {
         "message": "Доступные прокси решения для различных случаев использования"
-    },
-    "advertising.proxy.iproxy.title": {
-        "message": "iProxy"
-    },
-    "advertising.proxy.iproxy.description": {
-        "message": "Премиум прокси сервисы с глобальным покрытием IP"
     },
     "theme.navbar.item.label.Advertising": {
         "message": "Реклама"

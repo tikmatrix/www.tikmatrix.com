@@ -41,15 +41,6 @@ const advertising = [
         categoryId: 'advertising.category.analytics',
         category: 'Analytics'
     },
-    {
-        titleId: 'advertising.whatsapp.checker.title',
-        title: 'WhatsApp Number Checker',
-        url: 'https://ws.tikmatrix.com',
-        descriptionId: 'advertising.whatsapp.checker.description',
-        description: 'Verify WhatsApp numbers and check their status',
-        categoryId: 'advertising.category.verification',
-        category: 'Verification'
-    },
     // VPS Providers
     {
         titleId: 'advertising.vps.lisahost.title',
@@ -69,25 +60,7 @@ const advertising = [
         categoryId: 'advertising.category.vps',
         category: 'VPS'
     },
-    {
-        titleId: 'advertising.vps.vultr.title',
-        title: 'Vultr',
-        url: 'https://www.vultr.com/?ref=8557792',
-        descriptionId: 'advertising.vps.vultr.description',
-        description: 'Cloud infrastructure and VPS hosting worldwide',
-        categoryId: 'advertising.category.vps',
-        category: 'VPS'
-    },
     // Proxy IP Providers
-    {
-        titleId: 'advertising.proxy.ip2world.title',
-        title: 'IP2World',
-        url: 'https://www.ip2world.com/?ref=42CEY5RUTT',
-        descriptionId: 'advertising.proxy.ip2world.description',
-        description: 'Professional proxy IP services for global connectivity',
-        categoryId: 'advertising.category.proxy',
-        category: 'Proxy'
-    },
     {
         titleId: 'advertising.proxy.bartproxies.title',
         title: 'BartProxies',
@@ -103,15 +76,6 @@ const advertising = [
         url: 'https://app.proxy-cheap.com/r/jY5Tfd',
         descriptionId: 'advertising.proxy.proxycheap.description',
         description: 'Affordable proxy solutions for various use cases',
-        categoryId: 'advertising.category.proxy',
-        category: 'Proxy'
-    },
-    {
-        titleId: 'advertising.proxy.iproxy.title',
-        title: 'iProxy',
-        url: 'https://iproxy.online/invite/friend/8O2RSxPc4J',
-        descriptionId: 'advertising.proxy.iproxy.description',
-        description: 'Premium proxy services with global IP coverage',
         categoryId: 'advertising.category.proxy',
         category: 'Proxy'
     }

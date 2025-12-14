@@ -386,18 +386,6 @@
   "advertising.vps.uuuvps.description": {
     "message": "高性能VPS主机，提供全球多个位置"
   },
-  "advertising.vps.vultr.title": {
-    "message": "Vultr"
-  },
-  "advertising.vps.vultr.description": {
-    "message": "全球云基础设施和VPS主机服务"
-  },
-  "advertising.proxy.ip2world.title": {
-    "message": "IP2World"
-  },
-  "advertising.proxy.ip2world.description": {
-    "message": "专业代理IP服务，提供全球连接解决方案"
-  },
   "advertising.proxy.bartproxies.title": {
     "message": "BartProxies"
   },
@@ -409,12 +397,6 @@
   },
   "advertising.proxy.proxycheap.description": {
     "message": "适用于各种用例的经济实惠代理解决方案"
-  },
-  "advertising.proxy.iproxy.title": {
-    "message": "iProxy"
-  },
-  "advertising.proxy.iproxy.description": {
-    "message": "优质代理服务，提供全球IP覆盖"
   },
   "theme.navbar.item.label.Tools": {
     "message": "工具"
