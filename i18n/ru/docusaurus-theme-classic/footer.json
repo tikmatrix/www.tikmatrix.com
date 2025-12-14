@@ -44,7 +44,7 @@
     },
     "link.item.label.GitHub": {
         "message": "GitHub",
-        "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tiktok-matrix"
+        "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tikmatrix-desktop"
     },
     "copyright": {
         "message": "Авторские права © 2024 TikMatrix LLC. Все права защищены.",

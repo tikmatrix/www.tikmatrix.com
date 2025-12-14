@@ -80,7 +80,7 @@ sidebar_position: 9
 1. Перейдите в директорию проекта:
 
    ```bash
-   cd tiktok-matrix
+   cd tikmatrix-desktop
    ```
 
 2. Запустите инструмент конфигурации:

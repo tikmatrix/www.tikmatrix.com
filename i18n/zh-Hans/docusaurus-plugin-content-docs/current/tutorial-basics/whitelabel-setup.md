@@ -80,7 +80,7 @@ sidebar_position: 9
 1. 进入项目目录：
 
    ```bash
-   cd tiktok-matrix
+   cd tikmatrix-desktop
    ```
 
 2. 运行配置工具：
