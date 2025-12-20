@@ -16,6 +16,11 @@ on:
           - ytmatrix
           - igmatrix
           - tikzenx
+      build_all:
+        description: "Build all sites (ignore branch/site filters)"
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   # Read config and determine what to deploy
@@ -35,14 +40,17 @@ jobs:
           CONFIG=$(cat deploy-config.json)
           BRANCH="${{ github.ref_name }}"
           SELECTED_SITE="${{ inputs.site }}"
+          BUILD_ALL="${{ inputs.build_all }}"
 
           echo "Branch: $BRANCH"
           echo "Selected site: $SELECTED_SITE"
+          echo "Build all: $BUILD_ALL"
 
           # Get sites to build (unique)
-          BUILD_SITES=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" '
+          BUILD_SITES=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" --arg build_all "$BUILD_ALL" '
             .sites
             | map(select(
+                ($build_all == "true") or
                 ($selected == "" and .branch == $branch) or
                 ($selected != "" and .name == $selected)
               ))
@@ -54,10 +62,11 @@ jobs:
           ')
 
           # Build deployment matrix
-          DEPLOYMENTS=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" '
+          DEPLOYMENTS=$(echo "$CONFIG" | jq -c --arg branch "$BRANCH" --arg selected "$SELECTED_SITE" --arg build_all "$BUILD_ALL" '
             .servers as $servers |
             .sites
             | map(select(
+                ($build_all == "true") or
                 ($selected == "" and .branch == $branch) or
                 ($selected != "" and .name == $selected)
               ))

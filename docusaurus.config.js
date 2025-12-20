@@ -21,7 +21,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tikmatrix', // Usually your GitHub org/user name.
-  projectName: 'tiktok-matrix', // Usually your repo name.
+  projectName: 'tikmatrix-desktop', // Usually your repo name.
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
@@ -162,7 +162,7 @@ const config = {
             items: [
               {
                 label: 'Github',
-                href: 'https://github.com/tikmatrix/tiktok-matrix',
+                href: 'https://github.com/tikmatrix/tikmatrix-desktop',
               },
               {
                 label: 'Telegram',

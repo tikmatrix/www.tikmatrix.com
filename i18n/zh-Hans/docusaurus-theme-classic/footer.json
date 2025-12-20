@@ -44,7 +44,7 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tiktok-matrix"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/tikmatrix/tikmatrix-desktop"
   },
   "copyright": {
     "message": "Copyright © 2024 TikMatrix LLC. All rights reserved.",
@@ -69,10 +69,6 @@
   "link.item.label.TikTok User Finder": {
     "message": "TikTok用户国家查询",
     "description": "The label of footer link with label=TikTok User Finder linking to /tiktok-user-finder"
-  },
-  "link.item.label.WhatsApp Number Checker": {
-    "message": "WhatsApp号码查询",
-    "description": "The label of footer link with label=WhatsApp Number Checker linking to /whatsapp-number-checker"
   },
   "link.item.label.About Us": {
     "message": "关于我们",

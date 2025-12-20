@@ -106,8 +106,8 @@ The `script_name` parameter accepts the following values:
 | `follow` | Follow users | ✅ Supported |
 | `unfollow` | Unfollow users | ✅ Supported |
 | `account_warmup` | Warm up accounts | ✅ Supported |
+| `comment` | Comment on posts | ✅ Supported |
 | `like` | Like posts | 🔜 Coming Soon |
-| `comment` | Comment on posts | 🔜 Coming Soon |
 | `message` | Send direct messages | 🔜 Coming Soon |
 | `super_marketing` | Super marketing campaign | 🔜 Coming Soon |
 | `profile` | Update profile | 🔜 Coming Soon |
@@ -129,4 +129,5 @@ The `script_name` parameter accepts the following values:
 - [Follow Script Configuration](./follow-script) - Configure follow script parameters
 - [Unfollow Script Configuration](./unfollow-script) - Configure unfollow script parameters
 - [Account Warmup Script Configuration](./account-warmup-script) - Configure account warmup script parameters
+- [Comment Script Configuration](./comment-script) - Configure comment script parameters
 - [API Examples](./examples) - Code examples in different languages

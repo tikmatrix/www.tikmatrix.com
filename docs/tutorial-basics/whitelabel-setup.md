@@ -80,7 +80,7 @@ The White Label feature allows you to customize TikMatrix's branding to match yo
 1. Navigate to the project directory:
 
    ```bash
-   cd tiktok-matrix
+   cd tikmatrix-desktop
    ```
 
 2. Run the configuration tool:
