@@ -1,0 +1,757 @@
+# VPS Management Workflow
+# Manual workflows for managing VPS operations through GitHub Actions
+name: VPS Management
+run-name: ${{ github.actor }} is managing VPS - ${{ github.event.inputs.operation }} 🛠️
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: 'Operation to perform'
+        required: true
+        type: choice
+        options:
+          - deploy-site
+          - update-site
+          - push-files
+          - health-check
+          - manage-backup
+          - renew-ssl
+          - configure-nginx
+      
+      # Deploy site options
+      site:
+        description: 'Site to operate on'
+        required: false
+        type: choice
+        options:
+          - tikmatrix
+          - igmatrix
+          - ytmatrix
+          - tikzenx
+      
+      server:
+        description: 'Target server (leave empty for all servers from deploy-config.json)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - server-us
+          - server-dublin
+          - server-sgp
+      
+      # File push options
+      local_path:
+        description: 'Local path for file operations (e.g., ./build)'
+        required: false
+        type: string
+      
+      remote_path:
+        description: 'Remote path for file operations (e.g., /var/www/tikmatrix.com)'
+        required: false
+        type: string
+      
+      # Nginx configuration options
+      domain:
+        description: 'Domain for nginx configuration'
+        required: false
+        type: string
+      
+      site_type:
+        description: 'Site type (static or proxy)'
+        required: false
+        type: choice
+        options:
+          - static
+          - proxy
+        default: static
+      
+      proxy_backend:
+        description: 'Backend URL for reverse proxy (e.g., http://127.0.0.1:3000)'
+        required: false
+        type: string
+      
+      enable_ssl:
+        description: 'Enable SSL certificate setup'
+        required: false
+        type: boolean
+        default: false
+      
+      ssl_method:
+        description: 'SSL validation method'
+        required: false
+        type: choice
+        options:
+          - http
+          - route53
+        default: http
+      
+      # Backup options
+      backup_action:
+        description: 'Backup action (create or list)'
+        required: false
+        type: choice
+        options:
+          - create
+          - list
+        default: list
+      
+      backup_site:
+        description: 'Site to backup (e.g., tikmatrix.com)'
+        required: false
+        type: string
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      servers: ${{ steps.get-servers.outputs.servers }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Determine target servers
+        id: get-servers
+        run: |
+          CONFIG=$(cat deploy-config.json)
+          SELECTED_SERVER="${{ github.event.inputs.server }}"
+          SELECTED_SITE="${{ github.event.inputs.site }}"
+          
+          if [[ -n "$SELECTED_SERVER" ]]; then
+            # Use specific server
+            SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id == \"$SELECTED_SERVER\")]")
+          elif [[ -n "$SELECTED_SITE" ]]; then
+            # Get servers for the selected site
+            DEPLOY_TO=$(echo "$CONFIG" | jq -r ".sites[] | select(.name == \"$SELECTED_SITE\") | .deployTo[]")
+            SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id | IN($DEPLOY_TO))]")
+          else
+            # Use all servers
+            SERVERS=$(echo "$CONFIG" | jq -c '.servers')
+          fi
+          
+          echo "servers=$SERVERS" >> $GITHUB_OUTPUT
+          echo "Target servers: $SERVERS"
+
+  deploy-site:
+    needs: prepare
+    if: github.event.inputs.operation == 'deploy-site'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run brand replacement if needed
+        run: |
+          CONFIG=$(cat deploy-config.json)
+          BRAND_REPLACE=$(echo "$CONFIG" | jq -r ".sites[] | select(.name == \"${{ github.event.inputs.site }}\") | .brandReplace")
+          if [[ "$BRAND_REPLACE" == "true" ]]; then
+            echo "Running brand replacement..."
+            node ./scripts/replace-brand.js
+          fi
+      
+      - name: Build project
+        run: npm run build --verbose
+      
+      - name: Create deployment archive
+        run: |
+          cd build
+          tar -czf ../build-${{ github.event.inputs.site }}.tar.gz .
+      
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Deploy to ${{ matrix.server.id }}
+        env:
+          SITE: ${{ github.event.inputs.site }}
+        run: |
+          CONFIG=$(cat deploy-config.json)
+          DOMAIN=$(echo "$CONFIG" | jq -r ".sites[] | select(.name == \"$SITE\") | .domain")
+          TARGET_DIR="/var/www.$DOMAIN"
+          
+          echo "🚀 Deploying $SITE to ${{ matrix.server.host }}:$TARGET_DIR"
+          
+          # Upload archive
+          scp -i ~/.ssh/deploy_key -P ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "build-${SITE}.tar.gz" \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}:/tmp/"
+          
+          # Deploy on server
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'DEPLOY_SCRIPT'
+          set -e
+          
+          ARCHIVE="/tmp/build-${SITE}.tar.gz"
+          TARGET="${TARGET_DIR}"
+          BACKUP_DIR="/var/backups/www"
+          
+          echo "📦 Deploying to $TARGET"
+          
+          # Create directories
+          mkdir -p "$TARGET"
+          mkdir -p "$BACKUP_DIR"
+          
+          # Backup current deployment
+          if [[ -d "$TARGET" && "$(ls -A $TARGET 2>/dev/null)" ]]; then
+              BACKUP_NAME="$(basename $TARGET)-$(date +%Y%m%d_%H%M%S).tar.gz"
+              echo "📦 Creating backup: $BACKUP_NAME"
+              tar -czf "$BACKUP_DIR/$BACKUP_NAME" -C "$TARGET" . 2>/dev/null || true
+              ls -t "$BACKUP_DIR/$(basename $TARGET)-"* 2>/dev/null | tail -n +4 | xargs -r rm -f
+          fi
+          
+          # Clear and extract
+          rm -rf "$TARGET"/*
+          tar -xzf "$ARCHIVE" -C "$TARGET"
+          
+          # Set permissions
+          sudo chown -R deploy:www-data "$TARGET"
+          sudo chmod -R 775 "$TARGET"
+          
+          # Cleanup
+          rm -f "$ARCHIVE"
+          
+          echo "✅ Deployment completed!"
+          DEPLOY_SCRIPT
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  update-site:
+    needs: prepare
+    if: github.event.inputs.operation == 'update-site'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Trigger site update on ${{ matrix.server.id }}
+        run: |
+          echo "🔄 Updating site on ${{ matrix.server.host }}"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'UPDATE_SCRIPT'
+          set -e
+          
+          echo "🔄 Reloading Nginx..."
+          sudo systemctl reload nginx
+          
+          echo "✅ Site updated!"
+          UPDATE_SCRIPT
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  push-files:
+    needs: prepare
+    if: github.event.inputs.operation == 'push-files'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Validate inputs
+        run: |
+          if [[ -z "${{ github.event.inputs.local_path }}" ]] || [[ -z "${{ github.event.inputs.remote_path }}" ]]; then
+            echo "Error: Both local_path and remote_path are required for push-files operation"
+            exit 1
+          fi
+      
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Push files to ${{ matrix.server.id }}
+        run: |
+          echo "📤 Pushing files to ${{ matrix.server.host }}"
+          
+          # Use rsync for efficient file transfer
+          rsync -avz --progress \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+            "${{ github.event.inputs.local_path }}/" \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}:${{ github.event.inputs.remote_path }}/"
+          
+          echo "✅ Files pushed successfully!"
+      
+      - name: Set permissions
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" \
+            "sudo chown -R deploy:www-data ${{ github.event.inputs.remote_path }} && sudo chmod -R 775 ${{ github.event.inputs.remote_path }}"
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  health-check:
+    needs: prepare
+    if: github.event.inputs.operation == 'health-check'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Health check on ${{ matrix.server.id }}
+        run: |
+          echo "🏥 Running health check on ${{ matrix.server.host }}"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'HEALTH_SCRIPT'
+          set -e
+          
+          echo "================================"
+          echo "System Health Check"
+          echo "================================"
+          echo ""
+          
+          echo "📊 System Info:"
+          echo "  Hostname: $(hostname)"
+          echo "  OS: $(lsb_release -d | cut -f2)"
+          echo "  Uptime: $(uptime -p)"
+          echo ""
+          
+          echo "💾 Disk Usage:"
+          df -h / | tail -1 | awk '{print "  Root: "$3" / "$2" ("$5" used)"}'
+          echo ""
+          
+          echo "🧠 Memory Usage:"
+          free -h | grep Mem | awk '{print "  Memory: "$3" / "$2" ("int($3/$2*100)"% used)"}'
+          echo ""
+          
+          echo "🌐 Nginx Status:"
+          if sudo systemctl is-active --quiet nginx; then
+            echo "  ✅ Nginx is running"
+            sudo nginx -t 2>&1 | grep -E "syntax|successful"
+          else
+            echo "  ❌ Nginx is not running"
+          fi
+          echo ""
+          
+          echo "🔥 Firewall Status:"
+          sudo ufw status | head -5
+          echo ""
+          
+          echo "🔒 Fail2Ban Status:"
+          if sudo systemctl is-active --quiet fail2ban; then
+            echo "  ✅ Fail2Ban is running"
+            sudo fail2ban-client status | head -5
+          else
+            echo "  ❌ Fail2Ban is not running"
+          fi
+          echo ""
+          
+          echo "📁 Configured Sites:"
+          ls -1 /etc/nginx/conf.d/*.conf 2>/dev/null | wc -l | awk '{print "  Total: "$1" site(s)"}'
+          ls -1 /etc/nginx/conf.d/*.conf 2>/dev/null | sed 's|/etc/nginx/conf.d/||;s|.conf||' | sed 's/^/  - /'
+          echo ""
+          
+          echo "🔐 SSL Certificates:"
+          if [ -d "/etc/letsencrypt/live" ]; then
+            ls -1 /etc/letsencrypt/live/ 2>/dev/null | wc -l | awk '{print "  Total: "$1" certificate(s)"}'
+            ls -1 /etc/letsencrypt/live/ 2>/dev/null | sed 's/^/  - /'
+          else
+            echo "  No SSL certificates found"
+          fi
+          echo ""
+          
+          echo "✅ Health check completed!"
+          HEALTH_SCRIPT
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  manage-backup:
+    needs: prepare
+    if: github.event.inputs.operation == 'manage-backup'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Manage backups on ${{ matrix.server.id }}
+        env:
+          ACTION: ${{ github.event.inputs.backup_action }}
+          SITE: ${{ github.event.inputs.backup_site }}
+        run: |
+          echo "💾 Managing backups on ${{ matrix.server.host }}"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" bash << 'BACKUP_SCRIPT'
+          set -e
+          
+          BACKUP_DIR="/var/backups/www"
+          ACTION="${ACTION:-list}"
+          
+          if [[ "$ACTION" == "create" ]]; then
+            if [[ -z "$SITE" ]]; then
+              echo "❌ Error: backup_site is required for create action"
+              exit 1
+            fi
+            
+            TARGET_DIR="/var/www.$SITE"
+            if [[ ! -d "$TARGET_DIR" ]]; then
+              echo "❌ Error: Site directory not found: $TARGET_DIR"
+              exit 1
+            fi
+            
+            mkdir -p "$BACKUP_DIR"
+            BACKUP_NAME="$SITE-manual-$(date +%Y%m%d_%H%M%S).tar.gz"
+            
+            echo "📦 Creating backup: $BACKUP_NAME"
+            tar -czf "$BACKUP_DIR/$BACKUP_NAME" -C "$TARGET_DIR" .
+            
+            echo "✅ Backup created: $BACKUP_DIR/$BACKUP_NAME"
+            ls -lh "$BACKUP_DIR/$BACKUP_NAME"
+            
+          elif [[ "$ACTION" == "list" ]]; then
+            echo "📋 Available backups in $BACKUP_DIR:"
+            echo ""
+            
+            if [[ -d "$BACKUP_DIR" ]] && [[ "$(ls -A $BACKUP_DIR 2>/dev/null)" ]]; then
+              ls -lht "$BACKUP_DIR"/*.tar.gz 2>/dev/null | head -20 | awk '{
+                size=$5
+                date=$6" "$7" "$8
+                file=$9
+                printf "  %s  %8s  %s\n", date, size, file
+              }'
+              echo ""
+              du -sh "$BACKUP_DIR" | awk '{print "  Total size: "$1}'
+            else
+              echo "  No backups found"
+            fi
+          fi
+          BACKUP_SCRIPT
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  renew-ssl:
+    needs: prepare
+    if: github.event.inputs.operation == 'renew-ssl'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Renew SSL certificates on ${{ matrix.server.id }}
+        run: |
+          echo "🔐 Renewing SSL certificates on ${{ matrix.server.host }}"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'SSL_SCRIPT'
+          set -e
+          
+          echo "🔄 Running certbot renew..."
+          sudo certbot renew --quiet --post-hook 'systemctl reload nginx' || {
+            echo "⚠️ Certbot renew had some issues, checking status..."
+            sudo certbot certificates
+            exit 1
+          }
+          
+          echo ""
+          echo "📋 Current certificates:"
+          sudo certbot certificates
+          
+          echo ""
+          echo "✅ SSL renewal completed!"
+          SSL_SCRIPT
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
+
+  configure-nginx:
+    needs: prepare
+    if: github.event.inputs.operation == 'configure-nginx'
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Validate inputs
+        run: |
+          if [[ -z "${{ github.event.inputs.domain }}" ]]; then
+            echo "Error: domain is required for configure-nginx operation"
+            exit 1
+          fi
+      
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      
+      - name: Configure Nginx on ${{ matrix.server.id }}
+        env:
+          DOMAIN: ${{ github.event.inputs.domain }}
+          SITE_TYPE: ${{ github.event.inputs.site_type }}
+          PROXY_BACKEND: ${{ github.event.inputs.proxy_backend }}
+          ENABLE_SSL: ${{ github.event.inputs.enable_ssl }}
+          SSL_METHOD: ${{ github.event.inputs.ssl_method }}
+        run: |
+          echo "⚙️ Configuring Nginx on ${{ matrix.server.host }}"
+          
+          # Create nginx configuration script
+          cat > /tmp/nginx_config.sh << 'NGINX_CONFIG'
+          #!/bin/bash
+          set -e
+          
+          DOMAIN="${DOMAIN}"
+          SITE_TYPE="${SITE_TYPE:-static}"
+          PROXY_BACKEND="${PROXY_BACKEND}"
+          ENABLE_SSL="${ENABLE_SSL:-false}"
+          SSL_METHOD="${SSL_METHOD:-http}"
+          
+          echo "Configuring Nginx for: $DOMAIN"
+          echo "Site type: $SITE_TYPE"
+          
+          # Determine if domain is root domain
+          DOT_COUNT=$(echo "$DOMAIN" | tr -cd '.' | wc -c)
+          if [[ $DOT_COUNT -eq 1 ]]; then
+            WWW_DOMAIN="www.$DOMAIN"
+            SERVER_NAMES="$DOMAIN $WWW_DOMAIN"
+            CERTBOT_DOMAINS="-d $DOMAIN -d $WWW_DOMAIN"
+          else
+            WWW_DOMAIN=""
+            SERVER_NAMES="$DOMAIN"
+            CERTBOT_DOMAINS="-d $DOMAIN"
+          fi
+          
+          NGINX_CONF="/etc/nginx/conf.d/$DOMAIN.conf"
+          WEB_ROOT="/var/www.$DOMAIN"
+          
+          if [[ "$SITE_TYPE" == "static" ]]; then
+            # Create static site configuration
+            mkdir -p "$WEB_ROOT"
+            
+            cat > "$NGINX_CONF" << 'EOF'
+          # Static site configuration for DOMAIN_PLACEHOLDER
+          limit_req_zone $binary_remote_addr zone=ZONE_PLACEHOLDER_limit:10m rate=10r/s;
+          
+          server {
+              listen 80;
+              listen [::]:80;
+              server_name SERVER_NAMES_PLACEHOLDER;
+          
+              root WEB_ROOT_PLACEHOLDER;
+              index index.html;
+          
+              access_log /var/log/nginx/DOMAIN_PLACEHOLDER.access.log;
+              error_log  /var/log/nginx/DOMAIN_PLACEHOLDER.error.log warn;
+          
+              location ~ /\.(?!well-known) {
+                  deny all;
+                  access_log off;
+                  log_not_found off;
+              }
+          
+              location / {
+                  limit_req zone=ZONE_PLACEHOLDER_limit burst=20 nodelay;
+                  try_files $uri $uri.html $uri/ /index.html;
+                  
+                  add_header Cache-Control "no-cache, must-revalidate, max-age=0";
+                  add_header X-Content-Type-Options nosniff always;
+                  add_header X-Frame-Options "SAMEORIGIN" always;
+                  add_header X-XSS-Protection "1; mode=block" always;
+              }
+          
+              location ~* \.(?:css|js|json|svg|png|jpe?g|gif|ico|webp|ttf|woff2?)\$ {
+                  try_files $uri =404;
+                  access_log off;
+                  expires 365d;
+                  add_header Cache-Control "public, max-age=31536000, immutable";
+              }
+          
+              gzip on;
+              gzip_vary on;
+              gzip_comp_level 6;
+              gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml;
+          }
+          EOF
+            
+            # Replace placeholders
+            sed -i "s|DOMAIN_PLACEHOLDER|$DOMAIN|g" "$NGINX_CONF"
+            sed -i "s|SERVER_NAMES_PLACEHOLDER|$SERVER_NAMES|g" "$NGINX_CONF"
+            sed -i "s|WEB_ROOT_PLACEHOLDER|$WEB_ROOT|g" "$NGINX_CONF"
+            sed -i "s|ZONE_PLACEHOLDER|${DOMAIN//./_}|g" "$NGINX_CONF"
+            
+            sudo chown -R deploy:www-data "$WEB_ROOT"
+            sudo chmod -R 775 "$WEB_ROOT"
+            
+          elif [[ "$SITE_TYPE" == "proxy" ]]; then
+            if [[ -z "$PROXY_BACKEND" ]]; then
+              echo "Error: proxy_backend is required for proxy site type"
+              exit 1
+            fi
+            
+            # Create proxy configuration
+            cat > "$NGINX_CONF" << 'EOF'
+          # Reverse proxy configuration for DOMAIN_PLACEHOLDER
+          limit_req_zone $binary_remote_addr zone=ZONE_PLACEHOLDER_limit:10m rate=10r/s;
+          
+          upstream ZONE_PLACEHOLDER_backend {
+              server BACKEND_PLACEHOLDER;
+              keepalive 64;
+          }
+          
+          server {
+              listen 80;
+              listen [::]:80;
+              server_name SERVER_NAMES_PLACEHOLDER;
+          
+              access_log /var/log/nginx/DOMAIN_PLACEHOLDER.access.log;
+              error_log  /var/log/nginx/DOMAIN_PLACEHOLDER.error.log warn;
+          
+              location / {
+                  limit_req zone=ZONE_PLACEHOLDER_limit burst=20 nodelay;
+                  
+                  proxy_pass PROXY_PASS_PLACEHOLDER;
+                  proxy_http_version 1.1;
+                  proxy_set_header Upgrade $http_upgrade;
+                  proxy_set_header Connection "upgrade";
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto $scheme;
+              }
+          
+              gzip on;
+              gzip_vary on;
+              gzip_comp_level 6;
+              gzip_types text/plain text/css text/xml text/javascript application/json application/javascript;
+          }
+          EOF
+            
+            BACKEND_ADDR="${PROXY_BACKEND#*://}"
+            sed -i "s|DOMAIN_PLACEHOLDER|$DOMAIN|g" "$NGINX_CONF"
+            sed -i "s|SERVER_NAMES_PLACEHOLDER|$SERVER_NAMES|g" "$NGINX_CONF"
+            sed -i "s|BACKEND_PLACEHOLDER|$BACKEND_ADDR|g" "$NGINX_CONF"
+            sed -i "s|PROXY_PASS_PLACEHOLDER|$PROXY_BACKEND|g" "$NGINX_CONF"
+            sed -i "s|ZONE_PLACEHOLDER|${DOMAIN//./_}|g" "$NGINX_CONF"
+          fi
+          
+          # Test nginx configuration
+          sudo nginx -t
+          
+          # Reload nginx
+          sudo systemctl reload nginx
+          
+          echo "✅ Nginx configured for $DOMAIN"
+          
+          # Setup SSL if requested
+          if [[ "$ENABLE_SSL" == "true" ]]; then
+            echo "🔐 Setting up SSL certificate..."
+            
+            if [[ "$SSL_METHOD" == "route53" ]]; then
+              # Route53 DNS validation
+              if [[ -z "$AWS_ACCESS_KEY_ID" ]] || [[ -z "$AWS_SECRET_ACCESS_KEY" ]]; then
+                echo "⚠️ AWS credentials not provided, skipping Route53 SSL setup"
+              else
+                export AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+                export AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+                
+                sudo certbot -i nginx $CERTBOT_DOMAINS \
+                  --dns-route53 \
+                  --agree-tos \
+                  --no-eff-email \
+                  --non-interactive \
+                  --email "admin@$DOMAIN" || echo "⚠️ SSL setup failed"
+              fi
+            else
+              # HTTP validation
+              sudo certbot --nginx $CERTBOT_DOMAINS \
+                --agree-tos \
+                --no-eff-email \
+                --non-interactive \
+                --email "admin@$DOMAIN" || echo "⚠️ SSL setup failed (make sure DNS points to this server)"
+            fi
+          fi
+          
+          echo "✅ Configuration completed!"
+          NGINX_CONFIG
+          
+          chmod +x /tmp/nginx_config.sh
+          
+          # Upload and execute
+          scp -i ~/.ssh/deploy_key -P ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            /tmp/nginx_config.sh \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}:/tmp/"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" \
+            "DOMAIN=$DOMAIN SITE_TYPE=$SITE_TYPE PROXY_BACKEND=\"$PROXY_BACKEND\" ENABLE_SSL=$ENABLE_SSL SSL_METHOD=$SSL_METHOD AWS_ACCESS_KEY_ID=\"${{ secrets.AWS_ACCESS_KEY_ID }}\" AWS_SECRET_ACCESS_KEY=\"${{ secrets.AWS_SECRET_ACCESS_KEY }}\" bash /tmp/nginx_config.sh && rm /tmp/nginx_config.sh"
+      
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

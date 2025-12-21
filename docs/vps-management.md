@@ -1,0 +1,436 @@
+# VPS Management via GitHub Actions
+
+本文档说明如何通过 GitHub Actions 管理 VPS 服务器，实现自动化部署和运维。
+
+## 概述
+
+我们提供了两层管理方案：
+
+1. **初始化脚本** (`init-vps.sh`) - 在新 VPS 上手动运行一次，配置基础环境
+2. **GitHub Actions 工作流** (`vps-management.yml`) - 后续所有操作通过 GitHub Actions 自动化管理
+
+## 初始化新 VPS
+
+### 前提条件
+
+- Ubuntu 22.04 LTS 或 Debian 11+ 系统
+- Root 访问权限
+- 服务器可访问互联网
+
+### 步骤 1: 生成 SSH 密钥对
+
+在本地机器上生成 SSH 密钥对（如果还没有）：
+
+```bash
+ssh-keygen -t ed25519 -C "github-actions-deploy" -f ~/.ssh/github_deploy_key
+```
+
+这将生成两个文件：
+- `~/.ssh/github_deploy_key` - 私钥（配置到 GitHub Secrets）
+- `~/.ssh/github_deploy_key.pub` - 公钥（配置到 VPS）
+
+### 步骤 2: 在 VPS 上运行初始化脚本
+
+SSH 登录到新 VPS，然后执行：
+
+```bash
+# 下载初始化脚本
+curl -O https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/init-vps.sh
+
+# 设置执行权限
+chmod +x init-vps.sh
+
+# 设置公钥环境变量（使用你生成的公钥内容）
+export GITHUB_PUBKEY="ssh-ed25519 AAAAC3Nza... your-public-key-here"
+
+# 可选：自定义 SSH 端口（默认 22）
+export SSH_PORT=22
+
+# 运行初始化脚本
+sudo ./init-vps.sh
+```
+
+脚本将自动安装和配置：
+- ✅ 系统更新和必要软件包
+- ✅ Deploy 用户和 SSH 密钥认证
+- ✅ UFW 防火墙（开放 SSH, HTTP, HTTPS）
+- ✅ Fail2Ban 安全防护
+- ✅ Nginx Web 服务器
+- ✅ Certbot SSL 证书工具
+- ✅ 系统优化和安全加固
+
+### 步骤 3: 配置 GitHub Secrets
+
+在 GitHub 仓库中配置以下 Secrets（Settings → Secrets and variables → Actions）：
+
+**必需的 Secrets:**
+- `SSH_PRIVATE_KEY` - SSH 私钥内容（`~/.ssh/github_deploy_key` 的内容）
+
+**可选的 Secrets（用于 Route53 SSL 验证）:**
+- `AWS_ACCESS_KEY_ID` - AWS 访问密钥 ID
+- `AWS_SECRET_ACCESS_KEY` - AWS 密钥
+
+### 步骤 4: 更新部署配置
+
+编辑 `deploy-config.json`，添加新服务器信息：
+
+```json
+{
+  "servers": [
+    {
+      "id": "server-new",
+      "host": "your-server-ip",
+      "port": 22,
+      "user": "deploy"
+    }
+  ],
+  "sites": [
+    {
+      "name": "tikmatrix",
+      "domain": "tikmatrix.com",
+      "branch": "main",
+      "brandReplace": false,
+      "deployTo": ["server-new"]
+    }
+  ]
+}
+```
+
+## 使用 GitHub Actions 管理 VPS
+
+初始化完成后，所有后续操作都可以通过 GitHub Actions 完成。
+
+### 可用操作
+
+访问 GitHub 仓库的 **Actions** 标签页，选择 **VPS Management** 工作流，点击 **Run workflow**。
+
+#### 1. 部署站点 (deploy-site)
+
+构建并部署站点到 VPS。
+
+**参数：**
+- `operation`: 选择 `deploy-site`
+- `site`: 选择要部署的站点（tikmatrix, igmatrix, ytmatrix, tikzenx）
+- `server`: 目标服务器（留空则部署到配置文件中的所有服务器）
+
+**示例场景：**
+```
+部署 TikMatrix 站点到所有配置的服务器
+- operation: deploy-site
+- site: tikmatrix
+- server: (留空)
+```
+
+#### 2. 更新站点 (update-site)
+
+重新加载 Nginx 配置，无需重新构建。
+
+**参数：**
+- `operation`: 选择 `update-site`
+- `site`: 选择站点（可选）
+- `server`: 目标服务器（可选）
+
+**示例场景：**
+```
+更新所有服务器的 Nginx 配置
+- operation: update-site
+```
+
+#### 3. 推送文件 (push-files)
+
+推送任意文件或目录到服务器。
+
+**参数：**
+- `operation`: 选择 `push-files`
+- `local_path`: 本地路径（如 `./scripts`）
+- `remote_path`: 远程路径（如 `/home/deploy/scripts`）
+- `server`: 目标服务器（可选）
+
+**示例场景：**
+```
+推送配置文件到服务器
+- operation: push-files
+- local_path: ./config
+- remote_path: /etc/myapp/config
+- server: server-us
+```
+
+#### 4. 健康检查 (health-check)
+
+检查服务器状态和服务运行情况。
+
+**参数：**
+- `operation`: 选择 `health-check`
+- `server`: 目标服务器（留空检查所有服务器）
+
+**检查内容：**
+- ✅ 系统信息（OS, 运行时间）
+- ✅ 磁盘使用率
+- ✅ 内存使用率
+- ✅ Nginx 状态和配置
+- ✅ 防火墙状态
+- ✅ Fail2Ban 状态
+- ✅ 已配置的站点列表
+- ✅ SSL 证书列表
+
+#### 5. 管理备份 (manage-backup)
+
+创建或列出站点备份。
+
+**参数：**
+- `operation`: 选择 `manage-backup`
+- `backup_action`: `create` 或 `list`
+- `backup_site`: 站点域名（创建备份时需要，如 `tikmatrix.com`）
+- `server`: 目标服务器（可选）
+
+**示例场景：**
+```
+创建 TikMatrix 站点备份
+- operation: manage-backup
+- backup_action: create
+- backup_site: tikmatrix.com
+- server: server-us
+
+列出所有备份
+- operation: manage-backup
+- backup_action: list
+```
+
+#### 6. 续期 SSL 证书 (renew-ssl)
+
+手动触发 SSL 证书续期。
+
+**参数：**
+- `operation`: 选择 `renew-ssl`
+- `server`: 目标服务器（留空则所有服务器）
+
+**注意：** Certbot 已配置自动续期（每天凌晨 3 点），此操作用于手动触发。
+
+#### 7. 配置 Nginx (configure-nginx)
+
+为新域名配置 Nginx 站点。
+
+**参数：**
+- `operation`: 选择 `configure-nginx`
+- `domain`: 域名（如 `example.com`）
+- `site_type`: `static`（静态站点）或 `proxy`（反向代理）
+- `proxy_backend`: 后端 URL（仅 proxy 类型需要，如 `http://127.0.0.1:3000`）
+- `enable_ssl`: 是否启用 SSL
+- `ssl_method`: `http`（HTTP 验证）或 `route53`（DNS 验证）
+- `server`: 目标服务器（可选）
+
+**示例场景 1 - 静态站点：**
+```
+配置新的静态站点
+- operation: configure-nginx
+- domain: newsite.com
+- site_type: static
+- enable_ssl: true
+- ssl_method: http
+```
+
+**示例场景 2 - 反向代理：**
+```
+配置反向代理到本地服务
+- operation: configure-nginx
+- domain: api.example.com
+- site_type: proxy
+- proxy_backend: http://127.0.0.1:3000
+- enable_ssl: true
+- ssl_method: route53
+```
+
+## 工作流程示例
+
+### 场景 1: 部署新站点到现有服务器
+
+```bash
+1. 在 GitHub Actions 中运行 VPS Management 工作流
+   - operation: configure-nginx
+   - domain: newsite.com
+   - site_type: static
+   - enable_ssl: true
+   - ssl_method: http
+
+2. 更新 deploy-config.json，添加新站点配置
+
+3. 再次运行工作流部署站点
+   - operation: deploy-site
+   - site: newsite
+```
+
+### 场景 2: 添加新服务器
+
+```bash
+1. 在新 VPS 上运行 init-vps.sh 初始化脚本
+
+2. 更新 deploy-config.json，添加新服务器
+
+3. 提交并推送更改
+
+4. 使用 GitHub Actions 部署站点到新服务器
+   - operation: deploy-site
+   - site: tikmatrix
+   - server: server-new
+```
+
+### 场景 3: 日常维护
+
+```bash
+# 每周检查服务器健康状态
+- operation: health-check
+
+# 定期创建备份
+- operation: manage-backup
+- backup_action: create
+- backup_site: tikmatrix.com
+
+# 查看备份列表
+- operation: manage-backup
+- backup_action: list
+```
+
+## 安全最佳实践
+
+1. **SSH 密钥管理**
+   - 使用 ED25519 密钥（更安全，更小）
+   - 私钥仅存储在 GitHub Secrets 中
+   - 定期轮换密钥
+
+2. **防火墙规则**
+   - 仅开放必要端口（SSH, HTTP, HTTPS）
+   - 使用 Fail2Ban 防止暴力破解
+
+3. **SSL 证书**
+   - 使用 Let's Encrypt 免费证书
+   - 配置自动续期
+   - HTTP 验证适用于大多数场景
+   - Route53 验证适用于内网服务器或泛域名证书
+
+4. **权限管理**
+   - Deploy 用户仅有必要的 sudo 权限
+   - Web 文件归 deploy 用户所有，www-data 组可读
+
+5. **备份策略**
+   - 自动保留最近 3 个部署备份
+   - 定期创建手动备份
+   - 备份存储在 `/var/backups/www`
+
+## 故障排查
+
+### 问题 1: SSH 连接失败
+
+```bash
+# 检查 SSH 密钥是否正确配置
+ssh -i /path/to/private/key deploy@server-ip
+
+# 检查服务器防火墙
+sudo ufw status
+
+# 查看 SSH 日志
+sudo tail -f /var/log/auth.log
+```
+
+### 问题 2: Nginx 配置错误
+
+```bash
+# 测试配置
+sudo nginx -t
+
+# 查看错误日志
+sudo tail -f /var/log/nginx/error.log
+
+# 检查站点配置
+cat /etc/nginx/conf.d/domain.conf
+```
+
+### 问题 3: SSL 证书获取失败
+
+```bash
+# HTTP 验证失败 - 检查 DNS 是否指向服务器
+dig domain.com
+
+# Route53 验证失败 - 检查 AWS 凭证
+export AWS_ACCESS_KEY_ID="..."
+export AWS_SECRET_ACCESS_KEY="..."
+sudo certbot certificates
+```
+
+### 问题 4: 部署失败
+
+```bash
+# 检查磁盘空间
+df -h
+
+# 检查权限
+ls -la /var/www/domain.com
+
+# 查看部署日志
+# 在 GitHub Actions 工作流运行详情中查看
+```
+
+## 高级功能
+
+### 自定义域名配置
+
+如果需要为子域名或特殊域名配置 Nginx：
+
+```bash
+# 使用 configure-nginx 操作
+- operation: configure-nginx
+- domain: subdomain.example.com
+- site_type: static
+```
+
+脚本会自动检测：
+- 根域名（如 `example.com`）会同时配置 `www.example.com`
+- 子域名（如 `api.example.com`）仅配置单个域名
+
+### 反向代理高级配置
+
+对于需要代理到后端服务的场景：
+
+```bash
+- operation: configure-nginx
+- domain: api.example.com
+- site_type: proxy
+- proxy_backend: http://127.0.0.1:3000
+```
+
+生成的配置包括：
+- WebSocket 支持
+- 连接保持（keepalive）
+- 安全头
+- Gzip 压缩
+
+### 批量操作
+
+利用 `deploy-config.json` 中的 `deployTo` 配置，可以一次性部署到多个服务器：
+
+```json
+{
+  "sites": [
+    {
+      "name": "tikmatrix",
+      "deployTo": ["server-us", "server-dublin", "server-sgp"]
+    }
+  ]
+}
+```
+
+运行部署时会自动并行部署到所有配置的服务器。
+
+## 日志和监控
+
+- **Nginx 访问日志**: `/var/log/nginx/{domain}.access.log`
+- **Nginx 错误日志**: `/var/log/nginx/{domain}.error.log`
+- **初始化日志**: `/var/log/tikmatrix-init.log`
+- **站点备份**: `/var/backups/www/`
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request 改进此管理系统。
+
+## 许可
+
+MIT License
