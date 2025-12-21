@@ -107,14 +107,17 @@ This document provides practical examples of using the VPS Management workflow.
    operation: push-files
    local_path: ./server-configs
    remote_path: /home/deploy/configs
+   post_upload_commands: (optional, e.g., sudo systemctl restart myservice)
    server: server-us
    ```
 
 **What happens:**
-- Uses rsync to efficiently transfer files
+- Automatically creates remote directory if needed
+- Uses rsync to efficiently transfer files with automatic overwrite
 - Maintains file permissions
 - Shows progress
 - Sets correct ownership
+- Executes post-upload commands if specified
 
 **Result:** Config files updated on server! 📁
 
@@ -251,21 +254,26 @@ Status: active
 
 ---
 
-## Example 9: Update Site After Config Change
+## Example 9: Update Nginx Configuration
 
-**Scenario:** You updated Nginx config manually, need to reload
+**Scenario:** You updated Nginx config files and need to reload Nginx
 
 **Steps:**
-1. Go to **Actions** → **VPS Management** → **Run workflow**
-2. Configure:
+1. Update your Nginx config files in the repository
+2. Go to **Actions** → **VPS Management** → **Run workflow**
+3. Configure:
    ```
-   operation: update-site
+   operation: push-files
+   local_path: ./nginx-configs
+   remote_path: /etc/nginx/conf.d
+   post_upload_commands: sudo nginx -t && sudo nginx -s reload
    server: server-us
    ```
 
 **What happens:**
-- Tests Nginx configuration
-- Reloads Nginx gracefully
+- Uploads the Nginx config files
+- Tests Nginx configuration (`nginx -t`)
+- Reloads Nginx gracefully if tests pass
 - No downtime
 
 **Result:** Nginx reloaded with new config! 🔄
@@ -377,10 +385,8 @@ sudo ./fix-permissions.sh
 
 **Solution:**
 ```
-operation: update-site
-server: your-server
-
-This clears Nginx cache and reloads
+Clear browser cache or use hard refresh (Ctrl+F5)
+If issue persists, try clearing server-side cache
 ```
 
 ### Issue: Can't SSH to server
@@ -398,11 +404,10 @@ This clears Nginx cache and reloads
 |-----------|-----------------|---------------------|
 | deploy-site | Deploy site | site |
 | configure-nginx | Add new domain | domain, site_type |
-| push-files | Upload files | local_path, remote_path |
+| push-files | Upload files & run commands | local_path, remote_path |
 | health-check | Check status | (none) |
 | manage-backup | Backup site | backup_action, backup_site (for create) |
 | renew-ssl | Renew certs | (none) |
-| update-site | Reload Nginx | (none) |
 
 ---
 
