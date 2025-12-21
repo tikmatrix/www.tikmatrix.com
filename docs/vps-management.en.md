@@ -121,32 +121,23 @@ Deploy TikMatrix site to all configured servers
 - server: (empty)
 ```
 
-#### 2. Update Site (update-site)
+#### 2. Push Files (push-files)
 
-Reload Nginx configuration without rebuilding.
-
-**Parameters:**
-- `operation`: Select `update-site`
-- `site`: Select site (optional)
-- `server`: Target server (optional)
-
-**Example:**
-```
-Update Nginx configuration on all servers
-- operation: update-site
-```
-
-#### 3. Push Files (push-files)
-
-Push any files or directories to server.
+Push any files or directories to server with automatic overwrite and post-upload command execution.
 
 **Parameters:**
 - `operation`: Select `push-files`
 - `local_path`: Local path (e.g., `./scripts`)
 - `remote_path`: Remote path (e.g., `/home/deploy/scripts`)
+- `post_upload_commands`: Commands to run after upload (optional, e.g., `sudo nginx -t && sudo nginx -s reload`)
 - `server`: Target server (optional)
 
-**Example:**
+**Features:**
+- ✅ Automatically creates remote directory if it doesn't exist
+- ✅ Automatically overwrites existing files (using `rsync --delete`)
+- ✅ Supports post-upload command execution (e.g., reload config, restart service)
+
+**Example 1 - Push configuration files:**
 ```
 Push configuration files to server
 - operation: push-files
@@ -155,7 +146,17 @@ Push configuration files to server
 - server: server-us
 ```
 
-#### 4. Health Check (health-check)
+**Example 2 - Update Nginx config and reload:**
+```
+Update Nginx configuration and automatically reload
+- operation: push-files
+- local_path: ./nginx-configs
+- remote_path: /etc/nginx/conf.d
+- post_upload_commands: sudo nginx -t && sudo nginx -s reload
+- server: server-us
+```
+
+#### 3. Health Check (health-check)
 
 Check server status and service health.
 
@@ -173,7 +174,7 @@ Check server status and service health.
 - ✅ Configured sites list
 - ✅ SSL certificates list
 
-#### 5. Manage Backup (manage-backup)
+#### 4. Manage Backup (manage-backup)
 
 Create or list site backups.
 
@@ -196,7 +197,7 @@ List all backups
 - backup_action: list
 ```
 
-#### 6. Renew SSL (renew-ssl)
+#### 5. Renew SSL (renew-ssl)
 
 Manually trigger SSL certificate renewal.
 
@@ -206,7 +207,7 @@ Manually trigger SSL certificate renewal.
 
 **Note:** Certbot is configured for auto-renewal (daily at 3 AM). This operation is for manual triggering.
 
-#### 7. Configure Nginx (configure-nginx)
+#### 6. Configure Nginx (configure-nginx)
 
 Configure Nginx site for new domain.
 
