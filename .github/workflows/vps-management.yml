@@ -298,6 +298,9 @@ jobs:
           echo "⚙️ Running post-upload commands on ${{ matrix.server.host }}"
           echo "Commands: ${{ github.event.inputs.post_upload_commands }}"
           
+          # Note: Commands are executed directly on the server with deploy user privileges.
+          # Only authorized users with repository write access can trigger this workflow.
+          # Ensure commands are properly reviewed before execution.
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \

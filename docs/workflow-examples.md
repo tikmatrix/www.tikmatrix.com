@@ -107,7 +107,7 @@ This document provides practical examples of using the VPS Management workflow.
    operation: push-files
    local_path: ./server-configs
    remote_path: /home/deploy/configs
-   post_upload_commands: (optional, e.g., sudo systemctl restart myservice)
+   post_upload_commands: "sudo systemctl restart myservice"  # optional
    server: server-us
    ```
 
