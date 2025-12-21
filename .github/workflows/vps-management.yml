@@ -12,7 +12,6 @@ on:
         type: choice
         options:
           - deploy-site
-          - update-site
           - push-files
           - health-check
           - manage-backup
@@ -48,6 +47,11 @@ on:
       
       remote_path:
         description: 'Remote path for file operations (e.g., /var/www/tikmatrix.com)'
+        required: false
+        type: string
+      
+      post_upload_commands:
+        description: 'Commands to run after upload (e.g., "sudo nginx -t && sudo nginx -s reload")'
         required: false
         type: string
       
@@ -236,41 +240,6 @@ jobs:
         if: always()
         run: rm -f ~/.ssh/deploy_key
 
-  update-site:
-    needs: prepare
-    if: github.event.inputs.operation == 'update-site'
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        server: ${{ fromJson(needs.prepare.outputs.servers) }}
-      fail-fast: false
-    steps:
-      - name: Setup SSH Key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-      
-      - name: Trigger site update on ${{ matrix.server.id }}
-        run: |
-          echo "🔄 Updating site on ${{ matrix.server.host }}"
-          
-          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'UPDATE_SCRIPT'
-          set -e
-          
-          echo "🔄 Reloading Nginx..."
-          sudo systemctl reload nginx
-          
-          echo "✅ Site updated!"
-          UPDATE_SCRIPT
-      
-      - name: Cleanup SSH Key
-        if: always()
-        run: rm -f ~/.ssh/deploy_key
-
   push-files:
     needs: prepare
     if: github.event.inputs.operation == 'push-files'
@@ -300,8 +269,15 @@ jobs:
         run: |
           echo "📤 Pushing files to ${{ matrix.server.host }}"
           
-          # Use rsync for efficient file transfer
-          rsync -avz --progress \
+          # Create remote directory if it doesn't exist
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" \
+            "mkdir -p ${{ github.event.inputs.remote_path }}"
+          
+          # Use rsync for efficient file transfer with automatic overwrite
+          rsync -avz --progress --delete \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
             "${{ github.event.inputs.local_path }}/" \
             "${{ matrix.server.user }}@${{ matrix.server.host }}:${{ github.event.inputs.remote_path }}/"
@@ -315,6 +291,20 @@ jobs:
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" \
             "sudo chown -R deploy:www-data ${{ github.event.inputs.remote_path }} && sudo chmod -R 775 ${{ github.event.inputs.remote_path }}"
+      
+      - name: Run post-upload commands
+        if: github.event.inputs.post_upload_commands != ''
+        run: |
+          echo "⚙️ Running post-upload commands on ${{ matrix.server.host }}"
+          echo "Commands: ${{ github.event.inputs.post_upload_commands }}"
+          
+          ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            "${{ matrix.server.user }}@${{ matrix.server.host }}" \
+            "${{ github.event.inputs.post_upload_commands }}"
+          
+          echo "✅ Post-upload commands completed successfully!"
       
       - name: Cleanup SSH Key
         if: always()
