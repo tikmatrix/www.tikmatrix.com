@@ -2,6 +2,11 @@
 # =============================================================================
 # TikMatrix VPS Setup Script v1.1   
 # One-click setup for www.tikmatrix.com ecosystem on Ubuntu 22.04 LTS
+# 
+# NOTE: For GitHub Actions automation, use init-vps.sh instead!
+# - init-vps.sh: Non-interactive initialization script for new VPS
+# - This script: Interactive setup for manual configuration
+# - See docs/vps-management.md for the full automation workflow
 # =============================================================================
 
 set -e  # Exit on error
