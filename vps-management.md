@@ -164,41 +164,6 @@ sudo ./init-vps.sh
 
 #### 2. 健康检查 (health-check)
 
-推送任意文件或目录到服务器，支持自动覆盖和上传后执行命令。
-
-**参数：**
-- `operation`: 选择 `push-files`
-- `local_path`: 本地路径（如 `./scripts`）
-- `remote_path`: 远程路径（如 `/home/deploy/scripts`）
-- `post_upload_commands`: 上传后执行的命令（可选，如 `sudo nginx -t && sudo nginx -s reload`）
-- `server`: 目标服务器（可选）
-
-**特性：**
-- ✅ 自动创建远程目录（如果不存在）
-- ✅ 自动覆盖现有文件（使用 `rsync --delete`）
-- ✅ 支持上传后执行命令（如重载配置、重启服务等）
-
-**示例场景 1 - 推送配置文件：**
-```
-推送配置文件到服务器
-- operation: push-files
-- local_path: ./config
-- remote_path: /etc/myapp/config
-- server: server-us
-```
-
-**示例场景 2 - 更新 Nginx 配置并重载：**
-```
-更新 Nginx 配置文件并自动重载
-- operation: push-files
-- local_path: ./nginx-configs
-- remote_path: /etc/nginx/conf.d
-- post_upload_commands: sudo nginx -t && sudo nginx -s reload
-- server: server-us
-```
-
-#### 2. 健康检查 (health-check)
-
 检查服务器状态和服务运行情况。
 
 **参数：**
@@ -284,8 +249,6 @@ sudo ./init-vps.sh
 **支持的操作：**
 - `configure-nginx` - 配置 Nginx
 - `renew-ssl` - 续期 SSL 证书
-
-#### 5. 配置 Nginx (configure-nginx)
 
 #### 5. 配置 Nginx (configure-nginx)
 
