@@ -2,12 +2,28 @@
 
 This document explains how to manage VPS servers through GitHub Actions for automated deployment and operations.
 
+> **2024 Refactoring Note:** We have split the original single `vps-management.yml` workflow into three focused workflows by responsibility, and extracted reusable helper scripts. This greatly improves code readability, maintainability, and extensibility.
+
 ## Overview
 
 We provide a two-tier management approach:
 
 1. **Initialization Script** (`init-vps.sh`) - Run once on new VPS to configure base environment
-2. **GitHub Actions Workflow** (`vps-management.yml`) - All subsequent operations automated via GitHub Actions
+2. **GitHub Actions Workflows** - All subsequent operations automated via GitHub Actions
+   - `deploy-site.yml` - Site deployment
+   - `server-operations.yml` - Server operations (health check, file push, backup management)
+   - `server-config.yml` - Server configuration (Nginx config, SSL certificates)
+
+### Helper Scripts
+
+All workflows are built on reusable helper scripts in the `scripts/` directory:
+- `lib-common.sh` - Common function library
+- `deploy-site.sh` - Site deployment logic
+- `health-check.sh` - Health check logic
+- `backup-manage.sh` - Backup management logic
+- `push-files.sh` - File push logic
+- `ssl-renew.sh` - SSL renewal logic
+- `nginx-config.sh` - Nginx configuration logic
 
 ## Initialize New VPS
 
@@ -100,28 +116,71 @@ Edit `deploy-config.json` to add new server information:
 
 After initialization, all subsequent operations can be done through GitHub Actions.
 
-### Available Operations
+### Available Workflows
 
-Visit the **Actions** tab in your GitHub repository, select **VPS Management** workflow, and click **Run workflow**.
+We have split VPS management operations into three independent workflows with clearer responsibilities and easier usage:
 
-#### 1. Deploy Site (deploy-site)
+#### Workflow 1: Deploy Site
+
+Used for building and deploying sites to VPS servers.
+
+Visit the **Actions** tab in your GitHub repository, select **Deploy Site** workflow, and click **Run workflow**.
+
+#### 1. Deploy Site (Deploy Site workflow)
 
 Build and deploy site to VPS.
 
 **Parameters:**
-- `operation`: Select `deploy-site`
 - `site`: Select site to deploy (tikmatrix, igmatrix, ytmatrix, tikzenx)
-- `server`: Target server (leave empty to deploy to all configured servers)
+- `server`: Target server (leave empty to deploy to all configured servers for this site)
 
 **Example:**
 ```
 Deploy TikMatrix site to all configured servers
-- operation: deploy-site
 - site: tikmatrix
 - server: (empty)
 ```
 
-#### 2. Push Files (push-files)
+**Workflow:**
+1. Determine target servers based on configuration
+2. Install dependencies and build project
+3. Run brand replacement if needed
+4. Create deployment archive
+5. Deploy to all target servers in parallel
+6. Automatically create backups (keep last 3)
+
+---
+
+#### Workflow 2: Server Operations
+
+Used for daily server operations.
+
+Visit the **Actions** tab in your GitHub repository, select **Server Operations** workflow, and click **Run workflow**.
+
+**Supported operations:**
+- `health-check` - Health check
+- `push-files` - Push files
+- `manage-backup` - Backup management
+
+#### 2. Health Check (health-check)
+
+Check server status and service health.
+
+**Parameters:**
+- `operation`: Select `health-check`
+- `server`: Target server (leave empty to check all servers)
+
+**Checks:**
+- ✅ System info (OS, uptime)
+- ✅ Disk usage
+- ✅ Memory usage
+- ✅ Nginx status and configuration
+- ✅ Firewall status
+- ✅ Fail2Ban status
+- ✅ Configured sites list
+- ✅ SSL certificates list
+
+#### 3. Push Files (push-files)
 
 Push any files or directories to server with automatic overwrite and post-upload command execution.
 
@@ -156,24 +215,6 @@ Update Nginx configuration and automatically reload
 - server: server-us
 ```
 
-#### 3. Health Check (health-check)
-
-Check server status and service health.
-
-**Parameters:**
-- `operation`: Select `health-check`
-- `server`: Target server (leave empty to check all servers)
-
-**Checks:**
-- ✅ System info (OS, uptime)
-- ✅ Disk usage
-- ✅ Memory usage
-- ✅ Nginx status and configuration
-- ✅ Firewall status
-- ✅ Fail2Ban status
-- ✅ Configured sites list
-- ✅ SSL certificates list
-
 #### 4. Manage Backup (manage-backup)
 
 Create or list site backups.
@@ -197,17 +238,19 @@ List all backups
 - backup_action: list
 ```
 
-#### 5. Renew SSL (renew-ssl)
+---
 
-Manually trigger SSL certificate renewal.
+#### Workflow 3: Server Configuration
 
-**Parameters:**
-- `operation`: Select `renew-ssl`
-- `server`: Target server (leave empty for all servers)
+Used for Nginx and SSL certificate configuration management.
 
-**Note:** Certbot is configured for auto-renewal (daily at 3 AM). This operation is for manual triggering.
+Visit the **Actions** tab in your GitHub repository, select **Server Configuration** workflow, and click **Run workflow**.
 
-#### 6. Configure Nginx (configure-nginx)
+**Supported operations:**
+- `configure-nginx` - Configure Nginx
+- `renew-ssl` - Renew SSL certificates
+
+#### 5. Configure Nginx (configure-nginx)
 
 Configure Nginx site for new domain.
 
@@ -239,6 +282,17 @@ Configure reverse proxy to local service
 - proxy_backend: http://127.0.0.1:3000
 - enable_ssl: true
 - ssl_method: route53
+```
+
+#### 6. Renew SSL (renew-ssl)
+
+Manually trigger SSL certificate renewal.
+
+**Parameters:**
+- `operation`: Select `renew-ssl`
+- `server`: Target server (leave empty for all servers)
+
+**Note:** Certbot is configured for auto-renewal (daily at 3 AM). This operation is for manual triggering.
 ```
 
 ## Workflow Examples
