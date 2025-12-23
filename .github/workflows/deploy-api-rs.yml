@@ -137,7 +137,11 @@ jobs:
           
           # Deploy and setup service
           log_info "Setting up service on server"
-          ssh_exec "$SERVER_HOST" "$SERVER_PORT" "$SERVER_USER" "$SSH_KEY_FILE" << 'EOF'
+          ssh -i "$SSH_KEY_FILE" -p "$SERVER_PORT" \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -o ConnectTimeout=10 \
+            "$SERVER_USER@$SERVER_HOST" 'bash -s' << 'EOF'
           set -euo pipefail
           
           REMOTE_DIR="/home/deploy/apps/tikmatrix-api-rs"
@@ -166,8 +170,7 @@ jobs:
           SERVICE
           
           # Install and restart service
-          sudo cp /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
-          sudo rm -f /tmp/tikmatrix-api-rs.service
+          sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
           sudo systemctl daemon-reload
           sudo systemctl enable --now tikmatrix-api-rs.service || true
           
