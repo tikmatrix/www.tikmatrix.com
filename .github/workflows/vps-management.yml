@@ -123,11 +123,14 @@ jobs:
 
           if [[ -n "$SELECTED_SERVER" ]]; then
             # Use specific server
-            SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id == \"$SELECTED_SERVER\")]")
+            SERVERS=$(echo "$CONFIG" | jq -c --arg target "$SELECTED_SERVER" '[.servers[] | select(.id == $target)]')
           elif [[ -n "$SELECTED_SITE" ]]; then
             # Get servers for the selected site
-            DEPLOY_TO=$(echo "$CONFIG" | jq -c ".sites[] | select(.name == \"$SELECTED_SITE\") | .deployTo")
-            SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id | IN($DEPLOY_TO))]")
+            SERVERS=$(echo "$CONFIG" | jq -c --arg site "$SELECTED_SITE" '
+              .servers as $allServers
+              | .sites[] | select(.name == $site) | .deployTo as $deploy
+              | [$allServers[] | select(.id | IN($deploy))]
+            ')
           else
             # Use all servers
             SERVERS=$(echo "$CONFIG" | jq -c '.servers')
