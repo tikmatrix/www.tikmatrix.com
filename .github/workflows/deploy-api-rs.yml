@@ -84,8 +84,7 @@ jobs:
           key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Build release
-        run: cargo build --release
-        working-directory: tikmatrix-api-rs
+        run: cd tikmatrix-api-rs && cargo build --release
 
       - name: Upload binary
         uses: actions/upload-artifact@v4
@@ -167,8 +166,8 @@ jobs:
           SERVICE
           
           # Install and restart service
-          sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service || \
-            sudo cp /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
+          sudo cp /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
+          sudo rm -f /tmp/tikmatrix-api-rs.service
           sudo systemctl daemon-reload
           sudo systemctl enable --now tikmatrix-api-rs.service || true
           

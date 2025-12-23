@@ -59,35 +59,7 @@ jobs:
             SITES=$(jq -n -c --arg name "$SELECTED_SITE" --argjson config "$SITE_CONFIG" '[{name: $name, config: $config}]')
           fi
 
-          # Build deployment matrix using jq (avoiding bash subshell issues)
-          DEPLOYMENTS=$(echo "$CONFIG" | jq -c \
-            --argjson sites "$SITES" \
-            --arg selected_server "$SELECTED_SERVER" \
-            '
-            [
-              $sites[] | . as $site |
-              (
-                if $selected_server != "" then
-                  .servers[] | select(.id == $selected_server)
-                else
-                  .config.deployTo as $deployTo |
-                  .servers[] | select(.id as $id | $deployTo | index($id))
-                end
-              ) as $server |
-              {
-                site_name: $site.name,
-                site_config: $site.config,
-                server: $server
-              }
-            ]
-            ' | jq -c --argjson servers "$(echo "$CONFIG" | jq -c '.servers')" \
-            '
-            map(
-              .server = ($servers[] | select(.id == .server.id // .server))
-            )
-            ')
-          
-          # Simpler: directly create the deployment matrix
+          # Build deployment matrix
           if [[ -z "$SELECTED_SITE" ]]; then
             # All sites
             if [[ -n "$SELECTED_SERVER" ]]; then
@@ -109,19 +81,16 @@ jobs:
                 '[
                   .sites[] | . as $site |
                   .deployTo as $deployTo |
-                  (.. | .servers? // empty | select(type == "array") | .[]) as $srv |
-                  select($srv.id as $id | $deployTo | index($id)) |
+                  (.servers[] | select(.id as $id | $deployTo | index($id))) as $srv |
                   {
                     site_name: $site.name,
                     site_config: $site,
                     server: $srv
                   }
-                ] | unique_by(.site_name + "-" + .server.id)')
+                ]')
             fi
           else
-            # Single site
-            SITE_CONFIG=$(echo "$CONFIG" | jq -c --arg site "$SELECTED_SITE" '.sites[] | select(.name == $site)')
-            
+            # Single site - reuse SITE_CONFIG from above
             if [[ -n "$SELECTED_SERVER" ]]; then
               # Single site to specific server
               DEPLOYMENTS=$(echo "$CONFIG" | jq -c \
