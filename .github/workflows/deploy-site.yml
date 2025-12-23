@@ -1,0 +1,166 @@
+# Deploy Site Workflow
+# Deploys a site to VPS servers
+name: Deploy Site
+run-name: ${{ github.actor }} is deploying ${{ github.event.inputs.site }} 🚀
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: "Site to deploy"
+        required: true
+        type: choice
+        options:
+          - tikmatrix
+          - igmatrix
+          - ytmatrix
+          - tikzenx
+
+      server:
+        description: "Target server (leave empty to deploy to all configured servers for this site)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - server-us
+          - server-dublin
+          - server-sgp
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      servers: ${{ steps.get-servers.outputs.servers }}
+      site_config: ${{ steps.get-servers.outputs.site_config }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Determine target servers
+        id: get-servers
+        run: |
+          CONFIG=$(cat deploy-config.json)
+          SELECTED_SERVER="${{ github.event.inputs.server }}"
+          SELECTED_SITE="${{ github.event.inputs.site }}"
+          
+          # Get site configuration
+          SITE_CONFIG=$(echo "$CONFIG" | jq -c --arg site "$SELECTED_SITE" '.sites[] | select(.name == $site)')
+          
+          if [[ -z "$SITE_CONFIG" || "$SITE_CONFIG" == "null" ]]; then
+            echo "Error: Site '$SELECTED_SITE' not found in config"
+            exit 1
+          fi
+          
+          echo "site_config=$SITE_CONFIG" >> $GITHUB_OUTPUT
+          
+          # Determine servers
+          if [[ -n "$SELECTED_SERVER" ]]; then
+            # Use specific server
+            SERVERS=$(echo "$CONFIG" | jq -c --arg target "$SELECTED_SERVER" '[.servers[] | select(.id == $target)]')
+          else
+            # Get servers for the selected site
+            DEPLOY_TO=$(echo "$SITE_CONFIG" | jq -r '.deployTo[]')
+            SERVERS=$(echo "$CONFIG" | jq -c --arg site "$SELECTED_SITE" '
+              .sites[] | select(.name == $site) | .deployTo as $deploy |
+              [.] as $dummy |
+              ($dummy[0] | .deployTo) as $deployTo |
+              [.. | .servers? // empty | .[] | select(.id as $id | $deployTo | index($id))] | unique
+            ' | jq -c '[.. | .servers? // empty | .[]]' <<< "$CONFIG" | jq -c --argjson deploy "$(echo "$SITE_CONFIG" | jq -c '.deployTo')" '[.[] | select(.id as $id | $deploy | index($id))]')
+            
+            # Simplified approach
+            SERVERS=$(echo "$CONFIG" | jq -c --argjson deployTo "$(echo "$SITE_CONFIG" | jq -c '.deployTo')" '[.servers[] | select(.id as $id | $deployTo | index($id))]')
+          fi
+          
+          # Validate servers is not empty
+          if [[ -z "$SERVERS" || "$SERVERS" == "[]" || "$SERVERS" == "null" ]]; then
+            echo "Error: No servers found for deployment"
+            exit 1
+          fi
+          
+          echo "servers=$SERVERS" >> $GITHUB_OUTPUT
+          echo "Target servers: $SERVERS"
+          echo "Site config: $SITE_CONFIG"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run brand replacement if needed
+        run: |
+          SITE_CONFIG='${{ needs.prepare.outputs.site_config }}'
+          BRAND_REPLACE=$(echo "$SITE_CONFIG" | jq -r '.brandReplace')
+          
+          if [[ "$BRAND_REPLACE" == "true" ]]; then
+            echo "Running brand replacement..."
+            node ./scripts/replace-brand.js
+          else
+            echo "Brand replacement not needed for this site"
+          fi
+
+      - name: Build project
+        run: npm run build
+
+      - name: Create deployment archive
+        run: |
+          cd build
+          tar -czf ../build-${{ github.event.inputs.site }}.tar.gz .
+          cd ..
+          ls -lh build-${{ github.event.inputs.site }}.tar.gz
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: build-${{ github.event.inputs.site }}.tar.gz
+          retention-days: 1
+
+  deploy:
+    needs: [prepare, build]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: ${{ fromJson(needs.prepare.outputs.servers) }}
+      fail-fast: false
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+      - name: Deploy to ${{ matrix.server.id }}
+        env:
+          SITE: ${{ github.event.inputs.site }}
+          CONFIG_FILE: deploy-config.json
+          SSH_KEY_FILE: ~/.ssh/deploy_key
+        run: |
+          echo "🚀 Deploying $SITE to ${{ matrix.server.id }} (${{ matrix.server.host }})"
+          
+          ./scripts/deploy-site.sh \
+            "${{ matrix.server.id }}" \
+            "$SITE" \
+            "build-$SITE.tar.gz"
+
+      - name: Cleanup SSH Key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

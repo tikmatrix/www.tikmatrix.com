@@ -2,12 +2,28 @@
 
 本文档说明如何通过 GitHub Actions 管理 VPS 服务器，实现自动化部署和运维。
 
+> **2024 重构说明：** 我们已将原来的单一 `vps-management.yml` 工作流按职责拆分为三个独立工作流，并提取了可复用的辅助脚本。这大大提高了代码的可读性、可维护性和可扩展性。
+
 ## 概述
 
 我们提供了两层管理方案：
 
 1. **初始化脚本** (`init-vps.sh`) - 在新 VPS 上手动运行一次，配置基础环境
-2. **GitHub Actions 工作流** (`vps-management.yml`) - 后续所有操作通过 GitHub Actions 自动化管理
+2. **GitHub Actions 工作流** - 后续所有操作通过 GitHub Actions 自动化管理
+   - `deploy-site.yml` - 站点部署
+   - `server-operations.yml` - 服务器运维（健康检查、文件推送、备份管理）
+   - `server-config.yml` - 服务器配置（Nginx 配置、SSL 证书）
+
+### 辅助脚本
+
+所有工作流都基于 `scripts/` 目录下的可复用辅助脚本构建：
+- `lib-common.sh` - 公共函数库
+- `deploy-site.sh` - 站点部署逻辑
+- `health-check.sh` - 健康检查逻辑
+- `backup-manage.sh` - 备份管理逻辑
+- `push-files.sh` - 文件推送逻辑
+- `ssl-renew.sh` - SSL 续期逻辑
+- `nginx-config.sh` - Nginx 配置逻辑
 
 ## 初始化新 VPS
 
@@ -100,28 +116,71 @@ sudo ./init-vps.sh
 
 初始化完成后，所有后续操作都可以通过 GitHub Actions 完成。
 
-### 可用操作
+### 可用工作流
 
-访问 GitHub 仓库的 **Actions** 标签页，选择 **VPS Management** 工作流，点击 **Run workflow**。
+我们将 VPS 管理操作拆分为三个独立的工作流，职责更清晰，使用更方便：
 
-#### 1. 部署站点 (deploy-site)
+#### 工作流 1: Deploy Site (站点部署)
+
+用于构建和部署站点到 VPS 服务器。
+
+访问 GitHub 仓库的 **Actions** 标签页，选择 **Deploy Site** 工作流，点击 **Run workflow**。
+
+#### 1. 部署站点 (Deploy Site 工作流)
 
 构建并部署站点到 VPS。
 
 **参数：**
-- `operation`: 选择 `deploy-site`
 - `site`: 选择要部署的站点（tikmatrix, igmatrix, ytmatrix, tikzenx）
-- `server`: 目标服务器（留空则部署到配置文件中的所有服务器）
+- `server`: 目标服务器（留空则部署到配置文件中该站点的所有服务器）
 
 **示例场景：**
 ```
 部署 TikMatrix 站点到所有配置的服务器
-- operation: deploy-site
 - site: tikmatrix
 - server: (留空)
 ```
 
-#### 2. 推送文件 (push-files)
+**工作流程：**
+1. 根据配置确定目标服务器
+2. 安装依赖并构建项目
+3. 如果需要，运行品牌替换
+4. 创建部署压缩包
+5. 并行部署到所有目标服务器
+6. 自动创建备份（保留最近 3 个）
+
+---
+
+#### 工作流 2: Server Operations (服务器运维)
+
+用于日常服务器运维操作。
+
+访问 GitHub 仓库的 **Actions** 标签页，选择 **Server Operations** 工作流，点击 **Run workflow**。
+
+**支持的操作：**
+- `health-check` - 健康检查
+- `push-files` - 推送文件
+- `manage-backup` - 备份管理
+
+#### 2. 健康检查 (health-check)
+
+检查服务器状态和服务运行情况。
+
+**参数：**
+- `operation`: 选择 `health-check`
+- `server`: 目标服务器（留空检查所有服务器）
+
+**检查内容：**
+- ✅ 系统信息（OS, 运行时间）
+- ✅ 磁盘使用率
+- ✅ 内存使用率
+- ✅ Nginx 状态和配置
+- ✅ 防火墙状态
+- ✅ Fail2Ban 状态
+- ✅ 已配置的站点列表
+- ✅ SSL 证书列表
+
+#### 3. 推送文件 (push-files)
 
 推送任意文件或目录到服务器，支持自动覆盖和上传后执行命令。
 
@@ -156,24 +215,6 @@ sudo ./init-vps.sh
 - server: server-us
 ```
 
-#### 3. 健康检查 (health-check)
-
-检查服务器状态和服务运行情况。
-
-**参数：**
-- `operation`: 选择 `health-check`
-- `server`: 目标服务器（留空检查所有服务器）
-
-**检查内容：**
-- ✅ 系统信息（OS, 运行时间）
-- ✅ 磁盘使用率
-- ✅ 内存使用率
-- ✅ Nginx 状态和配置
-- ✅ 防火墙状态
-- ✅ Fail2Ban 状态
-- ✅ 已配置的站点列表
-- ✅ SSL 证书列表
-
 #### 4. 管理备份 (manage-backup)
 
 创建或列出站点备份。
@@ -197,17 +238,19 @@ sudo ./init-vps.sh
 - backup_action: list
 ```
 
-#### 5. 续期 SSL 证书 (renew-ssl)
+---
 
-手动触发 SSL 证书续期。
+#### 工作流 3: Server Configuration (服务器配置)
 
-**参数：**
-- `operation`: 选择 `renew-ssl`
-- `server`: 目标服务器（留空则所有服务器）
+用于 Nginx 和 SSL 证书配置管理。
 
-**注意：** Certbot 已配置自动续期（每天凌晨 3 点），此操作用于手动触发。
+访问 GitHub 仓库的 **Actions** 标签页，选择 **Server Configuration** 工作流，点击 **Run workflow**。
 
-#### 6. 配置 Nginx (configure-nginx)
+**支持的操作：**
+- `configure-nginx` - 配置 Nginx
+- `renew-ssl` - 续期 SSL 证书
+
+#### 5. 配置 Nginx (configure-nginx)
 
 为新域名配置 Nginx 站点。
 
@@ -240,6 +283,16 @@ sudo ./init-vps.sh
 - enable_ssl: true
 - ssl_method: route53
 ```
+
+#### 6. 续期 SSL 证书 (renew-ssl)
+
+手动触发 SSL 证书续期。
+
+**参数：**
+- `operation`: 选择 `renew-ssl`
+- `server`: 目标服务器（留空则所有服务器）
+
+**注意：** Certbot 已配置自动续期（每天凌晨 3 点），此操作用于手动触发。
 
 ## 工作流程示例
 

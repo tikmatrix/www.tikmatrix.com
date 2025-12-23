@@ -70,6 +70,52 @@ sudo ./fix-deploy-permissions.sh
 
 ---
 
+### 4. Helper Scripts for GitHub Actions
+
+These scripts are used by the GitHub Actions workflows and can also be run manually:
+
+#### `lib-common.sh`
+Common library functions for all VPS management scripts.
+
+#### `deploy-site.sh`
+Deploy a site archive to a VPS server.
+```bash
+./deploy-site.sh <server_id> <site_name> <archive_path>
+```
+
+#### `health-check.sh`
+Run health checks on a VPS server.
+```bash
+./health-check.sh <server_id>
+```
+
+#### `backup-manage.sh`
+Manage backups on a VPS server.
+```bash
+./backup-manage.sh <server_id> <action> [site]
+# Actions: list, create
+```
+
+#### `push-files.sh`
+Push files to a VPS server using rsync.
+```bash
+./push-files.sh <server_id> <local_path> <remote_path> [post_commands]
+```
+
+#### `ssl-renew.sh`
+Renew SSL certificates on a VPS server.
+```bash
+./ssl-renew.sh <server_id>
+```
+
+#### `nginx-config.sh`
+Configure Nginx for a domain on a VPS server.
+```bash
+./nginx-config.sh <server_id> <domain> <site_type> [proxy_backend] [enable_ssl] [ssl_method]
+```
+
+---
+
 ## Which Script Should I Use?
 
 ### For GitHub Actions Automation (Recommended) ✅
@@ -113,7 +159,10 @@ Use `setup-vps.sh` if:
 - **Full Guide:** `docs/vps-management.md`
 - **Quick Start:** `docs/vps-management-quickstart.md`
 - **English Docs:** `docs/vps-management.en.md`
-- **Workflows:** `.github/workflows/vps-management.yml`
+- **Workflows:**
+  - `deploy-site.yml` - Site deployment
+  - `server-operations.yml` - Health checks, file push, backups
+  - `server-config.yml` - Nginx and SSL configuration
 
 ## Examples
 
