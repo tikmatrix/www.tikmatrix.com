@@ -14,7 +14,6 @@ on:
           - tikmatrix
           - igmatrix
           - ytmatrix
-          - tikzenx
 
       server:
         description: "Target server (leave empty to deploy to all configured servers for this site)"
@@ -42,17 +41,17 @@ jobs:
           CONFIG=$(cat deploy-config.json)
           SELECTED_SERVER="${{ github.event.inputs.server }}"
           SELECTED_SITE="${{ github.event.inputs.site }}"
-          
+
           # Get site configuration
           SITE_CONFIG=$(echo "$CONFIG" | jq -c --arg site "$SELECTED_SITE" '.sites[] | select(.name == $site)')
-          
+
           if [[ -z "$SITE_CONFIG" || "$SITE_CONFIG" == "null" ]]; then
             echo "Error: Site '$SELECTED_SITE' not found in config"
             exit 1
           fi
-          
+
           echo "site_config=$SITE_CONFIG" >> $GITHUB_OUTPUT
-          
+
           # Determine servers
           if [[ -n "$SELECTED_SERVER" ]]; then
             # Use specific server
@@ -70,13 +69,13 @@ jobs:
             # Simplified approach
             SERVERS=$(echo "$CONFIG" | jq -c --argjson deployTo "$(echo "$SITE_CONFIG" | jq -c '.deployTo')" '[.servers[] | select(.id as $id | $deployTo | index($id))]')
           fi
-          
+
           # Validate servers is not empty
           if [[ -z "$SERVERS" || "$SERVERS" == "[]" || "$SERVERS" == "null" ]]; then
             echo "Error: No servers found for deployment"
             exit 1
           fi
-          
+
           echo "servers=$SERVERS" >> $GITHUB_OUTPUT
           echo "Target servers: $SERVERS"
           echo "Site config: $SITE_CONFIG"
@@ -101,7 +100,7 @@ jobs:
         run: |
           SITE_CONFIG='${{ needs.prepare.outputs.site_config }}'
           BRAND_REPLACE=$(echo "$SITE_CONFIG" | jq -r '.brandReplace')
-          
+
           if [[ "$BRAND_REPLACE" == "true" ]]; then
             echo "Running brand replacement..."
             node ./scripts/replace-brand.js
@@ -155,7 +154,7 @@ jobs:
           SSH_KEY_FILE: ~/.ssh/deploy_key
         run: |
           echo "🚀 Deploying $SITE to ${{ matrix.server.id }} (${{ matrix.server.host }})"
-          
+
           ./scripts/deploy-site.sh \
             "${{ matrix.server.id }}" \
             "$SITE" \
