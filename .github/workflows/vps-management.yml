@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       operation:
-        description: 'Operation to perform'
+        description: "Operation to perform"
         required: true
         type: choice
         options:
@@ -17,10 +17,10 @@ on:
           - manage-backup
           - renew-ssl
           - configure-nginx
-      
+
       # Deploy site options
       site:
-        description: 'Site to operate on'
+        description: "Site to operate on"
         required: false
         type: choice
         options:
@@ -28,80 +28,80 @@ on:
           - igmatrix
           - ytmatrix
           - tikzenx
-      
+
       server:
-        description: 'Target server (leave empty for all servers from deploy-config.json)'
+        description: "Target server (leave empty for all servers from deploy-config.json)"
         required: false
         type: choice
         options:
-          - ''
+          - ""
           - server-us
           - server-dublin
           - server-sgp
-      
+
       # File push options
       local_path:
-        description: 'Local path for file operations (e.g., ./build)'
+        description: "Local path for file operations (e.g., ./build)"
         required: false
         type: string
-      
+
       remote_path:
-        description: 'Remote path for file operations (e.g., /var/www/tikmatrix.com)'
+        description: "Remote path for file operations (e.g., /var/www/tikmatrix.com)"
         required: false
         type: string
-      
+
       post_upload_commands:
         description: 'Commands to run after upload (e.g., "sudo nginx -t && sudo nginx -s reload")'
         required: false
         type: string
-      
+
       # Nginx configuration options
       domain:
-        description: 'Domain for nginx configuration'
+        description: "Domain for nginx configuration"
         required: false
         type: string
-      
+
       site_type:
-        description: 'Site type (static or proxy)'
+        description: "Site type (static or proxy)"
         required: false
         type: choice
         options:
           - static
           - proxy
         default: static
-      
+
       proxy_backend:
-        description: 'Backend URL for reverse proxy (e.g., http://127.0.0.1:3000)'
+        description: "Backend URL for reverse proxy (e.g., http://127.0.0.1:3000)"
         required: false
         type: string
-      
+
       enable_ssl:
-        description: 'Enable SSL certificate setup'
+        description: "Enable SSL certificate setup"
         required: false
         type: boolean
         default: false
-      
+
       ssl_method:
-        description: 'SSL validation method'
+        description: "SSL validation method"
         required: false
         type: choice
         options:
           - http
           - route53
         default: http
-      
+
       # Backup options
       backup_action:
-        description: 'Backup action (create or list)'
+        description: "Backup action (create or list)"
         required: false
         type: choice
         options:
           - create
           - list
         default: list
-      
+
       backup_site:
-        description: 'Site to backup (e.g., tikmatrix.com)'
+        description: "Site to backup (e.g., tikmatrix.com)"
         required: false
         type: string
 
@@ -113,26 +113,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Determine target servers
         id: get-servers
         run: |
           CONFIG=$(cat deploy-config.json)
           SELECTED_SERVER="${{ github.event.inputs.server }}"
           SELECTED_SITE="${{ github.event.inputs.site }}"
-          
+
           if [[ -n "$SELECTED_SERVER" ]]; then
             # Use specific server
             SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id == \"$SELECTED_SERVER\")]")
           elif [[ -n "$SELECTED_SITE" ]]; then
             # Get servers for the selected site
-            DEPLOY_TO=$(echo "$CONFIG" | jq -r ".sites[] | select(.name == \"$SELECTED_SITE\") | .deployTo[]")
+            DEPLOY_TO=$(echo "$CONFIG" | jq -c ".sites[] | select(.name == \"$SELECTED_SITE\") | .deployTo")
             SERVERS=$(echo "$CONFIG" | jq -c "[.servers[] | select(.id | IN($DEPLOY_TO))]")
           else
             # Use all servers
             SERVERS=$(echo "$CONFIG" | jq -c '.servers')
           fi
-          
+
           echo "servers=$SERVERS" >> $GITHUB_OUTPUT
           echo "Target servers: $SERVERS"
 
@@ -147,16 +147,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run brand replacement if needed
         run: |
           CONFIG=$(cat deploy-config.json)
@@ -165,21 +165,21 @@ jobs:
             echo "Running brand replacement..."
             node ./scripts/replace-brand.js
           fi
-      
+
       - name: Build project
         run: npm run build --verbose
-      
+
       - name: Create deployment archive
         run: |
           cd build
           tar -czf ../build-${{ github.event.inputs.site }}.tar.gz .
-      
+
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Deploy to ${{ matrix.server.id }}
         env:
           SITE: ${{ github.event.inputs.site }}
@@ -187,33 +187,33 @@ jobs:
           CONFIG=$(cat deploy-config.json)
           DOMAIN=$(echo "$CONFIG" | jq -r ".sites[] | select(.name == \"$SITE\") | .domain")
           TARGET_DIR="/var/www.$DOMAIN"
-          
+
           echo "🚀 Deploying $SITE to ${{ matrix.server.host }}:$TARGET_DIR"
-          
+
           # Upload archive
           scp -i ~/.ssh/deploy_key -P ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "build-${SITE}.tar.gz" \
             "${{ matrix.server.user }}@${{ matrix.server.host }}:/tmp/"
-          
+
           # Deploy on server
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'DEPLOY_SCRIPT'
           set -e
-          
+
           ARCHIVE="/tmp/build-${SITE}.tar.gz"
           TARGET="${TARGET_DIR}"
           BACKUP_DIR="/var/backups/www"
-          
+
           echo "📦 Deploying to $TARGET"
-          
+
           # Create directories
           mkdir -p "$TARGET"
           mkdir -p "$BACKUP_DIR"
-          
+
           # Backup current deployment
           if [[ -d "$TARGET" && "$(ls -A $TARGET 2>/dev/null)" ]]; then
               BACKUP_NAME="$(basename $TARGET)-$(date +%Y%m%d_%H%M%S).tar.gz"
@@ -221,21 +221,21 @@ jobs:
               tar -czf "$BACKUP_DIR/$BACKUP_NAME" -C "$TARGET" . 2>/dev/null || true
               ls -t "$BACKUP_DIR/$(basename $TARGET)-"* 2>/dev/null | tail -n +4 | xargs -r rm -f
           fi
-          
+
           # Clear and extract
           rm -rf "$TARGET"/*
           tar -xzf "$ARCHIVE" -C "$TARGET"
-          
+
           # Set permissions
           sudo chown -R deploy:www-data "$TARGET"
           sudo chmod -R 775 "$TARGET"
-          
+
           # Cleanup
           rm -f "$ARCHIVE"
-          
+
           echo "✅ Deployment completed!"
           DEPLOY_SCRIPT
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -251,39 +251,39 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Validate inputs
         run: |
           if [[ -z "${{ github.event.inputs.local_path }}" ]] || [[ -z "${{ github.event.inputs.remote_path }}" ]]; then
             echo "Error: Both local_path and remote_path are required for push-files operation"
             exit 1
           fi
-      
+
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Push files to ${{ matrix.server.id }}
         run: |
           echo "📤 Pushing files to ${{ matrix.server.host }}"
-          
+
           # Create remote directory if it doesn't exist
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" \
             "mkdir -p ${{ github.event.inputs.remote_path }}"
-          
+
           # Use rsync for efficient file transfer with automatic overwrite
           rsync -avz --progress --delete \
             -e "ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
             "${{ github.event.inputs.local_path }}/" \
             "${{ matrix.server.user }}@${{ matrix.server.host }}:${{ github.event.inputs.remote_path }}/"
-          
+
           echo "✅ Files pushed successfully!"
-      
+
       - name: Set permissions
         run: |
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
@@ -291,13 +291,13 @@ jobs:
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" \
             "sudo chown -R deploy:www-data ${{ github.event.inputs.remote_path }} && sudo chmod -R 775 ${{ github.event.inputs.remote_path }}"
-      
+
       - name: Run post-upload commands
         if: github.event.inputs.post_upload_commands != ''
         run: |
           echo "⚙️ Running post-upload commands on ${{ matrix.server.host }}"
           echo "Commands: ${{ github.event.inputs.post_upload_commands }}"
-          
+
           # Note: Commands are executed directly on the server with deploy user privileges.
           # Only authorized users with repository write access can trigger this workflow.
           # Ensure commands are properly reviewed before execution.
@@ -306,9 +306,9 @@ jobs:
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" \
             "${{ github.event.inputs.post_upload_commands }}"
-          
+
           echo "✅ Post-upload commands completed successfully!"
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -327,36 +327,36 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Health check on ${{ matrix.server.id }}
         run: |
           echo "🏥 Running health check on ${{ matrix.server.host }}"
-          
+
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'HEALTH_SCRIPT'
           set -e
-          
+
           echo "================================"
           echo "System Health Check"
           echo "================================"
           echo ""
-          
+
           echo "📊 System Info:"
           echo "  Hostname: $(hostname)"
           echo "  OS: $(lsb_release -d | cut -f2)"
           echo "  Uptime: $(uptime -p)"
           echo ""
-          
+
           echo "💾 Disk Usage:"
           df -h / | tail -1 | awk '{print "  Root: "$3" / "$2" ("$5" used)"}'
           echo ""
-          
+
           echo "🧠 Memory Usage:"
           free -h | grep Mem | awk '{print "  Memory: "$3" / "$2" ("int($3/$2*100)"% used)"}'
           echo ""
-          
+
           echo "🌐 Nginx Status:"
           if sudo systemctl is-active --quiet nginx; then
             echo "  ✅ Nginx is running"
@@ -365,11 +365,11 @@ jobs:
             echo "  ❌ Nginx is not running"
           fi
           echo ""
-          
+
           echo "🔥 Firewall Status:"
           sudo ufw status | head -5
           echo ""
-          
+
           echo "🔒 Fail2Ban Status:"
           if sudo systemctl is-active --quiet fail2ban; then
             echo "  ✅ Fail2Ban is running"
@@ -378,12 +378,12 @@ jobs:
             echo "  ❌ Fail2Ban is not running"
           fi
           echo ""
-          
+
           echo "📁 Configured Sites:"
           ls -1 /etc/nginx/conf.d/*.conf 2>/dev/null | wc -l | awk '{print "  Total: "$1" site(s)"}'
           ls -1 /etc/nginx/conf.d/*.conf 2>/dev/null | sed 's|/etc/nginx/conf.d/||;s|.conf||' | sed 's/^/  - /'
           echo ""
-          
+
           echo "🔐 SSL Certificates:"
           if [ -d "/etc/letsencrypt/live" ]; then
             ls -1 /etc/letsencrypt/live/ 2>/dev/null | wc -l | awk '{print "  Total: "$1" certificate(s)"}'
@@ -392,10 +392,10 @@ jobs:
             echo "  No SSL certificates found"
           fi
           echo ""
-          
+
           echo "✅ Health check completed!"
           HEALTH_SCRIPT
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -414,23 +414,23 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Manage backups on ${{ matrix.server.id }}
         env:
           ACTION: ${{ github.event.inputs.backup_action }}
           SITE: ${{ github.event.inputs.backup_site }}
         run: |
           echo "💾 Managing backups on ${{ matrix.server.host }}"
-          
+
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" bash << 'BACKUP_SCRIPT'
           set -e
-          
+
           BACKUP_DIR="/var/backups/www"
           ACTION="${ACTION:-list}"
-          
+
           if [[ "$ACTION" == "create" ]]; then
             if [[ -z "$SITE" ]]; then
               echo "❌ Error: backup_site is required for create action"
@@ -470,7 +470,7 @@ jobs:
             fi
           fi
           BACKUP_SCRIPT
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -489,32 +489,32 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Renew SSL certificates on ${{ matrix.server.id }}
         run: |
           echo "🔐 Renewing SSL certificates on ${{ matrix.server.host }}"
-          
+
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" << 'SSL_SCRIPT'
           set -e
-          
+
           echo "🔄 Running certbot renew..."
           sudo certbot renew --quiet --post-hook 'systemctl reload nginx' || {
             echo "⚠️ Certbot renew had some issues, checking status..."
             sudo certbot certificates
             exit 1
           }
-          
+
           echo ""
           echo "📋 Current certificates:"
           sudo certbot certificates
-          
+
           echo ""
           echo "✅ SSL renewal completed!"
           SSL_SCRIPT
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
@@ -534,13 +534,13 @@ jobs:
             echo "Error: domain is required for configure-nginx operation"
             exit 1
           fi
-      
+
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      
+
       - name: Configure Nginx on ${{ matrix.server.id }}
         env:
           DOMAIN: ${{ github.event.inputs.domain }}
@@ -550,21 +550,21 @@ jobs:
           SSL_METHOD: ${{ github.event.inputs.ssl_method }}
         run: |
           echo "⚙️ Configuring Nginx on ${{ matrix.server.host }}"
-          
+
           # Create nginx configuration script
           cat > /tmp/nginx_config.sh << 'NGINX_CONFIG'
           #!/bin/bash
           set -e
-          
+
           DOMAIN="${DOMAIN}"
           SITE_TYPE="${SITE_TYPE:-static}"
           PROXY_BACKEND="${PROXY_BACKEND}"
           ENABLE_SSL="${ENABLE_SSL:-false}"
           SSL_METHOD="${SSL_METHOD:-http}"
-          
+
           echo "Configuring Nginx for: $DOMAIN"
           echo "Site type: $SITE_TYPE"
-          
+
           # Determine if domain is root domain
           DOT_COUNT=$(echo "$DOMAIN" | tr -cd '.' | wc -c)
           if [[ $DOT_COUNT -eq 1 ]]; then
@@ -576,10 +576,10 @@ jobs:
             SERVER_NAMES="$DOMAIN"
             CERTBOT_DOMAINS="-d $DOMAIN"
           fi
-          
+
           NGINX_CONF="/etc/nginx/conf.d/$DOMAIN.conf"
           WEB_ROOT="/var/www.$DOMAIN"
-          
+
           if [[ "$SITE_TYPE" == "static" ]]; then
             # Create static site configuration
             mkdir -p "$WEB_ROOT"
@@ -587,24 +587,24 @@ jobs:
             cat > "$NGINX_CONF" << 'EOF'
           # Static site configuration for DOMAIN_PLACEHOLDER
           limit_req_zone $binary_remote_addr zone=ZONE_PLACEHOLDER_limit:10m rate=10r/s;
-          
+
           server {
               listen 80;
               listen [::]:80;
               server_name SERVER_NAMES_PLACEHOLDER;
-          
+
               root WEB_ROOT_PLACEHOLDER;
               index index.html;
-          
+
               access_log /var/log/nginx/DOMAIN_PLACEHOLDER.access.log;
               error_log  /var/log/nginx/DOMAIN_PLACEHOLDER.error.log warn;
-          
+
               location ~ /\.(?!well-known) {
                   deny all;
                   access_log off;
                   log_not_found off;
               }
-          
+
               location / {
                   limit_req zone=ZONE_PLACEHOLDER_limit burst=20 nodelay;
                   try_files $uri $uri.html $uri/ /index.html;
@@ -614,14 +614,14 @@ jobs:
                   add_header X-Frame-Options "SAMEORIGIN" always;
                   add_header X-XSS-Protection "1; mode=block" always;
               }
-          
+
               location ~* \.(?:css|js|json|svg|png|jpe?g|gif|ico|webp|ttf|woff2?)\$ {
                   try_files $uri =404;
                   access_log off;
                   expires 365d;
                   add_header Cache-Control "public, max-age=31536000, immutable";
               }
-          
+
               gzip on;
               gzip_vary on;
               gzip_comp_level 6;
@@ -648,20 +648,20 @@ jobs:
             cat > "$NGINX_CONF" << 'EOF'
           # Reverse proxy configuration for DOMAIN_PLACEHOLDER
           limit_req_zone $binary_remote_addr zone=ZONE_PLACEHOLDER_limit:10m rate=10r/s;
-          
+
           upstream ZONE_PLACEHOLDER_backend {
               server BACKEND_PLACEHOLDER;
               keepalive 64;
           }
-          
+
           server {
               listen 80;
               listen [::]:80;
               server_name SERVER_NAMES_PLACEHOLDER;
-          
+
               access_log /var/log/nginx/DOMAIN_PLACEHOLDER.access.log;
               error_log  /var/log/nginx/DOMAIN_PLACEHOLDER.error.log warn;
-          
+
               location / {
                   limit_req zone=ZONE_PLACEHOLDER_limit burst=20 nodelay;
                   
@@ -674,7 +674,7 @@ jobs:
                   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                   proxy_set_header X-Forwarded-Proto $scheme;
               }
-          
+
               gzip on;
               gzip_vary on;
               gzip_comp_level 6;
@@ -689,15 +689,15 @@ jobs:
             sed -i "s|PROXY_PASS_PLACEHOLDER|$PROXY_BACKEND|g" "$NGINX_CONF"
             sed -i "s|ZONE_PLACEHOLDER|${DOMAIN//./_}|g" "$NGINX_CONF"
           fi
-          
+
           # Test nginx configuration
           sudo nginx -t
-          
+
           # Reload nginx
           sudo systemctl reload nginx
-          
+
           echo "✅ Nginx configured for $DOMAIN"
-          
+
           # Setup SSL if requested
           if [[ "$ENABLE_SSL" == "true" ]]; then
             echo "🔐 Setting up SSL certificate..."
@@ -726,25 +726,25 @@ jobs:
                 --email "admin@$DOMAIN" || echo "⚠️ SSL setup failed (make sure DNS points to this server)"
             fi
           fi
-          
+
           echo "✅ Configuration completed!"
           NGINX_CONFIG
-          
+
           chmod +x /tmp/nginx_config.sh
-          
+
           # Upload and execute
           scp -i ~/.ssh/deploy_key -P ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             /tmp/nginx_config.sh \
             "${{ matrix.server.user }}@${{ matrix.server.host }}:/tmp/"
-          
+
           ssh -i ~/.ssh/deploy_key -p ${{ matrix.server.port }} \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             "${{ matrix.server.user }}@${{ matrix.server.host }}" \
             "DOMAIN=$DOMAIN SITE_TYPE=$SITE_TYPE PROXY_BACKEND=\"$PROXY_BACKEND\" ENABLE_SSL=$ENABLE_SSL SSL_METHOD=$SSL_METHOD AWS_ACCESS_KEY_ID=\"${{ secrets.AWS_ACCESS_KEY_ID }}\" AWS_SECRET_ACCESS_KEY=\"${{ secrets.AWS_SECRET_ACCESS_KEY }}\" bash /tmp/nginx_config.sh && rm /tmp/nginx_config.sh"
-      
+
       - name: Cleanup SSH Key
         if: always()
         run: rm -f ~/.ssh/deploy_key
