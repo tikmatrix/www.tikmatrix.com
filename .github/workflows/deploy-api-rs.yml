@@ -1,0 +1,113 @@
+name: Deploy TikMatrix API Rust Service
+run-name: ${{ github.actor }} is deploying TikMatrix API Rust Service 🚀
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version tag (e.g., v1.0.0)"
+        required: true
+        type: string
+      branch:
+        description: "Branch to build from in tikmatrix-api-rs"
+        required: false
+        default: "main"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tikmatrix-api-rs repository
+        uses: actions/checkout@v3
+        with:
+          repository: tikmatrix/tikmatrix-api-rs
+          token: ${{ secrets.REPO_TOKEN }}
+          ref: ${{ inputs.branch }}
+          path: tikmatrix-api-rs
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt
+
+      - name: Cache cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Build release
+        run: cargo build --release
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: tikmatrix-binary
+          path: target/release/tikmatrix-api-rs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - id: server-us
+            host: 23.95.253.245
+          - id: server-dublin
+            host: 172.245.97.215
+          - id: server-sgp
+            host: 52.77.229.28
+
+    steps:
+      - name: Download binary
+        uses: actions/download-artifact@v4
+        with:
+          name: tikmatrix-binary
+
+      - name: Prepare SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ matrix.host }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server ${{ matrix.id }} (${{ matrix.host }})
+        env:
+          REMOTE_USER: deploy
+          REMOTE_HOST: ${{ matrix.host }}
+          REMOTE_PORT: 22
+          REMOTE_DIR: /home/deploy/apps/tikmatrix-api-rs
+        run: |
+          scp -P $REMOTE_PORT target/release/tikmatrix-api-rs ${REMOTE_USER}@${REMOTE_HOST}:~/tikmatrix-api-rs.tmp
+          ssh -p $REMOTE_PORT ${REMOTE_USER}@${REMOTE_HOST} "mkdir -p $REMOTE_DIR && mv ~/tikmatrix-api-rs.tmp $REMOTE_DIR/tikmatrix-api-rs && chmod +x $REMOTE_DIR/tikmatrix-api-rs"
+
+          # create systemd service and restart using a single ssh heredoc
+          ssh -p $REMOTE_PORT ${REMOTE_USER}@${REMOTE_HOST} 'bash -s' <<'EOF'
+          cat > /tmp/tikmatrix-api-rs.service <<'SERVICE'
+          [Unit]
+          Description=TikMatrix API Service
+          After=network.target
+
+          [Service]
+          User=deploy
+          WorkingDirectory=/home/deploy/apps/tikmatrix-api-rs
+          ExecStart=/home/deploy/apps/tikmatrix-api-rs/tikmatrix-api-rs
+          Restart=on-failure
+          RestartSec=5
+          Environment=RUST_LOG=info
+
+          [Install]
+          WantedBy=multi-user.target
+          SERVICE
+
+          sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service || sudo cp /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
+          sudo systemctl daemon-reload && sudo systemctl enable --now tikmatrix-api-rs.service || true
+          EOF
+        working-directory: tikmatrix-api-rs
