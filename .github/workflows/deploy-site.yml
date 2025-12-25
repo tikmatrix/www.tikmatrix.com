@@ -66,9 +66,9 @@ jobs:
               # All sites to specific server
               DEPLOYMENTS=$(echo "$CONFIG" | jq -c \
                 --arg server "$SELECTED_SERVER" \
-                '[
+                '. as $root | [
                   .sites[] | . as $site |
-                  (.servers[] | select(.id == $server)) as $srv |
+                  ($root.servers[] | select(.id == $server)) as $srv |
                   {
                     site_name: $site.name,
                     site_config: $site,
@@ -78,10 +78,10 @@ jobs:
             else
               # All sites to their configured servers
               DEPLOYMENTS=$(echo "$CONFIG" | jq -c \
-                '[
+                '. as $root | [
                   .sites[] | . as $site |
                   .deployTo as $deployTo |
-                  (.servers[] | select(.id as $id | $deployTo | index($id))) as $srv |
+                  ($root.servers[] | select(.id as $id | $deployTo | index($id))) as $srv |
                   {
                     site_name: $site.name,
                     site_config: $site,
@@ -98,11 +98,10 @@ jobs:
                 --arg server "$SELECTED_SERVER" \
                 --argjson site_config "$SITE_CONFIG" \
                 '[
-                  (.servers[] | select(.id == $server)) as $srv |
-                  {
+                  .servers[] | select(.id == $server) | {
                     site_name: $site,
                     site_config: $site_config,
-                    server: $srv
+                    server: .
                   }
                 ]')
             else
@@ -112,11 +111,10 @@ jobs:
                 --argjson site_config "$SITE_CONFIG" \
                 --argjson deployTo "$(echo "$SITE_CONFIG" | jq -c '.deployTo')" \
                 '[
-                  (.servers[] | select(.id as $id | $deployTo | index($id))) as $srv |
-                  {
+                  .servers[] | select(.id as $id | $deployTo | index($id)) | {
                     site_name: $site,
                     site_config: $site_config,
-                    server: $srv
+                    server: .
                   }
                 ]')
             fi
