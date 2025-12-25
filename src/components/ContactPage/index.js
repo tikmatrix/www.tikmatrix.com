@@ -46,15 +46,10 @@ export default function FrequentlyAsked() {
                                 </p>
                             </div>
 
-                            <div className="col col--6 info">
-                                <i className="bx bxl-discord"></i>
-                                <h4>
-                                    <Translate>Discord</Translate>
-                                </h4>
+                            <div className="col col--12 info">
+
                                 <p>
-                                    <a href="https://discord.gg/mSZ5b8tDfn" target="_blank" rel="noopener noreferrer">
-                                        <Translate>Join Server</Translate>
-                                    </a>
+                                    <iframe src="https://discordapp.com/widget?id=1428188531536171142&theme=dark" width="350" height="200" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                                 </p>
                             </div>
                         </div>
