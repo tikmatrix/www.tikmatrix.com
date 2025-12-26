@@ -6,7 +6,7 @@
 # - Validates prerequisites
 # - Creates certs with safe permissions
 # - Idempotent and backs up existing config
-# bash <(curl -fsSL https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/setup-hy2.sh)
+# curl -fsSL https://raw.githubusercontent.com/tikmatrix/www.tikmatrix.com/main/scripts/setup-hy2.sh | sudo bash -s -- --install-remote --force
 
 set -euo pipefail
 IFS=$'\n\t'
@@ -104,7 +104,7 @@ fi
 if [[ ! -f "$KEY_FILE" ]]; then
   echo "Generating private key: $KEY_FILE"
   openssl genrsa -out "$KEY_FILE" 2048
-  chmod 600 "$KEY_FILE"
+  chmod 644 "$KEY_FILE"
 fi
 
 if [[ ! -f "$CRT_FILE" ]]; then
