@@ -22,30 +22,11 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Update sudoers configuration
+# Update sudoers configuration - grant full sudo access
 cat > /etc/sudoers.d/deploy << EOF
-# Allow deploy user to manage web deployments
-# Nginx management
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /tmp/api.tikmatrix.com.conf.new /etc/nginx/conf.d/api.tikmatrix.com.conf
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.backup
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.new
-# Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl enable *
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl start *
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl stop *
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart *
-# File permission management for web directories
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chown -R deploy\:www-data /var/www.*
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chmod -R 775 /var/www.*
-# Service file deployment
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.service /etc/systemd/system/
+# Allow deploy user full sudo access for web deployments and system management
+# This simplifies permission management for the TikMatrix ecosystem
+$DEPLOY_USER ALL=(ALL) NOPASSWD: ALL
 EOF
 
 chmod 440 /etc/sudoers.d/deploy

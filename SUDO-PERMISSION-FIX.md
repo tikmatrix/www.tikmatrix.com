@@ -1,31 +1,14 @@
-# Deploy TikMatrix API Rust Service - Sudo Permission Fix Guide
+# Deploy User Sudo Permissions Configuration
 
-## Problem Summary
+## Overview
 
-The "Deploy TikMatrix API Rust Service" GitHub Actions workflow fails with the following error:
-
-```
-sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
-sudo: a password is required
-Error: Process completed with exit code 1.
-```
-
-This happens because the `deploy` user doesn't have NOPASSWD sudo permissions for systemd service management commands that are needed to deploy and manage the TikMatrix API Rust service.
-
-## Root Cause
-
-The deploy user's sudoers configuration was missing permissions for:
-- `systemctl daemon-reload` - reload systemd after adding service files
-- `systemctl enable/start/stop/restart` - manage custom services like tikmatrix-api-rs
-- `mv /tmp/*.service /etc/systemd/system/` - install service definition files
-- `nginx -t` - test nginx configuration before applying changes
-- `cp/mv /tmp/*.conf /etc/nginx/conf.d/` - deploy nginx configuration files
-
-The "Deploy Site" workflow works fine because it only uses commands that ARE in the sudoers whitelist (chown, chmod for /var/www.* directories).
+The `deploy` user needs sudo permissions to manage web deployments, services, and system configurations in the TikMatrix ecosystem. This guide covers how to grant full sudo access to the deploy user.
 
 ## Solution
 
-Update the sudoers configuration on all VPS servers to add the missing permissions.
+Grant the `deploy` user full sudo access without password. This simplifies permission management and eliminates the need to update specific permissions for each new operation.
+
+**Note:** This configuration is suitable for dedicated VPS servers where the deploy user is controlled via SSH key authentication from GitHub Actions. For higher security environments, consider using specific command permissions instead of `ALL`.
 
 ## How to Apply the Fix
 
@@ -52,28 +35,9 @@ sudo nano /etc/sudoers.d/deploy
 Replace the entire content with:
 
 ```
-# Allow deploy user to manage web deployments
-# Nginx management
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
-deploy ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
-deploy ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
-deploy ALL=(ALL) NOPASSWD: /bin/cp /tmp/api.tikmatrix.com.conf.new /etc/nginx/conf.d/api.tikmatrix.com.conf
-deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
-deploy ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
-deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.backup
-deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.new
-# Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl enable *
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl start *
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl stop *
-deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart *
-# File permission management for web directories
-deploy ALL=(ALL) NOPASSWD: /bin/chown -R deploy\:www-data /var/www.*
-deploy ALL=(ALL) NOPASSWD: /bin/chmod -R 775 /var/www.*
-# Service file deployment
-deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.service /etc/systemd/system/
+# Allow deploy user full sudo access for web deployments and system management
+# This simplifies permission management for the TikMatrix ecosystem
+deploy ALL=(ALL) NOPASSWD: ALL
 ```
 
 Then set proper permissions:
@@ -113,7 +77,15 @@ Once all servers are updated:
 
 ## Security Note
 
-The updated configuration uses wildcards for systemctl commands to support multiple services in the TikMatrix ecosystem (tikmatrix-api-rs, igmatrix-api, etc.). This is acceptable for dedicated VPS servers with SSH key authentication. For stricter security, the wildcards can be replaced with specific service names.
+The updated configuration grants full sudo access to the `deploy` user. This is suitable for:
+- ✅ Dedicated VPS servers for the TikMatrix ecosystem
+- ✅ Environments with SSH key-only authentication
+- ✅ Automated deployment workflows via GitHub Actions
+
+This approach simplifies permission management and eliminates the need to update sudo permissions for each new deployment operation. The deploy user is secured through:
+- SSH key authentication (no password login)
+- Limited to GitHub Actions deployment workflows
+- Isolated to dedicated VPS infrastructure
 
 ## Related Documentation
 
