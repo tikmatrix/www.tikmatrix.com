@@ -225,8 +225,14 @@ jobs:
             BACKUP_EXISTS=false
             if [[ -f /etc/nginx/conf.d/api.tikmatrix.com.conf ]]; then
               echo "Backing up existing nginx configuration..."
-              sudo cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
-              BACKUP_EXISTS=true
+              if sudo cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup; then
+                BACKUP_EXISTS=true
+                echo "✅ Backup created successfully"
+              else
+                echo "❌ Failed to create backup"
+                sudo rm -f /tmp/api.tikmatrix.com.conf.new
+                exit 1
+              fi
             fi
 
             # Test nginx configuration before applying
