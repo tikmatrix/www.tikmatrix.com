@@ -40,7 +40,7 @@ jobs:
         run: |
           CONFIG=$(cat deploy-config.json)
           SELECTED_SERVER="${{ github.event.inputs.server }}"
-          
+
           if [[ -n "$SELECTED_SERVER" ]]; then
             # Use specific server
             SERVERS=$(echo "$CONFIG" | jq -c --arg target "$SELECTED_SERVER" '[.servers[] | select(.id == $target)]')
@@ -48,13 +48,13 @@ jobs:
             # Use all servers
             SERVERS=$(echo "$CONFIG" | jq -c '.servers')
           fi
-          
+
           # Validate servers is not empty
           if [[ -z "$SERVERS" || "$SERVERS" == "[]" || "$SERVERS" == "null" ]]; then
             echo "Error: No servers found"
             exit 1
           fi
-          
+
           echo "servers=$SERVERS" >> $GITHUB_OUTPUT
           echo "Target servers: $SERVERS"
 
@@ -124,17 +124,17 @@ jobs:
           SERVER_HOST="${{ matrix.server.host }}"
           SERVER_PORT="${{ matrix.server.port }}"
           SERVER_USER="${{ matrix.server.user }}"
-          
+
           echo "🚀 Deploying to $SERVER_ID ($SERVER_HOST)"
-          
+
           # Source common library functions
           source ./scripts/lib-common.sh
-          
+
           # Upload binary
           log_info "Uploading binary to server"
           scp_upload "$SERVER_HOST" "$SERVER_PORT" "$SERVER_USER" "$SSH_KEY_FILE" \
             "tikmatrix-api-rs" "tikmatrix-api-rs.tmp"
-          
+
           # Deploy and setup service
           log_info "Setting up service on server"
           ssh -i "$SSH_KEY_FILE" -p "$SERVER_PORT" \
@@ -143,20 +143,22 @@ jobs:
             -o ConnectTimeout=10 \
             "$SERVER_USER@$SERVER_HOST" 'bash -s' << 'EOF'
           set -euo pipefail
-          
+
           REMOTE_DIR="/home/deploy/apps/tikmatrix-api-rs"
-          
+
           # Move binary to final location
+          log_info "Moving binary to $REMOTE_DIR"
           mkdir -p "$REMOTE_DIR"
           mv ~/tikmatrix-api-rs.tmp "$REMOTE_DIR/tikmatrix-api-rs"
           chmod +x "$REMOTE_DIR/tikmatrix-api-rs"
-          
+
           # Create systemd service
+          log_info "Creating systemd service"
           cat > /tmp/tikmatrix-api-rs.service <<'SERVICE'
           [Unit]
           Description=TikMatrix API Service
           After=network.target
-          
+
           [Service]
           User=deploy
           WorkingDirectory=/home/deploy/apps/tikmatrix-api-rs
@@ -164,19 +166,20 @@ jobs:
           Restart=on-failure
           RestartSec=5
           Environment=RUST_LOG=info
-          
+
           [Install]
           WantedBy=multi-user.target
           SERVICE
-          
+
           # Install and restart service
-          sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/tikmatrix-api-rs.service
+          log_info "Installing and starting systemd service"
+          sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/
           sudo systemctl daemon-reload
           sudo systemctl enable --now tikmatrix-api-rs.service || true
-          
+
           echo "✅ Deployment completed!"
           EOF
-          
+
           log_success "Deployment to $SERVER_ID completed successfully!"
 
       - name: Cleanup SSH Key
