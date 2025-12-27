@@ -372,6 +372,8 @@ Manually trigger SSL certificate renewal.
    - File permission management: `chown -R deploy:www-data /var/www.*` and `chmod -R 775 /var/www.*`
    - Service file deployment: `mv /tmp/*.service /etc/systemd/system/`
    
+   > **Security Note:** Systemd service management permissions use wildcards to support multiple services in the TikMatrix ecosystem (e.g., tikmatrix-api-rs, igmatrix-api, etc.). These servers are dedicated to TikMatrix deployments and the deploy user is accessed via SSH key authentication. For stricter security policies, the wildcards can be replaced with an explicit list of service names.
+   
    If the sudoers configuration on the server is outdated, run the following command to update it:
    ```bash
    sudo bash scripts/fix-deploy-permissions.sh

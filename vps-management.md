@@ -371,6 +371,8 @@ sudo ./init-vps.sh
    - 文件权限管理：`chown -R deploy:www-data /var/www.*` 和 `chmod -R 775 /var/www.*`
    - 服务文件部署：`mv /tmp/*.service /etc/systemd/system/`
    
+   > **安全说明：** Systemd 服务管理权限使用通配符以支持 TikMatrix 生态系统中的多种服务（如 tikmatrix-api-rs, igmatrix-api 等）。这些服务器专用于 TikMatrix 部署，且 deploy 用户通过 SSH 密钥认证访问。如需更严格的安全策略，可以将通配符替换为具体的服务名称列表。
+   
    如果服务器上的 sudoers 配置过旧，运行以下命令更新：
    ```bash
    sudo bash scripts/fix-deploy-permissions.sh
