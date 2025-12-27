@@ -363,8 +363,21 @@ Manually trigger SSL certificate renewal.
    - Route53 validation for internal servers or wildcard certificates
 
 4. **Permission Management**
-   - Deploy user has only necessary sudo permissions
+   - Deploy user has only necessary sudo permissions (configured via `/etc/sudoers.d/deploy`)
    - Web files owned by deploy user, readable by www-data group
+   
+   Deploy user's sudo permissions include:
+   - Nginx management: `systemctl reload/restart nginx`
+   - Systemd service management: `systemctl daemon-reload/enable/start/stop/restart`
+   - File permission management: `chown -R deploy:www-data /var/www.*` and `chmod -R 775 /var/www.*`
+   - Service file deployment: `mv /tmp/*.service /etc/systemd/system/`
+   
+   > **Security Note:** Systemd service management permissions use wildcards to support multiple services in the TikMatrix ecosystem (e.g., tikmatrix-api-rs, igmatrix-api, etc.). These servers are dedicated to TikMatrix deployments and the deploy user is accessed via SSH key authentication. For stricter security policies, the wildcards can be replaced with an explicit list of service names.
+   
+   If the sudoers configuration on the server is outdated, run the following command to update it:
+   ```bash
+   sudo bash scripts/fix-deploy-permissions.sh
+   ```
 
 5. **Backup Strategy**
    - Auto-keep last 3 deployment backups
@@ -423,6 +436,28 @@ ls -la /var/www/domain.com
 # View deployment logs
 # Check GitHub Actions workflow run details
 ```
+
+### Issue 5: sudo Permission Error
+
+If you encounter errors like the following during GitHub Actions deployment:
+
+```
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+```
+
+This usually means the deploy user doesn't have NOPASSWD sudo permission for specific commands. Solution:
+
+1. SSH into the server
+2. Run the permission fix script:
+   ```bash
+   sudo bash scripts/fix-deploy-permissions.sh
+   ```
+3. Verify sudoers configuration:
+   ```bash
+   sudo cat /etc/sudoers.d/deploy
+   ```
+4. Re-run the failed GitHub Actions workflow
 
 ## Advanced Features
 

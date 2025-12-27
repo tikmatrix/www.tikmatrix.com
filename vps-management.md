@@ -362,8 +362,21 @@ sudo ./init-vps.sh
    - Route53 验证适用于内网服务器或泛域名证书
 
 4. **权限管理**
-   - Deploy 用户仅有必要的 sudo 权限
+   - Deploy 用户仅有必要的 sudo 权限（通过 `/etc/sudoers.d/deploy` 配置）
    - Web 文件归 deploy 用户所有，www-data 组可读
+   
+   Deploy 用户的 sudo 权限包括：
+   - Nginx 管理：`systemctl reload/restart nginx`
+   - Systemd 服务管理：`systemctl daemon-reload/enable/start/stop/restart`
+   - 文件权限管理：`chown -R deploy:www-data /var/www.*` 和 `chmod -R 775 /var/www.*`
+   - 服务文件部署：`mv /tmp/*.service /etc/systemd/system/`
+   
+   > **安全说明：** Systemd 服务管理权限使用通配符以支持 TikMatrix 生态系统中的多种服务（如 tikmatrix-api-rs, igmatrix-api 等）。这些服务器专用于 TikMatrix 部署，且 deploy 用户通过 SSH 密钥认证访问。如需更严格的安全策略，可以将通配符替换为具体的服务名称列表。
+   
+   如果服务器上的 sudoers 配置过旧，运行以下命令更新：
+   ```bash
+   sudo bash scripts/fix-deploy-permissions.sh
+   ```
 
 5. **备份策略**
    - 自动保留最近 3 个部署备份
@@ -422,6 +435,28 @@ ls -la /var/www/domain.com
 # 查看部署日志
 # 在 GitHub Actions 工作流运行详情中查看
 ```
+
+### 问题 5: sudo 权限错误
+
+如果在 GitHub Actions 部署过程中遇到类似以下错误：
+
+```
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+```
+
+这通常意味着 deploy 用户没有执行特定命令的 NOPASSWD sudo 权限。解决方法：
+
+1. SSH 登录到服务器
+2. 运行权限修复脚本：
+   ```bash
+   sudo bash scripts/fix-deploy-permissions.sh
+   ```
+3. 验证 sudoers 配置：
+   ```bash
+   sudo cat /etc/sudoers.d/deploy
+   ```
+4. 重新运行失败的 GitHub Actions 工作流
 
 ## 高级功能
 
