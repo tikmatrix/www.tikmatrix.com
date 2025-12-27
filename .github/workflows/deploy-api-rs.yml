@@ -236,8 +236,9 @@ jobs:
               echo "Reloading nginx..."
               sudo systemctl reload nginx
               echo "✅ Nginx reloaded successfully"
-              # Clean up backup
+              # Clean up temporary files
               sudo rm -f /tmp/api.tikmatrix.com.conf.backup
+              sudo rm -f /tmp/api.tikmatrix.com.conf.new
             else
               echo "❌ Nginx configuration test failed"
               echo "Rolling back configuration..."
@@ -248,6 +249,8 @@ jobs:
                 sudo rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
                 echo "⚠️  No previous configuration found, removed invalid config"
               fi
+              # Clean up temporary files
+              sudo rm -f /tmp/api.tikmatrix.com.conf.new
               exit 1
             fi
           fi
