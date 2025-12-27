@@ -57,8 +57,11 @@ Replace the entire content with:
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
 deploy ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
+deploy ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/*.conf /tmp/
 deploy ALL=(ALL) NOPASSWD: /bin/cp /tmp/*.conf /etc/nginx/conf.d/
 deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.conf /etc/nginx/conf.d/
+deploy ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/*.conf
+deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/*.conf
 # Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl enable *

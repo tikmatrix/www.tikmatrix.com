@@ -218,22 +218,36 @@ jobs:
             echo "Deploying nginx configuration"
 
             # Move config to /tmp for testing
-            mv ~/api.tikmatrix.com.conf.tmp /tmp/api.tikmatrix.com.conf
-            chmod 644 /tmp/api.tikmatrix.com.conf
+            mv ~/api.tikmatrix.com.conf.tmp /tmp/api.tikmatrix.com.conf.new
+            chmod 644 /tmp/api.tikmatrix.com.conf.new
+
+            # Backup existing config if it exists
+            if [[ -f /etc/nginx/conf.d/api.tikmatrix.com.conf ]]; then
+              echo "Backing up existing nginx configuration..."
+              sudo cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
+            fi
 
             # Test nginx configuration before applying
             echo "Testing nginx configuration..."
-            sudo cp /tmp/api.tikmatrix.com.conf /etc/nginx/conf.d/api.tikmatrix.com.conf
+            sudo cp /tmp/api.tikmatrix.com.conf.new /etc/nginx/conf.d/api.tikmatrix.com.conf
 
             if sudo nginx -t; then
               echo "✅ Nginx configuration test passed"
               echo "Reloading nginx..."
               sudo systemctl reload nginx
               echo "✅ Nginx reloaded successfully"
+              # Clean up backup
+              sudo rm -f /tmp/api.tikmatrix.com.conf.backup
             else
               echo "❌ Nginx configuration test failed"
               echo "Rolling back configuration..."
-              sudo rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
+              if [[ -f /tmp/api.tikmatrix.com.conf.backup ]]; then
+                sudo mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
+                echo "✅ Previous configuration restored"
+              else
+                sudo rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
+                echo "⚠️  No previous configuration found, removed invalid config"
+              fi
               exit 1
             fi
           fi
