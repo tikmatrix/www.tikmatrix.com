@@ -97,7 +97,7 @@ jobs:
           path: tikmatrix-api-rs/target/release/tikmatrix-api-rs
 
       - name: Upload GeoLite2 database
-        if: ${{ inputs.deploy_geolite == true }}
+        if: ${{ inputs.deploy_geolite }}
         uses: actions/upload-artifact@v4
         with:
           name: geolite2-db
@@ -120,7 +120,7 @@ jobs:
           name: tikmatrix-binary
 
       - name: Download GeoLite2 database
-        if: ${{ inputs.deploy_geolite == true }}
+        if: ${{ inputs.deploy_geolite }}
         uses: actions/download-artifact@v4
         with:
           name: geolite2-db
