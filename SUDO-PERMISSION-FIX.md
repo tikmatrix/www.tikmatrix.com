@@ -57,11 +57,12 @@ Replace the entire content with:
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
 deploy ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
-deploy ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/*.conf /tmp/
-deploy ALL=(ALL) NOPASSWD: /bin/cp /tmp/*.conf /etc/nginx/conf.d/
-deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.conf /etc/nginx/conf.d/
-deploy ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/*.conf
-deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/*.conf
+deploy ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
+deploy ALL=(ALL) NOPASSWD: /bin/cp /tmp/api.tikmatrix.com.conf.new /etc/nginx/conf.d/api.tikmatrix.com.conf
+deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
+deploy ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
+deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.backup
+deploy ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.new
 # Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl enable *

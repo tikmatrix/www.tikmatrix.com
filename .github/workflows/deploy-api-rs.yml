@@ -222,9 +222,11 @@ jobs:
             chmod 644 /tmp/api.tikmatrix.com.conf.new
 
             # Backup existing config if it exists
+            BACKUP_EXISTS=false
             if [[ -f /etc/nginx/conf.d/api.tikmatrix.com.conf ]]; then
               echo "Backing up existing nginx configuration..."
               sudo cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
+              BACKUP_EXISTS=true
             fi
 
             # Test nginx configuration before applying
@@ -236,23 +238,25 @@ jobs:
               echo "Reloading nginx..."
               sudo systemctl reload nginx
               echo "✅ Nginx reloaded successfully"
-              # Clean up temporary files
-              sudo rm -f /tmp/api.tikmatrix.com.conf.backup
-              sudo rm -f /tmp/api.tikmatrix.com.conf.new
             else
               echo "❌ Nginx configuration test failed"
               echo "Rolling back configuration..."
-              if [[ -f /tmp/api.tikmatrix.com.conf.backup ]]; then
+              if [[ "$BACKUP_EXISTS" == "true" ]]; then
                 sudo mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
                 echo "✅ Previous configuration restored"
               else
                 sudo rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
                 echo "⚠️  No previous configuration found, removed invalid config"
               fi
-              # Clean up temporary files
+              # Clean up temporary file
               sudo rm -f /tmp/api.tikmatrix.com.conf.new
               exit 1
             fi
+
+            # Clean up temporary files after successful deployment
+            echo "Cleaning up temporary files..."
+            sudo rm -f /tmp/api.tikmatrix.com.conf.backup
+            sudo rm -f /tmp/api.tikmatrix.com.conf.new
           fi
 
           # Create systemd service

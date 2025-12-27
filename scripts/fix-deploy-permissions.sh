@@ -29,11 +29,12 @@ cat > /etc/sudoers.d/deploy << EOF
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/*.conf /tmp/
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /tmp/*.conf /etc/nginx/conf.d/
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.conf /etc/nginx/conf.d/
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/*.conf
-$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/*.conf
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /etc/nginx/conf.d/api.tikmatrix.com.conf /tmp/api.tikmatrix.com.conf.backup
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /tmp/api.tikmatrix.com.conf.new /etc/nginx/conf.d/api.tikmatrix.com.conf
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/api.tikmatrix.com.conf.backup /etc/nginx/conf.d/api.tikmatrix.com.conf
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /etc/nginx/conf.d/api.tikmatrix.com.conf
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.backup
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/rm -f /tmp/api.tikmatrix.com.conf.new
 # Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl enable *
