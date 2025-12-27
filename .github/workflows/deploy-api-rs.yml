@@ -210,7 +210,7 @@ jobs:
           sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/
           sudo systemctl daemon-reload
           sudo systemctl enable --now tikmatrix-api-rs.service || true
-
+          sudo systemctl restart tikmatrix-api-rs.service
           echo "✅ Deployment completed!"
           EOF
 
