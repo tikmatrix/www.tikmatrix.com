@@ -166,24 +166,24 @@ jobs:
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -o ConnectTimeout=10 \
-            "$SERVER_USER@$SERVER_HOST" bash -s << EOF
+            "$SERVER_USER@$SERVER_HOST" bash -s "$DEPLOY_GEOLITE" << 'EOF'
           set -euo pipefail
 
           REMOTE_DIR="/home/deploy/apps/tikmatrix-api-rs"
-          DEPLOY_GEOLITE="$DEPLOY_GEOLITE"
+          DEPLOY_GEOLITE="$1"
 
           # Move binary to final location
-          echo "Moving binary to \$REMOTE_DIR"
-          mkdir -p "\$REMOTE_DIR"
-          mv ~/tikmatrix-api-rs.tmp "\$REMOTE_DIR/tikmatrix-api-rs"
-          chmod +x "\$REMOTE_DIR/tikmatrix-api-rs"
+          echo "Moving binary to $REMOTE_DIR"
+          mkdir -p "$REMOTE_DIR"
+          mv ~/tikmatrix-api-rs.tmp "$REMOTE_DIR/tikmatrix-api-rs"
+          chmod +x "$REMOTE_DIR/tikmatrix-api-rs"
 
           # Move GeoLite2 database if enabled
-          if [[ "\$DEPLOY_GEOLITE" == "true" ]]; then
-            echo "Moving GeoLite2-Country.mmdb to \$REMOTE_DIR/data/"
-            mkdir -p "\$REMOTE_DIR/data"
-            mv ~/GeoLite2-Country.mmdb.tmp "\$REMOTE_DIR/data/GeoLite2-Country.mmdb"
-            chmod 644 "\$REMOTE_DIR/data/GeoLite2-Country.mmdb"
+          if [[ "$DEPLOY_GEOLITE" == "true" ]]; then
+            echo "Moving GeoLite2-Country.mmdb to $REMOTE_DIR/data/"
+            mkdir -p "$REMOTE_DIR/data"
+            mv ~/GeoLite2-Country.mmdb.tmp "$REMOTE_DIR/data/GeoLite2-Country.mmdb"
+            chmod 644 "$REMOTE_DIR/data/GeoLite2-Country.mmdb"
           fi
 
           # Create systemd service
