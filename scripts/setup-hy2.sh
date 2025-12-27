@@ -81,9 +81,14 @@ if [[ $INSTALL_REMOTE -eq 1 ]]; then
   fi
 fi
 
-# Create cert directory
+# Ensure base hysteria directory exists with proper permissions
+mkdir -p /etc/hysteria
+chmod 755 /etc/hysteria
+
+# Create cert directory with appropriate permissions
+# 755 allows service user to access the directory while keeping it secure
 mkdir -p "$CERT_DIR"
-chmod 700 "$CERT_DIR"
+chmod 755 "$CERT_DIR"
 cd "$CERT_DIR"
 
 KEY_FILE="$CERT_DIR/${DOMAIN}.key"
@@ -104,14 +109,14 @@ fi
 if [[ ! -f "$KEY_FILE" ]]; then
   echo "Generating private key: $KEY_FILE"
   openssl genrsa -out "$KEY_FILE" 2048
-  chmod 644 "$KEY_FILE"
+  chmod 600 "$KEY_FILE"  # Private key should only be readable by root
 fi
 
 if [[ ! -f "$CRT_FILE" ]]; then
   echo "Generating self-signed certificate: $CRT_FILE"
   openssl req -new -x509 -key "$KEY_FILE" \
     -out "$CRT_FILE" -days 3650 -subj "/CN=$DOMAIN"
-  chmod 644 "$CRT_FILE"
+  chmod 644 "$CRT_FILE"  # Certificate can be world-readable
 fi
 
 # Backup existing config
@@ -141,7 +146,35 @@ masquerade:
     url: https://www.apple.com/
     rewriteHost: true
 EOF
-chmod 644 "$CONFIG_FILE"
+chmod 640 "$CONFIG_FILE"  # Protect config file as it contains password
+
+# Detect and set ownership for hysteria service user
+# The official Hysteria installer typically creates a 'hysteria' user
+SERVICE_USER=""
+if id "hysteria" &>/dev/null; then
+  SERVICE_USER="hysteria"
+else
+  # Try to get the service user from systemd
+  SERVICE_SHOW=$(systemctl show -p User "$SERVICE_NAME" 2>/dev/null || echo "")
+  if [[ -n "$SERVICE_SHOW" ]] && echo "$SERVICE_SHOW" | grep -q "User="; then
+    SERVICE_USER=$(echo "$SERVICE_SHOW" | cut -d= -f2)
+  fi
+fi
+
+if [[ -n "$SERVICE_USER" && "$SERVICE_USER" != "root" ]]; then
+  echo "Setting ownership for service user: $SERVICE_USER"
+  chown root:"$SERVICE_USER" "$KEY_FILE" "$CRT_FILE" "$CONFIG_FILE"
+  # Adjust permissions now that we have group ownership
+  # Key was initially 600 (root only), now 640 (root + service group)
+  chmod 640 "$KEY_FILE"    # Private key readable by root and service group
+  chmod 640 "$CONFIG_FILE" # Config readable by root and service group
+  chmod 644 "$CRT_FILE"    # Certificate can remain world-readable
+else
+  echo "Warning: Hysteria service user not detected. Files owned by root."
+  echo "If the service fails to start, you may need to manually set ownership:"
+  echo "  sudo chown root:hysteria \"$KEY_FILE\" \"$CRT_FILE\" \"$CONFIG_FILE\""
+  echo "  sudo chmod 640 \"$KEY_FILE\" \"$CONFIG_FILE\""
+fi
 
 # Ensure service is enabled and restarted
 echo "Enabling and restarting $SERVICE_NAME"
@@ -150,15 +183,28 @@ systemctl restart "$SERVICE_NAME"
 
 # Wait a bit and show status
 sleep 2
-systemctl status "$SERVICE_NAME" --no-pager -l || true
+if systemctl is-active --quiet "$SERVICE_NAME"; then
+  echo "✅ Service $SERVICE_NAME is running"
+  systemctl status "$SERVICE_NAME" --no-pager -l || true
+else
+  echo "❌ Service $SERVICE_NAME failed to start"
+  echo "Checking logs for permission errors..."
+  journalctl -u "$SERVICE_NAME" -n 20 --no-pager || true
+  echo ""
+  echo "Common issues:"
+  echo "  1. Certificate permission errors - check ownership and permissions"
+  echo "  2. Port already in use - check if port $PORT is available"
+  echo "  3. Invalid config syntax - review $CONFIG_FILE"
+  exit 1
+fi
 
 # Configure firewall (if ufw is present)
 if command -v ufw >/dev/null 2>&1; then
   if ! ufw status | grep -q "${PORT}/tcp"; then
-    ufw allow ${PORT}/tcp
+    ufw allow "${PORT}/tcp"
   fi
   if ! ufw status | grep -q "${PORT}/udp"; then
-    ufw allow ${PORT}/udp
+    ufw allow "${PORT}/udp"
   fi
   echo "Firewall (ufw) updated to allow port ${PORT} (tcp/udp)"
 else
