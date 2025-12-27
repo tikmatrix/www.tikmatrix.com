@@ -167,8 +167,8 @@ if [[ -n "$SERVICE_USER" && "$SERVICE_USER" != "root" ]]; then
 else
   echo "Warning: Hysteria service user not detected. Files owned by root."
   echo "If the service fails to start, you may need to manually set ownership:"
-  echo "  sudo chown root:hysteria $KEY_FILE $CRT_FILE $CONFIG_FILE"
-  echo "  sudo chmod 640 $KEY_FILE $CONFIG_FILE"
+  echo "  sudo chown root:hysteria \"$KEY_FILE\" \"$CRT_FILE\" \"$CONFIG_FILE\""
+  echo "  sudo chmod 640 \"$KEY_FILE\" \"$CONFIG_FILE\""
 fi
 
 # Ensure service is enabled and restarted
