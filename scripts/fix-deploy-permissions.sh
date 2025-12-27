@@ -28,6 +28,9 @@ cat > /etc/sudoers.d/deploy << EOF
 # Nginx management
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/cp /tmp/*.conf /etc/nginx/conf.d/
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.conf /etc/nginx/conf.d/
 # Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl enable *

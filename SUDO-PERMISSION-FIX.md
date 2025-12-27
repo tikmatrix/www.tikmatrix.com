@@ -18,6 +18,8 @@ The deploy user's sudoers configuration was missing permissions for:
 - `systemctl daemon-reload` - reload systemd after adding service files
 - `systemctl enable/start/stop/restart` - manage custom services like tikmatrix-api-rs
 - `mv /tmp/*.service /etc/systemd/system/` - install service definition files
+- `nginx -t` - test nginx configuration before applying changes
+- `cp/mv /tmp/*.conf /etc/nginx/conf.d/` - deploy nginx configuration files
 
 The "Deploy Site" workflow works fine because it only uses commands that ARE in the sudoers whitelist (chown, chmod for /var/www.* directories).
 
@@ -54,6 +56,9 @@ Replace the entire content with:
 # Nginx management
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
+deploy ALL=(ALL) NOPASSWD: /usr/sbin/nginx -t
+deploy ALL=(ALL) NOPASSWD: /bin/cp /tmp/*.conf /etc/nginx/conf.d/
+deploy ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.conf /etc/nginx/conf.d/
 # Systemd service management (broad permissions for flexibility with TikMatrix ecosystem services)
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
 deploy ALL=(ALL) NOPASSWD: /bin/systemctl enable *
