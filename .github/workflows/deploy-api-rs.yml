@@ -147,13 +147,13 @@ jobs:
           REMOTE_DIR="/home/deploy/apps/tikmatrix-api-rs"
 
           # Move binary to final location
-          log_info "Moving binary to $REMOTE_DIR"
+          echo "Moving binary to $REMOTE_DIR"
           mkdir -p "$REMOTE_DIR"
           mv ~/tikmatrix-api-rs.tmp "$REMOTE_DIR/tikmatrix-api-rs"
           chmod +x "$REMOTE_DIR/tikmatrix-api-rs"
 
           # Create systemd service
-          log_info "Creating systemd service"
+          echo "Creating systemd service"
           cat > /tmp/tikmatrix-api-rs.service <<'SERVICE'
           [Unit]
           Description=TikMatrix API Service
@@ -172,7 +172,7 @@ jobs:
           SERVICE
 
           # Install and restart service
-          log_info "Installing and starting systemd service"
+          echo "Installing and starting systemd service"
           sudo mv /tmp/tikmatrix-api-rs.service /etc/systemd/system/
           sudo systemctl daemon-reload
           sudo systemctl enable --now tikmatrix-api-rs.service || true
