@@ -27,8 +27,14 @@ cat > /etc/sudoers.d/deploy << EOF
 # Allow deploy user to manage web deployments
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl reload nginx
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl daemon-reload
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl enable *
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl start *
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl stop *
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/systemctl restart *
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chown -R deploy\:www-data /var/www.*
 $DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/chmod -R 775 /var/www.*
+$DEPLOY_USER ALL=(ALL) NOPASSWD: /bin/mv /tmp/*.service /etc/systemd/system/
 EOF
 
 chmod 440 /etc/sudoers.d/deploy
