@@ -153,14 +153,19 @@ chmod 640 "$CONFIG_FILE"  # Protect config file as it contains password
 SERVICE_USER=""
 if id "hysteria" &>/dev/null; then
   SERVICE_USER="hysteria"
-elif systemctl show -p User "$SERVICE_NAME" 2>/dev/null | grep -q "User="; then
-  SERVICE_USER=$(systemctl show -p User "$SERVICE_NAME" 2>/dev/null | cut -d= -f2)
+else
+  # Try to get the service user from systemd
+  SERVICE_SHOW=$(systemctl show -p User "$SERVICE_NAME" 2>/dev/null || echo "")
+  if [[ -n "$SERVICE_SHOW" ]] && echo "$SERVICE_SHOW" | grep -q "User="; then
+    SERVICE_USER=$(echo "$SERVICE_SHOW" | cut -d= -f2)
+  fi
 fi
 
 if [[ -n "$SERVICE_USER" && "$SERVICE_USER" != "root" ]]; then
   echo "Setting ownership for service user: $SERVICE_USER"
   chown root:"$SERVICE_USER" "$KEY_FILE" "$CRT_FILE" "$CONFIG_FILE"
-  # Make sure the service user can read the files
+  # Adjust permissions now that we have group ownership
+  # Key was initially 600 (root only), now 640 (root + service group)
   chmod 640 "$KEY_FILE"    # Private key readable by root and service group
   chmod 640 "$CONFIG_FILE" # Config readable by root and service group
   chmod 644 "$CRT_FILE"    # Certificate can remain world-readable
