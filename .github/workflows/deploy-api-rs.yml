@@ -22,6 +22,11 @@ on:
           - server-us
           - server-dublin
           - server-sgp
+      deploy_geolite:
+        description: "Deploy GeoLite2-Country.mmdb file (enable for first deployment or updates)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -70,10 +75,9 @@ jobs:
           path: tikmatrix-api-rs
 
       - name: Install Rust toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          components: rustfmt
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable --component rustfmt
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
       - name: Cache cargo registry
         uses: actions/cache@v4
@@ -92,6 +96,13 @@ jobs:
           name: tikmatrix-binary
           path: tikmatrix-api-rs/target/release/tikmatrix-api-rs
 
+      - name: Upload GeoLite2 database
+        if: ${{ inputs.deploy_geolite == true }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: geolite2-db
+          path: tikmatrix-api-rs/data/GeoLite2-Country.mmdb
+
   deploy:
     needs: [prepare, build]
     runs-on: ubuntu-latest
@@ -108,6 +119,12 @@ jobs:
         with:
           name: tikmatrix-binary
 
+      - name: Download GeoLite2 database
+        if: ${{ inputs.deploy_geolite == true }}
+        uses: actions/download-artifact@v4
+        with:
+          name: geolite2-db
+
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
@@ -119,6 +136,7 @@ jobs:
           CONFIG_FILE: deploy-config.json
           SSH_KEY_FILE: ~/.ssh/deploy_key
           REMOTE_DIR: /home/deploy/apps/tikmatrix-api-rs
+          DEPLOY_GEOLITE: ${{ inputs.deploy_geolite }}
         run: |
           SERVER_ID="${{ matrix.server.id }}"
           SERVER_HOST="${{ matrix.server.host }}"
@@ -135,22 +153,38 @@ jobs:
           scp_upload "$SERVER_HOST" "$SERVER_PORT" "$SERVER_USER" "$SSH_KEY_FILE" \
             "tikmatrix-api-rs" "tikmatrix-api-rs.tmp"
 
+          # Upload GeoLite2 database if enabled
+          if [[ "$DEPLOY_GEOLITE" == "true" ]]; then
+            log_info "Uploading GeoLite2-Country.mmdb to server"
+            scp_upload "$SERVER_HOST" "$SERVER_PORT" "$SERVER_USER" "$SSH_KEY_FILE" \
+              "GeoLite2-Country.mmdb" "GeoLite2-Country.mmdb.tmp"
+          fi
+
           # Deploy and setup service
           log_info "Setting up service on server"
           ssh -i "$SSH_KEY_FILE" -p "$SERVER_PORT" \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -o ConnectTimeout=10 \
-            "$SERVER_USER@$SERVER_HOST" 'bash -s' << 'EOF'
+            "$SERVER_USER@$SERVER_HOST" bash -s << EOF
           set -euo pipefail
 
           REMOTE_DIR="/home/deploy/apps/tikmatrix-api-rs"
+          DEPLOY_GEOLITE="$DEPLOY_GEOLITE"
 
           # Move binary to final location
-          echo "Moving binary to $REMOTE_DIR"
-          mkdir -p "$REMOTE_DIR"
-          mv ~/tikmatrix-api-rs.tmp "$REMOTE_DIR/tikmatrix-api-rs"
-          chmod +x "$REMOTE_DIR/tikmatrix-api-rs"
+          echo "Moving binary to \$REMOTE_DIR"
+          mkdir -p "\$REMOTE_DIR"
+          mv ~/tikmatrix-api-rs.tmp "\$REMOTE_DIR/tikmatrix-api-rs"
+          chmod +x "\$REMOTE_DIR/tikmatrix-api-rs"
+
+          # Move GeoLite2 database if enabled
+          if [[ "\$DEPLOY_GEOLITE" == "true" ]]; then
+            echo "Moving GeoLite2-Country.mmdb to \$REMOTE_DIR/data/"
+            mkdir -p "\$REMOTE_DIR/data"
+            mv ~/GeoLite2-Country.mmdb.tmp "\$REMOTE_DIR/data/GeoLite2-Country.mmdb"
+            chmod 644 "\$REMOTE_DIR/data/GeoLite2-Country.mmdb"
+          fi
 
           # Create systemd service
           echo "Creating systemd service"
